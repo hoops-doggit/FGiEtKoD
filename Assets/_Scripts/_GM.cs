@@ -23,5 +23,8 @@ public class _GM : MonoBehaviour {
 		if (gummyBearPivot.transform.position.y < -0.5f) {
 			SceneManager.LoadScene (sceneName);
 		}
+
+		if (Input.GetKeyDown(KeyCode.R)){
+			SceneManager.LoadScene(sceneName);}
 	}
 }

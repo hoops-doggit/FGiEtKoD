@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4465882715153410}
   m_Layer: 0
   m_Name: JellyBeanPrefab
-  m_TagString: Untagged
+  m_TagString: jellybean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 114038051886923700}
   m_Layer: 0
   m_Name: ExclaimAnim Sprite
-  m_TagString: Untagged
+  m_TagString: jellybean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 114994656788681938}
   m_Layer: 0
   m_Name: CollisionObject
-  m_TagString: Untagged
+  m_TagString: jellybean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 114916705431560910}
   m_Layer: 0
   m_Name: JellyBean Sprite
-  m_TagString: Untagged
+  m_TagString: jellybean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_States: []
   m_File: {fileID: 11400000, guid: 7514d8a79bf83475992e4dff1c41b073, type: 2}
-  speed: 1.38
+  speed: 3.07
   m_Settings:
     randomizeOnStart: 0
     playOnStart: 1
@@ -224,14 +224,8 @@ MonoBehaviour:
   rotaionSpeed: 7
   rotate: {x: 0, y: 2, z: 0}
   parent: {fileID: 1111947735896808}
-  jellybean: {fileID: 1931458277483930}
-  burst: {fileID: 1403061574543412}
-  sizeIncrease: 1.5
-  scaleMax: 3
-  playingAnimation: 0
-  burstAnimation: {fileID: 11400000, guid: 7514d8a79bf83475992e4dff1c41b073, type: 2}
-  m_PlayOnStart: 0
-  m_Loop: 0
+  sizeIncrease: 0.2
+  scaleMax: 1.4
 --- !u!136 &136026090594084958
 CapsuleCollider:
   m_ObjectHideFlags: 1

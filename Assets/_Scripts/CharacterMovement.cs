@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DoodleStudio95;
 
 public class CharacterMovement : MonoBehaviour {
 
@@ -13,7 +14,12 @@ public class CharacterMovement : MonoBehaviour {
     public float grav;
     public float jumpspeed;
     public float jumpHeight;
+	public float moveSpeed;
     public float runSpeed;
+	public float slowSpeed;
+	public float accSpeed;
+	public bool slowed;
+	public float slowedDuration;
 
 
     public float LeftPos;
@@ -22,6 +28,8 @@ public class CharacterMovement : MonoBehaviour {
 
     private float _positionDifference;
     public bool _groundContact;
+
+	public GameObject burst;
 
     public void MoveLeft()
     {
@@ -52,6 +60,10 @@ public class CharacterMovement : MonoBehaviour {
             _groundContact = true;
             vsp = 0;
         }
+
+		if (col.gameObject.tag == "jellybean") {
+			PlayBurst();
+		}
     }
 
     public void OnCollisionExit(Collision col)
@@ -61,6 +73,38 @@ public class CharacterMovement : MonoBehaviour {
             _groundContact = false;
         }
     }
+
+	public void PlayBurst ()
+	{
+		StopCoroutine ("PlaySequence");
+		StartCoroutine ("PlaySequence");
+	}
+
+	public void GotHit(){
+		StopCoroutine ("GotHitCorourine");
+		StartCoroutine ("GotHitCoroutine");
+	}
+
+	public IEnumerator GotHitCoroutine(){
+		slowed = true;
+		moveSpeed = slowSpeed;
+		Debug.Log ("things are things if they have things");
+		yield return new WaitForSeconds (slowedDuration);
+		slowed = false;
+		StopCoroutine( "GotHitCoroutine" );
+	}
+
+	public IEnumerator PlaySequence() {
+		burst.SetActive (true);
+		DoodleAnimator animator = burst.GetComponent<DoodleAnimator>();
+		yield return animator.PlayAndPauseAt(0,-1);
+		animator.Stop();
+		burst.SetActive (false);
+		StopCoroutine ("PlaySequence");
+
+	}
+
+
 
     // Use this for initialization
     void Start () {
@@ -89,7 +133,23 @@ public class CharacterMovement : MonoBehaviour {
 
         character.transform.position = characterPos;
 
-        charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + runSpeed);
+		//speed up
+		if (moveSpeed < runSpeed && !slowed) {
+			
+			if (moveSpeed <= 0) {
+				moveSpeed = 0.03f;
+			}
+
+			moveSpeed = moveSpeed * accSpeed;
+		}
+
+		if (moveSpeed > runSpeed) {
+			moveSpeed = runSpeed;
+		}
+			
+			
+
+		charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + moveSpeed);
 	}
 
     private void Update()

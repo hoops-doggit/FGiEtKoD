@@ -83,7 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_States: []
   m_File: {fileID: 11400000, guid: e4708afe5474640c99d71656fec4da97, type: 2}
-  speed: 1
+  speed: 1.11
   m_Settings:
     randomizeOnStart: 1
     playOnStart: 1
