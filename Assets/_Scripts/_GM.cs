@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class _GM : MonoBehaviour {
 
-	public GameObect gummyBear;
-
+	public Transform gummyBearPivot;
+	public string sceneName;
 
 
 
@@ -15,12 +15,13 @@ public class _GM : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		//sceneName = SceneManager.GetActiveScene ().ToString();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (gummyBear.transform.position.y < 0f){
-			sce
+		if (gummyBearPivot.transform.position.y < -0.5f) {
+			SceneManager.LoadScene (sceneName);
+		}
 	}
 }
