@@ -19,6 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4465882715153410}
+  - component: {fileID: 95196830019321956}
+  - component: {fileID: 114952207984636208}
   m_Layer: 0
   m_Name: JellyBeanPrefab
   m_TagString: jellybean
@@ -125,8 +127,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111947735896808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.89, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 2.987, z: 32.37}
+  m_LocalScale: {x: 2.9245868, y: 2.9245868, z: 2.9245868}
   m_Children:
   - {fileID: 4334059472817824}
   - {fileID: 4297291334360626}
@@ -134,6 +136,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95196830019321956
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111947735896808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c56e60a2429e847c39c04ff9b52b6dcc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114038051886923700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_States: []
   m_File: {fileID: 11400000, guid: 0261fef5d76dd42c2ba384dc44b86585, type: 2}
-  speed: 1
+  speed: 2.88
   m_Settings:
     randomizeOnStart: 1
     playOnStart: 1
@@ -210,6 +229,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castShadows: 1
   receiveShadows: 1
+--- !u!114 &114952207984636208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111947735896808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c22fbe4a201604ff3b4c87721c6172bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 95196830019321956}
 --- !u!114 &114994656788681938
 MonoBehaviour:
   m_ObjectHideFlags: 1

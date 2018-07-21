@@ -18,24 +18,7 @@ public class Jellybean_Behaviour : MonoBehaviour {
 	{
 		
 		other.gameObject.GetComponentInParent<CharacterMovement> ().PlayBurst();
-		gotTouched = true;
+		parent.GetComponent<JellyBean_Death> ().PlayAnimation ();
 	}
-
-
-
-    void Update () {
-        //parent.transform.Rotate(rotate, rotaionSpeed);
-
-
-        if (gotTouched)
-        {
-            parent.transform.localScale = new Vector3(parent.transform.localScale.x + sizeIncrease, parent.transform.localScale.y + sizeIncrease, parent.transform.localScale.z + sizeIncrease);
-
-
-            if (parent.transform.localScale.x > scaleMax)
-            {
-				Destroy(parent);
-            }
-        }
-	}
+		
 }
