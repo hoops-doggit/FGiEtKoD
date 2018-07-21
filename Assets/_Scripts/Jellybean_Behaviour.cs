@@ -19,7 +19,7 @@ public class Jellybean_Behaviour : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        parent.transform.Rotate(rotate, rotaionSpeed);
+        //parent.transform.Rotate(rotate, rotaionSpeed);
 
         if (gotTouched)
         {
