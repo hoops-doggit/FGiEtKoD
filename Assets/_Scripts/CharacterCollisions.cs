@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterCollisions : MonoBehaviour {
 
     public bool groundContact;
-    public int groundContacts;
+    public int groundCount;
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class CharacterCollisions : MonoBehaviour {
         if (col.gameObject.tag == "ground")
         {
             groundContact = true;
-            groundContacts++;
+            groundCount++;
         }
     }
 
@@ -27,7 +27,7 @@ public class CharacterCollisions : MonoBehaviour {
         if (col.gameObject.tag == "ground")
         {
             groundContact = false;
-            groundContacts--;
+            groundCount--;
         }
     }
 }

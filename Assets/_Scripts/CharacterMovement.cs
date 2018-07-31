@@ -28,6 +28,8 @@ public class CharacterMovement : MonoBehaviour {
 
     private float _positionDifference;
     public bool _groundContact;
+	public int _groundCount;
+	public bool trueGroundContact;
 
 	public GameObject burst;
 
@@ -43,7 +45,7 @@ public class CharacterMovement : MonoBehaviour {
 
     public void Jump()
     {
-        if (_groundContact)
+		if (trueGroundContact)
         {
 
             _groundContact = false;
@@ -52,12 +54,14 @@ public class CharacterMovement : MonoBehaviour {
         }
     }
 
+	/*
     public void OnCollisionEnter(Collision col)
     {
         Debug.Log("thing");
         if (col.gameObject.tag == "ground")
         {
             _groundContact = true;
+			_groundCount++;
             vsp = 0;
         }
 
@@ -71,8 +75,11 @@ public class CharacterMovement : MonoBehaviour {
         if (col.gameObject.tag == "ground")
         {
             _groundContact = false;
+			//_groundCount--;
         }
     }
+
+*/
 
 	public void PlayBurst ()
 	{
@@ -109,20 +116,29 @@ public class CharacterMovement : MonoBehaviour {
     // Use this for initialization
     void Start () {
         _positionDifference = RightPos;
-        _groundContact = true;
+        //_groundContact = true;
 	}
 	
 	// Update is called once per frame
 	void FixedUpdate () {
 
         _groundContact = character.GetComponent<CharacterCollisions>().groundContact;
+		_groundCount = character.GetComponent<CharacterCollisions>().groundCount;
 
-        if (_groundContact && vsp < 0.0f)
+		if (_groundCount <= 0) {
+			trueGroundContact = false;
+		} 
+
+		else if (_groundCount > 0) {
+			trueGroundContact = true;
+		}
+
+		if (trueGroundContact && vsp < 0.0f)
         {
             vsp = 0;
         }
 
-        if (!_groundContact && vsp > -jumpHeight)
+		if (!trueGroundContact && vsp > -jumpHeight)
         {
             vsp -= grav;
         }
