@@ -18,6 +18,7 @@ public class Jellybean_Behaviour : MonoBehaviour {
 	{
 		
 		other.gameObject.GetComponentInParent<CharacterMovement> ().PlayBurst();
+		other.gameObject.GetComponent<CharacterCollisions> ().jelliesCollected++;
 		parent.GetComponent<JellyBean_Death> ().PlayAnimation ();
 	}
 		

@@ -21,7 +21,6 @@ public class CharacterMovement : MonoBehaviour {
 	public bool slowed;
 	public float slowedDuration;
 
-
     public float LeftPos;
     public float CentrePos;
     public float RightPos;

@@ -11,27 +11,10 @@ public class _GM : MonoBehaviour {
 	public Text millisecondsElapsed;
 	public Text secondsElapsed;
 	public Text jelliesCollected;
+	public CharacterCollisions characterCol;
 	//private float timer;
 	public float timeTime = 0f;
 
-
-
-
-	void OnGUI() {
-		/*int minutes = Mathf.FloorToInt(timer / 60F);
-		int seconds = Mathf.FloorToInt(timer - minutes * 60);
-		int milliseconds = Mathf.FloorToInt (timer - seconds - minutes * 60);
-		string niceTime = string.Format("{0:0}:{1:00}:{2}", minutes, seconds, milliseconds);*/
-
-		//int fractions = 100;   // for hundredths of sec
-		//int timerSec  = Mathf.RoundToInt(timer);
-		//int splitSeconds = Mathf.RoundToInt((timer - timerSec) * fractions);
-		//string niceTime = string.Format ("{0:00}:{0:00}", timerSec, splitSeconds);
-
-		//GUI.Label(new Rect(10,10,250,100), niceTime);
-
-		//timeRemaining.text = niceTime;
-	}
 
 	public void SetTime(){
 		//Debug.Log ("Did Time");
@@ -45,18 +28,20 @@ public class _GM : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//resets gb when below the ground a little
 		if (gummyBearPivot.transform.position.y < -0.5f) {
 			SceneManager.LoadScene (sceneName);
 			SetTime ();
 		}
-
+			
+		//resets the scene
 		if (Input.GetKeyDown(KeyCode.R)){
 			SceneManager.LoadScene(sceneName);
 			SetTime ();
 		}
 
-
-		//timeTime = timeTime + Time.deltaTime;
+		//updates the jellybeanCounter;
+		jelliesCollected.text = characterCol.jelliesCollected.ToString();
 
 
 		timeTime = timeTime + Time.deltaTime;

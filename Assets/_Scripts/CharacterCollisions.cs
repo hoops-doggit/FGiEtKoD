@@ -7,6 +7,8 @@ public class CharacterCollisions : MonoBehaviour {
     public bool groundContact;
     public int groundCount;
 
+	public int jelliesCollected;
+
     private void Start()
     {
         groundContact = true;
@@ -20,6 +22,10 @@ public class CharacterCollisions : MonoBehaviour {
             groundContact = true;
             groundCount++;
         }
+
+		if (col.gameObject.tag == "jellyBean") {
+			jelliesCollected++;
+		}
     }
 
     public void OnCollisionExit(Collision col)
