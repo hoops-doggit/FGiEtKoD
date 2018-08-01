@@ -1,20 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DoodleStudio95;
 
 public class PepperShaker : MonoBehaviour {
 
 	public bool gotHit;
 	public float speed;
 	public bool animating = false;
-	public Animator anim;
+	private Animator anim;
+	private DoodleAnimator ppAnim;
+	public GameObject pepperShaker;
+	public GameObject pepperPowder;
+	private GameObject _pepperPowderClone;
+	public Vector3 powderPos;
 	// Use this for initialization
+
+	private void Start(){
+		anim = pepperShaker.GetComponent<Animator> ();
+		ppAnim = pepperPowder.GetComponent<DoodleAnimator> ();
+	}
 
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "player") {
-			
+			pepperPowder.SetActive (true);
+			DoPowder();
 			gotHit = true;
 			animating = true;
 			//anim.Play ("PepperJump");
@@ -23,6 +35,15 @@ public class PepperShaker : MonoBehaviour {
 			Debug.Log ("pepper hit player");
 		}
 
+	}
+
+	public void DoPowder(){
+		StartCoroutine ("PlayPowder");
+	}
+
+	IEnumerator PlayPowder(){
+		DoodleAnimator ppAnim = pepperPowder.GetComponent<DoodleAnimator>();
+		yield return ppAnim.PlayAndPauseAt();
 	}
 
 

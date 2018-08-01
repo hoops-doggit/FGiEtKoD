@@ -42,7 +42,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_States: []
   m_File: {fileID: 11400000, guid: 36bdc10b21e044cf6b431742c3524095, type: 2}
-  speed: 1
+  speed: 0.8
   m_Settings:
     randomizeOnStart: 0
     playOnStart: 1
