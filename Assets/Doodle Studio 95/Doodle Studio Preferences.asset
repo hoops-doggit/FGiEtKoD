@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Name: Doodle Studio Preferences
   m_EditorClassIdentifier: 
   m_SaveFolder: Textures/Drawn
+  m_ShowGrabTool: 1
   m_Preset_Character_Chunky:
     width: 150
     height: 200
@@ -19,6 +20,7 @@ MonoBehaviour:
     border: {x: 0, y: 0, z: 0, w: 0}
     framesPerSecond: 8
     symmetryMode: 0
+    patternMode: 0
   m_Preset_Character_Smooth:
     width: 384
     height: 512
@@ -26,6 +28,7 @@ MonoBehaviour:
     border: {x: 0, y: 0, z: 0, w: 0}
     framesPerSecond: 8
     symmetryMode: 0
+    patternMode: 0
   m_Preset_Background_Chunky:
     width: 400
     height: 200
@@ -33,6 +36,7 @@ MonoBehaviour:
     border: {x: 0, y: 0, z: 0, w: 0}
     framesPerSecond: 8
     symmetryMode: 0
+    patternMode: 0
   m_Preset_Background_Smooth:
     width: 800
     height: 400
@@ -40,6 +44,7 @@ MonoBehaviour:
     border: {x: 0, y: 0, z: 0, w: 0}
     framesPerSecond: 8
     symmetryMode: 0
+    patternMode: 0
   m_Preset_Square_Chunky:
     width: 200
     height: 200
@@ -47,6 +52,7 @@ MonoBehaviour:
     border: {x: 0, y: 0, z: 0, w: 0}
     framesPerSecond: 8
     symmetryMode: 0
+    patternMode: 0
   m_Preset_Square_Smooth:
     width: 400
     height: 400
@@ -54,6 +60,7 @@ MonoBehaviour:
     border: {x: 0, y: 0, z: 0, w: 0}
     framesPerSecond: 8
     symmetryMode: 0
+    patternMode: 0
   m_Preset_PlayingCard_Chunky:
     width: 190
     height: 266
@@ -61,6 +68,7 @@ MonoBehaviour:
     border: {x: 0, y: 0, z: 0, w: 0}
     framesPerSecond: 8
     symmetryMode: 4
+    patternMode: 0
   m_Preset_PlayingCard_Smooth:
     width: 508
     height: 711
@@ -68,6 +76,7 @@ MonoBehaviour:
     border: {x: 0, y: 0, z: 0, w: 0}
     framesPerSecond: 8
     symmetryMode: 4
+    patternMode: 0
   m_Preset_UI_Chunky:
     width: 256
     height: 256
@@ -75,6 +84,7 @@ MonoBehaviour:
     border: {x: 85, y: 85, z: 85, w: 85}
     framesPerSecond: 8
     symmetryMode: 3
+    patternMode: 0
   m_Preset_UI_Smooth:
     width: 512
     height: 512
@@ -82,6 +92,7 @@ MonoBehaviour:
     border: {x: 170, y: 170, z: 170, w: 170}
     framesPerSecond: 8
     symmetryMode: 3
+    patternMode: 0
   m_BrushSize1: 0
   m_BrushSize2: 0.007
   m_BrushSize3: 0.016
@@ -118,50 +129,20 @@ MonoBehaviour:
     - {r: 0.050980393, g: 0.27058825, b: 0.49411765, a: 1}
     - {r: 0.41568628, g: 0.30588236, b: 0.9882353, a: 1}
     - {r: 0.47058824, g: 0.2627451, b: 0.08235294, a: 1}
-  - name: Mine
+  - name: poop
     colors:
-    - {r: 0.1137255, g: 0.9176471, b: 0, a: 1}
-    - {r: 0.73333335, g: 0.93725497, b: 0.09411766, a: 1}
-    - {r: 1, g: 0.93725497, b: 0.17254902, a: 1}
-    - {r: 1, g: 0.72156864, b: 0.16078432, a: 1}
-    - {r: 1, g: 0.57254905, b: 0.33333334, a: 1}
-    - {r: 1, g: 0.36862746, b: 0.17254902, a: 1}
-    - {r: 1, g: 0.15294118, b: 0.4156863, a: 1}
-    - {r: 0.9490197, g: 0.13333334, b: 0.8941177, a: 1}
-    - {r: 1, g: 0.72156864, b: 0.94117653, a: 1}
-    - {r: 0.63529414, g: 0.17254902, b: 1, a: 1}
-    - {r: 0.28235295, g: 0.16078432, b: 1, a: 1}
-    - {r: 0.18039216, g: 0.6509804, b: 1, a: 1}
-    - {r: 0.18039216, g: 0.9607844, b: 1, a: 1}
-    - {r: 0.3921569, g: 1, b: 0.882353, a: 1}
-    - {r: 0, g: 0.7686275, b: 0.6745098, a: 1}
-    - {r: 0.91372555, g: 0.9450981, b: 0.9568628, a: 1}
-    - {r: 1, g: 1, b: 1, a: 1}
-    - {r: 0.4901961, g: 0.59607846, b: 0.7137255, a: 1}
-    - {r: 0.2784314, g: 0.19607845, b: 0.43921572, a: 1}
-    - {r: 0.44705886, g: 0.31764707, b: 0.29803923, a: 1}
-    - {r: 0.7019608, g: 0.48235297, b: 0.40784317, a: 1}
-    - {r: 0.8078432, g: 0.6039216, b: 0.47058827, a: 1}
-    - {r: 0.91372555, g: 0.70980394, b: 0.63529414, a: 1}
-    - {r: 0.98823535, g: 0.8705883, b: 0.81568635, a: 1}
-    - {r: 0.16470589, g: 0.16078432, b: 0.20784315, a: 1}
-    - {r: 0.34901962, g: 0.3647059, b: 0.36862746, a: 1}
-    - {r: 0.8235295, g: 0.8588236, b: 0.86666673, a: 1}
-    - {r: 0.98823535, g: 0.058823533, b: 0.1137255, a: 1}
-    - {r: 0.882353, g: 0.043137256, b: 0.09019608, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
-    - {r: 0.5647059, g: 0.5882353, b: 0.59607846, a: 1}
+    - {r: 0.69411767, g: 0.56078434, b: 0.38431373, a: 1}
+    - {r: 0.47058824, g: 0.38039216, b: 0.26666668, a: 1}
+    - {r: 0.5294118, g: 0.35686275, b: 0.18431373, a: 1}
+    - {r: 0.43529412, g: 0.2627451, b: 0.09019608, a: 1}
+    - {r: 0.35686275, g: 0.23137255, b: 0.10980392, a: 1}
+    - {r: 0.35686275, g: 0.26666668, b: 0.18039216, a: 1}
+    - {r: 0.39607844, g: 0.34509805, b: 0.29803923, a: 1}
+    - {r: 0.5647059, g: 0.42352942, b: 0.3529412, a: 1}
+    - {r: 0.57254905, g: 0.4117647, b: 0.27058825, a: 1}
   m_SceneViewDrawing: 1
   m_ShowJumbleTool: 0
+  m_ReferenceImage: {fileID: 0}
   m_SoundRecorder: 0
   m_CustomBrush: {fileID: 0}
   m_Compression: 0

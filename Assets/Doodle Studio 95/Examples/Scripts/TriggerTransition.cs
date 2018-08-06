@@ -9,10 +9,13 @@ namespace DoodleStudio95Examples {
 [RequireComponent(typeof(Collider))]
 public class TriggerTransition : MonoBehaviour {
 
-	// Point to a UI element that covers the screen, with an animator
+	[Tooltip("Point to a UI element that covers the screen, with an animator")]
 	public DoodleAnimator m_Animator;
-	// Point to the transition animation you want to show
+	[Tooltip("Point to the transition animation you want to show")]
 	public DoodleAnimationFile m_Transition;
+	[Tooltip("Name of the scene to transition to")]
+	public string m_NextScene;
+
 
 	bool _inTransition = false;
 
@@ -41,8 +44,9 @@ public class TriggerTransition : MonoBehaviour {
 		yield return m_Animator.PlayAndPauseAt();
 
 		// We can do anything while the player isn't looking.
-		// Here we'll load the same scene, but we could also move the player somewhere else in the level
-		yield return SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+		//  If the next scene is empty, we'll load the same scene. 
+		// You can modify this to for example move the player somewhere else in the level
+		yield return SceneManager.LoadSceneAsync(string.IsNullOrEmpty(m_NextScene) ? m_NextScene : SceneManager.GetActiveScene().name);
 
 		// Play the transition backwards (from the last frame to the first)
 		yield return m_Animator.PlayAndPauseAt(-1, 0); 

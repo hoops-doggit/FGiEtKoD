@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212151579996137340}
   - component: {fileID: 114670395725516070}
   - component: {fileID: 114869710350763078}
+  - component: {fileID: 65302650628579980}
   m_Layer: 0
   m_Name: SinkEnd1
   m_TagString: ground
@@ -57,7 +58,7 @@ GameObject:
   - component: {fileID: 4605189546476436}
   m_Layer: 0
   m_Name: Sink
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,9 +164,10 @@ GameObject:
   - component: {fileID: 212958129187554578}
   - component: {fileID: 114359088717575720}
   - component: {fileID: 114781303672608400}
+  - component: {fileID: 65146454032118378}
   m_Layer: 0
   m_Name: SinkEnd2
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,8 +218,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1887474472144352}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.08, z: 44.600006}
-  m_LocalScale: {x: 3.997795, y: -3.2079668, z: 3.2079666}
+  m_LocalPosition: {x: 0, y: 0.1, z: 50}
+  m_LocalScale: {x: 3.997795, y: -5.87331, z: 3.2079666}
   m_Children: []
   m_Father: {fileID: 4605189546476436}
   m_RootOrder: 6
@@ -295,6 +297,30 @@ Transform:
   m_Father: {fileID: 4605189546476436}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &65146454032118378
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887474472144352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.85611, y: 3.231052, z: 0.09802126}
+  m_Center: {x: -0.071968056, y: -0.19533446, z: 0.050989393}
+--- !u!65 &65302650628579980
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1424509283036392}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.85611, y: 3.231052, z: 0.09802126}
+  m_Center: {x: -0.071968056, y: -0.19533446, z: 0.050989393}
 --- !u!114 &114062015881588260
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -333,6 +359,7 @@ MonoBehaviour:
     customFilterMode: 2
     wrapMode: 1
     startFrame: 0
+    useUnscaledTime: 0
 --- !u!114 &114252539745345738
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -371,6 +398,7 @@ MonoBehaviour:
     customFilterMode: 2
     wrapMode: 1
     startFrame: 0
+    useUnscaledTime: 0
 --- !u!114 &114359088717575720
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -396,6 +424,7 @@ MonoBehaviour:
     customFilterMode: 2
     wrapMode: 1
     startFrame: 0
+    useUnscaledTime: 0
 --- !u!114 &114519750184301134
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -421,6 +450,7 @@ MonoBehaviour:
     customFilterMode: 2
     wrapMode: 1
     startFrame: 0
+    useUnscaledTime: 0
 --- !u!114 &114553059728490322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -459,6 +489,7 @@ MonoBehaviour:
     customFilterMode: 2
     wrapMode: 1
     startFrame: 0
+    useUnscaledTime: 0
 --- !u!114 &114605545893014756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -484,6 +515,7 @@ MonoBehaviour:
     customFilterMode: 2
     wrapMode: 1
     startFrame: 0
+    useUnscaledTime: 0
 --- !u!114 &114670395725516070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -509,6 +541,7 @@ MonoBehaviour:
     customFilterMode: 2
     wrapMode: 1
     startFrame: 0
+    useUnscaledTime: 0
 --- !u!114 &114724035138469764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -560,6 +593,7 @@ MonoBehaviour:
     customFilterMode: 2
     wrapMode: 1
     startFrame: 0
+    useUnscaledTime: 0
 --- !u!114 &114869710350763078
 MonoBehaviour:
   m_ObjectHideFlags: 1
