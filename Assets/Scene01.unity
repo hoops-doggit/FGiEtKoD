@@ -1374,6 +1374,18 @@ Prefab:
       value: 
       objectReference: {fileID: 213023704464137018, guid: 28e45c1f1463d465292696ea6e9df931,
         type: 2}
+    - target: {fileID: 4394950322399430, guid: 31e16ea891e114dbf91dd3887a6f5254, type: 2}
+      propertyPath: m_LocalScale.y
+      value: -5.87331
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394950322399430, guid: 31e16ea891e114dbf91dd3887a6f5254, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4394950322399430, guid: 31e16ea891e114dbf91dd3887a6f5254, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31e16ea891e114dbf91dd3887a6f5254, type: 2}
   m_IsPrefabParent: 0
@@ -2747,7 +2759,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213012124612860248, guid: a6a58dff71c5938458654baf59900223, type: 2}
+  m_Sprite: {fileID: 213057250137002136, guid: a6a58dff71c5938458654baf59900223, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -11382,7 +11394,7 @@ MonoBehaviour:
   jumpHeight: 2.5
   moveSpeed: 0
   runSpeed: 1
-  slowSpeed: 0.6
+  slowSpeed: 0.15
   accSpeed: 1.06
   slowed: 0
   slowedDuration: 0.2
