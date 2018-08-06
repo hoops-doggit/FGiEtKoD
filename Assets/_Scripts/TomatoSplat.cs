@@ -24,7 +24,7 @@ public class TomatoSplat : MonoBehaviour {
 
 	IEnumerator PlaySplat() {
 		splatClone = Instantiate (splat, splatHolder.transform);
-		splatClone.transform.parent = splatHolder;
+		splatClone.transform.SetParent(splatHolder);
 		DoodleAnimator animator = splatClone.GetComponent<DoodleAnimator>();
 		yield return animator.PlayAndPauseAt();
 		animator.Stop();
