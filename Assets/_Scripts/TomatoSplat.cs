@@ -14,13 +14,17 @@ public class TomatoSplat : MonoBehaviour {
 
 
 
+
 	void OnTriggerEnter(Collider other)
 	{
 		other.gameObject.GetComponentInParent<CharacterMovement> ().GotHit();
 		gameObject.GetComponent<SpriteRenderer>().enabled = false;
 		DoSplat ();
 	}
-		
+
+    public void DoSplat() {
+		StartCoroutine(PlaySequence());
+	}	
 
 	IEnumerator PlaySplat() {
 		splatClone = Instantiate (splat, splatHolder.transform);
@@ -33,8 +37,16 @@ public class TomatoSplat : MonoBehaviour {
 		StopCoroutine ("PlaySplat");
 	}
 
-	public void DoSplat() {
-		StartCoroutine(PlaySplat());
-	}
+    public IEnumerator PlaySequence()
+    {
+        splat.SetActive(true);
+        DoodleAnimator animator = splat.GetComponent<DoodleAnimator>();
+        yield return animator.PlayAndPauseAt(0, -1);
+        animator.Stop();
+        splat.SetActive(false);
+        StopCoroutine("PlaySequence");
+    }
+
+
 
 }
