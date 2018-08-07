@@ -110,8 +110,6 @@ public class CharacterMovement : MonoBehaviour {
 
 	}
 
-
-
     // Use this for initialization
     void Start () {
         _positionDifference = RightPos;

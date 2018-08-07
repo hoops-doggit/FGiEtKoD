@@ -12,6 +12,8 @@ public class _GM : MonoBehaviour {
 	public Text secondsElapsed;
 	public Text jelliesCollected;
 	public CharacterCollisions characterCol;
+    public GameObject GameCanvas;
+    public GameObject LevelEndCanvas;
 	//private float timer;
 	public float timeTime = 0f;
 
@@ -23,21 +25,34 @@ public class _GM : MonoBehaviour {
 
 	void Start(){
 		SetTime ();
+        LevelEndCanvas.SetActive(false);
 	}
 
-	
-	// Update is called once per frame
-	void Update () {
+    public void LevelComplete()
+    {
+        Time.timeScale = 0.0f;
+        GameCanvas.SetActive(false);
+        LevelEndCanvas.SetActive(true);
+    }
+
+    
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneName);
+        SetTime();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		//resets gb when below the ground a little
 		if (gummyBearPivot.transform.position.y < -0.5f) {
-			SceneManager.LoadScene (sceneName);
-			SetTime ();
+            Restart();
 		}
 			
 		//resets the scene
 		if (Input.GetKeyDown(KeyCode.R)){
-			SceneManager.LoadScene(sceneName);
-			SetTime ();
+            Restart();
 		}
 
 		//updates the jellybeanCounter;
