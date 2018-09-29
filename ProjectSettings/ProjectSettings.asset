@@ -153,8 +153,8 @@ PlayerSettings:
     Android: com.DefaultCompany.FGBiEtKoD
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 23
-  AndroidTargetSdkVersion: 23
+  AndroidMinSdkVersion: 18
+  AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
   stripEngineCode: 1
