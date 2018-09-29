@@ -26,6 +26,9 @@ public class _GM : MonoBehaviour {
 	void Start(){
 		SetTime ();
         LevelEndCanvas.SetActive(false);
+
+        if (GameCanvas.activeSelf == false) {
+            GameCanvas.SetActive(true); }
 	}
 
     public void LevelComplete()
