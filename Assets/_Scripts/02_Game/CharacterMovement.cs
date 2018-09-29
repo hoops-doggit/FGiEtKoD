@@ -14,11 +14,18 @@ public class CharacterMovement : MonoBehaviour {
     public float grav;
     public float jumpspeed;
     public float jumpHeight;
+    public bool pushedBack;
+    public float pushedBackMoveSpeed;
+    public float pushedBackJumpSpeed;
+    public float pushedBackJumpHeight;
+    public float pushedBackAcc;
+    private float pushedBackInitial;
 	public float moveSpeed;
     public float runSpeed;
 	public float slowSpeed;
 	public float accSpeed;
-	public bool slowed;
+    public float accInitial;
+    public bool slowed;
 	public float slowedDuration;
 
     public float LeftPos;
@@ -51,6 +58,16 @@ public class CharacterMovement : MonoBehaviour {
             vsp = jumpspeed;
             
         }
+    }
+
+    public void Pushback()
+    {
+        pushedBackAcc = pushedBackInitial;
+        trueGroundContact = false;
+        _groundContact = false;
+        vsp = pushedBackJumpSpeed;
+        pushedBack = true;
+        moveSpeed = pushedBackMoveSpeed;
     }
 
 	/*
@@ -114,7 +131,9 @@ public class CharacterMovement : MonoBehaviour {
     void Start () {
         _positionDifference = RightPos;
         //_groundContact = true;
-	}
+
+        pushedBackInitial = pushedBackAcc;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -130,15 +149,33 @@ public class CharacterMovement : MonoBehaviour {
 			trueGroundContact = true;
 		}
 
-		if (trueGroundContact && vsp < 0.0f)
+        #region normal vspeed and gravity behaviour
+        if (trueGroundContact && !pushedBack && vsp < 0.0f)
         {
             vsp = 0;
         }
 
-		if (!trueGroundContact && vsp > -jumpHeight)
+		if (!trueGroundContact)
         {
             vsp -= grav;
         }
+        #endregion
+
+        #region pushed back speed and gravity behaviour
+        if (trueGroundContact && pushedBack && vsp <= 0.0f)
+        {
+            vsp = 0;
+            moveSpeed = moveSpeed + pushedBackAcc;
+            pushedBackAcc = pushedBackAcc * accSpeed;
+        }
+
+        if (trueGroundContact && pushedBack && moveSpeed > 0)
+        {
+            pushedBack = false;
+        }
+        #endregion
+
+
 
         float step = hsp * Time.deltaTime;
 
@@ -147,14 +184,15 @@ public class CharacterMovement : MonoBehaviour {
         character.transform.position = characterPos;
 
 		//speed up
-		if (moveSpeed < runSpeed && !slowed) {
+		if (moveSpeed < runSpeed && !slowed && !pushedBack) {
 			
 			if (moveSpeed <= 0) {
-				moveSpeed = 0.03f;
+				moveSpeed = accInitial;
 			}
 
 			moveSpeed = moveSpeed * accSpeed;
 		}
+
 
 		if (moveSpeed > runSpeed) {
 			moveSpeed = runSpeed;
