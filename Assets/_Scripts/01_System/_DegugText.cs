@@ -17,7 +17,7 @@ public class _DegugText : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
 
 		if (gbgo._groundContact == true)
         {

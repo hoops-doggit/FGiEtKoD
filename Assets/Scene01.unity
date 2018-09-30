@@ -366,24 +366,6 @@ Prefab:
       propertyPath: m_Name
       value: JellyBeanPrefab (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
   m_IsPrefabParent: 0
@@ -429,24 +411,6 @@ Prefab:
     - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
       propertyPath: m_Name
       value: JellyBeanPrefab (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.678197
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.6781976
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2.6781976
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
@@ -613,24 +577,6 @@ Prefab:
     - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
       propertyPath: m_Name
       value: JellyBeanPrefab (16)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
@@ -869,7 +815,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213773353699576634, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
+  m_Sprite: {fileID: 213478493413355074, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -981,24 +927,6 @@ Prefab:
       propertyPath: m_Name
       value: JellyBeanPrefab (21)
       objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
   m_IsPrefabParent: 0
@@ -1044,24 +972,6 @@ Prefab:
     - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
       propertyPath: m_Name
       value: JellyBeanPrefab (19)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
@@ -1144,7 +1054,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213773353699576634, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
+  m_Sprite: {fileID: 213478493413355074, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1373,7 +1283,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213773353699576634, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
+  m_Sprite: {fileID: 213478493413355074, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1795,24 +1705,6 @@ Prefab:
     - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
       propertyPath: m_Name
       value: JellyBeanPrefab (18)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
@@ -2647,7 +2539,7 @@ MonoBehaviour:
     customBorder: {x: 0, y: 0, z: 0, w: 0}
     customPixelsPerUnit: 100
     customFilterMode: 2
-    wrapMode: 1
+    wrapMode: 0
     startFrame: 0
     useUnscaledTime: 0
 --- !u!212 &559074427
@@ -2685,7 +2577,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213773353699576634, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
+  m_Sprite: {fileID: 213478493413355074, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2866,24 +2758,6 @@ Prefab:
     - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
       propertyPath: m_Name
       value: JellyBeanPrefab (22)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
@@ -3358,7 +3232,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213773353699576634, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
+  m_Sprite: {fileID: 213478493413355074, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3474,24 +3348,6 @@ Prefab:
     - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
       propertyPath: m_Name
       value: JellyBeanPrefab (14)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
@@ -4946,8 +4802,8 @@ RectTransform:
   m_Father: {fileID: 1831970250}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.05, y: 0.957}
-  m_AnchorMax: {x: 0.08516668, y: 0.9776563}
+  m_AnchorMin: {x: 0.009444445, y: 0.9760001}
+  m_AnchorMax: {x: 0.04477778, y: 0.99600005}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5049,24 +4905,6 @@ Prefab:
     - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
       propertyPath: m_Name
       value: JellyBeanPrefab (20)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
@@ -5439,12 +5277,6 @@ Prefab:
       propertyPath: m_Name
       value: JellyBeanPrefab (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
   m_IsPrefabParent: 0
@@ -5741,24 +5573,6 @@ Prefab:
     - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
       propertyPath: m_Name
       value: JellyBeanPrefab (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 2.6907806
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 2.690782
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2.690782
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
@@ -6580,7 +6394,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213773353699576634, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
+  m_Sprite: {fileID: 213478493413355074, guid: 1a46fdb5858114468a09858985c5bbd8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7502,24 +7316,6 @@ Prefab:
       propertyPath: m_Name
       value: JellyBeanPrefab (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
   m_IsPrefabParent: 0
@@ -7660,24 +7456,6 @@ Prefab:
       propertyPath: m_Name
       value: JellyBeanPrefab (13)
       objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
   m_IsPrefabParent: 0
@@ -7723,24 +7501,6 @@ Prefab:
     - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
       propertyPath: m_Name
       value: JellyBeanPrefab (17)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
@@ -7882,29 +7642,6 @@ Prefab:
     - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
       propertyPath: m_Name
       value: JellyBeanPrefab (15)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585,
-        type: 2}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 3.044239
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 4465882715153410, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 3.0442395
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
