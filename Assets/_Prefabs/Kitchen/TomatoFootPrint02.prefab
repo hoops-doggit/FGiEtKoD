@@ -9,52 +9,51 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1574428401298110}
+  m_RootGameObject: {fileID: 1519352593154312}
   m_IsPrefabParent: 1
---- !u!1 &1574428401298110
+--- !u!1 &1519352593154312
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4778929207631818}
-  - component: {fileID: 212919157080679450}
-  - component: {fileID: 114196417692565832}
-  - component: {fileID: 114778125681137112}
+  - component: {fileID: 4623220806300274}
+  - component: {fileID: 212138165824741840}
+  - component: {fileID: 114493350487481152}
   m_Layer: 0
-  m_Name: TomatoGuts
+  m_Name: TomatoFootPrint02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4778929207631818
+--- !u!4 &4623220806300274
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1574428401298110}
-  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.4991, y: 0.0049999994, z: 25.66552}
-  m_LocalScale: {x: 2.1909258, y: 3.163805, z: 0.60014236}
+  m_GameObject: {fileID: 1519352593154312}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0.001, z: -6e-15}
+  m_LocalScale: {x: 1.9196635, y: 5.6846404, z: 5.3037243}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &114196417692565832
+--- !u!114 &114493350487481152
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1574428401298110}
+  m_GameObject: {fileID: 1519352593154312}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: 0054bd4b90fa811449e7fd74c0d9061f, type: 2}
+  m_File: {fileID: 11400000, guid: 48e2d8e807cce4a43933de7ef29e67f1, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
@@ -68,35 +67,22 @@ MonoBehaviour:
     wrapMode: 1
     startFrame: 0
     useUnscaledTime: 0
---- !u!114 &114778125681137112
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1574428401298110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1800204556, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castShadows: 1
-  receiveShadows: 1
---- !u!212 &212919157080679450
+--- !u!212 &212138165824741840
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1574428401298110}
+  m_GameObject: {fileID: 1519352593154312}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 144b996f77c05d14a8083981015716b7, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -116,7 +102,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213883218794573538, guid: 0054bd4b90fa811449e7fd74c0d9061f, type: 2}
+  m_Sprite: {fileID: 213368357160515598, guid: 48e2d8e807cce4a43933de7ef29e67f1, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

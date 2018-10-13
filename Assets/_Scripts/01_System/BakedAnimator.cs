@@ -1,13 +1,18 @@
 using UnityEngine;
 
-[ExecuteInEditMode()]
+//[ExecuteInEditMode()]
 public class BakedAnimator : MonoBehaviour {
 	
 	public Sprite[] m_Sprites;
 	public int FramesPerSecond = 8;
 	public float Speed = 1.0f;
+    private float sprite;
+    private float spriteCounter;
+    public CharacterMovement cm;
 
-	SpriteRenderer spriteRenderer;
+
+
+    SpriteRenderer spriteRenderer;
 
 	
 	void OnEnable()
@@ -22,6 +27,18 @@ public class BakedAnimator : MonoBehaviour {
 		float t = (float)Time.time * (int)FramesPerSecond * Speed;
 		var s = m_Sprites[(int)Mathf.Repeat(t, m_Sprites.Length)];
 		spriteRenderer.sprite = s;
-	}
+
+        //For sending to the character to tell which foot is placed
+        float sprite = (int)Mathf.Repeat(t, m_Sprites.Length);
+
+        if (sprite != spriteCounter)
+        {
+            cm.currentWalkFrame = sprite;
+            spriteCounter = sprite;
+        }
+    }
+
+    
+
 
 }
