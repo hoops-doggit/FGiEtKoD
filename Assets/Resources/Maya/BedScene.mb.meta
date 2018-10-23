@@ -30,6 +30,36 @@ ModelImporter:
     100048: pCylinder12
     100050: pSphere2
     100052: w
+    100054: ambientLight1
+    100056: directionalLight1
+    100058: GroundPlane 1
+    100060: group2 1
+    100062: group3 1
+    100064: group4 1
+    100066: Iteration01
+    100068: Iteration02
+    100070: pCube10 1
+    100072: pCube11 1
+    100074: pCube12 1
+    100076: pCube13 1
+    100078: pCube14 1
+    100080: pCube15 1
+    100082: pCube9 1
+    100084: pCylinder1 1
+    100086: pCylinder10 1
+    100088: pCylinder11 1
+    100090: pCylinder12 1
+    100092: pCylinder4 1
+    100094: pCylinder5 1
+    100096: pCylinder6 1
+    100098: pCylinder7 1
+    100100: pCylinder8 1
+    100102: pCylinder9 1
+    100104: Player_Character_Sprite 1
+    100106: pSphere1 1
+    100108: pSphere2 1
+    100110: spotLight1
+    100112: w 1
     400000: //RootNode
     400002: GroundPlane
     400004: group2
@@ -57,8 +87,39 @@ ModelImporter:
     400048: pCylinder12
     400050: pSphere2
     400052: w
+    400054: ambientLight1
+    400056: directionalLight1
+    400058: GroundPlane 1
+    400060: group2 1
+    400062: group3 1
+    400064: group4 1
+    400066: Iteration01
+    400068: Iteration02
+    400070: pCube10 1
+    400072: pCube11 1
+    400074: pCube12 1
+    400076: pCube13 1
+    400078: pCube14 1
+    400080: pCube15 1
+    400082: pCube9 1
+    400084: pCylinder1 1
+    400086: pCylinder10 1
+    400088: pCylinder11 1
+    400090: pCylinder12 1
+    400092: pCylinder4 1
+    400094: pCylinder5 1
+    400096: pCylinder6 1
+    400098: pCylinder7 1
+    400100: pCylinder8 1
+    400102: pCylinder9 1
+    400104: Player_Character_Sprite 1
+    400106: pSphere1 1
+    400108: pSphere2 1
+    400110: spotLight1
+    400112: w 1
     2000000: Main_Camera
     2000002: w
+    2000004: w 1
     2100000: GroundPlane
     2100002: lambert1
     2300000: GroundPlane
@@ -82,6 +143,27 @@ ModelImporter:
     2300036: pCube15
     2300038: pCylinder12
     2300040: pSphere2
+    2300042: GroundPlane 1
+    2300044: group2 1
+    2300046: pCube10 1
+    2300048: pCube11 1
+    2300050: pCube12 1
+    2300052: pCube13 1
+    2300054: pCube14 1
+    2300056: pCube15 1
+    2300058: pCube9 1
+    2300060: pCylinder1 1
+    2300062: pCylinder10 1
+    2300064: pCylinder11 1
+    2300066: pCylinder12 1
+    2300068: pCylinder4 1
+    2300070: pCylinder5 1
+    2300072: pCylinder6 1
+    2300074: pCylinder7 1
+    2300076: pCylinder8 1
+    2300078: pCylinder9 1
+    2300080: pSphere1 1
+    2300082: pSphere2 1
     3300000: GroundPlane
     3300002: group2
     3300004: pCube10
@@ -103,6 +185,27 @@ ModelImporter:
     3300036: pCube15
     3300038: pCylinder12
     3300040: pSphere2
+    3300042: GroundPlane 1
+    3300044: group2 1
+    3300046: pCube10 1
+    3300048: pCube11 1
+    3300050: pCube12 1
+    3300052: pCube13 1
+    3300054: pCube14 1
+    3300056: pCube15 1
+    3300058: pCube9 1
+    3300060: pCylinder1 1
+    3300062: pCylinder10 1
+    3300064: pCylinder11 1
+    3300066: pCylinder12 1
+    3300068: pCylinder4 1
+    3300070: pCylinder5 1
+    3300072: pCylinder6 1
+    3300074: pCylinder7 1
+    3300076: pCylinder8 1
+    3300078: pCylinder9 1
+    3300080: pSphere1 1
+    3300082: pSphere2 1
     4300000: GroundPlane
     4300002: group2
     4300004: pCube12
@@ -124,6 +227,30 @@ ModelImporter:
     4300036: pCylinder12
     4300038: pCube15
     4300040: pSphere2
+    4300042: pSphere2
+    4300044: pSphere1
+    4300046: group2
+    4300048: pCube12
+    4300050: pCylinder4
+    4300052: pCube11
+    4300054: pCube10
+    4300056: pCube9
+    4300058: pCylinder1
+    4300060: pCylinder5
+    4300062: pCylinder6
+    4300064: pCylinder7
+    4300066: pCylinder8
+    4300068: pCylinder9
+    4300070: pCylinder10
+    4300072: pCylinder11
+    4300074: pCube13
+    4300076: pCube14
+    4300078: pCylinder12
+    4300080: pCube15
+    4300082: GroundPlane
+    10800000: ambientLight1
+    10800002: directionalLight1
+    10800004: spotLight1
   externalObjects: {}
   materials:
     importMaterials: 1
