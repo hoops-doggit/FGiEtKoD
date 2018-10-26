@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LightLerper : MonoBehaviour {
+public class CupboardDoor : MonoBehaviour {
 
     public Light light01;
     public Light light02;
@@ -12,8 +12,8 @@ public class LightLerper : MonoBehaviour {
 
     public bool collided;
 
+    public GameObject rightDoor;
 
-    // starting value for the Lerp
     float t = 0.0f;
 
     private void Start()
@@ -29,6 +29,9 @@ public class LightLerper : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         collided = true;
+        var thing = GetComponent<Animator>();
+        thing.SetTrigger("Thing");
+        other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
     }
 
 
@@ -39,8 +42,19 @@ public class LightLerper : MonoBehaviour {
 
         if (collided)
         {
+            Debug.Log(t);
             t += 10f * Time.deltaTime;
         }
     }
-}
 
+    public void TurnOffRightDoor()
+    {
+        rightDoor.SetActive(false);
+    }
+
+    public void TurnOffLeftDoor()
+    {
+        gameObject.SetActive(false);
+    }
+
+}

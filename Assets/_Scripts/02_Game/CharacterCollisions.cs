@@ -6,6 +6,7 @@ public class CharacterCollisions : MonoBehaviour {
 
     public bool groundContact;
     public int groundCount;
+    public CharacterMovement cm;
 
 	public int jelliesCollected;
 
@@ -23,7 +24,12 @@ public class CharacterCollisions : MonoBehaviour {
             groundCount++;
         }
 
-		if (col.gameObject.tag == "jellyBean") {
+        if (col.gameObject.tag == "box")
+        {
+            cm.Pushback();
+        }
+
+        if (col.gameObject.tag == "jellyBean") {
 			jelliesCollected++;
 		}
     }
