@@ -148,7 +148,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 18.666666
+  - time: 18.416666
     functionName: SkipCutScene
     data: 
     objectReferenceParameter: {fileID: 0}

@@ -10,6 +10,7 @@ TagManager:
   - jellybean
   - player
   - box
+  - clothesPile
   layers:
   - Default
   - TransparentFX

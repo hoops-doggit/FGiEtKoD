@@ -7,12 +7,14 @@ public class CharacterCollisions : MonoBehaviour {
     public bool groundContact;
     public int groundCount;
     public CharacterMovement cm;
+    public GameObject clothes_top;
 
 	public int jelliesCollected;
 
     private void Start()
     {
         groundContact = true;
+        clothes_top.SetActive(false);
     }
 
     public void OnCollisionEnter(Collision col)
@@ -32,6 +34,12 @@ public class CharacterCollisions : MonoBehaviour {
         if (col.gameObject.tag == "jellyBean") {
 			jelliesCollected++;
 		}
+
+        if (col.gameObject.tag == "clothesPile")
+        {
+            clothes_top.SetActive(true);
+            Destroy(col.gameObject.GetComponent<BoxCollider>());
+        }
     }
 
     public void OnCollisionExit(Collision col)
