@@ -67,10 +67,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b2ae9bd30e24c229e96019010446aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 114460511570483092}
-  splatHolder: {fileID: 0}
   splat: {fileID: 0}
-  splatAnimation: {fileID: 0}
+  guts: {fileID: 1574428401298110, guid: aeb05bc77e4dd2c449b2edaade36649b, type: 2}
+  gutsClone: {fileID: 0}
 --- !u!114 &114460511570483092
 MonoBehaviour:
   m_ObjectHideFlags: 1

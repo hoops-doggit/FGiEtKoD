@@ -9,6 +9,7 @@ public class CharacterMovement : MonoBehaviour {
     public GameObject character;
     public Transform playerGoalPos;
     private Vector3 characterPos;
+    [Header("Movement")]
     public float hsp;
     public float vsp;
     public float grav;
@@ -27,7 +28,7 @@ public class CharacterMovement : MonoBehaviour {
     public float accInitial;
     public bool slowed;
 	public float slowedDuration;
-
+    [Header("lane positions")]
     public float LeftPos;
     public float CentrePos;
     public float RightPos;
@@ -37,7 +38,18 @@ public class CharacterMovement : MonoBehaviour {
 	public int _groundCount;
 	public bool trueGroundContact;
 
-	public GameObject burst;
+    [Header("tomato")]
+    public GameObject tomatoFootprint;
+    private GameObject tomatoFootprintClone;
+    public Transform leftFootprintSpawnLocation;
+    public Transform rightFootprintSpawnLocation;
+    public bool tomatoed;
+    private int tomatoTime = 0;
+    public int maxTomatoTime;
+    private float lastWalkFrame;
+    public float currentWalkFrame;
+
+    public GameObject burst;
 
     public void MoveLeft()
     {
@@ -70,32 +82,6 @@ public class CharacterMovement : MonoBehaviour {
         moveSpeed = pushedBackMoveSpeed;
     }
 
-	/*
-    public void OnCollisionEnter(Collision col)
-    {
-        Debug.Log("thing");
-        if (col.gameObject.tag == "ground")
-        {
-            _groundContact = true;
-			_groundCount++;
-            vsp = 0;
-        }
-
-		if (col.gameObject.tag == "jellybean") {
-			PlayBurst();
-		}
-    }
-
-    public void OnCollisionExit(Collision col)
-    {
-        if (col.gameObject.tag == "ground")
-        {
-            _groundContact = false;
-			//_groundCount--;
-        }
-    }
-
-*/
 
 	public void PlayBurst ()
 	{
@@ -107,6 +93,12 @@ public class CharacterMovement : MonoBehaviour {
 		StopCoroutine ("GotHitCorourine");
 		StartCoroutine ("GotHitCoroutine");
 	}
+
+    public void HitTomato()
+    {
+        tomatoed = true;
+        tomatoTime = 0;
+    }
 
 	public IEnumerator GotHitCoroutine(){
 		slowed = true;
@@ -127,6 +119,7 @@ public class CharacterMovement : MonoBehaviour {
 
 	}
 
+
     // Use this for initialization
     void Start () {
         _positionDifference = RightPos;
@@ -134,9 +127,23 @@ public class CharacterMovement : MonoBehaviour {
 
         pushedBackInitial = pushedBackAcc;
     }
-	
-	// Update is called once per frame
-	void FixedUpdate () {
+           
+    void GenerateTomatoSplat(string side)
+    {
+        if (side == "left")
+        {
+            tomatoFootprintClone = Instantiate(tomatoFootprint, leftFootprintSpawnLocation.position, leftFootprintSpawnLocation.rotation);
+            //tomatoFootprintClone.transform.SetParent(transform,false);
+        }
+        if (side == "right")
+        {
+            tomatoFootprintClone = Instantiate(tomatoFootprint, rightFootprintSpawnLocation.position, rightFootprintSpawnLocation.rotation);
+        }
+    }
+
+
+    // Update is called once per frame
+    void FixedUpdate () {
 
         _groundContact = character.GetComponent<CharacterCollisions>().groundContact;
 		_groundCount = character.GetComponent<CharacterCollisions>().groundCount;
@@ -218,6 +225,33 @@ public class CharacterMovement : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
+        }
+
+        if (tomatoed == true)
+        {
+            tomatoTime++;
+            if (trueGroundContact == true)
+            {
+                if (currentWalkFrame != lastWalkFrame)
+                {
+                    if (currentWalkFrame == 0)
+                    {
+                        GenerateTomatoSplat("left");
+                    }
+
+                    if (currentWalkFrame == 1)
+                    {
+                        GenerateTomatoSplat("right");
+                    }
+
+                    lastWalkFrame = currentWalkFrame;
+                }
+            }
+            if (tomatoTime > maxTomatoTime)
+            {
+                tomatoTime = 0;
+                tomatoed = false;
+            }
         }
     }
 }
