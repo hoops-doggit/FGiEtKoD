@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1566551335, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
-  m_Name: Animation_2018-11-2_14-56-49
+  m_Name: Smoke
   m_EditorClassIdentifier: 
   frames:
   - _texture: {fileID: 28215634439667926}
@@ -82,7 +82,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    00000000000000000000000000000000: 0
+    8e7b9c4f99b0a7241a8ab0d0d9bd132d: 213726914633027066
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
