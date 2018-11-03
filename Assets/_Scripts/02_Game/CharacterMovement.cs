@@ -12,9 +12,15 @@ public class CharacterMovement : MonoBehaviour {
     [Header("Movement")]
     public float hsp;
     public float vsp;
+    [Header("Gravity")]
     public float grav;
+    public float oldGrav;
+    public float timeBefore2XGrav;
+    public float gravMulitplier;
+    public bool gravCoRoutineOn;
     public float jumpspeed;
     public float jumpHeight;
+    [Header("OtherMovement")]
     public bool pushedBack;
     public float pushedBackMoveSpeed;
     public float pushedBackJumpSpeed;
@@ -28,10 +34,8 @@ public class CharacterMovement : MonoBehaviour {
     public float accInitial;
     public bool slowed;
 	public float slowedDuration;
-    private float oldGrav;
-    public float timeBefore2XGrav;
-    public float gravMulitplier;
-    public bool gravCoRoutineOn;
+
+   
 
     [Header("lane positions")]
     public float LeftPos;
@@ -63,6 +67,9 @@ public class CharacterMovement : MonoBehaviour {
     public ParticleSystem clothesParticle03;
     public float timeToJumpAfterHittingClothesPile;
 
+    public Animator jumpScaler;
+    public Animator runScaler;
+
     private void Awake()
     {
         dust.Pause();
@@ -87,8 +94,12 @@ public class CharacterMovement : MonoBehaviour {
 		if (trueGroundContact)
         {
             _groundContact = false;
-            vsp = jumpspeed;            
+            vsp = jumpspeed;
+            jumpScaler.SetTrigger("Jump");
+            runScaler.speed = 0;
         }
+
+        
     }
     public void JumpOutOfClothesPile()
     {
@@ -207,6 +218,8 @@ public class CharacterMovement : MonoBehaviour {
 
 		else if (_groundCount > 0) {
 			trueGroundContact = true;
+            jumpScaler.speed = 1;
+            grav = oldGrav;
 		}
 
         #region normal vspeed and gravity behaviour
@@ -218,6 +231,7 @@ public class CharacterMovement : MonoBehaviour {
 		if (!trueGroundContact)
         {
             vsp -= grav;
+            runScaler.speed = 1;
 
             if (vsp < 0)
             {

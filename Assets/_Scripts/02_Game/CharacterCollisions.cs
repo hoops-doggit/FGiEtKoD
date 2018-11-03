@@ -15,7 +15,7 @@ public class CharacterCollisions : MonoBehaviour {
     private void Start()
     {
         //initialGrav = cm.grav;
-        groundContact = true;
+        groundContact = false;
         clothes_top.SetActive(false);
     }
 
