@@ -49,7 +49,7 @@ public class CupboardDoor : MonoBehaviour {
 
         if (collided)
         {
-            Debug.Log(t);
+            //Debug.Log(t);
             t += 10f * Time.deltaTime;
             t3 += 20f * Time.deltaTime;
         }

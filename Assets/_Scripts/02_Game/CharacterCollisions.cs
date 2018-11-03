@@ -39,7 +39,9 @@ public class CharacterCollisions : MonoBehaviour {
         {
             clothes_top.SetActive(true);
             Destroy(col.gameObject.GetComponent<BoxCollider>());
+            cm.HitClothesPile();
         }
+
     }
 
     public void OnCollisionExit(Collision col)

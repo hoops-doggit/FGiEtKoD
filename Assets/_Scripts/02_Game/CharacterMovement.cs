@@ -51,6 +51,20 @@ public class CharacterMovement : MonoBehaviour {
 
     public GameObject burst;
 
+    [Header("clothesPile")]
+    public ParticleSystem dust;
+    public ParticleSystem clothesParticle01;
+    public ParticleSystem clothesParticle02;
+    public ParticleSystem clothesParticle03;
+
+    private void Awake()
+    {
+        dust.Pause();
+        clothesParticle01.Pause();
+        clothesParticle02.Pause();
+        clothesParticle03.Pause();
+    }
+
     public void MoveLeft()
     {
         playerGoalPos.transform.position = new Vector3(Mathf.Clamp(playerGoalPos.transform.position.x - _positionDifference, LeftPos, RightPos), playerGoalPos.transform.position.y, playerGoalPos.transform.position.z);
@@ -65,10 +79,8 @@ public class CharacterMovement : MonoBehaviour {
     {
 		if (trueGroundContact)
         {
-
             _groundContact = false;
-            vsp = jumpspeed;
-            
+            vsp = jumpspeed;            
         }
     }
 
@@ -99,6 +111,20 @@ public class CharacterMovement : MonoBehaviour {
         tomatoed = true;
         tomatoTime = 0;
     }
+
+    public void HitClothesPile()
+    {
+        dust.Play();
+        clothesParticle01.Play();
+        clothesParticle02.Play();
+        clothesParticle03.Play();
+        if (trueGroundContact)
+        {
+            _groundContact = false;
+            vsp = jumpspeed;
+        }
+    }
+
 
 	public IEnumerator GotHitCoroutine(){
 		slowed = true;
