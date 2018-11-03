@@ -96,7 +96,7 @@ public class CharacterMovement : MonoBehaviour {
             _groundContact = false;
             vsp = jumpspeed;
             jumpScaler.SetTrigger("Jump");
-            runScaler.speed = 0;
+            runScaler.SetTrigger("Jump");
         }
 
         
@@ -231,13 +231,13 @@ public class CharacterMovement : MonoBehaviour {
 		if (!trueGroundContact)
         {
             vsp -= grav;
-            runScaler.speed = 1;
 
             if (vsp < 0)
             {
                 StartCoroutine("GravityTime");
             }
         }
+
         #endregion
 
         #region pushed back speed and gravity behaviour
@@ -254,11 +254,6 @@ public class CharacterMovement : MonoBehaviour {
         }
         #endregion
 
-
-        #region Designing Gravity
-  
-
-        #endregion
 
 
 

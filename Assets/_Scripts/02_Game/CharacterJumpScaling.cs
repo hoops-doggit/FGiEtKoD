@@ -8,6 +8,7 @@ public class CharacterJumpScaling : MonoBehaviour {
 
 
     public Animator stateMachine;
+    public Animator runStateMachine;
 
 
 
@@ -15,6 +16,11 @@ public class CharacterJumpScaling : MonoBehaviour {
     public void StopAnimating()
     {
         stateMachine.speed = 0;
+    }
+
+    public void StartRunAnimation()
+    {
+        runStateMachine.SetTrigger("Run");
     }
 
     public void StartAnimating()
