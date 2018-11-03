@@ -317,13 +317,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 5144375}
-  m_LocalRotation: {x: 0.1316433, y: -0, z: -0, w: 0.9912972}
-  m_LocalPosition: {x: 0, y: 1.8999996, z: 0.55000305}
+  m_LocalRotation: {x: 0.029963885, y: -0, z: -0, w: 0.999551}
+  m_LocalPosition: {x: 0, y: 2.04, z: 0.55000305}
   m_LocalScale: {x: 2.282793, y: 2.282793, z: 2.282793}
   m_Children: []
   m_Father: {fileID: 1828364400}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 15.129001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.4340003, y: 0, z: 0}
 --- !u!114 &5144380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9368,13 +9368,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 693295959}
-  m_LocalRotation: {x: 0.1316433, y: -0, z: -0, w: 0.9912972}
-  m_LocalPosition: {x: 0, y: 1.8999996, z: 0.5399933}
+  m_LocalRotation: {x: 0.029963885, y: -0, z: -0, w: 0.999551}
+  m_LocalPosition: {x: 0, y: 2.04, z: 0.5399933}
   m_LocalScale: {x: 2.28279, y: 2.2827888, z: 2.2827888}
   m_Children: []
   m_Father: {fileID: 1828364400}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 15.129001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 3.4340003, y: 0, z: 0}
 --- !u!114 &693295962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12678,7 +12678,7 @@ MonoBehaviour:
   clothesParticle01: {fileID: 449810720}
   clothesParticle02: {fileID: 449810720}
   clothesParticle03: {fileID: 449810720}
-  timeToJumpAfterHittingClothesPile: 0.5
+  timeToJumpAfterHittingClothesPile: 0.35
   jumpScaler: {fileID: 659093684}
   runScaler: {fileID: 1828364401}
 --- !u!33 &1343061843
