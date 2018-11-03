@@ -28,6 +28,11 @@ public class CharacterMovement : MonoBehaviour {
     public float accInitial;
     public bool slowed;
 	public float slowedDuration;
+    private float oldGrav;
+    public float timeBefore2XGrav;
+    public float gravMulitplier;
+    public bool gravCoRoutineOn;
+
     [Header("lane positions")]
     public float LeftPos;
     public float CentrePos;
@@ -56,6 +61,7 @@ public class CharacterMovement : MonoBehaviour {
     public ParticleSystem clothesParticle01;
     public ParticleSystem clothesParticle02;
     public ParticleSystem clothesParticle03;
+    public float timeToJumpAfterHittingClothesPile;
 
     private void Awake()
     {
@@ -63,6 +69,7 @@ public class CharacterMovement : MonoBehaviour {
         clothesParticle01.Pause();
         clothesParticle02.Pause();
         clothesParticle03.Pause();
+        oldGrav = grav;
     }
 
     public void MoveLeft()
@@ -81,6 +88,14 @@ public class CharacterMovement : MonoBehaviour {
         {
             _groundContact = false;
             vsp = jumpspeed;            
+        }
+    }
+    public void JumpOutOfClothesPile()
+    {
+        if (trueGroundContact)
+        {
+            _groundContact = false;
+            vsp = jumpspeed * 1.5f;
         }
     }
 
@@ -118,11 +133,13 @@ public class CharacterMovement : MonoBehaviour {
         clothesParticle01.Play();
         clothesParticle02.Play();
         clothesParticle03.Play();
-        if (trueGroundContact)
-        {
-            _groundContact = false;
-            vsp = jumpspeed;
-        }
+        StartCoroutine("JumpAfterGettingNewClothes");
+    }
+
+    public IEnumerator JumpAfterGettingNewClothes()
+    {
+        yield return new WaitForSeconds(timeToJumpAfterHittingClothesPile);
+        JumpOutOfClothesPile();
     }
 
 
@@ -144,6 +161,16 @@ public class CharacterMovement : MonoBehaviour {
 		StopCoroutine ("PlaySequence");
 
 	}
+
+    public IEnumerator GravityTime()
+    {
+        grav = 0;
+        gravCoRoutineOn = true;
+        yield return new WaitForSeconds(timeBefore2XGrav);
+        grav = oldGrav * gravMulitplier;
+        gravCoRoutineOn = false;
+        StopCoroutine("GravityTime");
+    }
 
 
     // Use this for initialization
@@ -191,6 +218,11 @@ public class CharacterMovement : MonoBehaviour {
 		if (!trueGroundContact)
         {
             vsp -= grav;
+
+            if (vsp < 0)
+            {
+                StartCoroutine("GravityTime");
+            }
         }
         #endregion
 
@@ -206,6 +238,12 @@ public class CharacterMovement : MonoBehaviour {
         {
             pushedBack = false;
         }
+        #endregion
+
+
+        #region Designing Gravity
+  
+
         #endregion
 
 

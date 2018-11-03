@@ -8,11 +8,13 @@ public class CharacterCollisions : MonoBehaviour {
     public int groundCount;
     public CharacterMovement cm;
     public GameObject clothes_top;
+    private float initialGrav;
 
 	public int jelliesCollected;
 
     private void Start()
     {
+        //initialGrav = cm.grav;
         groundContact = true;
         clothes_top.SetActive(false);
     }
@@ -24,6 +26,8 @@ public class CharacterCollisions : MonoBehaviour {
         {
             groundContact = true;
             groundCount++;
+            //cm.grav = initialGrav;
+
         }
 
         if (col.gameObject.tag == "box")
