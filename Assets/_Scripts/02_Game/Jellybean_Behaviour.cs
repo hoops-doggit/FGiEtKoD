@@ -15,9 +15,8 @@ public class Jellybean_Behaviour : MonoBehaviour {
     private bool gotTouched;
 
     private void OnTriggerEnter(Collider other)
-	{
-		
-		other.gameObject.GetComponentInParent<CharacterMovement> ().PlayBurst();
+	{		
+		other.gameObject.GetComponentInParent<CharacterMovement>().PlayBurst();
 		other.gameObject.GetComponent<CharacterCollisions> ().jelliesCollected++;
 		parent.GetComponent<JellyBean_Death> ().PlayAnimation ();
 	}

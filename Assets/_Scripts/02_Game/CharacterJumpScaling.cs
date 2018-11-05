@@ -18,9 +18,16 @@ public class CharacterJumpScaling : MonoBehaviour {
         stateMachine.speed = 0;
     }
 
+
     public void StartRunAnimation()
     {
-        runStateMachine.SetTrigger("Run");
+        runStateMachine.ResetTrigger("Run");
+        runStateMachine.SetTrigger("Run");        
+    }
+
+    public void TurnOffRunScalersJumpTrigger()
+    {
+        runStateMachine.ResetTrigger("Jump");
     }
 
     public void StartAnimating()

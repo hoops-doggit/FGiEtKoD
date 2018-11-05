@@ -8,25 +8,26 @@ public class CharacterCollisions : MonoBehaviour {
     public int groundCount;
     public CharacterMovement cm;
     public GameObject clothes_top;
-    private float initialGrav;
 
 	public int jelliesCollected;
 
     private void Start()
     {
-        //initialGrav = cm.grav;
         groundContact = false;
         clothes_top.SetActive(false);
     }
 
+
+    //NOTE: Jellybeans are triggers
+
     public void OnCollisionEnter(Collision col)
     {
         Debug.Log(col.gameObject.name);
+        Debug.Log(col.gameObject.tag);
         if (col.gameObject.tag == "ground")
         {
             groundContact = true;
             groundCount++;
-            //cm.grav = initialGrav;
 
         }
 
@@ -34,10 +35,6 @@ public class CharacterCollisions : MonoBehaviour {
         {
             cm.Pushback();
         }
-
-        if (col.gameObject.tag == "jellyBean") {
-			jelliesCollected++;
-		}
 
         if (col.gameObject.tag == "clothesPile")
         {

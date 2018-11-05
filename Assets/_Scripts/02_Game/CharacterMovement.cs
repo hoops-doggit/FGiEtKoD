@@ -19,12 +19,12 @@ public class CharacterMovement : MonoBehaviour {
     public float gravMulitplier;
     public bool gravCoRoutineOn;
     public float jumpspeed;
-    public float jumpHeight;
+    //public float jumpHeight;
     [Header("OtherMovement")]
     public bool pushedBack;
     public float pushedBackMoveSpeed;
     public float pushedBackJumpSpeed;
-    public float pushedBackJumpHeight;
+    //public float pushedBackJumpHeight;
     public float pushedBackAcc;
     private float pushedBackInitial;
 	public float moveSpeed;
@@ -95,7 +95,9 @@ public class CharacterMovement : MonoBehaviour {
         {
             _groundContact = false;
             vsp = jumpspeed;
+            jumpScaler.ResetTrigger("Jump");
             jumpScaler.SetTrigger("Jump");
+            runScaler.ResetTrigger("Run");
             runScaler.SetTrigger("Jump");
         }
 
@@ -164,6 +166,7 @@ public class CharacterMovement : MonoBehaviour {
 	}
 
 	public IEnumerator PlaySequence() {
+        Debug.Log("playing burst");
 		burst.SetActive (true);
 		DoodleAnimator animator = burst.GetComponent<DoodleAnimator>();
 		yield return animator.PlayAndPauseAt(0,-1);
@@ -175,11 +178,12 @@ public class CharacterMovement : MonoBehaviour {
 
     public IEnumerator GravityTime()
     {
+        vsp = 0;
         grav = 0;
         gravCoRoutineOn = true;
         yield return new WaitForSeconds(timeBefore2XGrav);
         grav = oldGrav * gravMulitplier;
-        gravCoRoutineOn = false;
+        
         StopCoroutine("GravityTime");
     }
 
@@ -218,7 +222,7 @@ public class CharacterMovement : MonoBehaviour {
 
 		else if (_groundCount > 0) {
 			trueGroundContact = true;
-            jumpScaler.speed = 1;
+            jumpScaler.speed = 1;//this just makes character rigid
             grav = oldGrav;
 		}
 
@@ -226,13 +230,14 @@ public class CharacterMovement : MonoBehaviour {
         if (trueGroundContact && !pushedBack && vsp < 0.0f)
         {
             vsp = 0;
+            gravCoRoutineOn = false;
         }
 
 		if (!trueGroundContact)
         {
             vsp -= grav;
 
-            if (vsp < 0)
+            if (vsp < 0 && !gravCoRoutineOn)
             {
                 StartCoroutine("GravityTime");
             }
