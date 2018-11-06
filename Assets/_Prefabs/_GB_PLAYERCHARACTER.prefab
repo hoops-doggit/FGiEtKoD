@@ -564,9 +564,9 @@ MonoBehaviour:
   playerGoalPos: {fileID: 4026110593798334}
   hsp: 40
   vsp: 0
-  grav: 0.04
+  grav: 0.035
   oldGrav: 0
-  timeBefore2XGrav: 0.04
+  timeBefore2XGrav: 0.05
   gravMulitplier: 1.3
   gravCoRoutineOn: 0
   jumpspeed: 0.62

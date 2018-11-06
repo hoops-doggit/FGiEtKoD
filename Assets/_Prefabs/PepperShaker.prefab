@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1064853743323174}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.35000038, y: 7.42, z: -0.39999962}
+  m_LocalPosition: {x: -0.03, y: 7.42, z: -0.39999962}
   m_LocalScale: {x: 3.8698783, y: 3.8698785, z: 3.8698785}
   m_Children: []
   m_Father: {fileID: 4633533025614772}
@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1197164652207818}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 4.38, z: 0}
+  m_LocalPosition: {x: -0.3800006, y: 4.38, z: 0}
   m_LocalScale: {x: 2.5075312, y: 2.5075307, z: 2.5075307}
   m_Children: []
   m_Father: {fileID: 4633533025614772}
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1378863973518244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.7, y: 0, z: 29.1}
+  m_LocalPosition: {x: 4.41, y: 0.0049999994, z: 323.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4116322714581652}
@@ -117,7 +117,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.5811467, y: 6.880224, z: 0.61457825}
-  m_Center: {x: 0.41336107, y: 3.6722708, z: -0.33057404}
+  m_Center: {x: 0, y: 3.6722708, z: -0.33057404}
 --- !u!95 &95627792459259854
 Animator:
   serializedVersion: 3
@@ -135,6 +135,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114678974635795880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -160,6 +161,7 @@ MonoBehaviour:
     customFilterMode: 2
     wrapMode: 1
     startFrame: 0
+    useUnscaledTime: 0
 --- !u!114 &114717836878819430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,6 +229,7 @@ MonoBehaviour:
     customFilterMode: 2
     wrapMode: 1
     startFrame: 0
+    useUnscaledTime: 0
 --- !u!212 &212364646214939910
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -240,6 +243,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
@@ -284,6 +288,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 144b996f77c05d14a8083981015716b7, type: 2}
   m_StaticBatchInfo:
@@ -305,7 +310,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213930380151036972, guid: ef2ead287b138284c9736bc14f623cdb, type: 2}
+  m_Sprite: {fileID: 213128312842517830, guid: ef2ead287b138284c9736bc14f623cdb, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

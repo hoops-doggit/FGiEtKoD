@@ -9,112 +9,125 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1234651279780588}
+  m_RootGameObject: {fileID: 1987212199050614}
   m_IsPrefabParent: 1
---- !u!1 &1234651279780588
+--- !u!1 &1565633366897600
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4420497790396528}
-  - component: {fileID: 114303952696505882}
+  - component: {fileID: 4989546861043978}
+  - component: {fileID: 212024754746601192}
+  - component: {fileID: 114937700226932464}
+  - component: {fileID: 114476420095325056}
+  - component: {fileID: 65907263861183182}
   m_Layer: 0
-  m_Name: Big Falling Knife
+  m_Name: Knife Sprite (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1470503555008064
+--- !u!1 &1987212199050614
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4062568320238604}
-  - component: {fileID: 212732502139759874}
-  - component: {fileID: 114808532752679382}
-  - component: {fileID: 114936686615726428}
-  - component: {fileID: 65195994306529832}
+  - component: {fileID: 4996363657785876}
+  - component: {fileID: 114290713767416256}
   m_Layer: 0
-  m_Name: Gummy Knife Sprite
+  m_Name: Falling Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4062568320238604
+--- !u!4 &4989546861043978
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470503555008064}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.14, y: 8.79, z: 0}
-  m_LocalScale: {x: 3.5843985, y: 3.5843985, z: 3.5843985}
+  m_GameObject: {fileID: 1565633366897600}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.64, y: 5.82, z: 0}
+  m_LocalScale: {x: 2.7060752, y: 2.7060766, z: 2.706076}
   m_Children: []
-  m_Father: {fileID: 4420497790396528}
+  m_Father: {fileID: 4996363657785876}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4420497790396528
+--- !u!4 &4996363657785876
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234651279780588}
+  m_GameObject: {fileID: 1987212199050614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.6, y: 0, z: 357.9}
+  m_LocalPosition: {x: 16.14, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4062568320238604}
+  - {fileID: 4989546861043978}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &65195994306529832
+--- !u!65 &65907263861183182
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470503555008064}
+  m_GameObject: {fileID: 1565633366897600}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9430332, y: 5.2964964, z: 0.19999999}
-  m_Center: {x: 0.00074657163, y: 1.2280127, z: 0}
---- !u!114 &114303952696505882
+  m_Size: {x: 1.1466179, y: 3.18789, z: 0.2}
+  m_Center: {x: -0.034421194, y: 2.0112247, z: 0}
+--- !u!114 &114290713767416256
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234651279780588}
+  m_GameObject: {fileID: 1987212199050614}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e89be3d93f98af4fb1b41e5bdadce8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knifeDownSpeed: 0.04
+  knifeDownSpeed: 0.08
   knifeUpSpeed: 0.02
   knifePosition: 0
   upRot: 0
   downRot: 90
   _goingDown: 1
---- !u!114 &114808532752679382
+--- !u!114 &114476420095325056
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470503555008064}
+  m_GameObject: {fileID: 1565633366897600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1800204556, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castShadows: 1
+  receiveShadows: 1
+--- !u!114 &114937700226932464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1565633366897600}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: b5e3b9cfa526b8941ab14aed3da60335, type: 2}
+  m_File: {fileID: 11400000, guid: 94028372d8c5d014bb77988ca1a1476c, type: 2}
   speed: 1
   m_Settings:
     randomizeOnStart: 1
@@ -128,25 +141,12 @@ MonoBehaviour:
     wrapMode: 1
     startFrame: 0
     useUnscaledTime: 0
---- !u!114 &114936686615726428
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470503555008064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1800204556, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  castShadows: 1
-  receiveShadows: 1
---- !u!212 &212732502139759874
+--- !u!212 &212024754746601192
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470503555008064}
+  m_GameObject: {fileID: 1565633366897600}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -176,7 +176,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213026063098241450, guid: b5e3b9cfa526b8941ab14aed3da60335, type: 2}
+  m_Sprite: {fileID: 213142735501030172, guid: 94028372d8c5d014bb77988ca1a1476c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
