@@ -8,6 +8,8 @@ public class TomatoSplat : MonoBehaviour {
 	public GameObject splat;
 	private GameObject splatClone;
     public GameObject guts;
+    [SerializeField]
+    private Transform parent;
     //commented out to try to minimise. It still exists as a self contained var
     //private GameObject gutsClone;
 
@@ -22,7 +24,7 @@ public class TomatoSplat : MonoBehaviour {
 
     public void DoSplat() {
 		StartCoroutine(PlaySequence());
-        Vector3 gutsPos = new Vector3(transform.position.x, transform.position.y - 3.499f, transform.position.z + 1.5f);
+        Vector3 gutsPos = new Vector3(transform.position.x, parent.position.y + 0.01f, transform.position.z + 1.5f);
         var gutsClone = Instantiate(guts, gutsPos, Quaternion.Euler(90f,0f,0f));
 
     }
