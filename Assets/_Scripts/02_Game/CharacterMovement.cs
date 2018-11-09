@@ -30,6 +30,7 @@ public class CharacterMovement : MonoBehaviour {
 	public float moveSpeed;
     public float runSpeed;
 	public float slowSpeed;
+    public float doorSlowSpeed;
 	public float accSpeed;
     public float accInitial;
     public bool slowed;
@@ -58,7 +59,9 @@ public class CharacterMovement : MonoBehaviour {
     private float lastWalkFrame;
     public float currentWalkFrame;
 
+    [Header("FX")]
     public GameObject burst;
+    public GameObject clothesBurst;
 
     [Header("clothesPile")]
     public ParticleSystem dust;
@@ -66,6 +69,12 @@ public class CharacterMovement : MonoBehaviour {
     public ParticleSystem clothesParticle02;
     public ParticleSystem clothesParticle03;
     public float timeToJumpAfterHittingClothesPile;
+    public float timeTillClothesBurstStarts;
+    public Light clothesLight;
+    public float clothesLightIncrease;
+    public float clothesLightMax;
+    public float timeToTurnOffLight;
+    private bool gotClothes;
 
     public Animator jumpScaler;
     public Animator runScaler;
@@ -77,6 +86,7 @@ public class CharacterMovement : MonoBehaviour {
         clothesParticle02.Pause();
         clothesParticle03.Pause();
         oldGrav = grav;
+        clothesLight.enabled = false;
     }
 
     public void MoveLeft()
@@ -99,18 +109,9 @@ public class CharacterMovement : MonoBehaviour {
             jumpScaler.SetTrigger("Jump");
             runScaler.ResetTrigger("Run");
             runScaler.SetTrigger("Jump");
-        }
+        }        
+    }
 
-        
-    }
-    public void JumpOutOfClothesPile()
-    {
-        if (trueGroundContact)
-        {
-            _groundContact = false;
-            vsp = jumpspeed * 1.5f;
-        }
-    }
 
     public void Pushback()
     {
@@ -125,14 +126,19 @@ public class CharacterMovement : MonoBehaviour {
 
 	public void PlayBurst ()
 	{
-		StopCoroutine ("PlaySequence");
-		StartCoroutine ("PlaySequence");
+		StopCoroutine ("PlayBurstCR");
+		StartCoroutine ("PlayBurstCR");
 	}
 
 	public void GotHit(){
 		StopCoroutine ("GotHitCorourine");
 		StartCoroutine ("GotHitCoroutine");
 	}
+
+    public void HitDoor()
+    {
+        StartCoroutine("HitDoorCoroutine");
+    }
 
     public void HitTomato()
     {
@@ -153,28 +159,70 @@ public class CharacterMovement : MonoBehaviour {
     {
         yield return new WaitForSeconds(timeToJumpAfterHittingClothesPile);
         JumpOutOfClothesPile();
+        yield return new WaitForSeconds(timeTillClothesBurstStarts);
+        StartCoroutine("PlayClothesBurstCR");
+        //yield return new WaitForSeconds(timeToTurnOffLight);
+        //congratsLight.enabled = false;
     }
 
+    public void JumpOutOfClothesPile()
+    {
+        if (trueGroundContact)
+        {
+            _groundContact = false;
+            vsp = jumpspeed * 1.5f;
+            jumpScaler.ResetTrigger("Jump");
+            jumpScaler.SetTrigger("Jump");
+            runScaler.ResetTrigger("Run");
+            runScaler.SetTrigger("Jump");
+            timeBefore2XGrav = timeBefore2XGrav * 3.5f;
+        }       
+    }
 
-	public IEnumerator GotHitCoroutine(){
+    public IEnumerator GotHitCoroutine(){
 		slowed = true;
 		moveSpeed = slowSpeed;
-		Debug.Log ("things are things if they have things");
 		yield return new WaitForSeconds (slowedDuration);
 		slowed = false;
 		StopCoroutine( "GotHitCoroutine" );
 	}
 
-	public IEnumerator PlaySequence() {
+    public IEnumerator HitDoorCoroutine()
+    {
+        slowed = true;
+        moveSpeed = slowSpeed / 2;
+        yield return new WaitForSeconds(slowedDuration * 4);
+        slowed = false;
+        slowSpeed = slowSpeed * 2;
+        StopCoroutine("GotHitCoroutine");
+    }
+
+    public IEnumerator PlayBurstCR() {
         Debug.Log("playing burst");
 		burst.SetActive (true);
 		DoodleAnimator animator = burst.GetComponent<DoodleAnimator>();
-		yield return animator.PlayAndPauseAt(0,-1);
-		animator.Stop();
+		yield return animator.PlayAndPauseAt(0, -1);
+        animator.Stop();
 		burst.SetActive (false);
-		StopCoroutine ("PlaySequence");
-
+		StopCoroutine ("PlayBurstCR");
 	}
+
+    public IEnumerator PlayClothesBurstCR()
+    {
+        Debug.Log("playing clothes burst");
+        clothesBurst.SetActive(true);
+        clothesLight.enabled = true;
+        DoodleAnimator animator = clothesBurst.GetComponent<DoodleAnimator>();
+        yield return animator.PlayAndPauseAt(0, -1);
+        yield return animator.PlayAndPauseAt(0, -1);
+        yield return animator.PlayAndPauseAt(0, -1);
+        yield return animator.PlayAndPauseAt(0, -1);
+        animator.Stop();
+        clothesLight.enabled = false;
+        clothesBurst.SetActive(false);
+        timeBefore2XGrav = timeBefore2XGrav / 3.5f;
+        StopCoroutine("PlayClothesBurstCR");
+    }
 
     public IEnumerator GravityTime()
     {
@@ -187,12 +235,10 @@ public class CharacterMovement : MonoBehaviour {
         StopCoroutine("GravityTime");
     }
 
-
     // Use this for initialization
     void Start () {
         _positionDifference = RightPos;
         //_groundContact = true;
-
         pushedBackInitial = pushedBackAcc;
     }
            
@@ -258,8 +304,6 @@ public class CharacterMovement : MonoBehaviour {
             pushedBack = false;
         }
         #endregion
-
-
 
 
         float step = hsp * Time.deltaTime;
@@ -331,5 +375,23 @@ public class CharacterMovement : MonoBehaviour {
                 tomatoed = false;
             }
         }
+
+        //if (gotClothes)
+        //{
+        //    clothesLight.enabled = true;
+        //    if (clothesLight.intensity < clothesLightMax)
+        //    {
+        //        clothesLight.intensity = clothesLight.intensity + clothesLightIncrease;
+        //    }
+        //}
+
+        //if (!gotClothes && clothesLight.intensity > 0)
+        //{
+        //    clothesLight.intensity = clothesLight.intensity - (clothesLightIncrease * 3);
+        //    if (clothesLight.intensity < 0)
+        //    {
+        //        clothesLight.enabled = false;
+        //    }
+        //}
     }
 }

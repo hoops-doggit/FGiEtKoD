@@ -37,7 +37,7 @@ public class CupboardDoor : MonoBehaviour {
         collided = true;
         var thing = GetComponent<Animator>();
         thing.SetTrigger("Thing");
-        other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
+        other.gameObject.GetComponentInParent<CharacterMovement>().HitDoor();
     }
 
 
