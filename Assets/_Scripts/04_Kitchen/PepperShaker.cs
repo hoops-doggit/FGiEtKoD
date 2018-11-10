@@ -42,7 +42,7 @@ public class PepperShaker : MonoBehaviour {
 	}
 
 	IEnumerator PlayPowder(){
-		DoodleAnimator ppAnim = pepperPowder.GetComponent<DoodleAnimator>();
+		//DoodleAnimator ppAnim = pepperPowder.GetComponent<DoodleAnimator>();
 		yield return ppAnim.PlayAndPauseAt();
 	}
 
