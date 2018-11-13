@@ -87,11 +87,12 @@ public class PrefabPlacer : EditorWindow {
         GUILayout.EndHorizontal();
 
 
+        //ContextMenu;
+        //Brakeys scriptable objects
+
         easyJellyPos = EditorGUILayout.FloatField("easy dist", easyJellyPos);
         mediumJullyPos = EditorGUILayout.FloatField("med dist", mediumJullyPos);
         hardJellyPos = EditorGUILayout.FloatField("hard dist", hardJellyPos);
-
-
 
         GUILayout.Space(7);
         GUILayout.Label("Outer Lane Distance", EditorStyles.boldLabel);
@@ -99,7 +100,6 @@ public class PrefabPlacer : EditorWindow {
         pepperJellyYPos = EditorGUILayout.FloatField("Pepper Jelly Y", pepperJellyYPos);
         tomatoRightPos = EditorGUILayout.FloatField("Tomato R", tomatoRightPos);
         bigTomatoRightPos = EditorGUILayout.FloatField("Big Tomato R", bigTomatoRightPos);
-
     }
 
     void Centre()
@@ -167,7 +167,6 @@ public class PrefabPlacer : EditorWindow {
                     jellyClone.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + pepperJellyYPos, obj.transform.position.z - easyJellyPos);
                     jellyClone.transform.SetParent(jellyBeanParent.transform);
                 }
-
             }
         }
 
@@ -188,7 +187,6 @@ public class PrefabPlacer : EditorWindow {
                     jellyClone.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + pepperJellyYPos, obj.transform.position.z - mediumJullyPos);
                     jellyClone.transform.SetParent(jellyBeanParent.transform);
                 }
-
             }
         }
 
@@ -209,7 +207,6 @@ public class PrefabPlacer : EditorWindow {
                     jellyClone.transform.position = new Vector3(obj.transform.position.x, obj.transform.position.y + pepperJellyYPos, obj.transform.position.z - hardJellyPos);
                     jellyClone.transform.SetParent(jellyBeanParent.transform);
                 }
-
             }
         }
 
