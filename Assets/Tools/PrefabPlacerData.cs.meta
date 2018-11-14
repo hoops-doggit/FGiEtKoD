@@ -1,12 +1,11 @@
 fileFormatVersion: 2
-guid: 912947206fd161f43b10479ab15486d5
+guid: 631f36e85b7ce2e4495f6f967b37d456
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - m_PersistentViewDataDictionary: {instanceID: 0}
-  - ppd: {fileID: 11400000, guid: 11ae93b76ba8a1242b630a2213554a87, type: 2}
-  - jellyPrefab: {instanceID: 0}
+  - jellyPrefab: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856,
+      type: 2}
   - jellyBeanParent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}

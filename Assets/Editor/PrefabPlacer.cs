@@ -4,21 +4,19 @@ using System.Collections;
 
 public class PrefabPlacer : EditorWindow {
 
-    string myString = "Hello, Worlds";
+    public PrefabPlacerData ppd;
 
     float pepperRightPos = 5.5f;
-    float pepperJellyYPos = 0;
-    float tomatoRightPos = 0;
+    float pepperJellyYPos = 2.6f;
+    float tomatoRightPos = 5.5f;
     float bigTomatoRightPos = 0;
 
-    float easyJellyPos = 0;
-    float mediumJullyPos = 0;
-    float hardJellyPos = 0;
+    float easyJellyPos = 8.9f;
+    float mediumJullyPos = 5f;
+    float hardJellyPos = 2f;
 
     public GameObject jellyPrefab;
     public GameObject jellyBeanParent;
-
-
 
     [MenuItem("Window/Prefab Placer")]
     public static void ShowWindow()
@@ -26,13 +24,40 @@ public class PrefabPlacer : EditorWindow {
         EditorWindow.GetWindow<PrefabPlacer>("Prefab Placer");
     }
 
-	// Use this for initialization
-	void OnGUI ()
+    protected void OnEnable()
+    {
+        pepperRightPos = ppd.pepperRightPos;
+        pepperJellyYPos = ppd.pepperJellyYPos;
+        tomatoRightPos = ppd.tomatoRightPos;
+        bigTomatoRightPos = ppd.bigTomatoRightPos;
+
+        easyJellyPos = ppd.easyJellyPos;
+        mediumJullyPos = ppd.mediumJullyPos;
+        hardJellyPos = ppd.hardJellyPos;
+    }
+
+    protected void OnDisable()
+    {
+        ppd.pepperRightPos = pepperRightPos;
+        ppd.pepperJellyYPos = pepperJellyYPos;
+        ppd.tomatoRightPos = tomatoRightPos;
+        ppd.bigTomatoRightPos = bigTomatoRightPos;
+
+        ppd.easyJellyPos = easyJellyPos;
+        ppd.mediumJullyPos = mediumJullyPos;
+        ppd.hardJellyPos = hardJellyPos;
+
+        ppd.jellyPrefab = jellyPrefab;
+        ppd.jellyBeanParent = jellyBeanParent;
+
+    }
+
+    // Use this for initialization
+    void OnGUI ()
     {
         GUILayout.Label("Lane Position", EditorStyles.boldLabel);
 
         GUILayout.BeginHorizontal();
-
         if (GUILayout.Button("Left"))
         {
             Move("left");
@@ -54,17 +79,12 @@ public class PrefabPlacer : EditorWindow {
 
         GUILayout.Label("Jellybean Placement", EditorStyles.boldLabel);
         EditorGUILayout.BeginHorizontal();
-        //jellyPrefab = EditorGUILayout.ObjectField(jellyPrefab, System. GameObject , true);
         GUILayout.Label("Jellybean Prefab", EditorStyles.label);
-        if (jellyPrefab == null)
-            jellyPrefab = new GameObject("temp object");
-        jellyPrefab = (GameObject)EditorGUILayout.ObjectField(jellyPrefab, typeof(PrefabPlacer), true);
+        jellyPrefab = (GameObject)EditorGUILayout.ObjectField(jellyPrefab, typeof(GameObject), true);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();
         GUILayout.Label("Jellybean Parent", EditorStyles.label);
-        if (jellyPrefab == null)
-            jellyPrefab = new GameObject("temp object");
         jellyBeanParent = (GameObject)EditorGUILayout.ObjectField(jellyBeanParent, typeof(GameObject), true);
         EditorGUILayout.EndHorizontal();
 
