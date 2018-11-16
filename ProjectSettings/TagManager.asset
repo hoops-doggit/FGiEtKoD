@@ -11,6 +11,7 @@ TagManager:
   - player
   - box
   - clothesPile
+  - jelly
   layers:
   - Default
   - TransparentFX
