@@ -25,11 +25,21 @@ public class LightsManager : MonoBehaviour {
     private float catwalk04Intensity;
     private float catwalk05Intensity;
 
-
     public bool doorCollision;
     public bool enteringCatwalk;
 
     public GameObject rightDoor;
+
+    public Material StartSkybox;
+    public Material EndSkybox;
+
+    [ColorUsage(true, true, 0f, 8f, 0.125f, 3f)]
+    public Color32 bedroomAmbientColour;
+    [ColorUsage(true, true, 0f, 8f, 0.125f, 3f)]
+    public Color catwalkAmbientColour;
+
+    public Color bedroomFogColour;
+    public Color catwalkFogColour;
 
     float bedroomTime = 0.0f;
     float exitBedroomTime = 0f;
@@ -59,7 +69,6 @@ public class LightsManager : MonoBehaviour {
         catwalk05Intensity = catwalk05.intensity;
 
         doorCollision = false;
-       
 
         bedroom01.intensity = bedroom01Intentsity;
         bedroom02.intensity = bedroom02Intensity;
@@ -75,17 +84,18 @@ public class LightsManager : MonoBehaviour {
         catwalk04.gameObject.SetActive(false);
         catwalk05.intensity = 0;
         catwalk05.gameObject.SetActive(false);
-
-
-
+        RenderSettings.fogColor = bedroomFogColour;
+        RenderSettings.ambientSkyColor = bedroomAmbientColour;
     }
 
-    public void LeavingBedroom(){
+
+
+    public void LeavingBedroom() {
         gameplay01.gameObject.SetActive(true);
         doorCollision = true;
     }
 
-    public void EnteringCatwalk(){
+    public void EnteringCatwalk() {
         catwalk01.gameObject.SetActive(true);
         catwalk02.gameObject.SetActive(true);
         catwalk03.gameObject.SetActive(true);
@@ -94,16 +104,13 @@ public class LightsManager : MonoBehaviour {
 
         enteringCatwalk = true;
     }
-
+    
 
 
 
     //might put this in a coroutine instead so that once it's done the update isn't necessary
     void FixedUpdate()
     {
-
-
-
         if (doorCollision)
         {
             //Debug.Log(t);
@@ -124,9 +131,14 @@ public class LightsManager : MonoBehaviour {
             catwalk03.intensity = Mathf.Lerp(0f, catwalk03Intensity, enterCatwalkTime);
             catwalk04.intensity = Mathf.Lerp(0f, catwalk04Intensity, enterCatwalkTime);
             catwalk05.intensity = Mathf.Lerp(0f, catwalk05Intensity, enterCatwalkTime);
+            RenderSettings.skybox.Lerp(StartSkybox, EndSkybox, enterCatwalkTime);
+
+            Color ambientSkylerpcolor = Color.Lerp(bedroomAmbientColour, catwalkAmbientColour, enterCatwalkTime);
+            RenderSettings.ambientSkyColor = ambientSkylerpcolor;
+
+            Color fogColourLerp = Color.Lerp(bedroomFogColour, catwalkFogColour, enterCatwalkTime);
+            RenderSettings.fogColor = fogColourLerp;
         }
     }
-
-
 
 }
