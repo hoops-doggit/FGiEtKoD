@@ -24,6 +24,7 @@ public class LightLerper : MonoBehaviour {
         light02Intensity = light02.intensity;
         collided = false;
         t = 0;
+        Debug.Log("light is on" + gameObject.name);
     }
 
     private void OnTriggerEnter(Collider other)
