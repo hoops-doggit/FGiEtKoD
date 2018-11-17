@@ -36,6 +36,10 @@ public class CharacterMovement : MonoBehaviour {
     public bool slowed;
 	public float slowedDuration;
 
+    public float endSceneMoveSpeed;
+    public float endSceneSlowDown;
+    public bool endScene;
+
    
 
     [Header("lane positions")]
@@ -155,6 +159,16 @@ public class CharacterMovement : MonoBehaviour {
         StartCoroutine("JumpAfterGettingNewClothes");
     }
 
+    public void EndScene(){
+        print("starting character slowdown");
+        endScene = true;
+    }
+
+    public void EndScene_EndOfCatWalk(){
+        moveSpeed = 0;
+        endSceneSlowDown = 0;
+
+    }
     public IEnumerator JumpAfterGettingNewClothes()
     {
         yield return new WaitForSeconds(timeToJumpAfterHittingClothesPile);
@@ -313,19 +327,26 @@ public class CharacterMovement : MonoBehaviour {
         character.transform.position = characterPos;
 
 		//speed up
-		if (moveSpeed < runSpeed && !slowed && !pushedBack) {
+        if (moveSpeed != runSpeed && !slowed && !pushedBack && !endScene) {
 			
 			if (moveSpeed <= 0) {
 				moveSpeed = accInitial;
 			}
 
+
 			moveSpeed = moveSpeed * accSpeed;
 		}
 
 
-		if (moveSpeed > runSpeed) {
+        if (moveSpeed > runSpeed && !endScene) {
 			moveSpeed = runSpeed;
 		}
+
+        if(endScene){
+            if(moveSpeed > endSceneMoveSpeed){
+                moveSpeed = moveSpeed * endSceneSlowDown;
+            }
+        }
 			
 			
 

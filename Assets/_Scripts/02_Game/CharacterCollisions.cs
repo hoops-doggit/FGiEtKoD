@@ -22,8 +22,8 @@ public class CharacterCollisions : MonoBehaviour {
 
     public void OnCollisionEnter(Collision col)
     {
-        Debug.Log(col.gameObject.name);
-        Debug.Log(col.gameObject.tag);
+        //Debug.Log(col.gameObject.name);
+        //Debug.Log(col.gameObject.tag);
         if (col.gameObject.tag == "ground")
         {
             groundContact = true;
