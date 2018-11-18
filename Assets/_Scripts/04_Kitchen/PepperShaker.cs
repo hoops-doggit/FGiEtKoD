@@ -32,7 +32,7 @@ public class PepperShaker : MonoBehaviour {
 			//anim.Play ("PepperJump");
 			anim.SetTrigger("jump");
 			other.gameObject.GetComponentInParent<CharacterMovement> ().GotHit();
-			Debug.Log ("pepper hit player");
+			//Debug.Log ("pepper hit player");
 		}
 
 	}

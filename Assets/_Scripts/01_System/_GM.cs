@@ -16,6 +16,7 @@ public class _GM : MonoBehaviour {
     public GameObject LevelEndCanvas;
 	//private float timer;
 	public float timeTime = 0f;
+    public LightsManager lm;
 
 
 	public void SetTime(){
@@ -44,6 +45,7 @@ public class _GM : MonoBehaviour {
         Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
         SetTime();
+        lm.SetEnvironmentSettings();
     }
 
     // Update is called once per frame

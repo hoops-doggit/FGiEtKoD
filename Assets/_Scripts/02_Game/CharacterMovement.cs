@@ -212,7 +212,7 @@ public class CharacterMovement : MonoBehaviour {
     }
 
     public IEnumerator PlayBurstCR() {
-        Debug.Log("playing burst");
+        //Debug.Log("playing burst");
 		burst.SetActive (true);
 		DoodleAnimator animator = burst.GetComponent<DoodleAnimator>();
 		yield return animator.PlayAndPauseAt(0, -1);

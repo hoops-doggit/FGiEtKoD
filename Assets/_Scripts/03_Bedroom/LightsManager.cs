@@ -30,6 +30,7 @@ public class LightsManager : MonoBehaviour {
 
     public GameObject rightDoor;
 
+    public Material skybox;
     public Material StartSkybox;
     public Material EndSkybox;
 
@@ -86,7 +87,24 @@ public class LightsManager : MonoBehaviour {
         catwalk05.gameObject.SetActive(false);
         RenderSettings.fogColor = bedroomFogColour;
         RenderSettings.ambientSkyColor = bedroomAmbientColour;
+        RenderSettings.skybox = skybox;
     }
+
+    public void SetEnvironmentSettings()
+    {
+        RenderSettings.fogColor = bedroomFogColour;
+        RenderSettings.ambientSkyColor = bedroomAmbientColour;
+        RenderSettings.skybox.Lerp(skybox, StartSkybox, 1f);
+    }
+
+    private void Start()
+    {
+        RenderSettings.fogColor = bedroomFogColour;
+        RenderSettings.ambientSkyColor = bedroomAmbientColour;
+        RenderSettings.skybox.Lerp(skybox, StartSkybox, 1f);
+    }
+
+
 
 
 
@@ -131,13 +149,14 @@ public class LightsManager : MonoBehaviour {
             catwalk03.intensity = Mathf.Lerp(0f, catwalk03Intensity, enterCatwalkTime);
             catwalk04.intensity = Mathf.Lerp(0f, catwalk04Intensity, enterCatwalkTime);
             catwalk05.intensity = Mathf.Lerp(0f, catwalk05Intensity, enterCatwalkTime);
-            RenderSettings.skybox.Lerp(StartSkybox, EndSkybox, enterCatwalkTime);
+            RenderSettings.skybox.Lerp(skybox, EndSkybox, enterCatwalkTime);
 
             Color ambientSkylerpcolor = Color.Lerp(bedroomAmbientColour, catwalkAmbientColour, enterCatwalkTime);
             RenderSettings.ambientSkyColor = ambientSkylerpcolor;
 
             Color fogColourLerp = Color.Lerp(bedroomFogColour, catwalkFogColour, enterCatwalkTime);
             RenderSettings.fogColor = fogColourLerp;
+
         }
     }
 
