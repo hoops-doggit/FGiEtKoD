@@ -5,25 +5,34 @@ using DoodleStudio95;
 
 public class TomatoSplat : MonoBehaviour {
 
-	public GameObject splat;
+    [SerializeField]
+    private GameObject splat;
 	private GameObject splatClone;
     public GameObject guts;
     [SerializeField]
     private Transform parent;
     //commented out to try to minimise. It still exists as a self contained var
     //private GameObject gutsClone;
+    private Collider myBoxCollider;
 
+    private void OnEnable()
+    {
+        myBoxCollider = GetComponent<BoxCollider>();
+    }
 
     void OnTriggerEnter(Collider other)
 	{
 		other.GetComponentInParent<CharacterMovement> ().GotHit();
         other.GetComponentInParent<CharacterMovement>().HitTomato();
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
-		DoSplat();       
+		DoSplat();
+        myBoxCollider.enabled = false;
+        
 	}
 
     public void DoSplat() {
 		StartCoroutine(PlaySequence());
+
         Vector3 gutsPos = new Vector3(transform.position.x, parent.position.y + 0.01f, transform.position.z + 1.5f);
         var gutsClone = Instantiate(guts, gutsPos, Quaternion.Euler(90f,0f,0f));
 
