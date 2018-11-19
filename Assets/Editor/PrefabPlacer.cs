@@ -34,6 +34,9 @@ public class PrefabPlacer : EditorWindow {
         easyJellyPos = ppd.easyJellyPos;
         mediumJullyPos = ppd.mediumJullyPos;
         hardJellyPos = ppd.hardJellyPos;
+
+        jellyPrefab = ppd.jellyPrefab;
+        jellyBeanParent = ppd.jellyBeanParent;
     }
 
     protected void OnDisable()
