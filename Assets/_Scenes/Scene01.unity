@@ -9956,7 +9956,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_States: []
-  m_File: {fileID: 11400000, guid: dcc3ae03d950a8941ace765549913bcd, type: 2}
+  m_File: {fileID: 11400000, guid: 6325a8941016847f487b58db490613b2, type: 2}
   speed: 2
   m_Settings:
     randomizeOnStart: 0
@@ -9964,7 +9964,7 @@ MonoBehaviour:
     overrideFileSettings: 0
     customPlaybackMode: 1
     customFramesPerSecond: 16
-    customBorder: {x: 1, y: 0, z: 0, w: 0}
+    customBorder: {x: 0, y: 0, z: 0, w: 0}
     customPixelsPerUnit: 100
     customFilterMode: 2
     wrapMode: 1
@@ -11173,7 +11173,6 @@ MonoBehaviour:
   LevelEndCanvas: {fileID: 693633746}
   timeTime: 0
   lm: {fileID: 927050677}
-  tomatoSplat: {fileID: 1158951}
 --- !u!4 &1011783395
 Transform:
   m_ObjectHideFlags: 0
@@ -16431,7 +16430,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213012124612860248, guid: a6a58dff71c5938458654baf59900223,
+      objectReference: {fileID: 213057250137002136, guid: a6a58dff71c5938458654baf59900223,
         type: 2}
     - target: {fileID: 4526355366186914, guid: f9dfa31b06e65e049b3a2b250ff5a2e0, type: 2}
       propertyPath: m_LocalScale.x
