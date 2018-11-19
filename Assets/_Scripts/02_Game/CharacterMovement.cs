@@ -227,10 +227,12 @@ public class CharacterMovement : MonoBehaviour {
         clothesBurst.SetActive(true);
         clothesLight.enabled = true;
         DoodleAnimator animator = clothesBurst.GetComponent<DoodleAnimator>();
+        yield return new WaitForSeconds(0.2f);
         yield return animator.PlayAndPauseAt(0, -1);
-        yield return animator.PlayAndPauseAt(0, -1);
-        yield return animator.PlayAndPauseAt(0, -1);
-        yield return animator.PlayAndPauseAt(0, -1);
+        //yield return animator.PlayAndPauseAt(0, -1);
+        //yield return animator.PlayAndPauseAt(0, -1);
+        //yield return animator.PlayAndPauseAt(0, -1);
+        //yield return animator.PlayAndPauseAt(0, -1);
         animator.Stop();
         clothesLight.enabled = false;
         clothesBurst.SetActive(false);
