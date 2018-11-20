@@ -1,7 +1,14 @@
 ﻿
 public class HighScores {
 
-    public string name = "abc";
-    public int score = 10;
-    public int[] clothes = { 0, 1, 2 };
+    private string name01;
+    private int score01;
+    private string name02;
+    private int score02;
+    private string name03;
+    private int score03;
+    private string name04;
+    private int score04;
+    private string name05;
+    private int score05;
 }
