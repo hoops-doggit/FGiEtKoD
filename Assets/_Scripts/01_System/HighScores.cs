@@ -1,14 +1,14 @@
 ﻿
 public class HighScores {
 
-    private string name01;
-    private int score01;
-    private string name02;
-    private int score02;
-    private string name03;
-    private int score03;
-    private string name04;
-    private int score04;
-    private string name05;
-    private int score05;
+    public string name00;
+    public int score00;
+    public string name01;
+    public int score01;
+    public string name02;
+    public int score02;
+    public string name03;
+    public int score03;
+    public string name04;
+    public int score04;
 }

@@ -9,6 +9,9 @@ public class HighScoreManager : MonoBehaviour {
     // Use this for initialization
     private HighScores _hs;
 
+
+    public Text name0;
+    public Text score0;
     public Text name01;
     public Text score01;
     public Text name02;
@@ -17,9 +20,24 @@ public class HighScoreManager : MonoBehaviour {
     public Text score03;
     public Text name04;
     public Text score04;
-    public Text name05;
-    public Text score05;
 
+    private int score00int;
+    private int score01int;
+    private int score02int;
+    private int score03int;
+    private int score04int;
+
+    private string name00name;
+    private string name01name;
+    private string name02name;
+    private string name03name;
+    private string name04name;
+
+
+
+
+
+    private int[] scores ={   };
 
 	void Start () {
         DontDestroyOnLoad(gameObject);
@@ -34,18 +52,83 @@ public class HighScoreManager : MonoBehaviour {
         //check if it's higher than any of the scores
         //if it is then it should delete the lowest score then move all lower scores down
         //then replace the empty slot with it's score
-        if (newScore > _hs.score)
+        /*if (newScore > _hs.score)
         {
             _hs.score = newScore;
             SavePlayerProgress();
             //text.text = _hs.score.ToString();
-        }        
+        }*/
+        
+        for(int i = 0; i < scores.Length; i++)
+        {
+            if (newScore > scores[0]) 
+            {
+                //function(i, newscore)
+            }
+        }
     }
+
+    private bool CheckIfScoreIsGreater(int i, int newscore)
+    {
+        return true;
+    }
+
+    private void UpdateScore00(int newscore, string name)
+    {
+        score04int = score03int;
+        name04name = name03name;
+        score03int = score02int;
+        name03name = name02name;
+        score02int = score01int;
+        name02name = name01name;
+        score01int = score00int;
+        name01name = name00name;
+        score00int = newscore;
+        name00name = name;
+    }
+
+    private void UpdateScore01(int newscore, string name)
+    {
+        score04int = score03int;
+        name04name = name03name;
+        score03int = score02int;
+        name03name = name02name;
+        score02int = score01int;
+        name02name = name01name;
+        score01int = newscore;
+        name01name = name;
+    }
+
+    private void UpdateScore02(int newscore, string name)
+    {
+        score04int = score03int;
+        name04name = name03name;
+        score03int = score02int;
+        name03name = name02name;
+        score02int = newscore;
+        name02name = name;
+    }
+
+    private void UpdateScore03(int newscore, string name)
+    {
+        score04int = score03int;
+        name04name = name03name;
+        score03int = newscore;
+        name03name = name;
+    }
+
+    private void UpdateScore04(int newscore, string name)
+    {
+        score04int = newscore;
+        name04name = name;
+    }
+
+
 
     //this is for after submitting a high score. Use it to send score to text object
     public int GetHighestPlayerScore()
     {
-        return _hs.score;
+        return _hs.score01;
     }
 
     public void UpdateScoreOnScreen()
@@ -55,10 +138,27 @@ public class HighScoreManager : MonoBehaviour {
 	
 	private void LoadHighScores()
     {
+        //sets _hs from the player prefs
         _hs = new HighScores();
-        if (PlayerPrefs.HasKey("score"))
+        if (PlayerPrefs.HasKey("score01"))
         {
-            _hs.score = PlayerPrefs.GetInt("score");
+            _hs.score01 = PlayerPrefs.GetInt("score01");
+        }
+        if (PlayerPrefs.HasKey("score02"))
+        {
+            _hs.score02 = PlayerPrefs.GetInt("score02");
+        }
+        if (PlayerPrefs.HasKey("score03"))
+        {
+            _hs.score03 = PlayerPrefs.GetInt("score03");
+        }
+        if (PlayerPrefs.HasKey("score04"))
+        {
+            _hs.score04 = PlayerPrefs.GetInt("score04");
+        }
+        if (PlayerPrefs.HasKey("score00"))
+        {
+            _hs.score00 = PlayerPrefs.GetInt("score00");
         }
     }
 
@@ -69,7 +169,11 @@ public class HighScoreManager : MonoBehaviour {
 
     private void SavePlayerProgress()
     {
-        PlayerPrefs.SetInt("score", _hs.score);
+        PlayerPrefs.SetInt("score01", _hs.score01);
+        PlayerPrefs.SetInt("score02", _hs.score02);
+        PlayerPrefs.SetInt("score03", _hs.score03);
+        PlayerPrefs.SetInt("score04", _hs.score04);
+        PlayerPrefs.SetInt("score00", _hs.score00);
     }
 
 }
