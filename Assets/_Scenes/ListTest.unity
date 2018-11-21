@@ -362,11 +362,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d449b5d44084624d9afb275b9c008c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  intLIst: 00000000160000003700000007000000
-  number00: {fileID: 582236894}
-  number01: {fileID: 188493364}
-  number02: {fileID: 1948513747}
-  number03: {fileID: 172926401}
+  intList: 00000000160000003700000007000000
+  number00: {fileID: 172926401}
+  number01: {fileID: 1948513747}
+  number02: {fileID: 188493364}
+  number03: {fileID: 582236894}
+  namescoreList:
+  - name: 
+    score: 0
+  - name: 
+    score: 0
 --- !u!4 &527558554
 Transform:
   m_ObjectHideFlags: 0
@@ -786,7 +791,7 @@ RectTransform:
   m_GameObject: {fileID: 1686012896}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1706553, y: 2.170655, z: 2.170655}
   m_Children:
   - {fileID: 172256426}
   m_Father: {fileID: 1503863316}
@@ -835,7 +840,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1686012899}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 527558553}
+        m_MethodName: Thing
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1686012899
