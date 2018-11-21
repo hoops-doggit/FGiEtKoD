@@ -1,5 +1,9 @@
-﻿
-public class HighScore {
+﻿using System;
+using System.Collections;
+
+
+public class HighScore : IComparable<HighScore>
+{
 
     public string name00;
     public int score00;
@@ -23,4 +27,21 @@ public class HighScore {
         this.Score = score;
     }
 
+    public int CompareTo(HighScore other)
+    {
+        //first > second return -1
+        //first < second return 1
+        //first == second return 0
+
+        if (other.Score < this.Score){
+            return -1;
+        }
+
+        else if (other.Score > this.Score){
+            return 1;
+        }
+
+        return 0;
+
+    }
 }
