@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HighScoreManager : MonoBehaviour {
 
     // Use this for initialization
-    private HighScores _hs;
+    private HighScore _hs;
 
 
     public Text name0;
@@ -73,6 +73,7 @@ public class HighScoreManager : MonoBehaviour {
         return true;
     }
 
+#region temp
     private void UpdateScore00(int newscore, string name)
     {
         score04int = score03int;
@@ -122,6 +123,7 @@ public class HighScoreManager : MonoBehaviour {
         score04int = newscore;
         name04name = name;
     }
+    #endregion
 
 
 
@@ -139,7 +141,7 @@ public class HighScoreManager : MonoBehaviour {
 	private void LoadHighScores()
     {
         //sets _hs from the player prefs
-        _hs = new HighScores();
+        //_hs = new HighScore();
         if (PlayerPrefs.HasKey("score01"))
         {
             _hs.score01 = PlayerPrefs.GetInt("score01");
