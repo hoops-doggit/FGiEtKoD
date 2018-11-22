@@ -8,7 +8,11 @@ public class Score_ScoreManager : MonoBehaviour {
     public static Score_ScoreManager instance;
     public Score_SavedScoreData savedScores;
 
+    //this is used to put scores into after reading from Score_SavedData
+    //this needs to get passed back into Score_savedScoreData before serializing;
     public List<HighScore> highscores = new List<HighScore>();
+    //this is used to store text boxes of score data on screen. It's not important;
+    public List<GameObject> tempList = new List<GameObject>();
 
     public GameObject scorePrefab;
     public Transform scoreGrid;
@@ -35,6 +39,28 @@ public class Score_ScoreManager : MonoBehaviour {
     }
 
     public void Save(){
+        savedScores.name1 = highscores[0].Name;
+        savedScores.score1 = highscores[0].Score;
+        savedScores.name2 = highscores[1].Name;
+        savedScores.score2 = highscores[1].Score;
+        savedScores.name3 = highscores[2].Name;
+        savedScores.score3 = highscores[2].Score;
+        savedScores.name4 = highscores[3].Name;
+        savedScores.score4 = highscores[3].Score;
+        savedScores.name5 = highscores[4].Name;
+        savedScores.score5 = highscores[4].Score;
+        savedScores.name6 = highscores[5].Name;
+        savedScores.score6 = highscores[5].Score;
+        savedScores.name7 = highscores[6].Name;
+        savedScores.score7 = highscores[6].Score;
+        savedScores.name8 = highscores[7].Name;
+        savedScores.score8 = highscores[7].Score;
+        savedScores.name9 = highscores[8].Name;
+        savedScores.score9 = highscores[8].Score;
+        savedScores.name10 = highscores[9].Name;
+        savedScores.score10 = highscores[9].Score;
+
+
         PlayerPrefs.SetString("save", Score_Serializer.Serialize<Score_SavedScoreData>(savedScores));
     }
     
@@ -43,6 +69,7 @@ public class Score_ScoreManager : MonoBehaviour {
     {
         if(PlayerPrefs.HasKey("save")){
             savedScores = Score_Serializer.Deserialize<Score_SavedScoreData>(PlayerPrefs.GetString("save"));
+            Debug.Log("Loading and savedScores does exist");
         }
 
         else{
@@ -91,12 +118,12 @@ public class Score_ScoreManager : MonoBehaviour {
 
     //maybe too UI centric
     private void AskForName(){
-        nameEntryboxClone = Instantiate(nameEntryboxPrefab) as GameObject;
-        nameEntryboxClone.transform.SetParent(Canvas);
-        nameEntryboxClone.GetComponent<RectTransform>().position = Vector3.one;
-        nameEntryboxClone.GetComponent<RectTransform>().position = Vector3.one;
-        nameEntryboxClone.GetComponent<RectTransform>().position = Vector3.one;
-
+        nameEntryboxPrefab.SetActive(true);
+        for (int i = 0; i < tempList.Count; i++)
+        {
+            Destroy(tempList[i].gameObject);
+        }
+        tempList.Clear();
     }
 
     public void AddNameAndScore(string name){
@@ -104,6 +131,7 @@ public class Score_ScoreManager : MonoBehaviour {
         highscores.Sort();
         Destroy(nameEntryboxClone);
         ShowScores();
+        Debug.Log("did save");
         Save();
     }
 
@@ -115,6 +143,7 @@ public class Score_ScoreManager : MonoBehaviour {
                 HighScore tmpScore = highscores[i];
                 tmpObj.GetComponent<Score_ScoreObject>().SetScore((i + 1).ToString(), highscores[i].Name, highscores[i].Score.ToString());
                 tmpObj.transform.SetParent(scoreGrid);
+                tempList.Add(tmpObj);
             }
         }
     }

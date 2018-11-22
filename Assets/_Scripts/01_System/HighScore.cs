@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections;
 
-
 public class HighScore : IComparable<HighScore>
 {
-
     public string name00;
     public int score00;
     public string name01;
@@ -19,7 +17,6 @@ public class HighScore : IComparable<HighScore>
     public int Rank { get; set; }
     public string Name { get; set; }
     public int Score { get; set; }
-
 
     public HighScore (int rank, string name, int score){
         this.Rank = rank;
