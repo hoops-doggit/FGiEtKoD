@@ -35,9 +35,10 @@ public class UI_Manager : MonoBehaviour {
 
     private void Start()
     {
-        gameCanvas.SetActive(true);
+       
         TurnOffAllButtons();
-        levelEndCanvas.SetActive(false);
+        TurnOffAllScreens();
+        gameCanvas.SetActive(true);
     }
 
     private void TurnOffAllButtons()
@@ -68,9 +69,8 @@ public class UI_Manager : MonoBehaviour {
 
         //setting all text fields
         highScoreText.text = score.ToString();
-        numberOfJelliesCollected.text = jelliesCollected.ToString();
         pointsFromJellies.text = jellyPoints.ToString();
-        time.text = _GM.instance.secondsElapsed.ToString();
+        time.text = _GM.instance.secondsElapsed.text;
         pointsFromTime.text = timePoints.ToString();
         numberOfJelliesCollected.text = jelliesCollected.ToString();
 
@@ -82,15 +82,16 @@ public class UI_Manager : MonoBehaviour {
     {
         gameCanvas.SetActive(false);
         levelEndCanvas.SetActive(true);
+        resultsScreen.SetActive(true);
 
         //setting all text fields
         highScoreText.text = score.ToString();
         numberOfJelliesCollected.text = jelliesCollected.ToString();
         pointsFromJellies.text = jellyPoints.ToString();
-        time.text = _GM.instance.secondsElapsed.ToString();
+        time.text = _GM.instance.secondsElapsed.text;
         pointsFromTime.text = timePoints.ToString();
 
-        mainMenuButton.SetActive(true);
+        //mainMenuButton.SetActive(true);
         viewHighScoresButton.SetActive(true);
         playAgainButton.SetActive(true);
     }
@@ -107,6 +108,13 @@ public class UI_Manager : MonoBehaviour {
         Score_ScoreManager.instance.AddNameAndScore(inputField.text);
         nameInputScreen.SetActive(false);
         hallOfFame.SetActive(true);
+    }
+
+    public void ShowHallOfFame()
+    {
+        resultsScreen.SetActive(false);
+        Score_ScoreManager.instance.ShowScores();
+        hallOfFame.SetActive(true); 
     }
 
 }

@@ -16,7 +16,7 @@ public class Score_ScoreManager : MonoBehaviour {
 
     public GameObject scorePrefab;
     public Transform scoreGrid;
-    public Transform Canvas;
+    //public Transform Canvas;
     public int numberOfDisplayedScores;
 
     public GameObject nameEntryboxPrefab;
@@ -24,7 +24,7 @@ public class Score_ScoreManager : MonoBehaviour {
 
     [Header("Score Values")]
     public int jellyValue = 150;
-    public int timeValue = 1000000;
+    public int timeValue;
 
     [Header("Scores Saved")]
     public int jellyScore = 150;
@@ -34,12 +34,13 @@ public class Score_ScoreManager : MonoBehaviour {
     private void Awake()
     {
         instance = this;
+        //PlayerPrefs.DeleteAll();
     }
 
     // Use this for initialization
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         Load();
         //GetScores();
         //ShowScores();
@@ -156,7 +157,7 @@ public class Score_ScoreManager : MonoBehaviour {
         Save();
     }
 
-    private void ShowScores(){
+    public void ShowScores(){
         for (int i = 0; i < numberOfDisplayedScores; i++){
             if (i <= highscores.Count - 1)
             {

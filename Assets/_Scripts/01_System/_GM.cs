@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class _GM : MonoBehaviour {
-    public static _GM instance = null;
+    public static _GM instance;
 
 	public Transform gummyBearPivot;
 	public string sceneName;
@@ -21,6 +21,8 @@ public class _GM : MonoBehaviour {
 	public float timeTime = 0f;
     public LightsManager lm;
 
+    public int numberOfJelliesCollected;
+
     public void Awake()
     {
         if (instance == null)
@@ -32,7 +34,7 @@ public class _GM : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);        
+        //DontDestroyOnLoad(gameObject);        
     }
 
     public void SetTime(){
@@ -54,13 +56,13 @@ public class _GM : MonoBehaviour {
         if (booley)
         {
             //Player did get a high score so show the results screen with highscore text
-            UI_Manager.instance.GotHighScore(Score_ScoreManager.instance.currentScore, characterCol.jelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore);            
+            UI_Manager.instance.GotHighScore(Score_ScoreManager.instance.currentScore, numberOfJelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore);            
         }
 
         else if (!booley)
         {
             //Player didn't get a high score so just show results screen
-            UI_Manager.instance.DidntGetHighScore(Score_ScoreManager.instance.currentScore, characterCol.jelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore);
+            UI_Manager.instance.DidntGetHighScore(Score_ScoreManager.instance.currentScore, numberOfJelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore);
         }
     }
 
@@ -71,6 +73,7 @@ public class _GM : MonoBehaviour {
         SceneManager.LoadScene(sceneName);
         SetTime();
         lm.SetEnvironmentSettings();
+        numberOfJelliesCollected = 0;
     }
 
     // Update is called once per frame
@@ -85,8 +88,9 @@ public class _GM : MonoBehaviour {
             Restart();
 		}
 
-		//updates the jellybeanCounter;
-		jelliesCollected.text = characterCol.jelliesCollected.ToString();
+        numberOfJelliesCollected = characterCol.jelliesCollected;
+        //updates the jellybeanCounter;
+        jelliesCollected.text = numberOfJelliesCollected.ToString();
 
 
 		timeTime = timeTime + Time.deltaTime;
