@@ -22,6 +22,13 @@ public class Score_ScoreManager : MonoBehaviour {
     public GameObject nameEntryboxPrefab;
     private GameObject nameEntryboxClone;
 
+    [Header("Score Values")]
+    public int jellyValue = 150;
+    public int timeValue = 1000000;
+
+    [Header("Scores Saved")]
+    public int jellyScore = 150;
+    public int timeScore;
     public int currentScore;
 
     private void Awake()
@@ -79,9 +86,7 @@ public class Score_ScoreManager : MonoBehaviour {
     }
 
     public void GetScores(){
-
         highscores.Clear();
-
         highscores.Add(new HighScore(1, savedScores.name1, savedScores.score1));
         highscores.Add(new HighScore(2, savedScores.name2, savedScores.score2));
         highscores.Add(new HighScore(3, savedScores.name3, savedScores.score3));
@@ -93,10 +98,27 @@ public class Score_ScoreManager : MonoBehaviour {
         highscores.Add(new HighScore(9, savedScores.name9, savedScores.score9));
         highscores.Add(new HighScore(10, savedScores.name3, savedScores.score10));
         highscores.Sort();
-
     }
 
-    public void CheckScore(int score){
+    public void CheckScoreAgainstHighScores(int score){
+        GetScores();
+        for (int i = 0; i < numberOfDisplayedScores; i++)
+        {
+            Debug.Log("Checking against " + i);
+            if (score > highscores[i].Score)
+            {
+                Debug.Log("stop checking, score is higher than " + i);
+                highscores.Remove(highscores[numberOfDisplayedScores - 1]);
+                AskForName();
+                return;
+            }
+        }
+        ShowScores();
+        Debug.Log("stopped checking");
+    }
+
+    public bool CheckIfPlayerGotHighScore(int score)
+    {
         GetScores();
         for (int i = 0; i < numberOfDisplayedScores; i++)
         {
@@ -107,17 +129,16 @@ public class Score_ScoreManager : MonoBehaviour {
                 highscores.Remove(highscores[numberOfDisplayedScores - 1]);
                 currentScore = score;
                 AskForName();
-                return;
+                return true;
             }
         }
-
-        ShowScores();
-        Debug.Log("stopped checking");
+        return false;
     }
 
     //maybe too UI centric
     private void AskForName(){
         nameEntryboxPrefab.SetActive(true);
+        //dont' need below
         for (int i = 0; i < tempList.Count; i++)
         {
             Destroy(tempList[i].gameObject);
@@ -125,6 +146,7 @@ public class Score_ScoreManager : MonoBehaviour {
         tempList.Clear();
     }
 
+    //this should just add to list etc not show scores
     public void AddNameAndScore(string name){
         highscores.Add(new HighScore(1, name, currentScore));
         highscores.Sort();
@@ -145,5 +167,21 @@ public class Score_ScoreManager : MonoBehaviour {
                 tempList.Add(tmpObj);
             }
         }
+    }
+
+    public int CalculateScore()
+    {
+        int jellies = _GM.instance.gummyBearPivot.GetComponent<CharacterCollisions>().jelliesCollected;
+        float time = _GM.instance.timeTime;
+        Debug.Log("jellies = " + jellies);
+        Debug.Log("time = " + time);
+        
+
+        jellyScore = jellies * jellyValue;
+        timeScore = timeValue - Mathf.RoundToInt(time);
+        int score = timeScore + jellyScore;
+        currentScore = score;
+        Debug.Log("score = " + score);
+        return score;
     }
 }

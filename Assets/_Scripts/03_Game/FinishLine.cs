@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class FinishLine : MonoBehaviour {
 
-    public _GM gm;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "player")
-        {
+        //this is returning Null????
+        _GM.instance.LevelComplete(Score_ScoreManager.instance.CheckIfPlayerGotHighScore(Score_ScoreManager.instance.CalculateScore()));
 
-            gm.LevelComplete();
-        }
+        //if (other.tag == "player")
+        //{
+        //    //i need to calculate the players score and put it into the check;
+        //    _GM.instance.LevelComplete(Score_ScoreManager.instance.CheckIfPlayerGotHighScore(Score_ScoreManager.instance.CalculateScore()));
+        //}
     }
 }

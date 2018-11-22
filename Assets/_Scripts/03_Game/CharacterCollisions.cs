@@ -9,16 +9,16 @@ public class CharacterCollisions : MonoBehaviour {
     public CharacterMovement cm;
     public GameObject clothes_top;
 
-	public int jelliesCollected;
+    //jelliesCollected gets incrememnted up inside a jellybean script. Not the topmost one.
+    //NOTE: Jellybeans are triggers
+    public int jelliesCollected;
 
     private void Start()
     {
         groundContact = false;
         clothes_top.SetActive(false);
     }
-
-
-    //NOTE: Jellybeans are triggers
+    
 
     public void OnCollisionEnter(Collision col)
     {
