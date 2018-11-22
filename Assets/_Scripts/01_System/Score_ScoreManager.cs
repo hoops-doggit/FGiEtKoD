@@ -60,7 +60,6 @@ public class Score_ScoreManager : MonoBehaviour {
         savedScores.name10 = highscores[9].Name;
         savedScores.score10 = highscores[9].Score;
 
-
         PlayerPrefs.SetString("save", Score_Serializer.Serialize<Score_SavedScoreData>(savedScores));
     }
     
