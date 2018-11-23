@@ -165,6 +165,7 @@ public class Score_ScoreManager : MonoBehaviour {
                 HighScore tmpScore = highscores[i];
                 tmpObj.GetComponent<Score_ScoreObject>().SetScore((i + 1).ToString(), highscores[i].Name, highscores[i].Score.ToString());
                 tmpObj.transform.SetParent(scoreGrid);
+                tmpObj.transform.GetComponent<RectTransform>().localScale = Vector3.one;
                 tempList.Add(tmpObj);
             }
         }

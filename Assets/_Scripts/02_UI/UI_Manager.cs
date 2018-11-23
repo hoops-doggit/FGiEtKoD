@@ -12,6 +12,7 @@ public class UI_Manager : MonoBehaviour {
     public GameObject resultsScreen;
     public GameObject youGotHighScoreText;
     public Text highScoreText;
+    public Text nameEntryHighScoreText;
     public Text time;
     public Text pointsFromTime;
     public Text numberOfJelliesCollected;
@@ -68,7 +69,7 @@ public class UI_Manager : MonoBehaviour {
         youGotHighScoreText.SetActive(true);
 
         //setting all text fields
-        highScoreText.text = score.ToString();
+        highScoreText.text = score.ToString() + "!";
         pointsFromJellies.text = jellyPoints.ToString();
         time.text = _GM.instance.secondsElapsed.text;
         pointsFromTime.text = timePoints.ToString();
@@ -100,6 +101,7 @@ public class UI_Manager : MonoBehaviour {
     {
 
         resultsScreen.SetActive(false);
+        nameEntryHighScoreText.text = Score_ScoreManager.instance.currentScore.ToString() + "!";
         nameInputScreen.SetActive(true);
     }
 

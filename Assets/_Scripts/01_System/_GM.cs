@@ -85,7 +85,7 @@ public class _GM : MonoBehaviour {
 			
 		//resets the scene
 		if (Input.GetKeyDown(KeyCode.R)){
-            Restart();
+            //Restart();
 		}
 
         numberOfJelliesCollected = characterCol.jelliesCollected;

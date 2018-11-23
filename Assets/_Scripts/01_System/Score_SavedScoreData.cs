@@ -4,14 +4,14 @@
 
 public class Score_SavedScoreData {
 
-    public string name1 = "jacob"; public int score1 = 9001;
-    public string name2 = "brooklyn"; public int score2 = 100000;
+    public string name1 = "U_J"; public int score1 = 2900;
+    public string name2 = "mlem"; public int score2 = 999;
     public string name3 = "sam"; public int score3 = 67;
-    public string name4 = "Matt"; public int score4 = 99999;
-    public string name5 = "hoops"; public int score5 = 80;
-    public string name6 = "hoops"; public int score6 = 80;
-    public string name7 = "hoops"; public int score7 = 80;
-    public string name8 = "hoops"; public int score8 = 80;
-    public string name9 = "hoops"; public int score9 = 80;
-    public string name10 = "hoops"; public int score10 = 80;
+    public string name4 = "Matt"; public int score4 = 2000;
+    public string name5 = "JAG"; public int score5 = 250;
+    public string name6 = "Veevee"; public int score6 = 1680;
+    public string name7 = "horse"; public int score7 = 1350;
+    public string name8 = "allan"; public int score8 = 720;
+    public string name9 = "Ben"; public int score9 = 1357;
+    public string name10 = "VV"; public int score10 = 1680;
 }
