@@ -20,6 +20,7 @@ public class _GM : MonoBehaviour {
 	//private float timer;
 	public float timeTime = 0f;
     public LightsManager lm;
+    public bool catwalk;
 
     public int numberOfJelliesCollected;
 
@@ -38,7 +39,6 @@ public class _GM : MonoBehaviour {
     }
 
     public void SetTime(){
-		//Debug.Log ("Did Time");
 		timeTime = 0f;
 	}
 
@@ -85,20 +85,47 @@ public class _GM : MonoBehaviour {
 			
 		//resets the scene
 		if (Input.GetKeyDown(KeyCode.R)){
-            //Restart();
+            Restart();
 		}
 
         numberOfJelliesCollected = characterCol.jelliesCollected;
         //updates the jellybeanCounter;
         jelliesCollected.text = numberOfJelliesCollected.ToString();
 
+        if (!catwalk)
+        {
+            timeTime = timeTime + Time.deltaTime;
+            string timeElapsed = Mathf.RoundToInt((float)System.TimeSpan.FromSeconds(timeTime).TotalMilliseconds).ToString();
 
-		timeTime = timeTime + Time.deltaTime;
-		//float currentTime = Time.
+            if (timeElapsed.Length == 2)
+            {
+                millisecondsElapsed.text = timeElapsed;
+                secondsElapsed.text = "0";
+            }
 
-		millisecondsElapsed.text = Mathf.RoundToInt((float)System.TimeSpan.FromSeconds(timeTime).TotalMilliseconds).ToString();
-		secondsElapsed.text = Mathf.RoundToInt((float)System.TimeSpan.FromSeconds(timeTime).TotalSeconds).ToString();
+            else if (timeElapsed.Length == 3)
+            {
+                string temp = timeElapsed.Remove(0, 1);
+                //temp = temp.Remove();
+                millisecondsElapsed.text = temp;
+                secondsElapsed.text = "0";
+            }
 
-		//Debug.Log (timer.Milliseconds ());
-	}
+            else if (timeElapsed.Length == 4)
+            {
+                string temp = timeElapsed.Remove(0, 1);
+                temp = temp.Remove(2);
+                millisecondsElapsed.text = temp;
+                secondsElapsed.text = timeElapsed.Remove(1);
+            }
+
+            else if (timeElapsed.Length == 5)
+            {
+                string temp = timeElapsed.Remove(0, 2);
+                temp = temp.Remove(2);
+                millisecondsElapsed.text = temp;
+                secondsElapsed.text = timeElapsed.Remove(2);
+            }
+        }        
+    }
 }

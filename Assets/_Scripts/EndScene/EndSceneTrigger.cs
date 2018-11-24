@@ -11,7 +11,7 @@ public class EndSceneTrigger : MonoBehaviour {
         other.gameObject.GetComponentInParent<CharacterMovement>().EndScene();
         Debug.Log("StartSlowDown");
         lm.EnteringCatwalk();
-        //gameObject.SetActive(false);
+        _GM.instance.catwalk = true;
     }
 
 
