@@ -83,6 +83,10 @@ public class CharacterMovement : MonoBehaviour {
     public Animator jumpScaler;
     public Animator runScaler;
 
+    public Material standardMat;
+    public Material shadowCasting;
+    public GameObject charSpriteOBJ;
+
     private void Awake()
     {
         dust.Pause();
@@ -90,7 +94,10 @@ public class CharacterMovement : MonoBehaviour {
         clothesParticle02.Pause();
         clothesParticle03.Pause();
         oldGrav = grav;
-        clothesLight.enabled = false;
+        clothesLight.enabled = true;
+        //charSpriteOBJ.GetComponent<ShadowCastingSprite>().enabled = false;
+        //charSpriteOBJ.GetComponent<SpriteRenderer>().material = standardMat;
+
     }
 
     public void MoveLeft()
@@ -142,6 +149,9 @@ public class CharacterMovement : MonoBehaviour {
     public void HitDoor()
     {
         StartCoroutine("HitDoorCoroutine");
+        clothesLight.enabled = false;
+        //charSpriteOBJ.GetComponent<SpriteRenderer>().material = shadowCasting;
+        //charSpriteOBJ.GetComponent<ShadowCastingSprite>().enabled = true;
     }
 
     public void HitTomato()
@@ -234,7 +244,7 @@ public class CharacterMovement : MonoBehaviour {
         //yield return animator.PlayAndPauseAt(0, -1);
         //yield return animator.PlayAndPauseAt(0, -1);
         animator.Stop();
-        clothesLight.enabled = false;
+        //clothesLight.enabled = false;
         clothesBurst.SetActive(false);
         timeBefore2XGrav = timeBefore2XGrav / 3.5f;
         StopCoroutine("PlayClothesBurstCR");
