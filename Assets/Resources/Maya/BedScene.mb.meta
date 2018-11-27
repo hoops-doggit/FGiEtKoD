@@ -60,6 +60,16 @@ ModelImporter:
     100108: pSphere2 1
     100110: spotLight1
     100112: w 1
+    100114: polySurface1
+    100116: polySurface14
+    100118: polySurface2
+    100120: polySurface4
+    100122: polySurface5
+    100124: polySurface6
+    100126: polySurface7
+    100128: polySurface8
+    100130: polySurface9
+    100132: transform1
     400000: //RootNode
     400002: GroundPlane
     400004: group2
@@ -117,6 +127,16 @@ ModelImporter:
     400108: pSphere2 1
     400110: spotLight1
     400112: w 1
+    400114: polySurface1
+    400116: polySurface14
+    400118: polySurface2
+    400120: polySurface4
+    400122: polySurface5
+    400124: polySurface6
+    400126: polySurface7
+    400128: polySurface8
+    400130: polySurface9
+    400132: transform1
     2000000: Main_Camera
     2000002: w
     2000004: w 1
@@ -164,6 +184,15 @@ ModelImporter:
     2300078: pCylinder9 1
     2300080: pSphere1 1
     2300082: pSphere2 1
+    2300084: polySurface1
+    2300086: polySurface14
+    2300088: polySurface2
+    2300090: polySurface4
+    2300092: polySurface5
+    2300094: polySurface6
+    2300096: polySurface7
+    2300098: polySurface8
+    2300100: polySurface9
     3300000: GroundPlane
     3300002: group2
     3300004: pCube10
@@ -206,6 +235,15 @@ ModelImporter:
     3300078: pCylinder9 1
     3300080: pSphere1 1
     3300082: pSphere2 1
+    3300084: polySurface1
+    3300086: polySurface14
+    3300088: polySurface2
+    3300090: polySurface4
+    3300092: polySurface5
+    3300094: polySurface6
+    3300096: polySurface7
+    3300098: polySurface8
+    3300100: polySurface9
     4300000: GroundPlane
     4300002: group2
     4300004: pCube12
@@ -248,6 +286,15 @@ ModelImporter:
     4300078: pCylinder12
     4300080: pCube15
     4300082: GroundPlane
+    4300084: polySurface1
+    4300086: polySurface2
+    4300088: polySurface4
+    4300090: polySurface5
+    4300092: polySurface6
+    4300094: polySurface7
+    4300096: polySurface8
+    4300098: polySurface9
+    4300100: polySurface14
     10800000: ambientLight1
     10800002: directionalLight1
     10800004: spotLight1

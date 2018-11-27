@@ -38,9 +38,14 @@ public class LightsManager : MonoBehaviour {
     public Color32 bedroomAmbientColour;
     [ColorUsage(true, true, 0f, 8f, 0.125f, 3f)]
     public Color catwalkAmbientColour;
+    [ColorUsage(true, true, 0f, 8f, 0.125f, 3f)]
+    public Color gameplayAmbientColour;
+
+
 
     public Color bedroomFogColour;
     public Color catwalkFogColour;
+    public Color gameplayFogColour;
 
     float bedroomTime = 0.0f;
     float exitBedroomTime = 0f;
