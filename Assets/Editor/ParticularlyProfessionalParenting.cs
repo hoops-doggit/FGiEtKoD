@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
+
 public class ParticularlyProfessionalParenting : EditorWindow {
 
     public GameObject professionalParent;
@@ -22,6 +23,11 @@ public class ParticularlyProfessionalParenting : EditorWindow {
         {
             Parent();
         }
+
+        if (GUILayout.Button("Toggle Gamma/Linear"))
+        {
+            ToggleGammaLinear();
+        }
     }
 
     void Parent()
@@ -29,6 +35,19 @@ public class ParticularlyProfessionalParenting : EditorWindow {
         foreach (GameObject obj in Selection.gameObjects)
         {
             obj.transform.SetParent(professionalParent.transform);
+        }
+    }
+
+    void ToggleGammaLinear()
+    {
+        if (PlayerSettings.colorSpace == ColorSpace.Gamma)
+        {
+            PlayerSettings.colorSpace = ColorSpace.Linear;
+        }
+
+        else if (PlayerSettings.colorSpace == ColorSpace.Linear)
+        {
+            PlayerSettings.colorSpace = ColorSpace.Gamma;
         }
     }
 }
