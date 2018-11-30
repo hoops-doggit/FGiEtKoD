@@ -8,7 +8,8 @@ public class HighScore : IComparable<HighScore>
     public string Name { get; set; }
     public int Score { get; set; }
 
-    public HighScore (int rank, string name, int score){
+    public HighScore (int rank, string name, int score)
+    {
         this.Rank = rank;
         this.Name = name;
         this.Score = score;

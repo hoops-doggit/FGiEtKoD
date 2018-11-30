@@ -18,6 +18,9 @@ public class BakedAnimator : MonoBehaviour {
     public Sprite[] orange;
     public Sprite[] yellow;
 
+    //used to tell objects what to do when gb collides with them
+    public string currentColour = "pink";
+
 
     SpriteRenderer spriteRenderer;
 
@@ -31,21 +34,27 @@ public class BakedAnimator : MonoBehaviour {
         switch (colour){
             case "pink":
                 m_Sprites = pink;
+                currentColour = "pink";
                 break;
             case "blue":
                 m_Sprites = blue;
+                currentColour = "blue";
                 break;
             case "green":
                 m_Sprites = green;
+                currentColour = "green";
                 break;
             case "orange":
                 m_Sprites = orange;
+                currentColour = "orange";
                 break;
             case "yellow":
                 m_Sprites = yellow;
+                currentColour = "yellow";
                 break;
             default:
                 m_Sprites = pink;
+                currentColour = "pink";
                 break;
         }
 
