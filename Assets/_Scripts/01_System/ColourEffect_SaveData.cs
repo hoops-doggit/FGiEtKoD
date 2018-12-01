@@ -5,15 +5,30 @@ using System;
 
 public class ColourEffect_SaveData : MonoBehaviour//, ISerializationCallbackReceiver
 {
-
+    public static ColourEffect_SaveData instance;
     //public List<ColourEffect_SaveData> colourEffectList;
 
-    public Dictionary<float, ColourEffect_Data> savedColourObjects = new Dictionary<float, ColourEffect_Data>();
+
+    public Dictionary<float, string> savedColourObjects = new Dictionary<float, string>();
 
     //this is going to be where I store all of my colour effected objects
     public List<float> ce_Data1 = new List<float>();
-    public List<ColourEffect_Data> ce_Data2 = new List<ColourEffect_Data>();
+    public List<string> ce_Data2 = new List<string>();
+    //public List<GameObject> ce_Data3 = new List<GameObject>();
 
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+
+        else if (instance != this)
+        {
+            Destroy(instance);
+        }
+    }
 
     public void OnBeforeSerialize()
     {
@@ -29,7 +44,7 @@ public class ColourEffect_SaveData : MonoBehaviour//, ISerializationCallbackRece
 
     public void OnAfterDeserialize()
     {
-        savedColourObjects = new Dictionary<float, ColourEffect_Data>();
+        savedColourObjects = new Dictionary<float, string>();
 
         for (var i = 0; i != Math.Min(ce_Data1.Count, ce_Data2.Count); i++)
             savedColourObjects.Add(ce_Data1[i], ce_Data2[i]);

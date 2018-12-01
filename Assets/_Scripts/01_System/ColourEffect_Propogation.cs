@@ -18,26 +18,33 @@ public class ColourEffect_Propogation : MonoBehaviour {
         go = gameObject;
         id = transform.position.x + transform.position.z;
 
-        //if (ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects.ContainsKey(id)){
-        //    cm = ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects[id];
-        //    colourEffectText = cm.ColourEffect;
-        //}
+        Invoke("CheckForColourEffect", id/100);
+    }
 
-        //else{
-        //    colourEffectText = "pink";
-        //}
-	}
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        colourEffectText = collision.gameObject.GetComponent<BakedAnimator>().currentColour;
+        colourEffectText = other.gameObject.GetComponentInChildren<BakedAnimator>().currentColour;
         Debug.Log("player collided with " + go.name + " and set colour effect to " + colourEffectText);
     }
 
+
     private void OnDestroy()
     {
-        ColourEffect_CEManager.instance.AddToColourEffectList(id, new ColourEffect_Data(id, colourEffectText, go));
+        ColourEffect_CEManager.instance.AddToColourEffectList(id,  colourEffectText);
         Debug.Log("added " + id + " to the colourEffectManagerDictionary ");
+    }
+
+    private void CheckForColourEffect()
+    {
+        if (ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects.ContainsKey(id))
+        {
+            colourEffectText = ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects[id];
+        }
+
+        else
+        {
+            colourEffectText = "pink";
+        }
     }
 
 }

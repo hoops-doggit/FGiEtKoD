@@ -278,6 +278,24 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0fa2be3871fd4b32ad124b4c9e5f52e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &19275951 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1378863973518244, guid: c8b6d738469e146bbb7fa0890f9c2430,
+    type: 2}
+  m_PrefabInternal: {fileID: 2082222478}
+--- !u!114 &19275955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 19275951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa695f0e1d4ad4a358629a9f92b6d808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  colourEffectText: pink
 --- !u!1001 &19666821
 Prefab:
   m_ObjectHideFlags: 0
@@ -8507,7 +8525,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213341431765736550, guid: c8ff2fd6a7aec4ce09253e04e5638165,
+      objectReference: {fileID: 213534034770320892, guid: c8ff2fd6a7aec4ce09253e04e5638165,
         type: 2}
     - target: {fileID: 114299520896324356, guid: 2b412f96e5de450469f5cfa1cb3c4263,
         type: 2}
@@ -8620,6 +8638,11 @@ Prefab:
     - target: {fileID: 1617179543453722, guid: 2b412f96e5de450469f5cfa1cb3c4263, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114299520896324356, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+        type: 2}
+      propertyPath: currentColour
+      value: grey
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b412f96e5de450469f5cfa1cb3c4263, type: 2}
@@ -11352,7 +11375,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213812572585048536, guid: 91a3a6b087498496cab780d78e8d5ebd, type: 2}
+  m_Sprite: {fileID: 213635791877584324, guid: 91a3a6b087498496cab780d78e8d5ebd, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14021,7 +14044,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213271996531680824, guid: 9115dd2c3b8f66f49bd1c35d09283f2f, type: 2}
+  m_Sprite: {fileID: 213563979767397322, guid: 9115dd2c3b8f66f49bd1c35d09283f2f, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -14823,6 +14846,7 @@ GameObject:
   - component: {fileID: 1011783398}
   - component: {fileID: 1011783399}
   - component: {fileID: 1011783400}
+  - component: {fileID: 1011783401}
   - component: {fileID: 1011783397}
   - component: {fileID: 1011783396}
   m_Layer: 0
@@ -14994,6 +15018,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbac634c08bd743968dedda8a8f984cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ce_SaveData: {fileID: 0}
+--- !u!114 &1011783401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1011783393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef2b15f755af243c9956a037ca9b46e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ce_Data1: []
+  ce_Data2: []
 --- !u!1001 &1012073381
 Prefab:
   m_ObjectHideFlags: 0
