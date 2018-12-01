@@ -1,12 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine; 
+using System;
+using UnityEngine;
 
-static class ColourEffect_Data {
+public class ColourEffect_Data //: IComparable<ColourEffect_SaveData>
+{
 
-    //public List<ColourEffect_SaveData> colourEffectList;
+    private float ID { get; set; }
+    public string ColourEffect { get; set; }
+    public GameObject TargetGameObject { get; set; }
 
-    public static Dictionary<float, ColourEffect_SaveData> savedColourObjects = new Dictionary<float, ColourEffect_SaveData>();
+    public ColourEffect_Data(float id, string colourEffect, GameObject targetGameObject){
+        this.ID = id;
+        this.ColourEffect = colourEffect;
+        this.TargetGameObject = targetGameObject;
+    }
 
 
 }

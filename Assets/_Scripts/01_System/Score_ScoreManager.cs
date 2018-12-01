@@ -11,6 +11,7 @@ public class Score_ScoreManager : MonoBehaviour {
     //this is used to put scores into after reading from Score_SavedData
     //this needs to get passed back into Score_savedScoreData before serializing;
     public List<HighScore> highscores = new List<HighScore>();
+   
     //this is used to store text boxes of score data on screen. It's not important;
     public List<GameObject> tempList = new List<GameObject>();
 
@@ -47,6 +48,7 @@ public class Score_ScoreManager : MonoBehaviour {
     }
 
     public void Save(){
+        //this is setting the values in saved score data before serialising into the playerpreffs
         savedScores.name1 = highscores[0].Name;
         savedScores.score1 = highscores[0].Score;
         savedScores.name2 = highscores[1].Name;

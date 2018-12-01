@@ -10,7 +10,7 @@ public class ColourEffect_Propogation : MonoBehaviour {
     public string colourEffectText;
     //private ColourEffect_SaveData sd;
     private GameObject go;
-    private ColourEffect_SaveData cm;
+    private ColourEffect_Data cm;
 
 
     //I check my data and create or remove if necessary
@@ -18,8 +18,8 @@ public class ColourEffect_Propogation : MonoBehaviour {
         go = gameObject;
         id = transform.position.x + transform.position.z;
 
-        if (ColourEffect_CEManager.savedColourObjects.ContainsKey(id)){
-            cm = ColourEffect_CEManager.savedColourObjects[id];
+        if (ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects.ContainsKey(id)){
+            cm = ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects[id];
             colourEffectText = cm.ColourEffect;
         }
 
@@ -35,8 +35,7 @@ public class ColourEffect_Propogation : MonoBehaviour {
 
     private void OnDestroy()
     {
-
-        ColourEffect_CEManager.savedColourObjects.Add(id, new ColourEffect_SaveData(id, colourEffectText, go));
+        ColourEffect_CEManager.instance.AddToColourEffectList(id, new ColourEffect_Data(id, colourEffectText, go));
     }
 
 }

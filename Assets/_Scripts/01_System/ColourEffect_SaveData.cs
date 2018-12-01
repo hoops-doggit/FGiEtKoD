@@ -1,20 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System;
-using UnityEngine;
+using UnityEngine; 
 
-public class ColourEffect_SaveData //: IComparable<ColourEffect_SaveData>
-{
+public class ColourEffect_SaveData {
 
-    private float ID { get; set; }
-    public string ColourEffect { get; set; }
-    private GameObject TargetGameObject { get; set; }
+    //public List<ColourEffect_SaveData> colourEffectList;
 
-    public ColourEffect_SaveData(float id, string colourEffect, GameObject targetGameObject){
-        this.ID = id;
-        this.ColourEffect = colourEffect;
-        this.TargetGameObject = targetGameObject;
-    }
+    public Dictionary<float, ColourEffect_Data> savedColourObjects = new Dictionary<float, ColourEffect_Data>();
+
+    //this is going to be where I store all of my colour effected objects
+    public List<ColourEffect_Data> ce_Data = new List<ColourEffect_Data>();
 
 
 }
