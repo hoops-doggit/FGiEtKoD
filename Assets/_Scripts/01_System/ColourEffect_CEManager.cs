@@ -10,11 +10,6 @@ public class ColourEffect_CEManager : MonoBehaviour  {
     public static ColourEffect_CEManager instance;
 
     public ColourEffect_SaveData ce_SaveData = ColourEffect_SaveData.instance;
-    private StringWriter writer = new StringWriter();
-
-
-
-    //public static List<ColourEffect_Data> ce_data = new List<ColourEffect_Data>();
 
     private void Awake()
     {
@@ -22,7 +17,7 @@ public class ColourEffect_CEManager : MonoBehaviour  {
         //PlayerPrefs.DeleteKey("ce_save1");
         //PlayerPrefs.DeleteKey("ce_save2");
 
-        ce_SaveData = ColourEffect_SaveData.instance;
+        ce_SaveData = GetComponent<ColourEffect_SaveData>();
 
         Load();
     }

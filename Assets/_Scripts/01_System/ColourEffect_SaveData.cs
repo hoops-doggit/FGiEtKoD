@@ -6,7 +6,6 @@ using System;
 public class ColourEffect_SaveData : MonoBehaviour//, ISerializationCallbackReceiver
 {
     public static ColourEffect_SaveData instance;
-    //public List<ColourEffect_SaveData> colourEffectList;
 
 
     public Dictionary<float, string> savedColourObjects = new Dictionary<float, string>();
