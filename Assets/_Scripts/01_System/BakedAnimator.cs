@@ -19,7 +19,7 @@ public class BakedAnimator : MonoBehaviour {
     public Sprite[] yellow;
 
     //used to tell objects what to do when gb collides with them
-    public string currentColour = "pink";
+    public string currentColour = "blue";
 
 
     SpriteRenderer spriteRenderer;

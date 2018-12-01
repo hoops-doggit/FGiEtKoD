@@ -7,7 +7,7 @@ public class ColourEffect_Propogation : MonoBehaviour {
 
     //this will be used between scenes so that 
     public float id;
-    public string colourEffectText;
+    public string colourEffectText = "pink";
     //private ColourEffect_SaveData sd;
     private GameObject go;
     private ColourEffect_Data cm;
@@ -18,24 +18,26 @@ public class ColourEffect_Propogation : MonoBehaviour {
         go = gameObject;
         id = transform.position.x + transform.position.z;
 
-        if (ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects.ContainsKey(id)){
-            cm = ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects[id];
-            colourEffectText = cm.ColourEffect;
-        }
+        //if (ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects.ContainsKey(id)){
+        //    cm = ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects[id];
+        //    colourEffectText = cm.ColourEffect;
+        //}
 
-        else{
-            colourEffectText = "pink";
-        }
+        //else{
+        //    colourEffectText = "pink";
+        //}
 	}
 
     private void OnCollisionEnter(Collision collision)
     {
         colourEffectText = collision.gameObject.GetComponent<BakedAnimator>().currentColour;
+        Debug.Log("player collided with " + go.name + " and set colour effect to " + colourEffectText);
     }
 
     private void OnDestroy()
     {
         ColourEffect_CEManager.instance.AddToColourEffectList(id, new ColourEffect_Data(id, colourEffectText, go));
+        Debug.Log("added " + id + " to the colourEffectManagerDictionary ");
     }
 
 }
