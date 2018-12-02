@@ -40,8 +40,6 @@ public class CharacterMovement : MonoBehaviour {
     public float endSceneSlowDown;
     public bool endScene;
 
-   
-
     [Header("lane positions")]
     public float LeftPos;
     public float CentrePos;
@@ -158,6 +156,10 @@ public class CharacterMovement : MonoBehaviour {
     {
         tomatoed = true;
         tomatoTime = 0;
+    }
+
+    public void HitKnife(){
+
     }
 
     public void HitClothesPile()
