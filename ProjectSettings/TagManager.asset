@@ -12,6 +12,7 @@ TagManager:
   - box
   - clothesPile
   - jelly
+  - bigKnife
   layers:
   - Default
   - TransparentFX
