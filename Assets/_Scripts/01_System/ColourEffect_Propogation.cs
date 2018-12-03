@@ -23,8 +23,15 @@ public class ColourEffect_Propogation : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        colourEffectText = other.gameObject.GetComponentInChildren<BakedAnimator>().currentColour;
-        Debug.Log("player collided with " + go.name + " and set colour effect to " + colourEffectText);
+        if (colourEffectText == "pink"){
+            colourEffectText = other.gameObject.GetComponentInChildren<BakedAnimator>().currentColour;
+            Debug.Log("player collided with " + go.name + " and set colour effect to " + colourEffectText);
+        }
+
+        else if (colourEffectText != "pink"){
+            colourEffectText = "pink";
+        }
+
     }
 
 
@@ -39,6 +46,7 @@ public class ColourEffect_Propogation : MonoBehaviour {
         if (ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects.ContainsKey(id))
         {
             colourEffectText = ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects[id];
+            gameObject.GetComponentInChildren<ColourEffect_DS_Static>().ChangeColour(colourEffectText);
         }
 
         else

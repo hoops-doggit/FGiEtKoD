@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114717836878819430}
   - component: {fileID: 95627792459259854}
   - component: {fileID: 114786184576064132}
+  - component: {fileID: 114200557668463316}
   m_Layer: 0
   m_Name: PepperShaker
   m_TagString: Untagged
@@ -58,6 +59,7 @@ GameObject:
   - component: {fileID: 4633533025614772}
   - component: {fileID: 65747079529025646}
   - component: {fileID: 114832674072719554}
+  - component: {fileID: 114301488447145654}
   m_Layer: 0
   m_Name: PepperShaker
   m_TagString: Untagged
@@ -98,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1378863973518244}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 122.1}
+  m_LocalPosition: {x: 5, y: 0, z: 122.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4116322714581652}
@@ -136,6 +138,35 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114200557668463316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1197164652207818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d984b57a5fcd4c31aef6bc2ed5f18ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pink: {fileID: 11400000, guid: ef2ead287b138284c9736bc14f623cdb, type: 2}
+  blue: {fileID: 11400000, guid: 52e86cc0da8204b0ebfff0fb0ebe24d7, type: 2}
+  green: {fileID: 11400000, guid: 4126a3cd936e14543a7fe775d70d76fb, type: 2}
+  orange: {fileID: 11400000, guid: 0a2bc5f52225242ef9fa2c53b5e84755, type: 2}
+  yellow: {fileID: 11400000, guid: 0bb18c7630c0f4723ab333aaa1ee9457, type: 2}
+--- !u!114 &114301488447145654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1378863973518244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa695f0e1d4ad4a358629a9f92b6d808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  colourEffectText: pink
 --- !u!114 &114678974635795880
 MonoBehaviour:
   m_ObjectHideFlags: 1

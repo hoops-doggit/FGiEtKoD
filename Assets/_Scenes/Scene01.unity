@@ -257,6 +257,11 @@ Prefab:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+        type: 2}
+      propertyPath: startRot
+      value: 0.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0
@@ -4840,6 +4845,11 @@ Prefab:
         type: 2}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+        type: 2}
+      propertyPath: startRot
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
@@ -12166,6 +12176,11 @@ Prefab:
         type: 2}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+        type: 2}
+      propertyPath: startRot
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
@@ -20719,6 +20734,11 @@ Prefab:
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+        type: 2}
+      propertyPath: startRot
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0
@@ -22987,6 +23007,11 @@ Prefab:
         type: 2}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+        type: 2}
+      propertyPath: startRot
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
@@ -33099,6 +33124,11 @@ Prefab:
         type: 2}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+        type: 2}
+      propertyPath: startRot
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}

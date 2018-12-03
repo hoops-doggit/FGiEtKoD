@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum JellyColour
+{
+    pink,
+    blue,
+    green,
+    orange,
+    yellow
+}
+
 public class Pickup_Jelly : MonoBehaviour {
 
-    public enum JellyColour
-    {
-        pink,
-        blue,
-        green,
-        orange,
-        yellow
-    }
+   
 
     public Sprite pink;
     public Sprite blue;

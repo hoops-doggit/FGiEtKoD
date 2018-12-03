@@ -12,6 +12,8 @@ public class CharacterCollisions : MonoBehaviour {
     public GameObject slice;
     public Camera came;
     public Transform slicePos;
+    private BakedAnimator ba;
+    private int colourBumps;
 
 
     //jelliesCollected gets incrememnted up inside a jellybean script. Not the topmost one.
@@ -22,13 +24,24 @@ public class CharacterCollisions : MonoBehaviour {
     {
         groundContact = false;
         clothes_top.SetActive(false);
+        ba = GetComponentInChildren<BakedAnimator>();
     }
     
 
     public void OnCollisionEnter(Collision col)
     {
-        //Debug.Log(col.gameObject.name);
-        //Debug.Log(col.gameObject.tag);
+
+        if(ba.currentColour != "pink" && (col.gameObject.tag != "ground" || col.gameObject.tag != "clothesPile")){
+            Debug.Log("colourBumps == " + colourBumps);
+            colourBumps++;
+            if (colourBumps > 3 ){
+                colourBumps = 0;
+                ba.currentColour = "pink";
+                ba.ChangeColor("pink");
+            }
+        }
+
+
         if (col.gameObject.tag == "ground")
         {
             groundContact = true;
@@ -72,4 +85,5 @@ public class CharacterCollisions : MonoBehaviour {
             groundCount--;
         }
     }
+
 }
