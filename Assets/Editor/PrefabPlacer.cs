@@ -18,7 +18,10 @@ public class PrefabPlacer : EditorWindow {
 
     public GameObject jellyPrefab;
     public GameObject jellyBeanParent;
-    public GameObject prefabToReplaceWith;
+    private GameObject saltShaker;
+    private GameObject pepperShaker;
+    private GameObject smallTomato;
+    private GameObject bigTomato;
 
     [MenuItem("Window/Prefab Placer")]
     public static void ShowWindow()
@@ -39,7 +42,10 @@ public class PrefabPlacer : EditorWindow {
 
         jellyPrefab = ppd.jellyPrefab;
         jellyBeanParent = ppd.jellyBeanParent;
-        prefabToReplaceWith = ppd.prefabToReplaceWith;
+        saltShaker = ppd.saltShaker;
+        pepperShaker = ppd.pepperShaker;
+        smallTomato = ppd.smallTomato;
+        bigTomato = ppd.bigTomato;
     }
 
     protected void OnDisable()
@@ -55,7 +61,7 @@ public class PrefabPlacer : EditorWindow {
 
         ppd.jellyPrefab = jellyPrefab;
         ppd.jellyBeanParent = jellyBeanParent;
-        ppd.prefabToReplaceWith = prefabToReplaceWith;
+        //ppd.prefabToReplaceWith = prefabToReplaceWith;
 
     }
 
@@ -130,12 +136,29 @@ public class PrefabPlacer : EditorWindow {
         GUILayout.Space(7);
         GUILayout.Label("Object Replacer", EditorStyles.boldLabel);
         GUILayout.Label("Object to replace with", EditorStyles.label);
-        prefabToReplaceWith = (GameObject)EditorGUILayout.ObjectField(prefabToReplaceWith, typeof(GameObject), true);
-        if (GUILayout.Button("Replace selected"))
+
+        GUILayout.BeginHorizontal();
+        if (GUILayout.Button("replace w' Salt"))
         {
-            JellyBean("easy");
+            ReplaceWith("salt");
         }
 
+        if (GUILayout.Button("replace w' Pepper"))
+        {
+            ReplaceWith("pepper");
+        }
+        if (GUILayout.Button("replace w' smallTom"))
+        {
+            ReplaceWith("smallTomato");
+        }
+
+        //if (GUILayout.Button("replace w' Big Tomato"))
+        //{
+        //    ReplaceWith("bigTomato");
+        //}
+
+
+        GUILayout.EndHorizontal();
 
     }
 
@@ -253,14 +276,55 @@ public class PrefabPlacer : EditorWindow {
         }        
     }
 
-    void ReplaceSelected()
+    void ReplaceWith(string thing)
     {
+        if (thing == "salt")
+        {
+            foreach (GameObject obj in Selection.gameObjects)
+            {
+                Transform tempTransform = obj.transform;
+                var replacement = PrefabUtility.InstantiatePrefab(saltShaker) as GameObject;
+                replacement.transform.position = tempTransform.position;
+            }
+        }
+
+        else if (thing == "pepper")
+        {
+            foreach (GameObject obj in Selection.gameObjects)
+            {
+                Transform tempTransform = obj.transform;
+                //DestroyImmediate(obj);
+                //obj = null;
+                var replacement = PrefabUtility.InstantiatePrefab(pepperShaker) as GameObject;
+                replacement.transform.position = tempTransform.position;
+            }
+        }
+
+        else if (thing == "smallTomato")
+        {
+            foreach (GameObject obj in Selection.gameObjects)
+            {
+                Transform tempTransform = obj.transform;
+                var replacement = PrefabUtility.InstantiatePrefab(smallTomato) as GameObject;
+                replacement.transform.position = tempTransform.position;
+                Destroy(obj);
+            }
+        }
+
+        else if (thing == "bigTomato")
+        {
+            foreach (GameObject obj in Selection.gameObjects)
+            {
+                Transform tempTransform = obj.transform;
+                var replacement = PrefabUtility.InstantiatePrefab(smallTomato) as GameObject;
+                replacement.transform.position = tempTransform.position;
+                Destroy(obj);
+            }
+        }
+
         foreach (GameObject obj in Selection.gameObjects)
         {
-            Transform tempTransform = obj.transform;
-            Destroy(obj);
-            var replacement = PrefabUtility.InstantiatePrefab(prefabToReplaceWith) as GameObject;
-            replacement.transform.position = tempTransform.position;
+            DestroyImmediate(obj);
         }
     }
 

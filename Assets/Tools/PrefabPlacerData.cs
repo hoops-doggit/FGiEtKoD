@@ -14,5 +14,8 @@ public class PrefabPlacerData : ScriptableObject {
 
     public GameObject jellyPrefab;
     public GameObject jellyBeanParent;
-    public GameObject prefabToReplaceWith;
+    public GameObject saltShaker;
+    public GameObject pepperShaker;
+    public GameObject smallTomato;
+    public GameObject bigTomato;
 }

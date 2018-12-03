@@ -21,3 +21,8 @@ MonoBehaviour:
   jellyPrefab: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856,
     type: 2}
   jellyBeanParent: {fileID: 0}
+  saltShaker: {fileID: 1768296653921600, guid: 561faa49d14bd9e47adb0d94397a8914, type: 2}
+  pepperShaker: {fileID: 1378863973518244, guid: c8b6d738469e146bbb7fa0890f9c2430,
+    type: 2}
+  smallTomato: {fileID: 0}
+  bigTomato: {fileID: 1929510020601322, guid: f9dfa31b06e65e049b3a2b250ff5a2e0, type: 2}
