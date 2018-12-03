@@ -18,6 +18,7 @@ public class PrefabPlacer : EditorWindow {
 
     public GameObject jellyPrefab;
     public GameObject jellyBeanParent;
+    public GameObject prefabToReplaceWith;
 
     [MenuItem("Window/Prefab Placer")]
     public static void ShowWindow()
@@ -38,6 +39,7 @@ public class PrefabPlacer : EditorWindow {
 
         jellyPrefab = ppd.jellyPrefab;
         jellyBeanParent = ppd.jellyBeanParent;
+        prefabToReplaceWith = ppd.prefabToReplaceWith;
     }
 
     protected void OnDisable()
@@ -53,6 +55,7 @@ public class PrefabPlacer : EditorWindow {
 
         ppd.jellyPrefab = jellyPrefab;
         ppd.jellyBeanParent = jellyBeanParent;
+        ppd.prefabToReplaceWith = prefabToReplaceWith;
 
     }
 
@@ -92,7 +95,6 @@ public class PrefabPlacer : EditorWindow {
         jellyBeanParent = (GameObject)EditorGUILayout.ObjectField(jellyBeanParent, typeof(GameObject), true);
         EditorGUILayout.EndHorizontal();
 
-
         GUILayout.BeginHorizontal();
         if (GUILayout.Button("Easy"))
         {
@@ -124,6 +126,17 @@ public class PrefabPlacer : EditorWindow {
         pepperJellyYPos = EditorGUILayout.FloatField("Pepper Jelly Y", pepperJellyYPos);
         tomatoRightPos = EditorGUILayout.FloatField("Tomato R", tomatoRightPos);
         bigTomatoRightPos = EditorGUILayout.FloatField("Big Tomato R", bigTomatoRightPos);
+
+        GUILayout.Space(7);
+        GUILayout.Label("Object Replacer", EditorStyles.boldLabel);
+        GUILayout.Label("Object to replace with", EditorStyles.label);
+        prefabToReplaceWith = (GameObject)EditorGUILayout.ObjectField(prefabToReplaceWith, typeof(GameObject), true);
+        if (GUILayout.Button("Replace selected"))
+        {
+            JellyBean("easy");
+        }
+
+
     }
 
     void Centre()
@@ -237,9 +250,18 @@ public class PrefabPlacer : EditorWindow {
                     jellyClone.transform.SetParent(jellyBeanParent.transform);
                 }
             }
-        }
+        }        
+    }
 
-        
+    void ReplaceSelected()
+    {
+        foreach (GameObject obj in Selection.gameObjects)
+        {
+            Transform tempTransform = obj.transform;
+            Destroy(obj);
+            var replacement = PrefabUtility.InstantiatePrefab(prefabToReplaceWith) as GameObject;
+            replacement.transform.position = tempTransform.position;
+        }
     }
 
 }
