@@ -9,9 +9,15 @@ public class Knife_Behaviour : MonoBehaviour {
     public float knifePosition;
     public float upRot;
     public float downRot;
+    public float startRot;
+    private bool wait;
+    private int waitTime;
+    private int waitMax;
 
     private float _currentRot;
     public bool _goingDown;
+
+    
 
     public void KnifeDown()
     {
@@ -31,15 +37,39 @@ public class Knife_Behaviour : MonoBehaviour {
         if (knifePosition > 1)
         {
             knifePosition = 0;
-            _goingDown = true;
+            wait = true;
+            
         }
+    }
+
+    public void StartColliderToggle()
+    {
+        StartCoroutine("ToggleCollider");
+    }
+
+    IEnumerator ToggleCollider()
+    {
+        var thing = GetComponentInChildren<BoxCollider>();
+        thing.enabled = false;
+        yield return new WaitForSeconds(1f);
+        thing.enabled = true;
     }
 
 
     // Use this for initialization
     void Start () {
-        transform.eulerAngles = new Vector3(0, 0, upRot);
+        knifePosition = startRot;
+
+        //transform.eulerAngles = new Vector3(0, 0, startRot);
+
+        if (transform.position.x > 1)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+            downRot = downRot * -1;
+        }
         _goingDown = true;
+        waitTime = 0;
+        waitMax = 16;
 		
 	}
 	
@@ -47,14 +77,25 @@ public class Knife_Behaviour : MonoBehaviour {
 	void FixedUpdate () {
 
 
-        if (_goingDown)
+        if (_goingDown && !wait)
         {
             KnifeDown();
         }
 
-        else if (!_goingDown)
+        else if (!_goingDown && !wait)
         {
             KnifeUp();
+        }
+
+        if (wait)
+        {
+            waitTime++;
+            if (waitTime >= waitMax)
+            {
+                waitTime = 0;
+                _goingDown = true;
+                wait = false;
+            }
         }
 
     }

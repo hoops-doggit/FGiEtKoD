@@ -10,6 +10,8 @@ public class CharacterCollisions : MonoBehaviour {
     public GameObject clothes_top;
     public GameObject clothes_bottom;
     public GameObject slice;
+    public Camera came;
+    public Transform slicePos;
 
 
     //jelliesCollected gets incrememnted up inside a jellybean script. Not the topmost one.
@@ -48,13 +50,15 @@ public class CharacterCollisions : MonoBehaviour {
 
         if (col.gameObject.tag == "bigKnife")
         {
-            col.gameObject.GetComponent<BoxCollider>().enabled = false;
+            col.gameObject.GetComponentInParent<Knife_Behaviour>().StartColliderToggle();
             if (clothes_top.activeSelf == true) {
                 clothes_top.SetActive(false);
             }
 
             cm.Pushback();
-            GameObject sliceClone = Instantiate(slice, col.transform.position, Quaternion.identity);
+            GameObject sliceClone = Instantiate(slice, gameObject.transform.position, Quaternion.identity);
+            sliceClone.transform.SetParent(null);
+            sliceClone.GetComponent<FX_Slice2Parent>().MoveSlice(slicePos, came);
 
         }
 

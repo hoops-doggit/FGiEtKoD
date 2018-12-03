@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DoodleStudio95;
 
-public class FX_Slice : MonoBehaviour {
-
+public class FX_Slice2 : MonoBehaviour {
 
     private DoodleAnimator da;
     private GameObject go;
@@ -13,14 +12,16 @@ public class FX_Slice : MonoBehaviour {
     {
         da = GetComponent<DoodleAnimator>();
         go = gameObject;
+        go.transform.eulerAngles = new Vector3(0, 0, Random.Range(-10f, 10));
         StartCoroutine("PlayAndDeleteGameObject");
+
+
     }
 
-    IEnumerator PlayAndDeleteGameObject(){
-
-
-        //yield return da.PlayAndPauseAt(0, -1);
-        yield return new WaitForSeconds(0.2f);
-        Destroy(go);
+    IEnumerator PlayAndDeleteGameObject()
+    {
+        yield return da.PlayAndPauseAt(0, -1);
+        yield return new WaitForSeconds(0.1f);
+        Destroy(go.transform.parent.gameObject);
     }
 }

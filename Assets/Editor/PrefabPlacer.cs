@@ -10,6 +10,7 @@ public class PrefabPlacer : EditorWindow {
     float pepperJellyYPos = 2.6f;
     float tomatoRightPos = 5.5f;
     float bigTomatoRightPos = 0;
+    float bigKnifePos = 21f;
 
     float easyJellyPos = 8.9f;
     float mediumJullyPos = 5f;
@@ -157,6 +158,11 @@ public class PrefabPlacer : EditorWindow {
             if (obj.GetComponent<PepperShaker>())
             {
                 obj.transform.position = new Vector3(pepperRightPos * multiplier, obj.transform.position.y, obj.transform.position.z);
+            }
+
+            if (obj.GetComponent<Knife_Behaviour>())
+            {
+                obj.transform.position = new Vector3(bigKnifePos * multiplier, obj.transform.position.y, obj.transform.position.z);
             }
 
             else if (obj.GetComponent<TomatoSplat>() || obj.GetComponentInChildren<TomatoSplat>())
