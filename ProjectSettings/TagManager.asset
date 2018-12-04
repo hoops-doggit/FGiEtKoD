@@ -13,6 +13,7 @@ TagManager:
   - clothesPile
   - jelly
   - bigKnife
+  - butterKnife
   layers:
   - Default
   - TransparentFX

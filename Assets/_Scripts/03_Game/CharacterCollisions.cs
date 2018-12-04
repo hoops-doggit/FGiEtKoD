@@ -61,20 +61,25 @@ public class CharacterCollisions : MonoBehaviour {
             cm.HitClothesPile();
         }
 
+        if (col.gameObject.tag == "butterKnife")
+        {
+            cm.Pushback();
+            Debug.Log("hitButterKnife");
+        }
+
         if (col.gameObject.tag == "bigKnife")
+
         {
             col.gameObject.GetComponentInParent<Knife_Behaviour>().StartColliderToggle();
-            if (clothes_top.activeSelf == true) {
+            if (clothes_top.activeSelf == true)
+            {
                 clothes_top.SetActive(false);
             }
-
             cm.Pushback();
             GameObject sliceClone = Instantiate(slice, gameObject.transform.position, Quaternion.identity);
             sliceClone.transform.SetParent(null);
             sliceClone.GetComponent<FX_Slice2Parent>().MoveSlice(slicePos, came);
-
         }
-
     }
 
     public void OnCollisionExit(Collision col)
