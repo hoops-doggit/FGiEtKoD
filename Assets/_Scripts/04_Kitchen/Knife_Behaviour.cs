@@ -17,6 +17,8 @@ public class Knife_Behaviour : MonoBehaviour {
     private float _currentRot;
     public bool _goingDown;
 
+    public float animationOffset;
+
     
 
     public void KnifeDown()
@@ -60,6 +62,14 @@ public class Knife_Behaviour : MonoBehaviour {
     void Start () {
         knifePosition = startRot;
 
+        Animator anim = GetComponentInChildren<Animator>();
+        //AnimationState animState = GetComponentInChildren<AnimationState>();
+
+        //AnimationClip
+        AnimationClip animanim = anim.GetComponent<Animation>();
+        //anim["Knife_Big"].time =
+        animanim["Knife_Big"].time = animationOffset / animanim["Knife_Big"].length;
+
         //transform.eulerAngles = new Vector3(0, 0, startRot);
 
         if (transform.position.x > 1)
@@ -73,30 +83,30 @@ public class Knife_Behaviour : MonoBehaviour {
 		
 	}
 	
-	// Update is called once per frame
-	void FixedUpdate () {
+	//// Update is called once per frame
+	//void FixedUpdate () {
 
 
-        if (_goingDown && !wait)
-        {
-            KnifeDown();
-        }
+ //       if (_goingDown && !wait)
+ //       {
+ //           KnifeDown();
+ //       }
 
-        else if (!_goingDown && !wait)
-        {
-            KnifeUp();
-        }
+ //       else if (!_goingDown && !wait)
+ //       {
+ //           KnifeUp();
+ //       }
 
-        if (wait)
-        {
-            waitTime++;
-            if (waitTime >= waitMax)
-            {
-                waitTime = 0;
-                _goingDown = true;
-                wait = false;
-            }
-        }
+ //       if (wait)
+ //       {
+ //           waitTime++;
+ //           if (waitTime >= waitMax)
+ //           {
+ //               waitTime = 0;
+ //               _goingDown = true;
+ //               wait = false;
+ //           }
+ //       }
 
-    }
+ //   }
 }

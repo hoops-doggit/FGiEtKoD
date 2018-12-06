@@ -252,16 +252,6 @@ Prefab:
       propertyPath: m_Name
       value: Big Falling Knife (12)
       objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: startRot
-      value: 0.8
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0
@@ -957,7 +947,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4017204034474076, guid: cda20c8476f14a24295c6a99a564448e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.91
+      value: -14.93
       objectReference: {fileID: 0}
     - target: {fileID: 4017204034474076, guid: cda20c8476f14a24295c6a99a564448e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2229,8 +2219,7 @@ Prefab:
       propertyPath: downRot
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: 212024754746601192, guid: 0415b4db12b42e44680d7a1c8d3dca3a,
-        type: 2}
+    - target: {fileID: 0}
       propertyPath: m_FlipX
       value: 1
       objectReference: {fileID: 0}
@@ -4946,16 +4935,6 @@ Prefab:
       propertyPath: m_Name
       value: Big Falling Knife (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: startRot
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0
@@ -5773,11 +5752,6 @@ Prefab:
     - target: {fileID: 1234651279780588, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
       propertyPath: m_Name
       value: Big Falling Knife (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
@@ -12366,16 +12340,6 @@ Prefab:
     - target: {fileID: 1234651279780588, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
       propertyPath: m_Name
       value: Big Falling Knife (13)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: startRot
-      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
@@ -19569,8 +19533,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
         type: 2}
-      propertyPath: startRot
-      value: 0.4
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+        type: 2}
+      propertyPath: animationOffset
+      value: 0.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
@@ -21251,16 +21220,6 @@ Prefab:
       propertyPath: m_Name
       value: Big Falling Knife (8)
       objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: startRot
-      value: 0.2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0
@@ -21773,6 +21732,53 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0fa2be3871fd4b32ad124b4c9e5f52e, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1001 &1362639776
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -21
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1631.8999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
+      propertyPath: m_RootOrder
+      value: 99
+      objectReference: {fileID: 0}
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+        type: 2}
+      propertyPath: animationOffset
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1373762634 stripped
 Transform:
@@ -22552,7 +22558,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4633533025614772, guid: c8b6d738469e146bbb7fa0890f9c2430, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4633533025614772, guid: c8b6d738469e146bbb7fa0890f9c2430, type: 2}
       propertyPath: m_LocalPosition.z
@@ -22666,57 +22672,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1140265085817354, guid: 33ae4fa58039cae4cac81d3ed1d29d24,
     type: 2}
   m_PrefabInternal: {fileID: 1992220848}
---- !u!1001 &1476404053
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -21
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 5.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 1631.8999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-      propertyPath: m_RootOrder
-      value: 99
-      objectReference: {fileID: 0}
-    - target: {fileID: 1234651279780588, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-      propertyPath: m_Name
-      value: Big Falling Knife (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: startRot
-      value: 0.8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1478416879
 GameObject:
   m_ObjectHideFlags: 0
@@ -23504,16 +23459,6 @@ Prefab:
       propertyPath: m_Name
       value: Big Falling Knife (10)
       objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: startRot
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0
@@ -23945,10 +23890,10 @@ Prefab:
       propertyPath: m_Name
       value: Big Falling Knife (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
         type: 2}
-      propertyPath: m_FlipX
-      value: 1
+      propertyPath: animationOffset
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
@@ -28184,6 +28129,7 @@ MonoBehaviour:
   downRot: 90
   startRot: 0
   _goingDown: 1
+  animationOffset: 0
 --- !u!4 &1762417018
 Transform:
   m_ObjectHideFlags: 0
@@ -33931,16 +33877,6 @@ Prefab:
     - target: {fileID: 1234651279780588, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
       propertyPath: m_Name
       value: Big Falling Knife (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: startRot
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
