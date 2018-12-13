@@ -18,6 +18,7 @@ public class Knife_Behaviour : MonoBehaviour {
     public bool _goingDown;
 
     public float animationOffset;
+    public float animationSpeed;
 
     
 
@@ -60,15 +61,20 @@ public class Knife_Behaviour : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        knifePosition = startRot;
+        //knifePosition = startRot;
 
         Animator anim = GetComponentInChildren<Animator>();
-        //AnimationState animState = GetComponentInChildren<AnimationState>();
+
+        anim.speed = 0f;
+
+        anim.Play("Knife_Big", 0, animationOffset);
+        anim.speed = animationSpeed;
+
 
         //AnimationClip
-        AnimationClip animanim = anim.GetComponent<Animation>();
+
         //anim["Knife_Big"].time =
-        animanim["Knife_Big"].time = animationOffset / animanim["Knife_Big"].length;
+        //animanim["Knife_Big"].time = animationOffset / animanim["Knife_Big"].length;
 
         //transform.eulerAngles = new Vector3(0, 0, startRot);
 
@@ -82,31 +88,38 @@ public class Knife_Behaviour : MonoBehaviour {
         waitMax = 16;
 		
 	}
-	
-	//// Update is called once per frame
-	//void FixedUpdate () {
+
+    private void Update()
+    {
+        Animator anim = GetComponentInChildren<Animator>();
+
+        anim.speed = animationSpeed;
+    }
+
+    //// Update is called once per frame
+    //void FixedUpdate () {
 
 
- //       if (_goingDown && !wait)
- //       {
- //           KnifeDown();
- //       }
+    //       if (_goingDown && !wait)
+    //       {
+    //           KnifeDown();
+    //       }
 
- //       else if (!_goingDown && !wait)
- //       {
- //           KnifeUp();
- //       }
+    //       else if (!_goingDown && !wait)
+    //       {
+    //           KnifeUp();
+    //       }
 
- //       if (wait)
- //       {
- //           waitTime++;
- //           if (waitTime >= waitMax)
- //           {
- //               waitTime = 0;
- //               _goingDown = true;
- //               wait = false;
- //           }
- //       }
+    //       if (wait)
+    //       {
+    //           waitTime++;
+    //           if (waitTime >= waitMax)
+    //           {
+    //               waitTime = 0;
+    //               _goingDown = true;
+    //               wait = false;
+    //           }
+    //       }
 
- //   }
+    //   }
 }
