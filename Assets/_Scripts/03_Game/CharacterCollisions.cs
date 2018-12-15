@@ -31,16 +31,6 @@ public class CharacterCollisions : MonoBehaviour {
     public void OnCollisionEnter(Collision col)
     {
 
-        if(ba.currentColour != "pink" && (col.gameObject.tag != "ground" || col.gameObject.tag != "clothesPile")){
-            Debug.Log("colourBumps == " + colourBumps);
-            colourBumps++;
-            if (colourBumps > 3 ){
-                colourBumps = 0;
-                ba.currentColour = "pink";
-                ba.ChangeColor("pink");
-            }
-        }
-
 
         if (col.gameObject.tag == "ground")
         {
@@ -88,6 +78,23 @@ public class CharacterCollisions : MonoBehaviour {
         {
             groundContact = false;
             groundCount--;
+        }
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(ba.currentColour);
+        Debug.Log("colour bumps = " + colourBumps);
+        if (ba.currentColour != "pink" && other.gameObject.tag == "pepper")
+        {
+            //Debug.Log("colourBumps == " + colourBumps);
+            colourBumps++;
+            if (colourBumps > 3)
+            {
+                colourBumps = 0;
+                ba.currentColour = "pink";
+                ba.ChangeColor("pink");
+            }
         }
     }
 

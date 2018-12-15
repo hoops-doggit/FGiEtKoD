@@ -80,8 +80,12 @@ public class Knife_Behaviour : MonoBehaviour {
 
         if (transform.position.x > 1)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.eulerAngles = new Vector3(0, 180, 0);
+            transform.localScale = new Vector3(1, 1, -1);
+            SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+            sr.flipX = true;
             downRot = downRot * -1;
+
         }
         _goingDown = true;
         waitTime = 0;

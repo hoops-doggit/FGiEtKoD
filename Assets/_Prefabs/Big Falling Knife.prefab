@@ -152,6 +152,7 @@ MonoBehaviour:
   startRot: 0.8
   _goingDown: 1
   animationOffset: 0
+  animationSpeed: 1
 --- !u!114 &114808532752679382
 MonoBehaviour:
   m_ObjectHideFlags: 1
