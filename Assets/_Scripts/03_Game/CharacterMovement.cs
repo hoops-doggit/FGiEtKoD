@@ -283,12 +283,18 @@ public class CharacterMovement : MonoBehaviour {
         }
     }
 
+    public void UpdateGroundStats()
+    {
+        _groundContact = character.GetComponent<CharacterCollisions>().groundContact;
+        _groundCount = character.GetComponent<CharacterCollisions>().groundCount;
+    }
+
 
     // Update is called once per frame
     void FixedUpdate () {
 
-        _groundContact = character.GetComponent<CharacterCollisions>().groundContact;
-		_groundCount = character.GetComponent<CharacterCollisions>().groundCount;
+  //      _groundContact = character.GetComponent<CharacterCollisions>().groundContact;
+		//_groundCount = character.GetComponent<CharacterCollisions>().groundCount;
 
 		if (_groundCount <= 0) {
 			trueGroundContact = false;

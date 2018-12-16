@@ -36,6 +36,7 @@ public class CharacterCollisions : MonoBehaviour {
         {
             groundContact = true;
             groundCount++;
+            cm.UpdateGroundStats();
 
         }
 
@@ -78,6 +79,7 @@ public class CharacterCollisions : MonoBehaviour {
         {
             groundContact = false;
             groundCount--;
+            cm.UpdateGroundStats();
         }
     }
 
