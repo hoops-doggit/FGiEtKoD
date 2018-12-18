@@ -13,13 +13,13 @@ public class ColourEffect_Propogation : MonoBehaviour {
     private ColourEffect_Data cm;
 
 
-    //I check my data and create or remove if necessary
-	void OnEnable () {
+    private void Start()
+    {
         go = gameObject;
         id = transform.position.x + transform.position.z;
-
-        Invoke("CheckForColourEffect", id/100);
+        CheckForColourEffect();
     }
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -50,6 +50,8 @@ public class ColourEffect_Propogation : MonoBehaviour {
         {
             colourEffectText = "pink";
         }
+
+        Debug.Log("Loaded color for " + id);
     }
 
 }
