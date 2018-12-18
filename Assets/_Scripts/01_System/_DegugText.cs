@@ -9,6 +9,7 @@ public class _DegugText : MonoBehaviour {
 
     public Text groundContact;
     public Text trueGroundContact;
+    public Text fast;
 
 
     private void Start()
@@ -26,6 +27,15 @@ public class _DegugText : MonoBehaviour {
         else
         {
             groundContact.text = "GroundContact: no";
+        }
+
+        if (gbgo.fast)
+        {
+            fast.text = "fast = true";
+        }
+        else
+        {
+            fast.text = "fast = false";
         }
 
         if(gbgo.trueGroundContact == true)

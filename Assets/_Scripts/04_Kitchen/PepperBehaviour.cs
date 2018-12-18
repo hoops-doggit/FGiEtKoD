@@ -7,10 +7,8 @@ public class PepperBehaviour : MonoBehaviour {
 	public GameObject parent;
 
 	public void LowerSpeed(){
-		parent.GetComponent<PepperShaker> ().speed = parent.GetComponent<PepperShaker> ().speed / 2;
+		parent.GetComponent<PepperShaker> ().speed = parent.GetComponent<PepperShaker>().speed / 2;
 	}
-
-
 
 	public void FinishedAnimation(){
 		Destroy (parent);

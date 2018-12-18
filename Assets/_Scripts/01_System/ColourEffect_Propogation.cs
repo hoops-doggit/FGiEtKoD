@@ -31,14 +31,11 @@ public class ColourEffect_Propogation : MonoBehaviour {
         else if (colourEffectText != "pink"){
             colourEffectText = "pink";
         }
-
     }
-
 
     private void OnDestroy()
     {
         ColourEffect_CEManager.instance.AddToColourEffectList(id,  colourEffectText);
-        Debug.Log("added " + id + " to the colourEffectManagerDictionary ");
     }
 
     private void CheckForColourEffect()

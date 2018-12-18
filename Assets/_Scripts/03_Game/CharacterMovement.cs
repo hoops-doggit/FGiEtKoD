@@ -30,11 +30,14 @@ public class CharacterMovement : MonoBehaviour {
 	public float moveSpeed;
     public float runSpeed;
 	public float slowSpeed;
+    public float fastSpeed;
     public float doorSlowSpeed;
 	public float accSpeed;
     public float accInitial;
     public bool slowed;
 	public float slowedDuration;
+    public bool fast;
+    public float fastDuration;
 
     public float endSceneMoveSpeed;
     public float endSceneSlowDown;
@@ -144,6 +147,21 @@ public class CharacterMovement : MonoBehaviour {
 		StartCoroutine ("GotHitCoroutine");
 	}
 
+    public void GotHitColoured(string colour)
+    {
+        if (colour == "pink")
+        {
+            StopCoroutine("GotHitCorourine");
+            StartCoroutine("GotHitCoroutine");
+        }
+
+        else if (colour != "pink")
+        {
+            StopCoroutine("GotHitColouredCoroutine");
+            StartCoroutine("GotHitColouredCoroutine");
+        }
+    }
+
     public void HitDoor()
     {
         StartCoroutine("HitDoorCoroutine");
@@ -206,12 +224,35 @@ public class CharacterMovement : MonoBehaviour {
     }
 
     public IEnumerator GotHitCoroutine(){
-		slowed = true;
-		moveSpeed = slowSpeed;
-		yield return new WaitForSeconds (slowedDuration);
-		slowed = false;
-		StopCoroutine( "GotHitCoroutine" );
+        if (!fast)
+        {
+            slowed = true;
+            moveSpeed = slowSpeed;
+        }
+
+        if (fast)
+        {
+            slowed = true;
+            moveSpeed = slowSpeed * 2;
+        }
+        yield return new WaitForSeconds(slowedDuration);
+        Debug.Log("I got hit");
+        slowed = false;
+        StopCoroutine("GotHitCoroutine");
+
 	}
+
+    public IEnumerator GotHitColouredCoroutine()
+    {
+        fast = true;
+        runSpeed = fastSpeed; 
+        yield return new WaitForSeconds(fastDuration);
+        Debug.Log("I got hit");
+        fast = false;
+        StopCoroutine("GotHitColouredCoroutine");
+    }
+
+
 
     public IEnumerator HitDoorCoroutine()
     {
@@ -353,16 +394,28 @@ public class CharacterMovement : MonoBehaviour {
 				moveSpeed = accInitial;
 			}
 
+            if (!fast)
+            {
+                moveSpeed *= accSpeed;
+            }
 
-			moveSpeed = moveSpeed * accSpeed;
+            if (fast)
+            {
+                moveSpeed *= (accSpeed * 2);
+            }
 		}
 
 
-        if (moveSpeed > runSpeed && !endScene) {
+        if (moveSpeed > runSpeed && !endScene && !fast) {
 			moveSpeed = runSpeed;
 		}
 
-        if(endScene){
+        if (moveSpeed > runSpeed && fast)
+        {
+            moveSpeed = runSpeed;
+        }
+
+        if (endScene){
             if(moveSpeed > endSceneMoveSpeed){
                 moveSpeed = moveSpeed * endSceneSlowDown;
             }

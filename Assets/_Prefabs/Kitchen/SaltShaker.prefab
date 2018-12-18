@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 4326298663029424}
   - component: {fileID: 65649377539297492}
   - component: {fileID: 114673384087240618}
+  - component: {fileID: 114460903795064092}
   m_Layer: 0
   m_Name: SaltShaker
   m_TagString: pepper
@@ -136,6 +137,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114460903795064092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768296653921600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa695f0e1d4ad4a358629a9f92b6d808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  colourEffectText: pink
 --- !u!114 &114673384087240618
 MonoBehaviour:
   m_ObjectHideFlags: 1

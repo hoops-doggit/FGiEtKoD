@@ -14,17 +14,22 @@ public class PepperShaker : MonoBehaviour {
 	public GameObject pepperPowder;
 	private GameObject _pepperPowderClone;
 	public Vector3 powderPos;
+    private ColourEffect_Propogation _cep;
+    private Collider col;
 	// Use this for initialization
 
 	private void Start(){
 		anim = pepperShaker.GetComponent<Animator> ();
 		ppAnim = pepperPowder.GetComponent<DoodleAnimator> ();
+        _cep = GetComponent<ColourEffect_Propogation>();
+        col = GetComponent<BoxCollider>();
 	}
 
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.gameObject.tag == "player") {
+        Destroy(col);
+		if (other.gameObject.tag == "player" && _cep.colourEffectText == "pink") {
 			pepperPowder.SetActive (true);
 			DoPowder();
 			gotHit = true;
@@ -34,6 +39,17 @@ public class PepperShaker : MonoBehaviour {
 			other.gameObject.GetComponentInParent<CharacterMovement> ().GotHit();
 			//Debug.Log ("pepper hit player");
 		}
+
+        if (other.gameObject.tag == "player" && _cep.colourEffectText != "pink")
+        {
+            pepperPowder.SetActive(true);
+            DoPowder();
+            gotHit = true;
+            animating = true;
+            //anim.Play ("PepperJump");
+            anim.SetTrigger("jump");
+            other.gameObject.GetComponentInParent<CharacterMovement>().GotHitColoured(_cep.colourEffectText);
+        }
 
 	}
 
