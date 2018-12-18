@@ -15,6 +15,7 @@ public class CharacterMovement : MonoBehaviour {
     [Header("Gravity")]
     public float grav;
     public float oldGrav;
+    public float fastGrav;
     public float timeBefore2XGrav;
     public float gravMulitplier;
     public bool gravCoRoutineOn;
@@ -28,6 +29,7 @@ public class CharacterMovement : MonoBehaviour {
     public float pushedBackAcc;
     private float pushedBackInitial;
 	public float moveSpeed;
+    public float maxSpeed;
     public float runSpeed;
 	public float slowSpeed;
     public float fastSpeed;
@@ -96,6 +98,7 @@ public class CharacterMovement : MonoBehaviour {
         clothesParticle03.Pause();
         oldGrav = grav;
         clothesLight.enabled = true;
+        maxSpeed = runSpeed;
         //charSpriteOBJ.GetComponent<ShadowCastingSprite>().enabled = false;
         //charSpriteOBJ.GetComponent<SpriteRenderer>().material = standardMat;
 
@@ -151,13 +154,13 @@ public class CharacterMovement : MonoBehaviour {
     {
         if (colour == "pink")
         {
-            StopCoroutine("GotHitCorourine");
+            //StopCoroutine("GotHitCorourine");
             StartCoroutine("GotHitCoroutine");
         }
 
         else if (colour != "pink")
         {
-            StopCoroutine("GotHitColouredCoroutine");
+            //StopCoroutine("GotHitColouredCoroutine");
             StartCoroutine("GotHitColouredCoroutine");
         }
     }
@@ -219,7 +222,7 @@ public class CharacterMovement : MonoBehaviour {
             jumpScaler.SetTrigger("Jump");
             runScaler.ResetTrigger("Run");
             runScaler.SetTrigger("Jump");
-            timeBefore2XGrav = timeBefore2XGrav * 3.5f;
+          
         }       
     }
 
@@ -245,11 +248,21 @@ public class CharacterMovement : MonoBehaviour {
     public IEnumerator GotHitColouredCoroutine()
     {
         fast = true;
-        runSpeed = fastSpeed; 
+        maxSpeed = fastSpeed;
+        accSpeed *= 1.2f;
+        hsp *= 1.2f;
+        grav = fastGrav;
+        jumpspeed *= 1.05f;
         yield return new WaitForSeconds(fastDuration);
         Debug.Log("I got hit");
         fast = false;
-        StopCoroutine("GotHitColouredCoroutine");
+        maxSpeed = runSpeed;
+        accSpeed /= 1.2f;
+        hsp /= 1.2f;
+        grav = oldGrav;
+        jumpspeed /= 1.05f;
+
+        //StopCoroutine("GotHitColouredCoroutine");
     }
 
 
@@ -344,7 +357,10 @@ public class CharacterMovement : MonoBehaviour {
 		else if (_groundCount > 0) {
 			trueGroundContact = true;
             jumpScaler.speed = 1;//this just makes character rigid
-            grav = oldGrav;
+            if (!fast)
+            {
+                grav = oldGrav;
+            }
 		}
 
         #region normal vspeed and gravity behaviour
@@ -388,7 +404,7 @@ public class CharacterMovement : MonoBehaviour {
         character.transform.position = characterPos;
 
 		//speed up
-        if (moveSpeed != runSpeed && !slowed && !pushedBack && !endScene) {
+        if (moveSpeed != maxSpeed && !slowed && !pushedBack && !endScene) {
 			
 			if (moveSpeed <= 0) {
 				moveSpeed = accInitial;
@@ -406,13 +422,13 @@ public class CharacterMovement : MonoBehaviour {
 		}
 
 
-        if (moveSpeed > runSpeed && !endScene && !fast) {
-			moveSpeed = runSpeed;
+        if (moveSpeed > maxSpeed && !endScene && !fast) {
+            moveSpeed = maxSpeed;
 		}
 
-        if (moveSpeed > runSpeed && fast)
+        if (moveSpeed > maxSpeed && fast)
         {
-            moveSpeed = runSpeed;
+            moveSpeed = maxSpeed;
         }
 
         if (endScene){

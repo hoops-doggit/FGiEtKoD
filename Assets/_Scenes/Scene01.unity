@@ -9753,7 +9753,17 @@ Prefab:
     - target: {fileID: 114239037787657632, guid: 2b412f96e5de450469f5cfa1cb3c4263,
         type: 2}
       propertyPath: fastSpeed
-      value: 1.2
+      value: 1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 114239037787657632, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+        type: 2}
+      propertyPath: fastDuration
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114239037787657632, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+        type: 2}
+      propertyPath: fastGrav
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b412f96e5de450469f5cfa1cb3c4263, type: 2}
