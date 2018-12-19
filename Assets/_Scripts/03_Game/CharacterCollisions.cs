@@ -91,7 +91,7 @@ public class CharacterCollisions : MonoBehaviour {
         {
             //Debug.Log("colourBumps == " + colourBumps);
             colourBumps++;
-            if (colourBumps > 3)
+            if (colourBumps > 2)
             {
                 colourBumps = 0;
                 ba.currentColour = "pink";

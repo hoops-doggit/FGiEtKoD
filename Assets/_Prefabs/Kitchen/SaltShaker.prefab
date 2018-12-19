@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114689707434385408}
   - component: {fileID: 95033717463046594}
   - component: {fileID: 114971904601104422}
+  - component: {fileID: 114959064894712652}
   m_Layer: 0
   m_Name: SaltShaker
   m_TagString: Untagged
@@ -232,6 +233,22 @@ MonoBehaviour:
     wrapMode: 1
     startFrame: 0
     useUnscaledTime: 0
+--- !u!114 &114959064894712652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1603578989295094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d984b57a5fcd4c31aef6bc2ed5f18ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pink: {fileID: 11400000, guid: 77e9ca4dadfb5204289e52f4bd19d6b0, type: 2}
+  blue: {fileID: 11400000, guid: 52e86cc0da8204b0ebfff0fb0ebe24d7, type: 2}
+  green: {fileID: 11400000, guid: 4126a3cd936e14543a7fe775d70d76fb, type: 2}
+  orange: {fileID: 11400000, guid: 0a2bc5f52225242ef9fa2c53b5e84755, type: 2}
+  yellow: {fileID: 11400000, guid: 0bb18c7630c0f4723ab333aaa1ee9457, type: 2}
 --- !u!114 &114971904601104422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -324,7 +341,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213344521388525640, guid: 77e9ca4dadfb5204289e52f4bd19d6b0, type: 2}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -332,5 +349,5 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
