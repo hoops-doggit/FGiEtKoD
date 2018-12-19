@@ -311,10 +311,18 @@ public class CharacterMovement : MonoBehaviour {
         vsp = 0;
         grav = 0;
         gravCoRoutineOn = true;
-        yield return new WaitForSeconds(timeBefore2XGrav);
-        grav = oldGrav * gravMulitplier;
-        
-        StopCoroutine("GravityTime");
+        if (!fast)
+        {
+            yield return new WaitForSeconds(timeBefore2XGrav);
+            grav = oldGrav * gravMulitplier;
+            StopCoroutine("GravityTime");
+        }
+        if (fast)
+        {
+            yield return new WaitForSeconds(timeBefore2XGrav * 2);
+            grav = fastGrav * gravMulitplier;
+            StopCoroutine("GravityTime");
+        }
     }
 
     // Use this for initialization
@@ -386,8 +394,8 @@ public class CharacterMovement : MonoBehaviour {
         if (trueGroundContact && pushedBack && vsp <= 0.0f)
         {
             vsp = 0;
-            moveSpeed = moveSpeed + pushedBackAcc;
-            pushedBackAcc = pushedBackAcc * accSpeed;
+            moveSpeed += pushedBackAcc;
+            pushedBackAcc *= accSpeed;
         }
 
         if (trueGroundContact && pushedBack && moveSpeed > 0)
@@ -483,6 +491,21 @@ public class CharacterMovement : MonoBehaviour {
             {
                 tomatoTime = 0;
                 tomatoed = false;
+            }
+        }
+
+        if (_groundCount <= 0)
+        {
+            trueGroundContact = false;
+        }
+
+        else if (_groundCount > 0)
+        {
+            trueGroundContact = true;
+            jumpScaler.speed = 1;//this just makes character rigid
+            if (!fast)
+            {
+                grav = oldGrav;
             }
         }
 
