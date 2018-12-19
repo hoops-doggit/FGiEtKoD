@@ -247,25 +247,42 @@ public class CharacterMovement : MonoBehaviour {
 
     public IEnumerator GotHitColouredCoroutine()
     {
-        fast = true;
-        maxSpeed = fastSpeed;
-        accSpeed *= 1.2f;
-        hsp *= 1.2f;
-        grav = fastGrav;
-        jumpspeed *= 1.05f;
+        FastInitial();
         yield return new WaitForSeconds(fastDuration);
-        Debug.Log("I got hit");
-        fast = false;
-        maxSpeed = runSpeed;
-        accSpeed /= 1.2f;
-        hsp /= 1.2f;
-        grav = oldGrav;
-        jumpspeed /= 1.05f;
+        Debug.Log("this");
+        FastEnd();
 
         //StopCoroutine("GotHitColouredCoroutine");
     }
 
+    private void FastInitial()
+    {
+        float fastAccSpeedModifier = 1.1f;
+        float FastHspModifier = 1.2f;
+        float fastJumpSpeedModifier = 1.5f;
+        Fast_CameraControll.instance.GoingFast();
+        fast = true;
+        maxSpeed = fastSpeed;
+        accSpeed *= fastAccSpeedModifier;
+        hsp *= FastHspModifier;
+        grav = fastGrav;
+        jumpspeed *= fastJumpSpeedModifier;
+    }
 
+    private void FastEnd()
+    {
+        Debug.Log("that");
+        float fastAccSpeedModifier = 1.1f;
+        float FastHspModifier = 1.2f;
+        float fastJumpSpeedModifier = 1.5f;
+        Fast_CameraControll.instance.NormalSpeed();
+        fast = false;
+        maxSpeed = runSpeed;
+        accSpeed /= fastAccSpeedModifier;
+        hsp /= FastHspModifier;
+        grav = oldGrav;
+        jumpspeed /= fastJumpSpeedModifier;
+    }
 
     public IEnumerator HitDoorCoroutine()
     {

@@ -25,7 +25,7 @@ public class ColourEffect_Propogation : MonoBehaviour {
     {
         if (colourEffectText == "pink"){
             colourEffectText = other.gameObject.GetComponentInChildren<BakedAnimator>().currentColour;
-            Debug.Log("player collided with " + go.name + " and set colour effect to " + colourEffectText);
+            //Debug.Log("player collided with " + go.name + " and set colour effect to " + colourEffectText);
         }
 
         else if (colourEffectText != "pink"){
@@ -51,7 +51,7 @@ public class ColourEffect_Propogation : MonoBehaviour {
             colourEffectText = "pink";
         }
 
-        Debug.Log("Loaded color for " + id);
+        //Debug.Log("Loaded color for " + id);
     }
 
 }

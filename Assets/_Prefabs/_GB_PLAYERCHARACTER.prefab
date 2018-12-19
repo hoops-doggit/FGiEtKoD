@@ -724,6 +724,7 @@ MonoBehaviour:
   vsp: 0
   grav: 0.035
   oldGrav: 0
+  fastGrav: 0.06
   timeBefore2XGrav: 0.05
   gravMulitplier: 1.3
   gravCoRoutineOn: 0
@@ -733,16 +734,17 @@ MonoBehaviour:
   pushedBackJumpSpeed: 0.3
   pushedBackAcc: 0.1
   moveSpeed: 0
+  maxSpeed: 0
   runSpeed: 1
   slowSpeed: 0.15
-  fastSpeed: 2
+  fastSpeed: 1.34
   doorSlowSpeed: 0.07
   accSpeed: 1.06
   accInitial: 0.03
   slowed: 0
   slowedDuration: 0.2
   fast: 0
-  fastDuration: 0.25
+  fastDuration: 10
   endSceneMoveSpeed: 0.2
   endSceneSlowDown: 0.99
   endScene: 0
