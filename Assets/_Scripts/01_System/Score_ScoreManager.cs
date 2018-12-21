@@ -182,7 +182,7 @@ public class Score_ScoreManager : MonoBehaviour {
         
 
         jellyScore = jellies * jellyValue;
-        timeScore = timeValue - Mathf.RoundToInt(time);
+        timeScore = (int)(timeValue - (time*100));
         int score = timeScore + jellyScore;
         currentScore = score;
         Debug.Log("score = " + score);
