@@ -11,6 +11,7 @@ public class CharacterMovement : MonoBehaviour {
     private Vector3 characterPos;
     [Header("Movement")]
     public float hsp;
+    private float hspInitial;
     public float vsp;
     [Header("Gravity")]
     public float grav;
@@ -20,6 +21,7 @@ public class CharacterMovement : MonoBehaviour {
     public float gravMulitplier;
     public bool gravCoRoutineOn;
     public float jumpspeed;
+    private float jumpspeedInitial;
     //public float jumpHeight;
     [Header("OtherMovement")]
     public bool pushedBack;
@@ -90,17 +92,47 @@ public class CharacterMovement : MonoBehaviour {
     public Material shadowCasting;
     public GameObject charSpriteOBJ;
 
+    //variables for modifying fast behaviour
+    private float fastAccSpeedModifier = 1.1f;
+    private float FastHspModifier = 1.2f;
+    private float fastJumpSpeedModifier = 1.5f;
+
+    private float fastAcc;
+    private float fastHsp;
+    private float fastJumpSpeed;
+
+
+
     private void Awake()
     {
         dust.Pause();
         clothesParticle01.Pause();
         clothesParticle02.Pause();
         clothesParticle03.Pause();
-        oldGrav = grav;
         clothesLight.enabled = true;
-        maxSpeed = runSpeed;
+
         //charSpriteOBJ.GetComponent<ShadowCastingSprite>().enabled = false;
         //charSpriteOBJ.GetComponent<SpriteRenderer>().material = standardMat;
+
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        _positionDifference = RightPos;
+        //_groundContact = true;
+        pushedBackInitial = pushedBackAcc;
+
+        maxSpeed = runSpeed;
+        oldGrav = grav;
+
+        fastAcc = accSpeed * fastAccSpeedModifier;
+        fastHsp =  hsp * FastHspModifier;
+        fastJumpSpeed = jumpspeed * fastJumpSpeedModifier;
+        accInitial = accSpeed;
+        hspInitial = hsp;
+        jumpspeedInitial = jumpspeed;
+
 
     }
 
@@ -257,31 +289,25 @@ public class CharacterMovement : MonoBehaviour {
 
     private void FastInitial()
     {
-        float fastAccSpeedModifier = 1.1f;
-        float FastHspModifier = 1.2f;
-        float fastJumpSpeedModifier = 1.5f;
         Fast_CameraControll.instance.GoingFast();
         fast = true;
         maxSpeed = fastSpeed;
-        accSpeed *= fastAccSpeedModifier;
-        hsp *= FastHspModifier;
+        accSpeed = fastAcc;
+        hsp = fastHsp;
         grav = fastGrav;
-        jumpspeed *= fastJumpSpeedModifier;
+        jumpspeed = fastJumpSpeed;
     }
 
     private void FastEnd()
     {
         Debug.Log("that");
-        float fastAccSpeedModifier = 1.1f;
-        float FastHspModifier = 1.2f;
-        float fastJumpSpeedModifier = 1.5f;
         Fast_CameraControll.instance.NormalSpeed();
         fast = false;
         maxSpeed = runSpeed;
-        accSpeed /= fastAccSpeedModifier;
-        hsp /= FastHspModifier;
+        accSpeed = accInitial;
+        hsp = hspInitial;
         grav = oldGrav;
-        jumpspeed /= fastJumpSpeedModifier;
+        jumpspeed = jumpspeedInitial;
     }
 
     public IEnumerator HitDoorCoroutine()
@@ -342,12 +368,7 @@ public class CharacterMovement : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
-    void Start () {
-        _positionDifference = RightPos;
-        //_groundContact = true;
-        pushedBackInitial = pushedBackAcc;
-    }
+ 
            
     void GenerateTomatoSplat(string side)
     {
