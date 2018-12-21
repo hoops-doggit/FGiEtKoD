@@ -105,7 +105,7 @@ public class Score_ScoreManager : MonoBehaviour {
 
     public void CheckScoreAgainstHighScores(int score){
         GetScores();
-        for (int i = 0; i < numberOfDisplayedScores; i++)
+        for (int i = 0; i < (numberOfDisplayedScores-1); i++)
         {
             Debug.Log("Checking against " + i);
             if (score > highscores[i].Score)
@@ -123,7 +123,7 @@ public class Score_ScoreManager : MonoBehaviour {
     public bool CheckIfPlayerGotHighScore(int score)
     {
         GetScores();
-        for (int i = 0; i < numberOfDisplayedScores; i++)
+        for (int i = 0; i < (numberOfDisplayedScores); i++)
         {
             Debug.Log("Checking against " + i);
             if (score > highscores[i].Score)
@@ -160,7 +160,7 @@ public class Score_ScoreManager : MonoBehaviour {
     }
 
     public void ShowScores(){
-        for (int i = 0; i < numberOfDisplayedScores; i++){
+        for (int i = 0; i < (numberOfDisplayedScores -1); i++){
             if (i <= highscores.Count - 1)
             {
                 GameObject tmpObj = Instantiate(scorePrefab);
