@@ -36,7 +36,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4062568320238604}
   - component: {fileID: 212732502139759874}
-  - component: {fileID: 114808532752679382}
   - component: {fileID: 114936686615726428}
   - component: {fileID: 65195994306529832}
   m_Layer: 0
@@ -95,8 +94,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1234651279780588}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21, y: 5.2, z: 1631.8999}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -21, y: 5.2, z: -17.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4311750322151202}
@@ -151,34 +150,8 @@ MonoBehaviour:
   downRot: -95
   startRot: 0.8
   _goingDown: 1
-  animationOffset: 0
+  animationOffset: 0.5
   animationSpeed: 1
---- !u!114 &114808532752679382
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1470503555008064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_States: []
-  m_File: {fileID: 11400000, guid: b5e3b9cfa526b8941ab14aed3da60335, type: 2}
-  speed: 1
-  m_Settings:
-    randomizeOnStart: 1
-    playOnStart: 1
-    overrideFileSettings: 0
-    customPlaybackMode: 1
-    customFramesPerSecond: 8
-    customBorder: {x: 0, y: 0, z: 0, w: 0}
-    customPixelsPerUnit: 100
-    customFilterMode: 2
-    wrapMode: 1
-    startFrame: 0
-    useUnscaledTime: 0
 --- !u!114 &114936686615726428
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -227,12 +200,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213026063098241450, guid: b5e3b9cfa526b8941ab14aed3da60335, type: 2}
+  m_Sprite: {fileID: 21300000, guid: 7e72a6cc8a9c5412ca96ccc8b8052df8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

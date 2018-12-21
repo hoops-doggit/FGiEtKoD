@@ -72,8 +72,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4030171529566084}
   - component: {fileID: 212803146228759218}
-  - component: {fileID: 114545994770410034}
   - component: {fileID: 114916705431560910}
+  - component: {fileID: 114201155156436828}
   m_Layer: 0
   m_Name: JellyBean Sprite
   m_TagString: jellybean
@@ -127,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111947735896808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.81, y: 2.59, z: 584.8}
+  m_LocalPosition: {x: 51.8, y: 2.987, z: 282.69}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4334059472817824}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   castShadows: 1
   receiveShadows: 1
---- !u!114 &114545994770410034
+--- !u!114 &114201155156436828
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -175,24 +175,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 1931458277483930}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
+  m_Script: {fileID: 11500000, guid: c73f852a77ca94b78b4325fef9bdb076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States: []
-  m_File: {fileID: 11400000, guid: 0261fef5d76dd42c2ba384dc44b86585, type: 2}
-  speed: 2.88
-  m_Settings:
-    randomizeOnStart: 1
-    playOnStart: 1
-    overrideFileSettings: 0
-    customPlaybackMode: 1
-    customFramesPerSecond: 6
-    customBorder: {x: 0, y: 0, z: 0, w: 0}
-    customPixelsPerUnit: 100
-    customFilterMode: 2
-    wrapMode: 1
-    startFrame: 0
-    useUnscaledTime: 0
+  m_Sprites:
+  - {fileID: 21300000, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300002, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300004, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300006, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300008, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300010, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300012, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300014, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  FramesPerSecond: 19
+  Speed: 1
+  pink: []
+  blue: []
+  green: []
+  orange: []
+  yellow: []
+  currentColour: blue
 --- !u!114 &114797967750038292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -352,12 +354,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213062586457524418, guid: 0261fef5d76dd42c2ba384dc44b86585, type: 2}
+  m_Sprite: {fileID: 21300000, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 0.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

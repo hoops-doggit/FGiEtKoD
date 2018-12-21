@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 5
+  m_CurrentQuality: 4
   m_QualitySettings:
   - serializedVersion: 2
     name: Very Low
@@ -120,23 +120,23 @@ QualitySettings:
     excludedTargetPlatforms: []
   - serializedVersion: 2
     name: Very High
-    pixelLightCount: 3
-    shadows: 2
-    shadowResolution: 2
+    pixelLightCount: 12
+    shadows: 1
+    shadowResolution: 1
     shadowProjection: 1
     shadowCascades: 2
-    shadowDistance: 70
-    shadowNearPlaneOffset: 3
+    shadowDistance: 550
+    shadowNearPlaneOffset: 30
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
-    shadowmaskMode: 1
+    shadowmaskMode: 0
     blendWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
-    antiAliasing: 2
-    softParticles: 1
+    antiAliasing: 0
+    softParticles: 0
     softVegetation: 1
-    realtimeReflectionProbes: 1
+    realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 1
     vSyncCount: 1
     lodBias: 1.5
@@ -150,18 +150,18 @@ QualitySettings:
     name: Ultra
     pixelLightCount: 12
     shadows: 2
-    shadowResolution: 1
+    shadowResolution: 2
     shadowProjection: 0
-    shadowCascades: 2
+    shadowCascades: 4
     shadowDistance: 550
     shadowNearPlaneOffset: 30
     shadowCascade2Split: 0.34678563
-    shadowCascade4Split: {x: 0.5212559, y: 0.72234166, z: 0.8788895}
-    shadowmaskMode: 0
+    shadowCascade4Split: {x: 0.3674097, y: 0.72234154, z: 0.947855}
+    shadowmaskMode: 1
     blendWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
-    antiAliasing: 2
+    antiAliasing: 0
     softParticles: 0
     softVegetation: 1
     realtimeReflectionProbes: 0
@@ -175,7 +175,7 @@ QualitySettings:
     resolutionScalingFixedDPIFactor: 1
     excludedTargetPlatforms: []
   m_PerPlatformDefaultQuality:
-    Android: 5
+    Android: 4
     Standalone: 5
     WebGL: 5
     Windows Store Apps: 5
