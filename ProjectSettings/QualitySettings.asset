@@ -150,21 +150,21 @@ QualitySettings:
     name: Ultra
     pixelLightCount: 12
     shadows: 2
-    shadowResolution: 3
-    shadowProjection: 1
-    shadowCascades: 4
-    shadowDistance: 600
-    shadowNearPlaneOffset: 200
-    shadowCascade2Split: 0.33333334
-    shadowCascade4Split: {x: 0.6775982, y: 0.84918594, z: 0.9644357}
-    shadowmaskMode: 1
+    shadowResolution: 1
+    shadowProjection: 0
+    shadowCascades: 2
+    shadowDistance: 550
+    shadowNearPlaneOffset: 30
+    shadowCascade2Split: 0.34678563
+    shadowCascade4Split: {x: 0.5212559, y: 0.72234166, z: 0.8788895}
+    shadowmaskMode: 0
     blendWeights: 4
     textureQuality: 0
     anisotropicTextures: 2
-    antiAliasing: 4
+    antiAliasing: 2
     softParticles: 0
     softVegetation: 1
-    realtimeReflectionProbes: 1
+    realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 1
     vSyncCount: 1
     lodBias: 2
