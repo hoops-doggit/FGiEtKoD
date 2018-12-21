@@ -6,39 +6,39 @@ using DoodleStudio95;
 
 public class ColourEffect_DS_Static : MonoBehaviour {
 
-    private DoodleAnimator ds;
+    private SpriteRenderer ds;
 
-    public DoodleAnimationFile pink;
-    public DoodleAnimationFile blue;
-    public DoodleAnimationFile green;
-    public DoodleAnimationFile orange;
-    public DoodleAnimationFile yellow;
+    public Sprite pink;
+    public Sprite blue;
+    public Sprite green;
+    public Sprite orange;
+    public Sprite yellow;
 
     public void ChangeColour(string colour)
     {
-        ds = gameObject.GetComponent<DoodleAnimator>();
+        ds = gameObject.GetComponent<SpriteRenderer>();
 
         if (colour == "blue"){
-            ds.ChangeAnimation(blue);
+            ds.sprite = blue;
         }
 
         else if (colour == "green")
         {
-            ds.ChangeAnimation(green);
+            ds.sprite = green;
         }
 
         else if (colour == "orange")
         {
-            ds.ChangeAnimation(orange);
+            ds.sprite = orange;
         }
 
         else if(colour == "yellow")
         {
-            ds.ChangeAnimation(yellow);
+            ds.sprite = (yellow);
         }
 
         else{
-            ds.ChangeAnimation(pink);
+            ds.sprite = (pink);
         }
     }
 

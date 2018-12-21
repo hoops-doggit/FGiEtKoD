@@ -37,7 +37,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4184530564181942}
   - component: {fileID: 212597187747345636}
-  - component: {fileID: 114914721094756414}
   - component: {fileID: 114717836878819430}
   - component: {fileID: 95627792459259854}
   - component: {fileID: 114786184576064132}
@@ -149,11 +148,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d984b57a5fcd4c31aef6bc2ed5f18ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pink: {fileID: 11400000, guid: ef2ead287b138284c9736bc14f623cdb, type: 2}
-  blue: {fileID: 11400000, guid: 52e86cc0da8204b0ebfff0fb0ebe24d7, type: 2}
-  green: {fileID: 11400000, guid: 4126a3cd936e14543a7fe775d70d76fb, type: 2}
-  orange: {fileID: 11400000, guid: 0a2bc5f52225242ef9fa2c53b5e84755, type: 2}
-  yellow: {fileID: 11400000, guid: 0bb18c7630c0f4723ab333aaa1ee9457, type: 2}
+  pink: {fileID: 21300000, guid: d3ebc1d3acf234b6b914c8bcc9ed870f, type: 3}
+  blue: {fileID: 21300000, guid: cbb0adf0f0a844a08b3d8e5e8383acfe, type: 3}
+  green: {fileID: 21300000, guid: def84c32b84c54c609e89b85a40ddc6b, type: 3}
+  orange: {fileID: 21300000, guid: 802b5f237a17e4c7791fadf2698e875b, type: 3}
+  yellow: {fileID: 21300000, guid: 684ccef8d7469426caa60b6de72f8c55, type: 3}
 --- !u!114 &114301488447145654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,32 +234,6 @@ MonoBehaviour:
   pepperShaker: {fileID: 1197164652207818}
   pepperPowder: {fileID: 1064853743323174}
   powderPos: {x: 0.35, y: 7.42, z: -0.4}
---- !u!114 &114914721094756414
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1197164652207818}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_States: []
-  m_File: {fileID: 11400000, guid: ef2ead287b138284c9736bc14f623cdb, type: 2}
-  speed: 1
-  m_Settings:
-    randomizeOnStart: 1
-    playOnStart: 1
-    overrideFileSettings: 0
-    customPlaybackMode: 1
-    customFramesPerSecond: 8
-    customBorder: {x: 0, y: 0, z: 0, w: 0}
-    customPixelsPerUnit: 100
-    customFilterMode: 2
-    wrapMode: 1
-    startFrame: 0
-    useUnscaledTime: 0
 --- !u!212 &212364646214939910
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -341,12 +314,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213128312842517830, guid: ef2ead287b138284c9736bc14f623cdb, type: 2}
+  m_Sprite: {fileID: 21300000, guid: d3ebc1d3acf234b6b914c8bcc9ed870f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
