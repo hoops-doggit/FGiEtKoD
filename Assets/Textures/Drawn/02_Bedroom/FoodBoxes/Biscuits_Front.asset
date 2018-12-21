@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1566551335, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
-  m_Name: Animation_2018-11-28_19-58-39
+  m_Name: Biscuits_Front
   m_EditorClassIdentifier: 
   frames:
   - _texture: {fileID: 28390592718803984}
@@ -82,7 +82,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    00000000000000000000000000000000: 0
+    39e182f220c0b4fd89af32ecced479c2: 213644251961405282
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -154,7 +154,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000020c00000803f00000000000020400000803f00000000000020c0000080bf0000000000002040000080bf000000000000000000000000000000000000000000000000000000000000000000000000
+      _typelessdata: 000020c00000803f00000000000020400000803f00000000000020c0000080bf0000000000002040000080bf00000000000000000000803f0000803f0000803f00000000000000000000803f00000000
     m_Bindpose: []
     m_SourceSkin: []
     textureRect:
