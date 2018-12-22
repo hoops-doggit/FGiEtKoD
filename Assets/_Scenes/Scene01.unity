@@ -1502,6 +1502,29 @@ Transform:
   m_PrefabParentObject: {fileID: 4943130514345168, guid: d0fa2be3871fd4b32ad124b4c9e5f52e,
     type: 2}
   m_PrefabInternal: {fileID: 961637102}
+--- !u!1 &81348111 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1962889053517668, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+    type: 2}
+  m_PrefabInternal: {fileID: 548142317}
+--- !u!114 &81348116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 81348111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d987d3c53d2df49768015583ce7b670d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Sprites:
+  - {fileID: 21300000, guid: 545abcb21f01f5f45a77727a5f784bf8, type: 3}
+  - {fileID: 21300002, guid: 545abcb21f01f5f45a77727a5f784bf8, type: 3}
+  FramesPerSecond: 8
+  Speed: 1
+  topClothesName: 
+  bottomClothesName: 
 --- !u!1 &85408686
 GameObject:
   m_ObjectHideFlags: 0
@@ -7348,7 +7371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &409104571
 Transform:
   m_ObjectHideFlags: 0
@@ -7360,7 +7383,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1110957828}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &409104572
 Light:
@@ -7887,7 +7910,7 @@ GameObject:
   - component: {fileID: 437028107}
   - component: {fileID: 437028110}
   - component: {fileID: 437028108}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightDoor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9499,12 +9522,27 @@ Prefab:
       propertyPath: came
       value: 
       objectReference: {fileID: 1649629154}
+    - target: {fileID: 114948685428985886, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 212096165967931832, guid: 2b412f96e5de450469f5cfa1cb3c4263,
         type: 2}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 213341431765736550, guid: c8ff2fd6a7aec4ce09253e04e5638165,
         type: 2}
+    - target: {fileID: 212750116729109642, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 212750116729109642, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+        type: 2}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b412f96e5de450469f5cfa1cb3c4263, type: 2}
   m_IsPrefabParent: 0
@@ -10393,7 +10431,7 @@ GameObject:
   - component: {fileID: 617462501}
   - component: {fileID: 617462500}
   - component: {fileID: 617462498}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RightDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10983,7 +11021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &644445753
 Transform:
   m_ObjectHideFlags: 0
@@ -10995,7 +11033,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1110957828}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &644445754
 Light:
@@ -13750,7 +13788,7 @@ GameObject:
   - component: {fileID: 825791150}
   - component: {fileID: 825791149}
   - component: {fileID: 825791148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CupboardDoorLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15125,7 +15163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a2758e2f508f408781c63aed4629c8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bedroom01: {fileID: 988059715}
+  bedroom01: {fileID: 1331525864}
   bedroom02: {fileID: 409104572}
   gameplay01: {fileID: 841157084}
   catwalk01: {fileID: 460757382}
@@ -16268,7 +16306,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1110957828}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 148.73, y: -6.8449707, z: -20.00299}
 --- !u!108 &988059715
 Light:
@@ -18232,6 +18270,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1331525863}
   - {fileID: 988059714}
   - {fileID: 409104571}
   - {fileID: 644445753}
@@ -18863,7 +18902,7 @@ GameObject:
   - component: {fileID: 1137677995}
   - component: {fileID: 1137677998}
   - component: {fileID: 1137677996}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftDoorSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19076,7 +19115,7 @@ GameObject:
   - component: {fileID: 1146547596}
   - component: {fileID: 1146547595}
   - component: {fileID: 1146547593}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LeftDoorSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20236,7 +20275,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1204871366}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CupboardDoorRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22294,6 +22333,71 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d0fa2be3871fd4b32ad124b4c9e5f52e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1331525862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1331525863}
+  - component: {fileID: 1331525864}
+  m_Layer: 0
+  m_Name: Bedroom_KeyTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1331525863
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1331525862}
+  m_LocalRotation: {x: 0.95634645, y: 0.115012445, z: 0.026980331, w: 0.2672933}
+  m_LocalPosition: {x: -13.25, y: 85.9, z: 137.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1110957828}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 149.666, y: -7.5289917, z: -15.758972}
+--- !u!108 &1331525864
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1331525862}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 1
+  m_Color: {r: 1, g: 0.9633679, b: 0.8726415, a: 1}
+  m_Intensity: 2
+  m_Range: 10
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 2
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 2800000, guid: 743e0b3468003480fa7c59a898d45763, type: 3}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294966783
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1001 &1332599855
 Prefab:
   m_ObjectHideFlags: 0
@@ -24601,6 +24705,36 @@ Transform:
   m_PrefabParentObject: {fileID: 4326298663029424, guid: 561faa49d14bd9e47adb0d94397a8914,
     type: 2}
   m_PrefabInternal: {fileID: 2075589987}
+--- !u!1 &1514125644 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1504263190561122, guid: 3dd555c210829924cbf4346b798d53b6,
+    type: 2}
+  m_PrefabInternal: {fileID: 1559556311}
+--- !u!114 &1514125645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1514125644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19678a56c445424ea32e4514533a01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top01:
+  - {fileID: 21300000, guid: 545abcb21f01f5f45a77727a5f784bf8, type: 3}
+  - {fileID: 21300002, guid: 545abcb21f01f5f45a77727a5f784bf8, type: 3}
+  top02:
+  - {fileID: 21300000, guid: 4fba03b16f0a4430b965c5add9b16c72, type: 3}
+  - {fileID: 21300002, guid: 4fba03b16f0a4430b965c5add9b16c72, type: 3}
+  bottom01:
+  - {fileID: 21300000, guid: 5f6b23cc7ba0d4a559afd41dbd172b09, type: 3}
+  - {fileID: 21300002, guid: 5f6b23cc7ba0d4a559afd41dbd172b09, type: 3}
+  bottom02:
+  - {fileID: 21300000, guid: f7094924bcb5f4dd79d7f693ba21a3d5, type: 3}
+  - {fileID: 21300002, guid: f7094924bcb5f4dd79d7f693ba21a3d5, type: 3}
+  topName: 
+  bottomName: 
 --- !u!1 &1515268160
 GameObject:
   m_ObjectHideFlags: 0
