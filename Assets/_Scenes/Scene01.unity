@@ -20298,11 +20298,6 @@ Prefab:
       propertyPath: m_Name
       value: Big Falling Knife (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 114748319561553228, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: colourEffectText
-      value: pink
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0

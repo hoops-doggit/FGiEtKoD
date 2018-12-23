@@ -18,4 +18,5 @@ public class PrefabPlacerData : ScriptableObject {
     public GameObject pepperShaker;
     public GameObject smallTomato;
     public GameObject bigTomato;
+    public GameObject bigKnife;
 }
