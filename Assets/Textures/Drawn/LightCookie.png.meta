@@ -34,8 +34,8 @@ TextureImporter:
     aniso: 0
     mipBias: -1
     wrapU: 1
-    wrapV: 3
-    wrapW: 3
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -119,7 +119,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0998d4772615344978a3d22450f926a3
+      spriteID: 582e7c2192cc94789aca12313834133a
       vertices: []
       indices: 
       edges: []
