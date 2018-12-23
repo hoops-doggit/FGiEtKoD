@@ -26,6 +26,7 @@ public class CharacterMovement : MonoBehaviour {
     [Header("OtherMovement")]
     public bool pushedBack;
     public float pushedBackMoveSpeed;
+    public float fastPushedBackMoveSpeed;
     public float pushedBackJumpSpeed;
     //public float pushedBackJumpHeight;
     public float pushedBackAcc;
@@ -162,12 +163,20 @@ public class CharacterMovement : MonoBehaviour {
 
     public void Pushback()
     {
+        //resets pushedBackAcc?
         pushedBackAcc = pushedBackInitial;
         trueGroundContact = false;
         _groundContact = false;
         vsp = pushedBackJumpSpeed;
         pushedBack = true;
-        moveSpeed = pushedBackMoveSpeed;
+        if (!fast)
+        {
+            moveSpeed = pushedBackMoveSpeed;
+        }
+
+        else if (fast){
+            moveSpeed = fastPushedBackMoveSpeed;
+        }
     }
 
 
@@ -254,7 +263,6 @@ public class CharacterMovement : MonoBehaviour {
             jumpScaler.SetTrigger("Jump");
             runScaler.ResetTrigger("Run");
             runScaler.SetTrigger("Jump");
-          
         }       
     }
 
@@ -435,6 +443,7 @@ public class CharacterMovement : MonoBehaviour {
             moveSpeed += pushedBackAcc;
             pushedBackAcc *= accSpeed;
         }
+
 
         if (trueGroundContact && pushedBack && moveSpeed > 0)
         {
