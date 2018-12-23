@@ -21,6 +21,8 @@ public class Knife_Behaviour : MonoBehaviour {
     public float animationSpeed;
     public float slowAnimationSpeed;
 
+    private Animator anim;
+
     
 
     public void KnifeDown()
@@ -64,13 +66,13 @@ public class Knife_Behaviour : MonoBehaviour {
     void Start () {
         //knifePosition = startRot;
 
-        Animator anim = GetComponentInChildren<Animator>();
+        anim = GetComponentInChildren<Animator>();
 
         anim.speed = 0f;
 
         anim.Play("Knife_Big", 0, animationOffset);
 
-        if (GetComponentInChildren<ColourEffect_Propogation>().colourEffectText == "blue")
+        if (GetComponentInChildren<ColourEffect_Propogation_Knife>().colourEffectText == "blue")
         {
             anim.speed = slowAnimationSpeed;
         }
@@ -78,15 +80,9 @@ public class Knife_Behaviour : MonoBehaviour {
         {
             anim.speed = animationSpeed;
         }
-    
 
-        //AnimationClip
 
-        //anim["Knife_Big"].time =
-        //animanim["Knife_Big"].time = animationOffset / animanim["Knife_Big"].length;
-
-        //transform.eulerAngles = new Vector3(0, 0, startRot);
-
+        //turns knife if it's on the right side of the track;
         if (transform.position.x > 1)
         {
             transform.eulerAngles = new Vector3(0, 180, 0);
@@ -96,11 +92,20 @@ public class Knife_Behaviour : MonoBehaviour {
             downRot = downRot * -1;
 
         }
-        _goingDown = true;
-        waitTime = 0;
-        waitMax = 16;
 		
 	}
+
+    public void CheckWhichColourIAm(){
+        anim = GetComponentInChildren<Animator>();
+        if (GetComponentInChildren<ColourEffect_Propogation_Knife>().colourEffectText == "blue")
+        {
+            anim.speed = slowAnimationSpeed;
+        }
+        else
+        {
+            anim.speed = animationSpeed;
+        }
+    }
 
     private void Update()
     {
@@ -108,31 +113,4 @@ public class Knife_Behaviour : MonoBehaviour {
 
         //anim.speed = animationSpeed;
     }
-
-    //// Update is called once per frame
-    //void FixedUpdate () {
-
-
-    //       if (_goingDown && !wait)
-    //       {
-    //           KnifeDown();
-    //       }
-
-    //       else if (!_goingDown && !wait)
-    //       {
-    //           KnifeUp();
-    //       }
-
-    //       if (wait)
-    //       {
-    //           waitTime++;
-    //           if (waitTime >= waitMax)
-    //           {
-    //               waitTime = 0;
-    //               _goingDown = true;
-    //               wait = false;
-    //           }
-    //       }
-
-    //   }
 }

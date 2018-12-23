@@ -3,45 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class ColourEffect_Propogation : MonoBehaviour {
+public class ColourEffect_Propogation_Knife : MonoBehaviour {
 
     //this will be used between scenes so that 
     public float id;
     public string colourEffectText = "pink";
     //private ColourEffect_SaveData sd;
     private GameObject go;
+    private GameObject gop;
     private ColourEffect_Data cm;
     public string[] allowedColours;
+    private bool loaded;
 
 
     private void Start()
     {
         go = gameObject;
-        id =  transform.position.x + transform.position.z;
+        gop = gameObject.transform.parent.gameObject;
+        id = transform.position.x + transform.position.z;
         CheckForColourEffect();
-    }
-    
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (colourEffectText == "pink"){
-            foreach (string x in allowedColours)
-            {
-                string colour = other.gameObject.GetComponentInChildren<BakedAnimator>().currentColour;
-                if (x == colour)
-                {
-                    colourEffectText = colour;
-                    break;
-
-                }
-            }
-
-            //Debug.Log("player collided with " + go.name + " and set colour effect to " + colourEffectText);
-        }
-
-        else if (colourEffectText != "pink"){
-            colourEffectText = "pink";
-        }
+        //remind parent 
+        gop.GetComponentInParent<Knife_Behaviour>().CheckWhichColourIAm();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -55,11 +37,8 @@ public class ColourEffect_Propogation : MonoBehaviour {
                 {
                     colourEffectText = colour;
                     break;
-
                 }
             }
-
-            //Debug.Log("player collided with " + go.name + " and set colour effect to " + colourEffectText);
         }
 
         else if (colourEffectText != "pink")
@@ -70,9 +49,16 @@ public class ColourEffect_Propogation : MonoBehaviour {
 
 
 
-    private void OnDestroy()
+    private void OnDisable()
     {
-        ColourEffect_CEManager.instance.AddToColourEffectList(id,  colourEffectText);
+        if (!loaded)
+        {
+            ColourEffect_CEManager.instance.AddToColourEffectList(id, colourEffectText);
+        }
+
+        else{
+            ColourEffect_CEManager.instance.AddToColourEffectList(id, "pink");
+        }
     }
 
     private void CheckForColourEffect()
@@ -80,7 +66,12 @@ public class ColourEffect_Propogation : MonoBehaviour {
         if (ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects.ContainsKey(id))
         {
             colourEffectText = ColourEffect_CEManager.instance.ce_SaveData.savedColourObjects[id];
+            //this tells the script holding colour variations to change
             gameObject.GetComponentInChildren<ColourEffect_DS_Static>().ChangeColour(colourEffectText);
+            gop.GetComponentInParent<Knife_Behaviour>().CheckWhichColourIAm();
+            if (colourEffectText != "pink"){
+                loaded = true;
+            }
         }
 
         else

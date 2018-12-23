@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4425660474945354}
   - component: {fileID: 212693378191410210}
-  - component: {fileID: 114944764220447128}
   - component: {fileID: 114147130941926550}
   - component: {fileID: 65897004983773136}
+  - component: {fileID: 114045204066051168}
+  - component: {fileID: 114844032929918394}
   m_Layer: 0
   m_Name: Gummy Knife Sprite
   m_TagString: bigKnife
@@ -95,8 +96,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987212199050614}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21, y: 5.2, z: 1631.8999}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.7, y: 0, z: -175.20001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4200468526754554}
@@ -133,6 +134,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114045204066051168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1204395777811174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d984b57a5fcd4c31aef6bc2ed5f18ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pink: {fileID: 21300000, guid: 7e72a6cc8a9c5412ca96ccc8b8052df8, type: 3}
+  blue: {fileID: 21300000, guid: 7a9ee131540624c3baff65c766250a70, type: 3}
+  green: {fileID: 0}
+  orange: {fileID: 0}
+  yellow: {fileID: 0}
 --- !u!114 &114147130941926550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,7 +169,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1987212199050614}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e89be3d93f98af4fb1b41e5bdadce8b, type: 3}
   m_Name: 
@@ -164,7 +181,10 @@ MonoBehaviour:
   downRot: -95
   startRot: 0.8
   _goingDown: 1
---- !u!114 &114944764220447128
+  animationOffset: 0
+  animationSpeed: 0
+  slowAnimationSpeed: 0
+--- !u!114 &114844032929918394
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -172,24 +192,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1204395777811174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 492295970, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 366d98a6208964fd4b5daff127371b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_States: []
-  m_File: {fileID: 11400000, guid: b5e3b9cfa526b8941ab14aed3da60335, type: 2}
-  speed: 1
-  m_Settings:
-    randomizeOnStart: 1
-    playOnStart: 1
-    overrideFileSettings: 0
-    customPlaybackMode: 1
-    customFramesPerSecond: 8
-    customBorder: {x: 0, y: 0, z: 0, w: 0}
-    customPixelsPerUnit: 100
-    customFilterMode: 2
-    wrapMode: 1
-    startFrame: 0
-    useUnscaledTime: 0
+  id: 0
+  colourEffectText: pink
+  allowedColours:
+  - blue
+  - pink
 --- !u!212 &212693378191410210
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -225,12 +235,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213026063098241450, guid: b5e3b9cfa526b8941ab14aed3da60335, type: 2}
+  m_Sprite: {fileID: 21300000, guid: 7e72a6cc8a9c5412ca96ccc8b8052df8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4, y: 8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
