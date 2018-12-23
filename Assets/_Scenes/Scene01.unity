@@ -2293,14 +2293,25 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213026063098241450, guid: b5e3b9cfa526b8941ab14aed3da60335,
-        type: 2}
+      objectReference: {fileID: 21300000, guid: 7e72a6cc8a9c5412ca96ccc8b8052df8,
+        type: 3}
     - target: {fileID: 212693378191410210, guid: 0415b4db12b42e44680d7a1c8d3dca3a,
         type: 2}
       propertyPath: m_WasSpriteAssigned
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 212693378191410210, guid: 0415b4db12b42e44680d7a1c8d3dca3a,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 212693378191410210, guid: 0415b4db12b42e44680d7a1c8d3dca3a,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 8
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114944764220447128, guid: 0415b4db12b42e44680d7a1c8d3dca3a, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0415b4db12b42e44680d7a1c8d3dca3a, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &104279361
@@ -18492,46 +18503,6 @@ Prefab:
       propertyPath: m_Name
       value: Big Falling Knife (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: downRot
-      value: -95
-      objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_FlipX
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4420497790396528, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: animationOffset
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_CastShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 213026063098241450, guid: b5e3b9cfa526b8941ab14aed3da60335,
-        type: 2}
-    - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0
@@ -19879,6 +19850,43 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1173603056 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1204395777811174, guid: 0415b4db12b42e44680d7a1c8d3dca3a,
+    type: 2}
+  m_PrefabInternal: {fileID: 101124922}
+--- !u!114 &1173603060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1173603056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d984b57a5fcd4c31aef6bc2ed5f18ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pink: {fileID: 21300000, guid: 7e72a6cc8a9c5412ca96ccc8b8052df8, type: 3}
+  blue: {fileID: 21300000, guid: 7a9ee131540624c3baff65c766250a70, type: 3}
+  green: {fileID: 0}
+  orange: {fileID: 0}
+  yellow: {fileID: 0}
+--- !u!114 &1173603062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1173603056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa695f0e1d4ad4a358629a9f92b6d808, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  colourEffectText: pink
+  allowedColours:
+  - blue
+  - pink
 --- !u!1001 &1175253288
 Prefab:
   m_ObjectHideFlags: 0

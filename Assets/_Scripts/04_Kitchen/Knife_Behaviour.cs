@@ -19,6 +19,7 @@ public class Knife_Behaviour : MonoBehaviour {
 
     public float animationOffset;
     public float animationSpeed;
+    public float slowAnimationSpeed;
 
     
 
@@ -68,8 +69,16 @@ public class Knife_Behaviour : MonoBehaviour {
         anim.speed = 0f;
 
         anim.Play("Knife_Big", 0, animationOffset);
-        anim.speed = animationSpeed;
 
+        if (GetComponentInChildren<ColourEffect_Propogation>().colourEffectText == "blue")
+        {
+            anim.speed = slowAnimationSpeed;
+        }
+        else
+        {
+            anim.speed = animationSpeed;
+        }
+    
 
         //AnimationClip
 
@@ -95,9 +104,9 @@ public class Knife_Behaviour : MonoBehaviour {
 
     private void Update()
     {
-        Animator anim = GetComponentInChildren<Animator>();
+        //Animator anim = GetComponentInChildren<Animator>();
 
-        anim.speed = animationSpeed;
+        //anim.speed = animationSpeed;
     }
 
     //// Update is called once per frame
