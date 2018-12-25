@@ -79,12 +79,12 @@ public class _GM : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		//resets gb when below the ground a little
-		if (gummyBearPivot.transform.position.y < -0.5f) {
-            Restart();
-		}
+		//if (gummyBearPivot.transform.position.y < -0.5f) {
+  //          Restart();
+		//}
 			
 		//resets the scene
-		if (Input.GetKeyDown(KeyCode.R)){
+		if (Input.GetKeyDown(KeyCode.Comma)){
             Restart();
 		}
 

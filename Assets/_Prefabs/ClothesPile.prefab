@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 23309780021320406}
   - component: {fileID: 65119760483596724}
   - component: {fileID: 114781212710817600}
+  - component: {fileID: 114244522261988486}
   m_Layer: 0
   m_Name: ClothesPile
   m_TagString: clothesPile
@@ -72,9 +73,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1504263190561122}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.29999924, y: 0, z: 226}
-  m_LocalScale: {x: 1.6947443, y: 1.1965029, z: 1.2563878}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3, y: -0.08, z: 226}
+  m_LocalScale: {x: 2.097185, y: 1.3312591, z: 1.9368682}
   m_Children:
   - {fileID: 4571439318041650}
   - {fileID: 4839449416647434}
@@ -271,6 +272,31 @@ MonoBehaviour:
     wrapMode: 1
     startFrame: 0
     useUnscaledTime: 0
+--- !u!114 &114244522261988486
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1504263190561122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19678a56c445424ea32e4514533a01b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  top01:
+  - {fileID: 21300000, guid: 545abcb21f01f5f45a77727a5f784bf8, type: 3}
+  - {fileID: 21300002, guid: 545abcb21f01f5f45a77727a5f784bf8, type: 3}
+  top02:
+  - {fileID: 21300000, guid: 4fba03b16f0a4430b965c5add9b16c72, type: 3}
+  - {fileID: 21300002, guid: 4fba03b16f0a4430b965c5add9b16c72, type: 3}
+  bottom01:
+  - {fileID: 21300000, guid: 5f6b23cc7ba0d4a559afd41dbd172b09, type: 3}
+  - {fileID: 21300002, guid: 5f6b23cc7ba0d4a559afd41dbd172b09, type: 3}
+  bottom02:
+  - {fileID: 21300000, guid: f7094924bcb5f4dd79d7f693ba21a3d5, type: 3}
+  - {fileID: 21300002, guid: f7094924bcb5f4dd79d7f693ba21a3d5, type: 3}
+  topName: 
+  bottomName: 
 --- !u!114 &114709874937564860
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -69,6 +69,7 @@ public class CharacterCollisions : MonoBehaviour {
         if (col.gameObject.tag == "bigKnife")
 
         {
+            colourBumps++;
             col.gameObject.GetComponentInParent<Knife_Behaviour>().StartColliderToggle();
             if (clothes_top.activeSelf == true)
             {

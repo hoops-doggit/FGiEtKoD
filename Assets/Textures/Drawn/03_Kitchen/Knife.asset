@@ -19,6 +19,7 @@ MonoBehaviour:
   framesPerSecond: 8
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   filterMode: 2
+  patternMode: 0
   darkCheckerboard: 0
   spriteSheetAssetGUID: 
   sounds: []
@@ -32,6 +33,8 @@ Texture2D:
   m_ImageContentsHash:
     serializedVersion: 2
     Hash: 00000000000000000000000000000000
+  m_ForcedFallbackFormat: 4
+  m_DownscaleFallback: 0
   serializedVersion: 2
   m_Width: 400
   m_Height: 800
@@ -79,7 +82,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    00000000000000000000000000000000: 0
+    94028372d8c5d014bb77988ca1a1476c: 213142735501030172
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
@@ -91,6 +94,7 @@ Sprite:
       firstByte: 0
       indexCount: 6
       topology: 0
+      baseVertex: 0
       firstVertex: 0
       vertexCount: 4
       localAABB:
@@ -98,13 +102,17 @@ Sprite:
         m_Extent: {x: 0, y: 0, z: 0}
     m_IndexBuffer: 000001000200020001000300
     m_VertexData:
-      m_CurrentChannels: 9
+      serializedVersion: 2
       m_VertexCount: 4
       m_Channels:
       - stream: 0
         offset: 0
         format: 0
         dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
       - stream: 0
         offset: 0
         format: 0
@@ -133,8 +141,22 @@ Sprite:
         offset: 0
         format: 0
         dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000c0000080400000000000000000000000000000004000008040000000000000000000000000000000c0000080c000000000000000000000000000000040000080c0000000000000000000000000
+      _typelessdata: 000000c00000804000000000000000000000803f0000004000008040000000000000803f0000803f000000c0000080c000000000000000000000000000000040000080c0000000000000803f00000000
+    m_Bindpose: []
+    m_SourceSkin: []
     textureRect:
       serializedVersion: 2
       x: 0
@@ -155,6 +177,7 @@ Sprite:
       firstByte: 0
       indexCount: 6
       topology: 0
+      baseVertex: 0
       firstVertex: 0
       vertexCount: 4
       localAABB:
@@ -162,13 +185,17 @@ Sprite:
         m_Extent: {x: 0, y: 0, z: 0}
     m_IndexBuffer: 000001000200020001000300
     m_VertexData:
-      m_CurrentChannels: 9
+      serializedVersion: 2
       m_VertexCount: 4
       m_Channels:
       - stream: 0
         offset: 0
         format: 0
         dimension: 3
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
       - stream: 0
         offset: 0
         format: 0
@@ -197,8 +224,22 @@ Sprite:
         offset: 0
         format: 0
         dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
+      - stream: 0
+        offset: 0
+        format: 0
+        dimension: 0
       m_DataSize: 80
       _typelessdata: 000000c0000080400000000000000000000000000000004000008040000000000000000000000000000000c0000080c000000000000000000000000000000040000080c0000000000000000000000000
+    m_Bindpose: []
+    m_SourceSkin: []
     textureRect:
       serializedVersion: 2
       x: 0
@@ -211,3 +252,5 @@ Sprite:
     uvTransform: {x: 100, y: 200, z: 100, w: 400}
     downscaleMultiplier: 1
   m_PhysicsShape: []
+  m_Bones: []
+  m_SpriteID: 
