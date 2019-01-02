@@ -70,10 +70,14 @@ public class _GM : MonoBehaviour {
     public void Restart()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(sceneName);
+        string currentScene = SceneManager.GetActiveScene().name;
+        //SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(currentScene);
+       
         SetTime();
         lm.SetEnvironmentSettings();
         numberOfJelliesCollected = 0;
+        Debug.Log(currentScene);
     }
 
     // Update is called once per frame

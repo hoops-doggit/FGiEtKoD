@@ -57,7 +57,7 @@ public class RunLevel : MonoBehaviour {
     IEnumerator LevelLoaderProcess()
     {
         startedLoadingGame = true;
-        AsyncOperation status = SceneManager.LoadSceneAsync("Scene01");
+        AsyncOperation status = SceneManager.LoadSceneAsync("Scene02");
         status.allowSceneActivation = false;
 
         // Wait until done and collect progress as we go.
