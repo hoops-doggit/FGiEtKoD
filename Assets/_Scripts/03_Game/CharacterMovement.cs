@@ -43,6 +43,8 @@ public class CharacterMovement : MonoBehaviour {
 	public float slowedDuration;
     public bool fast;
     public float fastDuration;
+    public float swimSpeed;
+    public float waterRunSpeed;
 
     public float endSceneMoveSpeed;
     public float endSceneSlowDown;
