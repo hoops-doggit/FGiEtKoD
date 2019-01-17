@@ -50,6 +50,8 @@ public class ColourEffect_Propogation : MonoBehaviour {
         {
             foreach (string x in allowedColours)
             {
+                //if current colour of character is in the allowed colours list then change
+                //this objects current colour text
                 string colour = other.gameObject.GetComponentInChildren<BakedAnimator>().currentColour;
                 if (x == colour)
                 {

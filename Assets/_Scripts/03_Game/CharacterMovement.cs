@@ -197,14 +197,17 @@ public class CharacterMovement : MonoBehaviour {
     {
         if (colour == "pink")
         {
-            //StopCoroutine("GotHitCorourine");
             StartCoroutine("GotHitCoroutine");
         }
 
-        else if (colour != "pink")
+        else if (colour != "green")
         {
-            //StopCoroutine("GotHitColouredCoroutine");
             StartCoroutine("GotHitColouredCoroutine");
+        }
+
+        else if (colour != "pink" || colour != "green")
+        {
+            StartCoroutine("GotHitCoroutine");
         }
     }
 
@@ -327,7 +330,7 @@ public class CharacterMovement : MonoBehaviour {
         yield return new WaitForSeconds(slowedDuration * 4);
         slowed = false;
         slowSpeed = slowSpeed * 2;
-        StopCoroutine("GotHitCoroutine");
+        //StopCoroutine("GotHitCoroutine");
     }
 
     public IEnumerator PlayBurstCR() {
