@@ -10,8 +10,9 @@ public class CupboardDoor : MonoBehaviour {
         lm.LeavingBedroom();
         var thing = GetComponent<Animator>();
         thing.SetTrigger("Thing");
-        other.gameObject.GetComponentInParent<CharacterMovement>().HitDoor();
-
+        //since the only object that can collide is the player character I could make the character movement script static and just run hitdoor
+        CharacterMovement.cm.HitDoor();
+        Sound_MusicHandler.sm.PlayEndBit();
     }
 
     public void TurnOffRightDoor()

@@ -5,6 +5,8 @@ using DoodleStudio95;
 
 public class CharacterMovement : MonoBehaviour {
 
+    public static CharacterMovement cm;
+
     public GameObject charContainer;
     public GameObject character;
     public Transform playerGoalPos;
@@ -108,6 +110,18 @@ public class CharacterMovement : MonoBehaviour {
 
     private void Awake()
     {
+
+        if (cm == null)
+        {
+            cm = this;
+        }
+
+        else if (cm != this)
+        {
+            Destroy(gameObject);
+        }
+
+
         dust.Pause();
         clothesParticle01.Pause();
         clothesParticle02.Pause();
@@ -219,6 +233,16 @@ public class CharacterMovement : MonoBehaviour {
         //charSpriteOBJ.GetComponent<ShadowCastingSprite>().enabled = true;
     }
 
+    public IEnumerator HitDoorCoroutine()
+    {
+        slowed = true;
+        moveSpeed = slowSpeed * 3;
+        yield return new WaitForSeconds(slowedDuration / 2);
+        slowed = false;
+        slowSpeed = slowSpeed / 3;
+        //StopCoroutine("GotHitCoroutine");
+    }
+
     public void HitTomato()
     {
         tomatoed = true;
@@ -321,16 +345,6 @@ public class CharacterMovement : MonoBehaviour {
         hsp = hspInitial;
         grav = oldGrav;
         jumpspeed = jumpspeedInitial;
-    }
-
-    public IEnumerator HitDoorCoroutine()
-    {
-        slowed = true;
-        moveSpeed = slowSpeed / 2;
-        yield return new WaitForSeconds(slowedDuration * 4);
-        slowed = false;
-        slowSpeed = slowSpeed * 2;
-        //StopCoroutine("GotHitCoroutine");
     }
 
     public IEnumerator PlayBurstCR() {
