@@ -173,6 +173,7 @@ public class CharacterMovement : MonoBehaviour {
             jumpScaler.SetTrigger("Jump");
             runScaler.ResetTrigger("Run");
             runScaler.SetTrigger("Jump");
+            Sound_GBSfx.gbsfx.JumpSFX();
         }        
     }
 
