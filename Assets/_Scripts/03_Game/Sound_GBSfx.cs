@@ -10,6 +10,9 @@ public class Sound_GBSfx : MonoBehaviour {
 
 
     public AudioClip[] jumpSFXClips;
+    public AudioClip moveLeft;
+    public AudioClip moveRight;
+
     private AudioSource source;
     private bool playEndPiece = false;
 
@@ -34,5 +37,16 @@ public class Sound_GBSfx : MonoBehaviour {
         source.clip = jumpSFXClips[Random.Range(0,jumpSFXClips.Length)];
         source.Play();
     }
-    
+
+    public void MoveLeft()
+    {
+        source.clip = moveLeft;
+        source.Play();
+    }
+    public void MoveRight()
+    {
+        source.clip = moveRight;
+        source.Play();
+    }
+
 }

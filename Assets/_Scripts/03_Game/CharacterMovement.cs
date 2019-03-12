@@ -155,11 +155,13 @@ public class CharacterMovement : MonoBehaviour {
 
     public void MoveLeft()
     {
+        Sound_GBSfx.gbsfx.MoveLeft();
         playerGoalPos.transform.position = new Vector3(Mathf.Clamp(playerGoalPos.transform.position.x - _positionDifference, LeftPos, RightPos), playerGoalPos.transform.position.y, playerGoalPos.transform.position.z);
     }
 
     public void MoveRight()
     {
+        Sound_GBSfx.gbsfx.MoveRight();
         playerGoalPos.transform.position = new Vector3(Mathf.Clamp(playerGoalPos.transform.position.x + _positionDifference, LeftPos, RightPos), playerGoalPos.transform.position.y, playerGoalPos.transform.position.z);
     }
 
