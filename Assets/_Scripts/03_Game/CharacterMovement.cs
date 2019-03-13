@@ -155,13 +155,13 @@ public class CharacterMovement : MonoBehaviour {
 
     public void MoveLeft()
     {
-        Sound_GBSfx.gbsfx.MoveLeft();
+        Sound_GBSfx.instance.MoveLeft();
         playerGoalPos.transform.position = new Vector3(Mathf.Clamp(playerGoalPos.transform.position.x - _positionDifference, LeftPos, RightPos), playerGoalPos.transform.position.y, playerGoalPos.transform.position.z);
     }
 
     public void MoveRight()
     {
-        Sound_GBSfx.gbsfx.MoveRight();
+        Sound_GBSfx.instance.MoveRight();
         playerGoalPos.transform.position = new Vector3(Mathf.Clamp(playerGoalPos.transform.position.x + _positionDifference, LeftPos, RightPos), playerGoalPos.transform.position.y, playerGoalPos.transform.position.z);
     }
 
@@ -175,7 +175,7 @@ public class CharacterMovement : MonoBehaviour {
             jumpScaler.SetTrigger("Jump");
             runScaler.ResetTrigger("Run");
             runScaler.SetTrigger("Jump");
-            Sound_GBSfx.gbsfx.JumpSFX();
+            Sound_GBSfx.instance.JumpSFX();
         }        
     }
 
