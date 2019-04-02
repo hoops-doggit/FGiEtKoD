@@ -2677,6 +2677,7 @@ GameObject:
   - component: {fileID: 129365458}
   - component: {fileID: 129365460}
   - component: {fileID: 129365459}
+  - component: {fileID: 129365461}
   m_Layer: 0
   m_Name: Catwalk_Trigger
   m_TagString: Untagged
@@ -2721,6 +2722,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 33.22, y: 16.92, z: 3.13}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &129365461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 129365457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d692253ce71dd6408f100d3158300f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &131062002 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4633533025614772, guid: c8b6d738469e146bbb7fa0890f9c2430,
