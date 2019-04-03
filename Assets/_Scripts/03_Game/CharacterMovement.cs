@@ -206,7 +206,7 @@ public class CharacterMovement : MonoBehaviour {
 	}
 
 	public void GotHit(){
-		StopCoroutine ("GotHitCorourine");
+		StopCoroutine ("GotHitCoroutine");
 		StartCoroutine ("GotHitCoroutine");
 	}
 
@@ -299,6 +299,7 @@ public class CharacterMovement : MonoBehaviour {
     }
 
     public IEnumerator GotHitCoroutine(){
+        Character_HitTracker.instance.AddHit();
         if (!fast)
         {
             slowed = true;
@@ -319,6 +320,7 @@ public class CharacterMovement : MonoBehaviour {
 
     public IEnumerator GotHitColouredCoroutine()
     {
+        Character_HitTracker.instance.AddHit();
         FastInitial();
         yield return new WaitForSeconds(fastDuration);
         Debug.Log("this");

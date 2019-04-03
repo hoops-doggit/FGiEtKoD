@@ -94,8 +94,8 @@ public class CharacterCollisions : MonoBehaviour {
 
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log(ba.currentColour);
-        Debug.Log("colour bumps = " + colourBumps);
+        //Debug.Log(ba.currentColour);
+        //Debug.Log("colour bumps = " + colourBumps);
         if (ba.currentColour != "pink" && other.gameObject.tag == "pepper")
         {
             //Debug.Log("colourBumps == " + colourBumps);
