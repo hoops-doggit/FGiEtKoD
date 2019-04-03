@@ -255,7 +255,7 @@ Prefab:
     - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
         type: 2}
       propertyPath: animationOffset
-      value: 0.2
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 212732502139759874, guid: 2086c4f868e54fa41b025b089c8dfbb4,
         type: 2}
@@ -4193,13 +4193,13 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213708220554170410, guid: 022e7d9a85c934e9e9052024e157cee9,
+      objectReference: {fileID: 213229676246937022, guid: d54852e919faddf49bd4a54f5c3efe45,
         type: 2}
     - target: {fileID: 212668480509612618, guid: c78eac8938ae64da289c338b6b0e0fae,
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213708220554170410, guid: 022e7d9a85c934e9e9052024e157cee9,
+      objectReference: {fileID: 213229676246937022, guid: d54852e919faddf49bd4a54f5c3efe45,
         type: 2}
     - target: {fileID: 1217347999654022, guid: c78eac8938ae64da289c338b6b0e0fae, type: 2}
       propertyPath: m_TagString
@@ -4238,7 +4238,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213708220554170410, guid: 022e7d9a85c934e9e9052024e157cee9,
+      objectReference: {fileID: 213229676246937022, guid: d54852e919faddf49bd4a54f5c3efe45,
         type: 2}
     - target: {fileID: 212458513812225688, guid: c78eac8938ae64da289c338b6b0e0fae,
         type: 2}
@@ -4259,7 +4259,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213708220554170410, guid: 022e7d9a85c934e9e9052024e157cee9,
+      objectReference: {fileID: 213229676246937022, guid: d54852e919faddf49bd4a54f5c3efe45,
         type: 2}
     - target: {fileID: 212821184477274276, guid: c78eac8938ae64da289c338b6b0e0fae,
         type: 2}
@@ -5168,6 +5168,11 @@ Prefab:
       propertyPath: animationSpeed
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+        type: 2}
+      propertyPath: animationOffset
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0
@@ -5971,7 +5976,7 @@ Prefab:
     - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
         type: 2}
       propertyPath: animationOffset
-      value: 0.25
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
         type: 2}
@@ -7818,6 +7823,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
+        type: 2}
+      propertyPath: animationOffset
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
   m_IsPrefabParent: 0
@@ -8590,13 +8600,13 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213503175444203534, guid: c5a7a0bd634b6479fbf9e9fc27744511,
+      objectReference: {fileID: 213229676246937022, guid: d54852e919faddf49bd4a54f5c3efe45,
         type: 2}
     - target: {fileID: 212668480509612618, guid: c78eac8938ae64da289c338b6b0e0fae,
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213708220554170410, guid: 022e7d9a85c934e9e9052024e157cee9,
+      objectReference: {fileID: 213229676246937022, guid: d54852e919faddf49bd4a54f5c3efe45,
         type: 2}
     - target: {fileID: 1217347999654022, guid: c78eac8938ae64da289c338b6b0e0fae, type: 2}
       propertyPath: m_TagString
@@ -8614,7 +8624,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213708220554170410, guid: 022e7d9a85c934e9e9052024e157cee9,
+      objectReference: {fileID: 213229676246937022, guid: d54852e919faddf49bd4a54f5c3efe45,
         type: 2}
     - target: {fileID: 1488410673955306, guid: c78eac8938ae64da289c338b6b0e0fae, type: 2}
       propertyPath: m_Name
@@ -8636,13 +8646,13 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 213708220554170410, guid: 022e7d9a85c934e9e9052024e157cee9,
+      objectReference: {fileID: 213229676246937022, guid: d54852e919faddf49bd4a54f5c3efe45,
         type: 2}
     - target: {fileID: 114020818535017268, guid: c78eac8938ae64da289c338b6b0e0fae,
         type: 2}
       propertyPath: m_File
       value: 
-      objectReference: {fileID: 11400000, guid: c5a7a0bd634b6479fbf9e9fc27744511,
+      objectReference: {fileID: 11400000, guid: d54852e919faddf49bd4a54f5c3efe45,
         type: 2}
     - target: {fileID: 114020818535017268, guid: c78eac8938ae64da289c338b6b0e0fae,
         type: 2}
@@ -9880,7 +9890,7 @@ Prefab:
     - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
         type: 2}
       propertyPath: animationOffset
-      value: 0.7
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
         type: 2}
@@ -11220,7 +11230,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4632130057039022, guid: 33ae4fa58039cae4cac81d3ed1d29d24, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.04986745
+      value: -59.1
       objectReference: {fileID: 0}
     - target: {fileID: 4632130057039022, guid: 33ae4fa58039cae4cac81d3ed1d29d24, type: 2}
       propertyPath: m_LocalPosition.y
@@ -24117,7 +24127,7 @@ Prefab:
     - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
         type: 2}
       propertyPath: animationOffset
-      value: 0.5
+      value: 0.65
       objectReference: {fileID: 0}
     - target: {fileID: 114303952696505882, guid: 2086c4f868e54fa41b025b089c8dfbb4,
         type: 2}
