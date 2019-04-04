@@ -5,11 +5,12 @@ using UnityEngine;
 public class Character_HitTracker : MonoBehaviour {
 
     public static Character_HitTracker instance;
-
+    public bool trackValuesOnline = false;
     public int timesHit = 0;
     public int jelliesCollected = 0;
 
     public Vector2[] gateValues;
+    
 
     private void Awake()
     {

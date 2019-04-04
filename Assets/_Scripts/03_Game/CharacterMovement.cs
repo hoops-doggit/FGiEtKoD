@@ -184,6 +184,7 @@ public class CharacterMovement : MonoBehaviour {
     public void Pushback()
     {
         //resets pushedBackAcc?
+        Character_HitTracker.instance.AddHit();
         pushedBackAcc = pushedBackInitial;
         trueGroundContact = false;
         _groundContact = false;

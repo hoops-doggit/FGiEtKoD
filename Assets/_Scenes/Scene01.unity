@@ -17600,6 +17600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3adb9285a3764a4a980929cf17a3fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trackValuesOnline: 1
   timesHit: 0
   jelliesCollected: 0
   gateValues:

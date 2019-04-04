@@ -22,7 +22,11 @@ public class GateScript : MonoBehaviour {
             int jelliesCollected = hitTracker.jelliesCollected;
             Debug.Log("went throught zone" + gateNumber + "with " + timesHit + " hits and " + jelliesCollected + " jellies collected");
             hitTracker.ResetValues(gateNumber);
-            //SendAnalytics(timesHit, jelliesCollected);
+            if (Character_HitTracker.instance.trackValuesOnline)
+            {
+                Debug.Log("tried to send something");
+                SendAnalytics(timesHit, jelliesCollected);
+            }
         }
     }
 
