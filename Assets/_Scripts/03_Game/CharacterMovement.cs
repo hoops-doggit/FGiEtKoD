@@ -38,6 +38,7 @@ public class CharacterMovement : MonoBehaviour {
     public float runSpeed;
 	public float slowSpeed;
     public float fastSpeed;
+    public float standingStartSpeed;
     public float doorSlowSpeed;
 	public float accSpeed;
     public float accInitial;
@@ -486,7 +487,7 @@ public class CharacterMovement : MonoBehaviour {
         if (moveSpeed != maxSpeed && !slowed && !pushedBack && !endScene) {
 			
 			if (moveSpeed <= 0) {
-				moveSpeed = accInitial;
+				moveSpeed = standingStartSpeed;
 			}
 
             if (!fast)

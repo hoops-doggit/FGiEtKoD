@@ -7,8 +7,9 @@ public class Character_HitTracker : MonoBehaviour {
     public static Character_HitTracker instance;
 
     public int timesHit = 0;
+    public int jelliesCollected = 0;
 
-    public int[] gateValues;
+    public Vector2[] gateValues;
 
     private void Awake()
     {
@@ -17,6 +18,7 @@ public class Character_HitTracker : MonoBehaviour {
 
     void Start () {
         timesHit = 0;
+        jelliesCollected = 0;
 	}
 	
 	public void AddHit()
@@ -24,9 +26,17 @@ public class Character_HitTracker : MonoBehaviour {
         timesHit ++;
     }
 
-    public void ResetHit(int gateNumber)
+    public void AddJelly()
     {
-        gateValues[gateNumber] = timesHit;
+        jelliesCollected++;
+    }
+
+    public void ResetValues(int gateNumber)
+    {
+        //take values and send them to the analytics thing
+        gateValues[gateNumber].x= timesHit;
+        gateValues[gateNumber].y = jelliesCollected;
         timesHit = 0;
+        jelliesCollected = 0;
     }
 }

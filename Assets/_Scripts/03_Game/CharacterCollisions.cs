@@ -29,7 +29,6 @@ public class CharacterCollisions : MonoBehaviour {
         ba = GetComponentInChildren<BakedAnimator>();
         _cbaTop = clothes_top.GetComponent<Clothes_BakedAnimator>();
         //_cbaBottom = clothes_bottom.GetComponent<Clothes_BakedAnimator>();
-
     }
     
 
@@ -57,7 +56,6 @@ public class CharacterCollisions : MonoBehaviour {
             _cbaTop.m_Sprites= col.gameObject.GetComponent<ClothesPile_ClothesContainer>().GiveGBClothing();
             Destroy(col.gameObject.GetComponent<BoxCollider>());
             cm.HitClothesPile();
-
         }
 
         if (col.gameObject.tag == "butterKnife")
