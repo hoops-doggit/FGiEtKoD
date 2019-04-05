@@ -41,9 +41,13 @@ public class CharacterMovement : MonoBehaviour {
     public float standingStartSpeed;
     public float doorSlowSpeed;
 	public float accSpeed;
+    public float accSlowSpeed;
     public float accInitial;
     public bool slowed;
+    public float blueSlowSpeed;
 	public float slowedDuration;
+    public float blueSlowedDuration;
+    public float blueSlowedAcc;
     public bool fast;
     public float fastDuration;
     public float swimSpeed;
@@ -246,20 +250,22 @@ public class CharacterMovement : MonoBehaviour {
         moveSpeed = slowSpeed * 3;
         yield return new WaitForSeconds(slowedDuration / 2);
         slowed = false;
-        slowSpeed = slowSpeed / 3;
-        //StopCoroutine("GotHitCoroutine");
+        //slowSpeed = slowSpeed / 3;
+        StopCoroutine("HitDoorCoroutine");
     }
 
     public IEnumerator SlowCoroutine(string colour)
     {
+        float initialSlowSpeed = slowSpeed;
+        float initialAccSpeed = accSpeed;
         slowed = true;
-        moveSpeed = (colour == "blue")?slowSpeed / 2: slowSpeed;
+        moveSpeed = (colour == "blue")?blueSlowSpeed: slowSpeed;
         accSpeed = (colour == "blue") ? accSpeed / 2 : accSpeed;
         yield return new WaitForSeconds((colour == "blue") ? slowedDuration*5:slowedDuration);
         slowed = false;
-        slowSpeed = (colour == "blue") ? slowSpeed * 2 : slowSpeed;
-        accSpeed = (colour == "blue") ? accSpeed * 2 : accSpeed;
-        //StopCoroutine("GotHitCoroutine");
+        slowSpeed = initialSlowSpeed;
+        accSpeed = initialAccSpeed;
+        StopCoroutine("SlowCoroutine");
     }
 
     public void HitTomato()
@@ -320,6 +326,7 @@ public class CharacterMovement : MonoBehaviour {
         {
             slowed = true;
             moveSpeed = slowSpeed;
+            accSpeed = accSlowSpeed;
         }
 
         if (fast)
@@ -330,6 +337,7 @@ public class CharacterMovement : MonoBehaviour {
         yield return new WaitForSeconds(slowedDuration);
         Debug.Log("I got hit");
         slowed = false;
+        accSpeed = accInitial;
         StopCoroutine("GotHitCoroutine");
 
 	}
