@@ -68,6 +68,16 @@ public class PepperShaker : MonoBehaviour {
             anim.SetTrigger("jumpslow");
             other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
         }
+
+        else if (other.gameObject.tag == "player" && _cep.colourEffectText == "orange")
+        {
+            pepperPowder.SetActive(true);
+            DoPowder();
+            gotHit = true;
+            animating = true;
+            anim.SetTrigger("jump");
+            other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
+        }
     }
 
 	public void DoPowder(){

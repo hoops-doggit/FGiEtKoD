@@ -41,7 +41,6 @@ public class CharacterCollisions : MonoBehaviour {
             groundContact = true;
             groundCount++;
             cm.UpdateGroundStats();
-
         }
 
         if (col.gameObject.tag == "box")

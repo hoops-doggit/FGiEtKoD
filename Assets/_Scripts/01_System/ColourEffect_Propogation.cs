@@ -32,7 +32,6 @@ public class ColourEffect_Propogation : MonoBehaviour {
                 {
                     colourEffectText = colour;
                     break;
-
                 }
             }
 
@@ -57,7 +56,6 @@ public class ColourEffect_Propogation : MonoBehaviour {
                 {
                     colourEffectText = colour;
                     break;
-
                 }
             }
 

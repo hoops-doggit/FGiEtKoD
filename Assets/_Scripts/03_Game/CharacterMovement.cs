@@ -219,9 +219,14 @@ public class CharacterMovement : MonoBehaviour {
             StartCoroutine("GotHitCoroutine");
         }
 
-        else if (colour != "green")
+        else if (colour == "green")
         {
             StartCoroutine("GotHitColouredCoroutine");
+        }
+
+        else if (colour == "blue")
+        {
+            StartCoroutine("SlowCoroutine");
         }
 
         else if (colour != "pink" || colour != "green")
@@ -243,6 +248,16 @@ public class CharacterMovement : MonoBehaviour {
         slowed = true;
         moveSpeed = slowSpeed * 3;
         yield return new WaitForSeconds(slowedDuration / 2);
+        slowed = false;
+        slowSpeed = slowSpeed / 3;
+        //StopCoroutine("GotHitCoroutine");
+    }
+
+    public IEnumerator SlowCoroutine()
+    {
+        slowed = true;
+        moveSpeed = slowSpeed * 3;
+        yield return new WaitForSeconds(slowedDuration);
         slowed = false;
         slowSpeed = slowSpeed / 3;
         //StopCoroutine("GotHitCoroutine");
