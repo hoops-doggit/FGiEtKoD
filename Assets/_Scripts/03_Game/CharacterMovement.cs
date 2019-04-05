@@ -122,7 +122,6 @@ public class CharacterMovement : MonoBehaviour {
             Destroy(gameObject);
         }
 
-
         dust.Pause();
         clothesParticle01.Pause();
         clothesParticle02.Pause();
@@ -131,7 +130,6 @@ public class CharacterMovement : MonoBehaviour {
 
         //charSpriteOBJ.GetComponent<ShadowCastingSprite>().enabled = false;
         //charSpriteOBJ.GetComponent<SpriteRenderer>().material = standardMat;
-
     }
 
     // Use this for initialization
@@ -150,7 +148,6 @@ public class CharacterMovement : MonoBehaviour {
         accInitial = accSpeed;
         hspInitial = hsp;
         jumpspeedInitial = jumpspeed;
-
 
     }
 
@@ -253,13 +250,15 @@ public class CharacterMovement : MonoBehaviour {
         //StopCoroutine("GotHitCoroutine");
     }
 
-    public IEnumerator SlowCoroutine()
+    public IEnumerator SlowCoroutine(string colour)
     {
         slowed = true;
-        moveSpeed = slowSpeed * 3;
-        yield return new WaitForSeconds(slowedDuration);
+        moveSpeed = (colour == "blue")?slowSpeed / 2: slowSpeed;
+        accSpeed = (colour == "blue") ? accSpeed / 2 : accSpeed;
+        yield return new WaitForSeconds((colour == "blue") ? slowedDuration*5:slowedDuration);
         slowed = false;
-        slowSpeed = slowSpeed / 3;
+        slowSpeed = (colour == "blue") ? slowSpeed * 2 : slowSpeed;
+        accSpeed = (colour == "blue") ? accSpeed * 2 : accSpeed;
         //StopCoroutine("GotHitCoroutine");
     }
 
