@@ -15,6 +15,7 @@ TagManager:
   - bigKnife
   - butterKnife
   - pepper
+  - orange
   layers:
   - Default
   - TransparentFX

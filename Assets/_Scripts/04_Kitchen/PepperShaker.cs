@@ -16,6 +16,8 @@ public class PepperShaker : MonoBehaviour {
 	public Vector3 powderPos;
     private ColourEffect_Propogation _cep;
     private Collider col;
+    public GameObject Orange;
+    public float orangeOffset;
 	// Use this for initialization
 
 	private void Start(){
@@ -28,6 +30,20 @@ public class PepperShaker : MonoBehaviour {
 	private void OnTriggerEnter(Collider other)
 	{
         Destroy(col);
+
+        if(other.gameObject.tag == "orange")
+        {
+            other.gameObject.GetComponentInParent<Orange_Behaviour>().DoTheThing(gameObject);
+        }
+
+        if(other.gameObject.tag == "player" && _cep.colourEffectText == "orange")
+        {
+            GameObject orange = Instantiate(Orange,gameObject.transform, true);
+            orange.transform.parent = null;
+            orange.transform.localScale = Vector3.one * 0.5f;
+            orange.transform.position = new Vector3(transform.position.x, 0, transform.position.z + orangeOffset);
+        }
+
 		if (other.gameObject.tag == "player" && _cep.colourEffectText == "pink") {
 			pepperPowder.SetActive (true);
 			DoPowder();
@@ -35,7 +51,7 @@ public class PepperShaker : MonoBehaviour {
 			animating = true;
 			//anim.Play ("PepperJump");
 			anim.SetTrigger("jump");
-			other.gameObject.GetComponentInParent<CharacterMovement> ().GotHit();
+			other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
 			//Debug.Log ("pepper hit player");
 		}
 
@@ -71,11 +87,13 @@ public class PepperShaker : MonoBehaviour {
 
         else if (other.gameObject.tag == "player" && _cep.colourEffectText == "orange")
         {
-            pepperPowder.SetActive(true);
-            DoPowder();
-            gotHit = true;
-            animating = true;
-            anim.SetTrigger("jump");
+            //pepperPowder.SetActive(true);
+            //DoPowder();
+            //gotHit = true;
+            //animating = true;
+            //anim.SetTrigger("jump");
+
+            //instantiaate orangee at gaaameobjeect position
             other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
         }
     }

@@ -15,12 +15,15 @@ public class Jellybean_Behaviour : MonoBehaviour {
     private bool gotTouched;
 
     private void OnTriggerEnter(Collider other)
-	{		
-		//other.gameObject.GetComponentInParent<CharacterMovement>().PlayBurst();
-        CharacterMovement.cm.PlayBurst();
-        other.gameObject.GetComponent<CharacterCollisions> ().jelliesCollected++;
-		parent.GetComponent<JellyBean_Death> ().PlayAnimation ();
-        Character_HitTracker.instance.AddJelly();
+	{
+        //other.gameObject.GetComponentInParent<CharacterMovement>().PlayBurst();
+        if (other.gameObject.tag == "player")
+        {
+            CharacterMovement.cm.PlayBurst();
+            other.gameObject.GetComponent<CharacterCollisions>().jelliesCollected++;
+            parent.GetComponent<JellyBean_Death>().PlayAnimation();
+            Character_HitTracker.instance.AddJelly();
+        }
 	}
 		
 }
