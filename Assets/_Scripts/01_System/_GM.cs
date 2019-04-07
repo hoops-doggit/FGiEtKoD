@@ -35,6 +35,13 @@ public class _GM : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+
+        int width = 320; // or something else
+        int height = 640; // or something else
+        bool isFullScreen = false; // should be windowed to run in arbitrary resolution
+        int desiredFPS = 60; // or something else
+
+        Screen.SetResolution(width, height, isFullScreen, desiredFPS);
         //DontDestroyOnLoad(gameObject);        
     }
 

@@ -1567,7 +1567,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 213023704464137018, guid: 28e45c1f1463d465292696ea6e9df931, type: 2}
+  m_Sprite: {fileID: 213393660502574906, guid: 28e45c1f1463d465292696ea6e9df931, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -3998,6 +3998,14 @@ Prefab:
       propertyPath: m_Name
       value: Sink_03
       objectReference: {fileID: 0}
+    - target: {fileID: 4285038591355608, guid: 31e16ea891e114dbf91dd3887a6f5254, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4662560150883154, guid: 31e16ea891e114dbf91dd3887a6f5254, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.3
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114670395725516070, guid: 31e16ea891e114dbf91dd3887a6f5254, type: 2}
     - {fileID: 114359088717575720, guid: 31e16ea891e114dbf91dd3887a6f5254, type: 2}
@@ -5654,7 +5662,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 306616006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -18.7, y: 3.6, z: 71.899994}
+  m_LocalPosition: {x: -18.7, y: 5.1, z: 71.899994}
   m_LocalScale: {x: 4.0840898, y: 4.0840898, z: 4.0840898}
   m_Children: []
   m_Father: {fileID: 2077425455}
@@ -7676,7 +7684,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 425221101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.4, y: 3.6, z: 94.2}
+  m_LocalPosition: {x: -19.4, y: 5.1, z: 94.2}
   m_LocalScale: {x: 4.0840898, y: 4.0840898, z: 4.0840898}
   m_Children: []
   m_Father: {fileID: 2077425455}
@@ -17691,7 +17699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3adb9285a3764a4a980929cf17a3fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trackValuesOnline: 0
+  trackValuesOnline: 1
   timesHit: 0
   jelliesCollected: 0
   gateValues:
