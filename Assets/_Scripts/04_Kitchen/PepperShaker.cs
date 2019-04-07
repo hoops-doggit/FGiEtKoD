@@ -30,29 +30,43 @@ public class PepperShaker : MonoBehaviour {
 	private void OnTriggerEnter(Collider other)
 	{
         Destroy(col);
+        ColourEffect_DS_Static ds = GetComponentInChildren<ColourEffect_DS_Static>();
 
+        //this runs when giant orange hits the pepper
         if(other.gameObject.tag == "orange")
         {
             other.gameObject.GetComponentInParent<Orange_Behaviour>().DoTheThing(gameObject);
         }
-
+        //if player bumps into pepper and it's orange
         if(other.gameObject.tag == "player" && _cep.colourEffectText == "orange")
         {
+
             GameObject orange = Instantiate(Orange,gameObject.transform, true);
             orange.transform.parent = null;
             orange.transform.localScale = Vector3.one * 0.5f;
             orange.transform.position = new Vector3(transform.position.x, 0, transform.position.z + orangeOffset);
+
+            Orange_Behaviour ob = orange.GetComponent<Orange_Behaviour>();
+            ParticleSystem particles = Instantiate(ob.orangeDestroyedFX, gameObject.transform);
+            particles.transform.parent = null;
+            particles.transform.localScale = Vector3.one;
+            
+            gotHit = true;
+            animating = true;
+            anim.SetTrigger("jump");
         }
 
 		if (other.gameObject.tag == "player" && _cep.colourEffectText == "pink") {
-			pepperPowder.SetActive (true);
+
+            string colour = other.gameObject.GetComponentInChildren<BakedAnimator>().currentColour;
+            ColourEffect_DS_Static ce = GetComponentInChildren<ColourEffect_DS_Static>();
+            ce.ChangeColour(colour);
+            pepperPowder.SetActive (true);
 			DoPowder();
 			gotHit = true;
 			animating = true;
-			//anim.Play ("PepperJump");
 			anim.SetTrigger("jump");
 			other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
-			//Debug.Log ("pepper hit player");
 		}
 
         else if (other.gameObject.tag == "player" && _cep.colourEffectText == "green")

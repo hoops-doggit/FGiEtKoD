@@ -15,6 +15,7 @@ public class Orange_Behaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         thingsDestroyed = 0;
+        StartCoroutine("OrangeLife");
 	}
 
     public void DoTheThing(GameObject collisionObject)
@@ -31,13 +32,26 @@ public class Orange_Behaviour : MonoBehaviour {
         }
     }
 
+    private void DestroyOrange()
+    {
+        StopAllCoroutines();
+        ParticleSystem orangeDeath = Instantiate(orangeDestroyedFX, orangeDeathParticlesPosition);
+        orangeDeath.transform.parent = null;
+        Destroy(gameObject);
+    }
+
     private void CheckNumberOfDestroyedThings()
     {
         if (thingsDestroyed >= maxThingsHit)
         {
-            ParticleSystem orangeDeath = Instantiate(orangeDestroyedFX, orangeDeathParticlesPosition);
-            orangeDeath.transform.parent = null;
-            Destroy(gameObject);
+            DestroyOrange();
         }
+    }
+
+    private IEnumerator OrangeLife()
+    {
+        yield return new WaitForSeconds(4);
+        DestroyOrange();
+        StopAllCoroutines();
     }
 }

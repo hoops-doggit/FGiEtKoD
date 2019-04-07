@@ -24,7 +24,7 @@ public class ColourEffect_Propogation : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (colourEffectText == "pink"){
+        if (colourEffectText == "pink" && other.tag == "player"){
             foreach (string x in allowedColours)
             {
                 string colour = other.gameObject.GetComponentInChildren<BakedAnimator>().currentColour;
