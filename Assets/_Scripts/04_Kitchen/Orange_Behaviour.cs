@@ -6,15 +6,18 @@ public class Orange_Behaviour : MonoBehaviour {
 
     [SerializeField]
     private int thingsDestroyed;
-    public int maxThingsHit;
+    [SerializeField]
+    private float orangeLifeSpanSeconds;
+    //public int maxThingsHit;
     public ParticleSystem destroyedFX;
     public ParticleSystem orangeDestroyedFX;
     public Transform orangeDeathParticlesPosition;
     
     
+    
 	// Use this for initialization
 	void Start () {
-        thingsDestroyed = 0;
+        //thingsDestroyed = 0;
         StartCoroutine("OrangeLife");
 	}
 
@@ -27,8 +30,12 @@ public class Orange_Behaviour : MonoBehaviour {
             particles.transform.parent = null;
             particles.transform.localScale = Vector3.one;
             Destroy(collisionObject.gameObject);
-            thingsDestroyed++;
-            CheckNumberOfDestroyedThings();
+            if(collisionObject.transform.parent != null && collisionObject.transform.parent.tag != "UnDestroyable")
+            {
+                Destroy(collisionObject.transform.parent.gameObject);
+            }
+            //thingsDestroyed++;
+            //CheckNumberOfDestroyedThings();
         }
     }
 
@@ -40,17 +47,17 @@ public class Orange_Behaviour : MonoBehaviour {
         Destroy(gameObject);
     }
 
-    private void CheckNumberOfDestroyedThings()
-    {
-        if (thingsDestroyed >= maxThingsHit)
-        {
-            DestroyOrange();
-        }
-    }
+    //private void CheckNumberOfDestroyedThings()
+    //{
+    //    if (thingsDestroyed >= maxThingsHit)
+    //    {
+    //        DestroyOrange();
+    //    }
+    //}
 
     private IEnumerator OrangeLife()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(orangeLifeSpanSeconds);
         DestroyOrange();
         StopAllCoroutines();
     }

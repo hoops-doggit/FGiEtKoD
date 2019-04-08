@@ -21,7 +21,10 @@ public class Knife_Behaviour : MonoBehaviour {
     public float animationSpeed;
     public float slowAnimationSpeed;
 
-    private Animator anim;
+    [SerializeField]
+    private Animator knife;
+    [SerializeField]
+    private Animator knifeShadow;
 
     
 
@@ -66,19 +69,29 @@ public class Knife_Behaviour : MonoBehaviour {
     void Start () {
         //knifePosition = startRot;
 
-        anim = GetComponentInChildren<Animator>();
-
-        anim.speed = 0f;
-
-        anim.Play("Knife_Big", 0, animationOffset);
+        knife.speed = 0f;
+        knife.Play("Knife_Big", 0, animationOffset);
+        if (knifeShadow != null)
+        {
+            knifeShadow.speed = 0f;
+            knifeShadow.Play("Knife_Shadow", 0, animationOffset);
+        }   
 
         if (GetComponentInChildren<ColourEffect_Propogation_Knife>().colourEffectText == "blue")
         {
-            anim.speed = slowAnimationSpeed;
+            knife.speed = slowAnimationSpeed;
+            if (knifeShadow != null)
+            {
+                knifeShadow.speed = slowAnimationSpeed;
+            }
         }
         else
         {
-            anim.speed = animationSpeed;
+            knife.speed = animationSpeed;
+            if (knifeShadow != null)
+            {
+                knifeShadow.speed = animationSpeed;
+            }
         }
 
 
@@ -96,14 +109,22 @@ public class Knife_Behaviour : MonoBehaviour {
 	}
 
     public void CheckWhichColourIAm(){
-        anim = GetComponentInChildren<Animator>();
         if (GetComponentInChildren<ColourEffect_Propogation_Knife>().colourEffectText == "blue")
         {
-            anim.speed = slowAnimationSpeed;
+            knife.speed = slowAnimationSpeed;
+            if (knifeShadow != null)
+            {
+                knifeShadow.speed = slowAnimationSpeed;
+            }
+
         }
         else
         {
-            anim.speed = animationSpeed;
+            knife.speed = animationSpeed;
+            if (knifeShadow != null)
+            {
+                knifeShadow.speed = animationSpeed;
+            }
         }
     }
 

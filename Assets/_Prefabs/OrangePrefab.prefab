@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 136115324773291578}
   - component: {fileID: 54237135333389952}
   - component: {fileID: 114116019319250030}
+  - component: {fileID: 65238237975869088}
   m_Layer: 0
   m_Name: OrangeBall
   m_TagString: orange
@@ -163,7 +164,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1734551463131190}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -101.79}
+  m_LocalPosition: {x: 0.8466223, y: 0.005, z: 185.68698}
   m_LocalScale: {x: 0.41010123, y: 0.41010123, z: 0.41010123}
   m_Children:
   - {fileID: 4645590963327148}
@@ -242,6 +243,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65238237975869088
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1146134269798006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11, y: 12.5, z: 12.5}
+  m_Center: {x: 0, y: 9.38, z: 0}
 --- !u!95 &95056211786938528
 Animator:
   serializedVersion: 3
@@ -346,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingsDestroyed: 0
-  maxThingsHit: 3
+  orangeLifeSpanSeconds: 0.9
   destroyedFX: {fileID: 198559378222913344, guid: 9c0d06955756e8d4dbfc0fca963765b7,
     type: 2}
   orangeDestroyedFX: {fileID: 198559378222913344, guid: 9c0d06955756e8d4dbfc0fca963765b7,

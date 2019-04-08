@@ -23,6 +23,7 @@ public class PrefabPlacer : EditorWindow {
     private GameObject smallTomato;
     private GameObject bigTomato;
     private GameObject bigKnife;
+    private GameObject bigPlainKnife;
 
     [MenuItem("Window/Prefab Placer")]
     public static void ShowWindow()
@@ -48,6 +49,7 @@ public class PrefabPlacer : EditorWindow {
         smallTomato = ppd.smallTomato;
         bigTomato = ppd.bigTomato;
         bigKnife = ppd.bigKnife;
+        bigPlainKnife = ppd.bigPlainKnife;
 
     }
 
@@ -160,11 +162,12 @@ public class PrefabPlacer : EditorWindow {
         {
             ReplaceWith("bigknife");
         }
-        GUILayout.EndHorizontal();
 
-
-
-
+        if (GUILayout.Button("replace w' Big Plain Knife"))
+        {
+            ReplaceWith("bigPlainKnife");
+        }
+        GUILayout.EndHorizontal();        
     }
 
     void Centre()
@@ -322,6 +325,17 @@ public class PrefabPlacer : EditorWindow {
             {
                 Transform tempTransform = obj.transform;
                 var replacement = PrefabUtility.InstantiatePrefab(bigKnife) as GameObject;
+                replacement.transform.position = tempTransform.position;
+                Destroy(obj);
+            }
+        }
+
+        else if (thing == "bigPlainKnife")
+        {
+            foreach (GameObject obj in Selection.gameObjects)
+            {
+                Transform tempTransform = obj.transform;
+                var replacement = PrefabUtility.InstantiatePrefab(bigPlainKnife) as GameObject;
                 replacement.transform.position = tempTransform.position;
                 Destroy(obj);
             }

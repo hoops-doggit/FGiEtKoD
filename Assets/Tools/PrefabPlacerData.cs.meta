@@ -15,6 +15,8 @@ MonoImporter:
   - bigTomato: {fileID: 1929510020601322, guid: f9dfa31b06e65e049b3a2b250ff5a2e0,
       type: 2}
   - bigKnife: {fileID: 1234651279780588, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
+  - bigPlainKnife: {fileID: 1867988265716116, guid: 2e3954599f6fb4544a6ab907cb91c0a8,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
