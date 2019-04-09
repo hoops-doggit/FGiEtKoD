@@ -37,78 +37,73 @@ public class PepperShaker : MonoBehaviour {
         {
             other.gameObject.GetComponentInParent<Orange_Behaviour>().DoTheThing(gameObject);
         }
-        //if player bumps into pepper and it's orange
-        if(other.gameObject.tag == "player" && _cep.colourEffectText == "orange")
+
+        //if the thing that bumps into me is the player
+        if (other.gameObject.tag == "player")
         {
+            //and if i am orange
+            if (_cep.colourEffectText == "orange")
+            {
+                other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
+                GameObject orange = Instantiate(Orange, gameObject.transform, true);
+                orange.transform.parent = null;
+                orange.transform.localScale = Vector3.one * 0.5f;
+                orange.transform.position = new Vector3(transform.position.x, 0, transform.position.z + orangeOffset);
 
-            GameObject orange = Instantiate(Orange,gameObject.transform, true);
-            orange.transform.parent = null;
-            orange.transform.localScale = Vector3.one * 0.5f;
-            orange.transform.position = new Vector3(transform.position.x, 0, transform.position.z + orangeOffset);
+                Orange_Behaviour ob = orange.GetComponent<Orange_Behaviour>();
+                ParticleSystem particles = Instantiate(ob.orangeDestroyedFX, gameObject.transform);
+                particles.transform.parent = null;
+                particles.transform.localScale = Vector3.one;
 
-            Orange_Behaviour ob = orange.GetComponent<Orange_Behaviour>();
-            ParticleSystem particles = Instantiate(ob.orangeDestroyedFX, gameObject.transform);
-            particles.transform.parent = null;
-            particles.transform.localScale = Vector3.one;
-            
-            gotHit = true;
-            animating = true;
-            anim.SetTrigger("jump");
-        }
+                gotHit = true;
+                animating = true;
+                anim.SetTrigger("jump");
+            }
 
-		if (other.gameObject.tag == "player" && _cep.colourEffectText == "pink") {
+            //and if i am pink
+            if (_cep.colourEffectText == "pink")
+            {
 
-            string colour = other.gameObject.GetComponentInChildren<BakedAnimator>().currentColour;
-            ColourEffect_DS_Static ce = GetComponentInChildren<ColourEffect_DS_Static>();
-            ce.ChangeColour(colour);
-            pepperPowder.SetActive (true);
-			DoPowder();
-			gotHit = true;
-			animating = true;
-			anim.SetTrigger("jump");
-			other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
-		}
+                string colour = other.gameObject.GetComponentInChildren<BakedAnimator>().currentColour;
+                ColourEffect_DS_Static ce = GetComponentInChildren<ColourEffect_DS_Static>();
+                ce.ChangeColour(colour);
+                pepperPowder.SetActive(true);
+                DoPowder();
+                gotHit = true;
+                animating = true;
+                anim.SetTrigger("jump");
+                other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
+            }
 
-        else if (other.gameObject.tag == "player" && _cep.colourEffectText == "green")
-        {
-            pepperPowder.SetActive(true);
-            DoPowder();
-            gotHit = true;
-            animating = true;
-            anim.SetTrigger("jump");
-            other.gameObject.GetComponentInParent<CharacterMovement>().GotHitColoured(_cep.colourEffectText);
-        }
+            else if (_cep.colourEffectText == "green")
+            {
+                pepperPowder.SetActive(true);
+                DoPowder();
+                gotHit = true;
+                animating = true;
+                anim.SetTrigger("jump");
+                other.gameObject.GetComponentInParent<CharacterMovement>().GotHitColoured(_cep.colourEffectText);
+            }
 
-        else if (other.gameObject.tag == "player" && _cep.colourEffectText == "yellow")
-        {
-            pepperPowder.SetActive(true);
-            DoPowder();
-            gotHit = true;
-            animating = true;
-            anim.SetTrigger("jump");
-            other.gameObject.GetComponentInParent<CharacterMovement>().GotHitColoured(_cep.colourEffectText);
-        }
+            else if (_cep.colourEffectText == "yellow")
+            {
+                pepperPowder.SetActive(true);
+                DoPowder();
+                gotHit = true;
+                animating = true;
+                anim.SetTrigger("jump");
+                other.gameObject.GetComponentInParent<CharacterMovement>().GotHitColoured(_cep.colourEffectText);
+            }
 
-        else if (other.gameObject.tag == "player" && _cep.colourEffectText == "blue")
-        {
-            pepperPowder.SetActive(true);
-            DoPowder();
-            gotHit = true;
-            animating = true;
-            anim.SetTrigger("jumpslow");
-            other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
-        }
-
-        else if (other.gameObject.tag == "player" && _cep.colourEffectText == "orange")
-        {
-            //pepperPowder.SetActive(true);
-            //DoPowder();
-            //gotHit = true;
-            //animating = true;
-            //anim.SetTrigger("jump");
-
-            //instantiaate orangee at gaaameobjeect position
-            other.gameObject.GetComponentInParent<CharacterMovement>().GotHit();
+            else if (_cep.colourEffectText == "blue")
+            {
+                pepperPowder.SetActive(true);
+                DoPowder();
+                gotHit = true;
+                animating = true;
+                anim.SetTrigger("jumpslow");
+                other.gameObject.GetComponentInParent<CharacterMovement>().GotHitColoured("blue");
+            }
         }
     }
 

@@ -230,7 +230,7 @@ public class CharacterMovement : MonoBehaviour {
             StartCoroutine("SlowCoroutine");
         }
 
-        else if (colour != "pink" || colour != "green")
+        else if (colour != "pink" || colour != "green" || colour != "blue") 
         {
             StartCoroutine("GotHitCoroutine");
         }
@@ -254,18 +254,54 @@ public class CharacterMovement : MonoBehaviour {
         StopCoroutine("HitDoorCoroutine");
     }
 
-    public IEnumerator SlowCoroutine(string colour)
+    //runs only when you hit a blue pepper
+    public IEnumerator SlowCoroutine()
     {
+        Debug.Log("playing blue slow");
         float initialSlowSpeed = slowSpeed;
         float initialAccSpeed = accSpeed;
         slowed = true;
-        moveSpeed = (colour == "blue")?blueSlowSpeed: slowSpeed;
-        accSpeed = (colour == "blue") ? accSpeed / 2 : accSpeed;
-        yield return new WaitForSeconds((colour == "blue") ? slowedDuration*5:slowedDuration);
+        moveSpeed = blueSlowSpeed;
+        accSpeed = blueSlowedAcc;
+        yield return new WaitForSeconds(blueSlowedDuration);
         slowed = false;
         slowSpeed = initialSlowSpeed;
         accSpeed = initialAccSpeed;
+        Debug.Log("Stopping blue slow");
         StopCoroutine("SlowCoroutine");
+    }
+
+    public IEnumerator GotHitCoroutine()
+    {
+        Character_HitTracker.instance.AddHit();
+        if (!fast)
+        {
+            slowed = true;
+            moveSpeed = slowSpeed;
+            accSpeed = accSlowSpeed;
+        }
+
+        if (fast)
+        {
+            slowed = true;
+            moveSpeed = slowSpeed * 2;
+        }
+        yield return new WaitForSeconds(slowedDuration);
+        Debug.Log("I got hit");
+        slowed = false;
+        accSpeed = accInitial;
+        StopCoroutine("GotHitCoroutine");
+    }
+
+    public IEnumerator GotHitColouredCoroutine()
+    {
+        Character_HitTracker.instance.AddHit();
+        FastInitial();
+        yield return new WaitForSeconds(fastDuration);
+        Debug.Log("this");
+        FastEnd();
+
+        //StopCoroutine("GotHitColouredCoroutine");
     }
 
     public void HitTomato()
@@ -320,38 +356,7 @@ public class CharacterMovement : MonoBehaviour {
         }       
     }
 
-    public IEnumerator GotHitCoroutine(){
-        Character_HitTracker.instance.AddHit();
-        if (!fast)
-        {
-            slowed = true;
-            moveSpeed = slowSpeed;
-            accSpeed = accSlowSpeed;
-        }
-
-        if (fast)
-        {
-            slowed = true;
-            moveSpeed = slowSpeed * 2;
-        }
-        yield return new WaitForSeconds(slowedDuration);
-        Debug.Log("I got hit");
-        slowed = false;
-        accSpeed = accInitial;
-        StopCoroutine("GotHitCoroutine");
-
-	}
-
-    public IEnumerator GotHitColouredCoroutine()
-    {
-        Character_HitTracker.instance.AddHit();
-        FastInitial();
-        yield return new WaitForSeconds(fastDuration);
-        Debug.Log("this");
-        FastEnd();
-
-        //StopCoroutine("GotHitColouredCoroutine");
-    }
+    
 
     private void FastInitial()
     {

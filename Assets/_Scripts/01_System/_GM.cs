@@ -110,7 +110,7 @@ public class _GM : MonoBehaviour {
 
             if (timeElapsed.Length == 2)
             {
-                millisecondsElapsed.text = timeElapsed;
+                millisecondsElapsed.text = timeElapsed.Remove(0,1);
                 secondsElapsed.text = "0";
             }
 

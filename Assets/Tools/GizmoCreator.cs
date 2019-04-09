@@ -8,6 +8,7 @@ public class GizmoCreator : MonoBehaviour {
     public Vector3 offset = new Vector3(23, 0, 0);
     private Vector3 realPos;
 
+    
     private void OnDrawGizmosSelected()
     {
         realPos.x = transform.position.x + offset.x;

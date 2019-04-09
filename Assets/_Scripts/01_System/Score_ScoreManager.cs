@@ -35,6 +35,8 @@ public class Score_ScoreManager : MonoBehaviour {
     private void Awake()
     {
         instance = this;
+
+        //the below line is for resetting progress
         //PlayerPrefs.DeleteAll();
     }
 
@@ -176,7 +178,8 @@ public class Score_ScoreManager : MonoBehaviour {
     public int CalculateScore()
     {
         int jellies = _GM.instance.gummyBearPivot.GetComponent<CharacterCollisions>().jelliesCollected;
-        float time = _GM.instance.timeTime;
+        float time = _GM.instance.timeTime * 100;
+
         Debug.Log("jellies = " + jellies);
         Debug.Log("time = " + time);
         

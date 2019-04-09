@@ -21,6 +21,7 @@ public class Orange_Behaviour : MonoBehaviour {
         StartCoroutine("OrangeLife");
 	}
 
+    //this runs when the orange destroys something
     public void DoTheThing(GameObject collisionObject)
     {
         if (collisionObject != gameObject)
@@ -39,6 +40,7 @@ public class Orange_Behaviour : MonoBehaviour {
         }
     }
 
+    //this runs when the orange gets to the end of it's lifespan
     private void DestroyOrange()
     {
         StopAllCoroutines();
