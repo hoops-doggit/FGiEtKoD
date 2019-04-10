@@ -81,6 +81,8 @@ public class CharacterMovement : MonoBehaviour {
     [Header("FX")]
     public GameObject burst;
     public GameObject clothesBurst;
+    public ParticleSystem snowFlake;
+    public ParticleSystem speedStreaks;
 
     [Header("clothesPile")]
     public ParticleSystem dust;
@@ -101,6 +103,8 @@ public class CharacterMovement : MonoBehaviour {
     public Material standardMat;
     public Material shadowCasting;
     public GameObject charSpriteOBJ;
+
+   
 
     //variables for modifying fast behaviour
     private float fastAccSpeedModifier = 1.1f;
@@ -130,6 +134,8 @@ public class CharacterMovement : MonoBehaviour {
         clothesParticle01.Pause();
         clothesParticle02.Pause();
         clothesParticle03.Pause();
+        snowFlake.Pause();
+        speedStreaks.Pause();
         clothesLight.enabled = true;
 
         //charSpriteOBJ.GetComponent<ShadowCastingSprite>().enabled = false;
@@ -258,6 +264,8 @@ public class CharacterMovement : MonoBehaviour {
     //runs only when you hit a blue pepper
     public IEnumerator SlowCoroutine()
     {
+        //play ice fx
+        snowFlake.Play();
         Debug.Log("playing blue slow");
         float initialSlowSpeed = slowSpeed;
         float initialAccSpeed = accSpeed;
@@ -296,9 +304,11 @@ public class CharacterMovement : MonoBehaviour {
 
     public IEnumerator GotHitColouredCoroutine()
     {
+        speedStreaks.Play();
         Character_HitTracker.instance.AddHit();
         FastInitial();
         yield return new WaitForSeconds(fastDuration);
+        speedStreaks.Stop();
         Debug.Log("this");
         FastEnd();
 
