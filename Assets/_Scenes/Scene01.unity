@@ -1322,7 +1322,7 @@ ParticleSystem:
   stopAction: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -14471,7 +14471,17 @@ Prefab:
         type: 2}
       propertyPath: speedStreaks
       value: 
-      objectReference: {fileID: 52931376}
+      objectReference: {fileID: 1348935626}
+    - target: {fileID: 198934030586609728, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198107008962206946, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2b412f96e5de450469f5cfa1cb3c4263, type: 2}
   m_IsPrefabParent: 0
@@ -18594,7 +18604,7 @@ ParticleSystem:
   stopAction: 0
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -21066,7 +21076,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
   NoiseModule:
-    enabled: 0
+    enabled: 1
     strength:
       serializedVersion: 2
       minMaxState: 0
@@ -32486,7 +32496,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.25
+      scalar: 0.6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
