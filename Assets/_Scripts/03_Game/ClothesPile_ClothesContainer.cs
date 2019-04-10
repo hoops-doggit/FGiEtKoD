@@ -8,6 +8,7 @@ public class ClothesPile_ClothesContainer : MonoBehaviour {
     public List<Sprite> top02;
     public List<Sprite> bottom01;
     public List<Sprite> bottom02;
+    public List<Sprite> bottom03;
 
     public string topName;
     public string bottomName;
@@ -40,7 +41,7 @@ public class ClothesPile_ClothesContainer : MonoBehaviour {
 
         else if (topOrBottom == 1)
         {
-            int whichbottom = Random.Range(0, 2);
+            int whichbottom = Random.Range(0, 3);
             if (whichbottom == 0)
             {
                 return bottom01;
@@ -48,6 +49,11 @@ public class ClothesPile_ClothesContainer : MonoBehaviour {
             if (whichbottom == 1)
             {
                 return bottom02;
+            }
+
+            if (whichbottom == 2)
+            {
+                return bottom03;
             }
         }
         return null;
