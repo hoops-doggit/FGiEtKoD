@@ -369,7 +369,7 @@ public class CharacterMovement : MonoBehaviour {
 
     private void FastInitial()
     {
-        Fast_CameraControll.instance.GoingFast();
+        //Fast_CameraControll.instance.GoingFast();
         fast = true;
         maxSpeed = fastSpeed;
         accSpeed = fastAcc;
@@ -381,7 +381,7 @@ public class CharacterMovement : MonoBehaviour {
     private void FastEnd()
     {
         Debug.Log("that");
-        Fast_CameraControll.instance.NormalSpeed();
+        //Fast_CameraControll.instance.NormalSpeed();
         fast = false;
         maxSpeed = runSpeed;
         accSpeed = accInitial;
