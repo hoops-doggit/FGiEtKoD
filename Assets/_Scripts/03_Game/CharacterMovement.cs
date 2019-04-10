@@ -222,6 +222,7 @@ public class CharacterMovement : MonoBehaviour {
 
         else if (colour == "green")
         {
+            StopCoroutine("GotHitColouredCoroutine");
             StartCoroutine("GotHitColouredCoroutine");
         }
 
@@ -354,9 +355,7 @@ public class CharacterMovement : MonoBehaviour {
             runScaler.ResetTrigger("Run");
             runScaler.SetTrigger("Jump");
         }       
-    }
-
-    
+    }    
 
     private void FastInitial()
     {
