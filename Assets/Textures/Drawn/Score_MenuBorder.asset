@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1566551335, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
-  m_Name: MenuBorder
+  m_Name: Score_MenuBorder
   m_EditorClassIdentifier: 
   frames:
   - _texture: {fileID: 28625497438936926}
@@ -82,7 +82,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    00000000000000000000000000000000: 0
+    afe7d256df39b7e4a921e5299b6c2540: 213258124799543704
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
