@@ -23,6 +23,8 @@ public class Score_ScoreManager : MonoBehaviour {
     public GameObject nameEntryboxPrefab;
     private GameObject nameEntryboxClone;
 
+    public string playerName;
+
     [Header("Score Values")]
     public int jellyValue = 150;
     public int timeValue;
@@ -87,6 +89,7 @@ public class Score_ScoreManager : MonoBehaviour {
     {
         if(PlayerPrefs.HasKey("save")){
             savedScores = Score_Serializer.Deserialize<Score_SavedScoreData>(PlayerPrefs.GetString("save"));
+            playerName = savedScores.playerName;
             Debug.Log("Loading and savedScores does exist");
         }
 
@@ -94,8 +97,33 @@ public class Score_ScoreManager : MonoBehaviour {
             savedScores = new Score_SavedScoreData();
             Save();
             Debug.Log("No saved state found, created a new one");
-        }  
+        }
     }
+
+    public bool CheckPlayerNameExists()
+    {
+        if (PlayerPrefs.HasKey("save"))
+        {
+            savedScores = Score_Serializer.Deserialize<Score_SavedScoreData>(PlayerPrefs.GetString("save"));
+            if (savedScores.playerName == null)
+            {
+                Debug.Log("Player Name Does Exist");
+                return false;
+
+            }
+            playerName = savedScores.playerName;
+            Debug.Log("Player Name Does Exist");
+            return true;
+        }
+
+        else
+        {
+            Debug.Log("Player name doesn't exist");
+            return false;
+        }
+    }
+
+
 
     public void GetScores(){
         highscores.Clear();
@@ -160,7 +188,10 @@ public class Score_ScoreManager : MonoBehaviour {
 
     //this should just add to list etc not show scores
     public void AddNameAndScore(string name){
+
+        //this currently adds a new high score entry, this will be replaced by a single entry which is changed
         highscores.Add(new HighScore(1, name, currentScore));
+        //check if playerScore exists
         highscores.Sort();
         Destroy(nameEntryboxClone);
         ShowScores();
