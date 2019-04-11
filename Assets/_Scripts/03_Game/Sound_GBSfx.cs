@@ -13,6 +13,7 @@ public class Sound_GBSfx : MonoBehaviour {
     public AudioClip moveLeft;
     public AudioClip moveRight;
     public AudioSource[] audioSources;
+    public AudioClip jellyPickup;
 
     private AudioSource source;
     private bool playEndPiece = false;
@@ -50,6 +51,13 @@ public class Sound_GBSfx : MonoBehaviour {
     {
         AudioSource source = PickAudioSource();
         source.clip = jumpSFXClips[Random.Range(0,jumpSFXClips.Length)];
+        source.Play();
+    }
+
+    public void JellyPickup()
+    {
+        AudioSource source = PickAudioSource();
+        source.clip = jellyPickup;
         source.Play();
     }
 

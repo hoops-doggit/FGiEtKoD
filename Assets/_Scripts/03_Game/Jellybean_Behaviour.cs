@@ -23,6 +23,7 @@ public class Jellybean_Behaviour : MonoBehaviour {
             other.gameObject.GetComponent<CharacterCollisions>().jelliesCollected++;
             parent.GetComponent<JellyBean_Death>().PlayAnimation();
             Character_HitTracker.instance.AddJelly();
+            Sound_GBSfx.instance.JellyPickup();
         }
 	}
 		
