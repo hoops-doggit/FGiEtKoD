@@ -24,6 +24,7 @@ public class Character_HitTracker : MonoBehaviour {
 	
 	public void AddHit()
     {
+        Sound_GBSfx.instance.GenericHit();
         timesHit ++;
     }
 

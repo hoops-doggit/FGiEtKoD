@@ -26,15 +26,21 @@ public class Score_ScoreManager : MonoBehaviour {
     [Header("Score Values")]
     public int jellyValue = 150;
     public int timeValue;
+    public int clothesValue;
 
     [Header("Scores Saved")]
     public int jellyScore = 150;
     public int timeScore;
+    public bool clothesBool = false;
+    
     public int currentScore;
+    [SerializeField]
+    private GameObject clothes;
 
     private void Awake()
     {
         instance = this;
+
 
         //the below line is for resetting progress
         //PlayerPrefs.DeleteAll();
@@ -45,6 +51,7 @@ public class Score_ScoreManager : MonoBehaviour {
     {
         //DontDestroyOnLoad(gameObject);
         Load();
+        clothesBool = false;
         //GetScores();
         //ShowScores();
     }
@@ -179,6 +186,7 @@ public class Score_ScoreManager : MonoBehaviour {
     {
         int jellies = _GM.instance.gummyBearPivot.GetComponent<CharacterCollisions>().jelliesCollected;
         float time = _GM.instance.timeTime * 100;
+        
 
         Debug.Log("jellies = " + jellies);
         Debug.Log("time = " + time);
@@ -187,6 +195,12 @@ public class Score_ScoreManager : MonoBehaviour {
         jellyScore = jellies * jellyValue;
         timeScore = (int)(timeValue - (time));
         int score = timeScore + jellyScore;
+        if (clothes.activeSelf == true)
+        {
+            clothesBool = true;
+            score += clothesValue;
+        }
+
         currentScore = score;
         Debug.Log("score = " + score);
         return score;

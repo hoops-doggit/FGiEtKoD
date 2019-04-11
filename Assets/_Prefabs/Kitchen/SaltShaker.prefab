@@ -174,7 +174,7 @@ MonoBehaviour:
   pepperPowder: {fileID: 1157948357920154}
   powderPos: {x: 0.35, y: 7.42, z: -0.4}
   Orange: {fileID: 1734551463131190, guid: 07968ca29eb9fee40aacb08ce87acd8e, type: 2}
-  orangeOffset: 15
+  orangeOffset: 10
 --- !u!114 &114689707434385408
 MonoBehaviour:
   m_ObjectHideFlags: 1

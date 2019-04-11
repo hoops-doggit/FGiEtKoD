@@ -8,12 +8,16 @@ public class Sound_GBSfx : MonoBehaviour {
 
     public static Sound_GBSfx instance;
 
-
+    [Header("Sound Effects")]
     public AudioClip[] jumpSFXClips;
     public AudioClip moveLeft;
     public AudioClip moveRight;
-    public AudioSource[] audioSources;
     public AudioClip jellyPickup;
+    public AudioClip genericHit;
+    public AudioClip ground;
+    [Header("Audio Sources")]
+    public AudioSource[] audioSources;
+    
 
     private AudioSource source;
     private bool playEndPiece = false;
@@ -51,6 +55,20 @@ public class Sound_GBSfx : MonoBehaviour {
     {
         AudioSource source = PickAudioSource();
         source.clip = jumpSFXClips[Random.Range(0,jumpSFXClips.Length)];
+        source.Play();
+    }
+
+    public void GenericHit()
+    {
+        AudioSource source = PickAudioSource();
+        source.clip = genericHit;
+        source.Play();
+    }
+
+    public void GroundHit()
+    {
+        AudioSource source = PickAudioSource();
+        source.clip = ground;
         source.Play();
     }
 

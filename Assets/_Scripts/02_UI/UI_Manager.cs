@@ -17,6 +17,8 @@ public class UI_Manager : MonoBehaviour {
     public Text pointsFromTime;
     public Text numberOfJelliesCollected;
     public Text pointsFromJellies;
+    public Text pointsFromClothes;
+    public Text clothesText;
     public GameObject continueToNameEntryButton;
     public GameObject viewHighScoresButton;
     public GameObject mainMenuButton;
@@ -61,7 +63,7 @@ public class UI_Manager : MonoBehaviour {
     }
 
 
-    public void GotHighScore(int score, int jelliesCollected, int jellyPoints, int timePoints)
+    public void GotHighScore(int score, int jelliesCollected, int jellyPoints, int timePoints, bool clothed, int clothesPoints)
     {
         gameCanvas.SetActive(false);
         levelEndCanvas.SetActive(true);
@@ -73,13 +75,25 @@ public class UI_Manager : MonoBehaviour {
         pointsFromJellies.text = jellyPoints.ToString();
         time.text = _GM.instance.secondsElapsed.text;
         pointsFromTime.text = timePoints.ToString();
+        if (clothed)
+        {
+            clothesText.text = "yes!";
+            pointsFromClothes.text = clothesPoints.ToString();
+        }
+
+        if (!clothed)
+        {
+            clothesText.text = "X";
+            pointsFromClothes.text = "0";
+        }
         numberOfJelliesCollected.text = jelliesCollected.ToString();
+
 
         continueToNameEntryButton.SetActive(true);
         //assumes all buttons are turned off;
     }
 
-    public void DidntGetHighScore(int score, int jelliesCollected, int jellyPoints, int timePoints)
+    public void DidntGetHighScore(int score, int jelliesCollected, int jellyPoints, int timePoints, bool clothed, int clothesPoints)
     {
         gameCanvas.SetActive(false);
         levelEndCanvas.SetActive(true);
@@ -91,7 +105,17 @@ public class UI_Manager : MonoBehaviour {
         pointsFromJellies.text = jellyPoints.ToString();
         time.text = _GM.instance.secondsElapsed.text;
         pointsFromTime.text = timePoints.ToString();
+        if (clothed)
+        {
+            clothesText.text = "yes!";
+            pointsFromClothes.text = clothesPoints.ToString();
+        }
 
+        if (!clothed)
+        {
+            clothesText.text = "X";
+            pointsFromClothes.text = "0";
+        }
         //mainMenuButton.SetActive(true);
         viewHighScoresButton.SetActive(true);
         playAgainButton.SetActive(true);

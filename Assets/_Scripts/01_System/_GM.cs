@@ -63,13 +63,13 @@ public class _GM : MonoBehaviour {
         if (booley)
         {
             //Player did get a high score so show the results screen with highscore text
-            UI_Manager.instance.GotHighScore(Score_ScoreManager.instance.currentScore, numberOfJelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore);            
+            UI_Manager.instance.GotHighScore(Score_ScoreManager.instance.currentScore, numberOfJelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore, Score_ScoreManager.instance.clothesBool, Score_ScoreManager.instance.clothesValue);            
         }
 
         else if (!booley)
         {
             //Player didn't get a high score so just show results screen
-            UI_Manager.instance.DidntGetHighScore(Score_ScoreManager.instance.currentScore, numberOfJelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore);
+            UI_Manager.instance.DidntGetHighScore(Score_ScoreManager.instance.currentScore, numberOfJelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore, Score_ScoreManager.instance.clothesBool, Score_ScoreManager.instance.clothesValue);
         }
     }
 

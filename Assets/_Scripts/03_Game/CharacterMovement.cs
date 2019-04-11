@@ -192,6 +192,7 @@ public class CharacterMovement : MonoBehaviour {
     {
         //resets pushedBackAcc?
         Character_HitTracker.instance.AddHit();
+        Sound_GBSfx.instance.GenericHit();
         pushedBackAcc = pushedBackInitial;
         trueGroundContact = false;
         _groundContact = false;

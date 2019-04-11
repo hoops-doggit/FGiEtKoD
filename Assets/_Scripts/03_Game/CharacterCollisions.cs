@@ -6,7 +6,7 @@ public class CharacterCollisions : MonoBehaviour {
 
     public bool groundContact;
     public int groundCount;
-    public CharacterMovement cm;
+    private CharacterMovement cm;
     public GameObject clothes_top;
     private Clothes_BakedAnimator _cbaTop;
     public GameObject clothes_bottom;
@@ -22,8 +22,14 @@ public class CharacterCollisions : MonoBehaviour {
     //NOTE: Jellybeans are triggers
     public int jelliesCollected;
 
+    private void Awake()
+    {
+        
+    }
+
     private void Start()
     {
+        cm = CharacterMovement.cm;
         groundContact = false;
         clothes_top.SetActive(false);
         ba = GetComponentInChildren<BakedAnimator>();

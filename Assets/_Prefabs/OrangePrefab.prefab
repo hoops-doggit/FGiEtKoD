@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thingsDestroyed: 0
-  orangeLifeSpanSeconds: 0.9
+  orangeLifeSpanSeconds: 1
   destroyedFX: {fileID: 198559378222913344, guid: 9c0d06955756e8d4dbfc0fca963765b7,
     type: 2}
   orangeDestroyedFX: {fileID: 198559378222913344, guid: 9c0d06955756e8d4dbfc0fca963765b7,
