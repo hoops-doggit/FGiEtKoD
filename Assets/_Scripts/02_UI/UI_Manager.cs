@@ -121,17 +121,30 @@ public class UI_Manager : MonoBehaviour {
         playAgainButton.SetActive(true);
     }
 
-    public void ShowNameInputScreen()
-    {
 
-        resultsScreen.SetActive(false);
-        nameEntryHighScoreText.text = Score_ScoreManager.instance.currentScore.ToString() + "!";
-        nameInputScreen.SetActive(true);
+    //this should only run if player name == test
+    public void ShowNameInputScreenORgoToHighScores()
+    {
+        if (Score_ScoreManager.instance.playerName == "test")
+        {
+            resultsScreen.SetActive(false);
+            nameEntryHighScoreText.text = Score_ScoreManager.instance.currentScore.ToString() + "!";
+            nameInputScreen.SetActive(true);
+        }
+
+        else
+        {
+            resultsScreen.SetActive(false);
+            Score_ScoreManager.instance.AddNameAndScore(Score_ScoreManager.instance.playerName);
+        }
+
     }
 
     public void CommitName()
     {
+        Score_ScoreManager.instance.playerName = inputField.text;
         Score_ScoreManager.instance.AddNameAndScore(inputField.text);
+        
         nameInputScreen.SetActive(false);
         hallOfFame.SetActive(true);
     }
@@ -141,6 +154,12 @@ public class UI_Manager : MonoBehaviour {
         resultsScreen.SetActive(false);
         Score_ScoreManager.instance.ShowScores();
         hallOfFame.SetActive(true); 
+    }
+
+    public void PlayAgainButton()
+    {
+        Score_ScoreManager.instance.Save();
+        _GM.instance.Restart();
     }
 
 }

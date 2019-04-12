@@ -76,6 +76,7 @@ public class _GM : MonoBehaviour {
     
     public void Restart()
     {
+        //Score_ScoreManager.instance.Save();
         Time.timeScale = 1;
         string currentScene = SceneManager.GetActiveScene().name;
         //SceneManager.LoadScene(sceneName);

@@ -24,6 +24,8 @@ public class Score_ScoreManager : MonoBehaviour {
     private GameObject nameEntryboxClone;
 
     public string playerName;
+    public int playerScore;
+ 
 
     [Header("Score Values")]
     public int jellyValue = 150;
@@ -45,7 +47,7 @@ public class Score_ScoreManager : MonoBehaviour {
 
 
         //the below line is for resetting progress
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
 
     // Use this for initialization
@@ -53,6 +55,8 @@ public class Score_ScoreManager : MonoBehaviour {
     {
         //DontDestroyOnLoad(gameObject);
         Load();
+        
+
         clothesBool = false;
         //GetScores();
         //ShowScores();
@@ -80,6 +84,8 @@ public class Score_ScoreManager : MonoBehaviour {
         savedScores.score9 = highscores[8].Score;
         savedScores.name10 = highscores[9].Name;
         savedScores.score10 = highscores[9].Score;
+        savedScores.playerName = playerName;
+        savedScores.playerScore = playerScore;
 
         PlayerPrefs.SetString("save", Score_Serializer.Serialize<Score_SavedScoreData>(savedScores));
     }
@@ -90,11 +96,14 @@ public class Score_ScoreManager : MonoBehaviour {
         if(PlayerPrefs.HasKey("save")){
             savedScores = Score_Serializer.Deserialize<Score_SavedScoreData>(PlayerPrefs.GetString("save"));
             playerName = savedScores.playerName;
+            playerScore = savedScores.playerScore;
             Debug.Log("Loading and savedScores does exist");
         }
 
         else{
             savedScores = new Score_SavedScoreData();
+            playerName = savedScores.playerName;
+            playerScore = savedScores.playerScore;
             Save();
             Debug.Log("No saved state found, created a new one");
         }
@@ -117,25 +126,25 @@ public class Score_ScoreManager : MonoBehaviour {
         highscores.Sort();
     }
 
-    public void CheckScoreAgainstHighScores(int score){
-        GetScores();
-        for (int i = 0; i < (numberOfDisplayedScores-1); i++)
-        {
-            Debug.Log("Checking against " + i);
-            if (score > highscores[i].Score)
-            {
-                Debug.Log("stop checking, score is higher than " + i);
-                highscores.Remove(highscores[numberOfDisplayedScores - 1]);
-                if (savedScores.playerName == null)
-                {
-                    AskForName();
-                }
-                return;
-            }
-        }
-        ShowScores();
-        Debug.Log("stopped checking");
-    }
+    //public void CheckScoreAgainstHighScores(int score){
+    //    GetScores();
+    //    for (int i = 0; i < (numberOfDisplayedScores-1); i++)
+    //    {
+    //        Debug.Log("Checking against " + i);
+    //        if (score > highscores[i].Score)
+    //        {
+    //            Debug.Log("stop checking, score is higher than " + i);
+    //            highscores.Remove(highscores[numberOfDisplayedScores - 1]);
+    //            if (savedScores.playerName == null)
+    //            {
+    //                AskForName();
+    //            }
+    //            return;
+    //        }
+    //    }
+    //    ShowScores();
+    //    Debug.Log("stopped checking");
+    //}
 
     public bool CheckIfPlayerGotHighScore(int score)
     {
@@ -168,9 +177,25 @@ public class Score_ScoreManager : MonoBehaviour {
     //this should just add to list etc not show scores
     public void AddNameAndScore(string name){
 
-        //this currently adds a new high score entry, this will be replaced by a single entry which is changed
-        highscores.Add(new HighScore(1, name, currentScore));
-        //check if playerScore exists
+        bool needsScoreEntry = true;
+
+        //does playerscore exist?
+        for(int i = 0; i < highscores.Count; i++)
+        {
+            if (highscores[i].Name == savedScores.playerName)
+            {
+                highscores[i].Score = currentScore;
+                needsScoreEntry = false;
+            }
+        }
+
+        if(needsScoreEntry)
+        {
+            highscores.Add(new HighScore(1, name, currentScore));
+        }
+
+
+        //this runs the sorting function in Highscores
         highscores.Sort();
         Destroy(nameEntryboxClone);
         ShowScores();
