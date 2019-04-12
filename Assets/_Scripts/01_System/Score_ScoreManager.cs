@@ -100,29 +100,6 @@ public class Score_ScoreManager : MonoBehaviour {
         }
     }
 
-    public bool CheckPlayerNameExists()
-    {
-        if (PlayerPrefs.HasKey("save"))
-        {
-            savedScores = Score_Serializer.Deserialize<Score_SavedScoreData>(PlayerPrefs.GetString("save"));
-            if (savedScores.playerName == null)
-            {
-                Debug.Log("Player Name Does Exist");
-                return false;
-
-            }
-            playerName = savedScores.playerName;
-            Debug.Log("Player Name Does Exist");
-            return true;
-        }
-
-        else
-        {
-            Debug.Log("Player name doesn't exist");
-            return false;
-        }
-    }
-
 
 
     public void GetScores(){
@@ -149,7 +126,10 @@ public class Score_ScoreManager : MonoBehaviour {
             {
                 Debug.Log("stop checking, score is higher than " + i);
                 highscores.Remove(highscores[numberOfDisplayedScores - 1]);
-                AskForName();
+                if (savedScores.playerName == null)
+                {
+                    AskForName();
+                }
                 return;
             }
         }
@@ -168,7 +148,6 @@ public class Score_ScoreManager : MonoBehaviour {
                 Debug.Log("stop checking, score is higher than " + i);
                 highscores.Remove(highscores[numberOfDisplayedScores - 1]);
                 currentScore = score;
-                AskForName();
                 return true;
             }
         }
