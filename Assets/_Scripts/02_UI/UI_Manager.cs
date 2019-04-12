@@ -123,14 +123,29 @@ public class UI_Manager : MonoBehaviour {
 
     public void ShowNameInputScreen()
     {
+        //this is the only time you should be asked to input your name before going to the score screen
+        if(Score_ScoreManager.instance.playerSavedName == "temp")
+        {
+            //turn off results screen
+            resultsScreen.SetActive(false);
+            
+            //update score text on name input screen (don't need this on name entry screen)
+            //nameEntryHighScoreText.text = Score_ScoreManager.instance.currentScore.ToString() + "!";
+            
+            //turn on name input screen
+            nameInputScreen.SetActive(true);
+        }
 
-        resultsScreen.SetActive(false);
-        nameEntryHighScoreText.text = Score_ScoreManager.instance.currentScore.ToString() + "!";
-        nameInputScreen.SetActive(true);
+        else
+        {
+            ShowHallOfFame();
+        }
+        
     }
 
     public void CommitName()
     {
+        Score_ScoreManager.instance.playerSetName = inputField.text;
         Score_ScoreManager.instance.AddNameAndScore(inputField.text);
         nameInputScreen.SetActive(false);
         hallOfFame.SetActive(true);
@@ -139,6 +154,7 @@ public class UI_Manager : MonoBehaviour {
     public void ShowHallOfFame()
     {
         resultsScreen.SetActive(false);
+        //update scores with updated scores
         Score_ScoreManager.instance.ShowScores();
         hallOfFame.SetActive(true); 
     }

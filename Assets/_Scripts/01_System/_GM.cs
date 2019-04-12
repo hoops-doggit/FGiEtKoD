@@ -62,7 +62,15 @@ public class _GM : MonoBehaviour {
         Time.timeScale = 0.0f;
         if (booley)
         {
+            //Player name is Temp?
+            //Ask player to input name
+
+            //Player name exists?
             //Player did get a high score so show the results screen with highscore text
+            
+
+            //update highscore list
+
             UI_Manager.instance.GotHighScore(Score_ScoreManager.instance.currentScore, numberOfJelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore, Score_ScoreManager.instance.clothesBool, Score_ScoreManager.instance.clothesValue);            
         }
 

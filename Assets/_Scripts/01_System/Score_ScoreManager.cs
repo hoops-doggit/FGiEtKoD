@@ -23,6 +23,12 @@ public class Score_ScoreManager : MonoBehaviour {
     public GameObject nameEntryboxPrefab;
     private GameObject nameEntryboxClone;
 
+    public string playerSavedName;
+    public int playerSavedScore;
+
+    public string playerSetName;
+    public int playerSetScore;
+
     [Header("Score Values")]
     public int jellyValue = 150;
     public int timeValue;
@@ -43,7 +49,7 @@ public class Score_ScoreManager : MonoBehaviour {
 
 
         //the below line is for resetting progress
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
 
     // Use this for initialization
@@ -78,6 +84,10 @@ public class Score_ScoreManager : MonoBehaviour {
         savedScores.score9 = highscores[8].Score;
         savedScores.name10 = highscores[9].Name;
         savedScores.score10 = highscores[9].Score;
+        if(playerSetName != null)
+        {
+            savedScores.playerName = playerSetName;
+        }
 
         PlayerPrefs.SetString("save", Score_Serializer.Serialize<Score_SavedScoreData>(savedScores));
     }
@@ -87,12 +97,16 @@ public class Score_ScoreManager : MonoBehaviour {
     {
         if(PlayerPrefs.HasKey("save")){
             savedScores = Score_Serializer.Deserialize<Score_SavedScoreData>(PlayerPrefs.GetString("save"));
+            playerSavedName = savedScores.playerName;
+            playerSavedScore = savedScores.playerScore;
             Debug.Log("Loading and savedScores does exist");
         }
 
         else{
             savedScores = new Score_SavedScoreData();
             Save();
+            playerSavedName = savedScores.playerName;
+            playerSavedScore = savedScores.playerScore;
             Debug.Log("No saved state found, created a new one");
         }  
     }
@@ -121,7 +135,7 @@ public class Score_ScoreManager : MonoBehaviour {
             {
                 Debug.Log("stop checking, score is higher than " + i);
                 highscores.Remove(highscores[numberOfDisplayedScores - 1]);
-                AskForName();
+                //AskForName();
                 return;
             }
         }
@@ -132,19 +146,43 @@ public class Score_ScoreManager : MonoBehaviour {
     public bool CheckIfPlayerGotHighScore(int score)
     {
         GetScores();
-        for (int i = 0; i < (numberOfDisplayedScores); i++)
+        for (int i = 0; i < numberOfDisplayedScores; i++)
         {
             Debug.Log("Checking against " + i);
             if (score > highscores[i].Score)
             {
                 Debug.Log("stop checking, score is higher than " + i);
-                highscores.Remove(highscores[numberOfDisplayedScores - 1]);
+
+                if(highscores[i].Name == savedScores.playerName)
+                {
+                    highscores[i].Score = score;
+                }
+
+                else
+                {
+                    highscores.Remove(highscores[numberOfDisplayedScores - 1]);
+                }
+                
                 currentScore = score;
-                AskForName();
+                //AskForName();
                 return true;
             }
         }
         return false;
+    }
+
+    public void UpdateHighScoreList()
+    {
+        for (int i = 0; i < highscores.Count; i++)
+        {
+            if (currentScore > highscores[i].Score)
+            { 
+                if (highscores[i].Name == playerSavedName || highscores[i].Name == playerSetName)
+                {
+                    highscores[i].Score = currentScore;
+                }
+            }
+        }
     }
 
     //maybe too UI centric
@@ -160,11 +198,16 @@ public class Score_ScoreManager : MonoBehaviour {
 
     //this should just add to list etc not show scores
     public void AddNameAndScore(string name){
+        playerSetName = name;
+        savedScores.playerName = name;
+        savedScores.playerScore = currentScore;
+
+        //this is where I need to save new inputted name
         highscores.Add(new HighScore(1, name, currentScore));
         highscores.Sort();
         Destroy(nameEntryboxClone);
         ShowScores();
-        Debug.Log("did save");
+        //Debug.Log("did save");
         Save();
     }
 
@@ -204,5 +247,11 @@ public class Score_ScoreManager : MonoBehaviour {
         currentScore = score;
         Debug.Log("score = " + score);
         return score;
+    }
+
+    public void Update()
+    {
+        Load();
+            
     }
 }
