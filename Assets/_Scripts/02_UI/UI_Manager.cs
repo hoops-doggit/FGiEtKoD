@@ -128,16 +128,18 @@ public class UI_Manager : MonoBehaviour {
         {
             //turn off results screen
             resultsScreen.SetActive(false);
-            
+
             //update score text on name input screen (don't need this on name entry screen)
             //nameEntryHighScoreText.text = Score_ScoreManager.instance.currentScore.ToString() + "!";
-            
+
             //turn on name input screen
+            Debug.Log("tried to load name input screen");
             nameInputScreen.SetActive(true);
         }
 
         else
         {
+            Score_ScoreManager.instance.UpdateHighScoreList();
             ShowHallOfFame();
         }
         

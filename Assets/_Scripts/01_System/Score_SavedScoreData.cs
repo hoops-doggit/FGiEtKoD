@@ -14,5 +14,5 @@ public class Score_SavedScoreData {
     public string name8 = "allan"; public int score8 = 3320;
     public string name9 = "Ben"; public int score9 = 1357;
     public string name10 = "VV"; public int score10 = 4543;
-    public string playerName = "temp"; public int playerScore = 0;
+    public string playerName = "temp"; public int playerScore = 50;
 }

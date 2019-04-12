@@ -11,7 +11,7 @@ public class EndOfLevel : MonoBehaviour {
         {
             string seconds = _GM.instance.secondsElapsed.text;
             string milliseconds = _GM.instance.millisecondsElapsed.text;
-            string time = seconds + "." + milliseconds;
+            string time = seconds.ToString() + "." + milliseconds.ToString();
             OnGameOver(time, _GM.instance.numberOfJelliesCollected);
             Debug.Log("PRintinGSTUFF" + time + _GM.instance.numberOfJelliesCollected);
         }

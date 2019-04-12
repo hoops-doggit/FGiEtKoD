@@ -49,7 +49,7 @@ public class Score_ScoreManager : MonoBehaviour {
 
 
         //the below line is for resetting progress
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
 
     // Use this for initialization
@@ -64,29 +64,29 @@ public class Score_ScoreManager : MonoBehaviour {
 
     public void Save(){
         //this is setting the values in saved score data before serialising into the playerpreffs
-        savedScores.name1 = highscores[0].Name;
-        savedScores.score1 = highscores[0].Score;
-        savedScores.name2 = highscores[1].Name;
-        savedScores.score2 = highscores[1].Score;
-        savedScores.name3 = highscores[2].Name;
-        savedScores.score3 = highscores[2].Score;
-        savedScores.name4 = highscores[3].Name;
-        savedScores.score4 = highscores[3].Score;
-        savedScores.name5 = highscores[4].Name;
-        savedScores.score5 = highscores[4].Score;
-        savedScores.name6 = highscores[5].Name;
-        savedScores.score6 = highscores[5].Score;
-        savedScores.name7 = highscores[6].Name;
-        savedScores.score7 = highscores[6].Score;
-        savedScores.name8 = highscores[7].Name;
-        savedScores.score8 = highscores[7].Score;
-        savedScores.name9 = highscores[8].Name;
-        savedScores.score9 = highscores[8].Score;
-        savedScores.name10 = highscores[9].Name;
-        savedScores.score10 = highscores[9].Score;
-        if(playerSetName != null)
+        //PlayerPrefs.SetString("save", Score_Serializer.Serialize<Score_SavedScoreData>(savedScores));
+        if (highscores[1] != null)
         {
-            savedScores.playerName = playerSetName;
+            savedScores.name1 = highscores[0].Name;
+            savedScores.score1 = highscores[0].Score;
+            savedScores.name2 = highscores[1].Name;
+            savedScores.score2 = highscores[1].Score;
+            savedScores.name3 = highscores[2].Name;
+            savedScores.score3 = highscores[2].Score;
+            savedScores.name4 = highscores[3].Name;
+            savedScores.score4 = highscores[3].Score;
+            savedScores.name5 = highscores[4].Name;
+            savedScores.score5 = highscores[4].Score;
+            savedScores.name6 = highscores[5].Name;
+            savedScores.score6 = highscores[5].Score;
+            savedScores.name7 = highscores[6].Name;
+            savedScores.score7 = highscores[6].Score;
+            savedScores.name8 = highscores[7].Name;
+            savedScores.score8 = highscores[7].Score;
+            savedScores.name9 = highscores[8].Name;
+            savedScores.score9 = highscores[8].Score;
+            savedScores.name10 = highscores[9].Name;
+            savedScores.score10 = highscores[9].Score;
         }
 
         PlayerPrefs.SetString("save", Score_Serializer.Serialize<Score_SavedScoreData>(savedScores));
@@ -104,6 +104,7 @@ public class Score_ScoreManager : MonoBehaviour {
 
         else{
             savedScores = new Score_SavedScoreData();
+            GetScores();
             Save();
             playerSavedName = savedScores.playerName;
             playerSavedScore = savedScores.playerScore;
@@ -122,7 +123,7 @@ public class Score_ScoreManager : MonoBehaviour {
         highscores.Add(new HighScore(7, savedScores.name7, savedScores.score7));
         highscores.Add(new HighScore(8, savedScores.name8, savedScores.score8));
         highscores.Add(new HighScore(9, savedScores.name9, savedScores.score9));
-        highscores.Add(new HighScore(10, savedScores.name3, savedScores.score10));
+        highscores.Add(new HighScore(10, savedScores.name10, savedScores.score10));
         highscores.Sort();
     }
 
@@ -130,6 +131,7 @@ public class Score_ScoreManager : MonoBehaviour {
         GetScores();
         for (int i = 0; i < (numberOfDisplayedScores-1); i++)
         {
+            Debug.Log("highscore[" + i + "] " + highscores[i].Score);
             Debug.Log("Checking against " + i);
             if (score > highscores[i].Score)
             {
@@ -152,18 +154,10 @@ public class Score_ScoreManager : MonoBehaviour {
             if (score > highscores[i].Score)
             {
                 Debug.Log("stop checking, score is higher than " + i);
-
-                if(highscores[i].Name == savedScores.playerName)
-                {
-                    highscores[i].Score = score;
-                }
-
-                else
-                {
-                    highscores.Remove(highscores[numberOfDisplayedScores - 1]);
-                }
+                highscores.Remove(highscores[numberOfDisplayedScores - 1]);                
                 
                 currentScore = score;
+                //UpdateHighScoreList();
                 //AskForName();
                 return true;
             }
@@ -175,12 +169,12 @@ public class Score_ScoreManager : MonoBehaviour {
     {
         for (int i = 0; i < highscores.Count; i++)
         {
-            if (currentScore > highscores[i].Score)
-            { 
-                if (highscores[i].Name == playerSavedName || highscores[i].Name == playerSetName)
+            if (highscores[i].Name == playerSavedName || highscores[i].Name == playerSetName)
+            {
+                if (currentScore > highscores[i].Score)
                 {
                     highscores[i].Score = currentScore;
-                }
+                }                
             }
         }
     }
@@ -247,11 +241,5 @@ public class Score_ScoreManager : MonoBehaviour {
         currentScore = score;
         Debug.Log("score = " + score);
         return score;
-    }
-
-    public void Update()
-    {
-        Load();
-            
     }
 }
