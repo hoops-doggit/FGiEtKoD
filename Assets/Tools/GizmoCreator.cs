@@ -11,16 +11,17 @@ public class GizmoCreator : MonoBehaviour {
     
     private void OnDrawGizmosSelected()
     {
-        realPos.x = transform.position.x + offset.x;
-        realPos.y = transform.position.y + offset.y;
-        realPos.z = transform.position.z + offset.z;
-        
+             
     }
 
     void OnDrawGizmos()
     {
         // Draw a semitransparent blue cube at the transforms position
         Gizmos.color = gizCol;
+        realPos.x = transform.position.x + offset.x;
+        realPos.y = transform.position.y + offset.y;
+        realPos.z = transform.position.z + offset.z;
         Gizmos.DrawCube(realPos, new Vector3(15, 3, 3));
+        
     }
 }

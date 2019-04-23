@@ -17,13 +17,16 @@ MonoBehaviour:
   bigTomatoRightPos: 0
   easyJellyPos: 8.9
   mediumJullyPos: 5
-  hardJellyPos: 2
+  hardJellyPos: 2.2
   jellyPrefab: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856,
     type: 2}
   jellyBeanParent: {fileID: 0}
   saltShaker: {fileID: 1768296653921600, guid: 561faa49d14bd9e47adb0d94397a8914, type: 2}
   pepperShaker: {fileID: 1378863973518244, guid: c8b6d738469e146bbb7fa0890f9c2430,
     type: 2}
-  smallTomato: {fileID: 0}
+  smallTomato: {fileID: 1538052682233610, guid: 1e996166b62b83144b599e4674bf8156,
+    type: 2}
   bigTomato: {fileID: 1929510020601322, guid: f9dfa31b06e65e049b3a2b250ff5a2e0, type: 2}
   bigKnife: {fileID: 1234651279780588, guid: 2086c4f868e54fa41b025b089c8dfbb4, type: 2}
+  bigPlainKnife: {fileID: 1867988265716116, guid: 2e3954599f6fb4544a6ab907cb91c0a8,
+    type: 2}

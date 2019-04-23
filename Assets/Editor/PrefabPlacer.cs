@@ -14,7 +14,7 @@ public class PrefabPlacer : EditorWindow {
 
     float easyJellyPos = 8.9f;
     float mediumJullyPos = 5f;
-    float hardJellyPos = 2f;
+    float hardJellyPos = 2.2f;
 
     public GameObject jellyPrefab;
     public GameObject jellyBeanParent;
@@ -156,8 +156,13 @@ public class PrefabPlacer : EditorWindow {
         {
             ReplaceWith("smallTomato");
         }
+        
         GUILayout.EndHorizontal();
         GUILayout.BeginHorizontal();
+        if (GUILayout.Button("replace w' bigTom"))
+        {
+            ReplaceWith("bigTomato");
+        }
         if (GUILayout.Button("replace w' Big Knife"))
         {
             ReplaceWith("bigknife");
@@ -227,6 +232,7 @@ public class PrefabPlacer : EditorWindow {
         {
             foreach (GameObject obj in Selection.gameObjects)
             {
+                jellyBeanParent = obj;
                 if (obj.GetComponent<PepperShaker>())
                 {
                     var jellyClone = PrefabUtility.InstantiatePrefab(jellyPrefab) as GameObject;
@@ -247,6 +253,7 @@ public class PrefabPlacer : EditorWindow {
         {
             foreach (GameObject obj in Selection.gameObjects)
             {
+                jellyBeanParent = obj;
                 if (obj.GetComponent<PepperShaker>())
                 {
                     var jellyClone = PrefabUtility.InstantiatePrefab(jellyPrefab) as GameObject;
@@ -267,6 +274,7 @@ public class PrefabPlacer : EditorWindow {
         {
             foreach (GameObject obj in Selection.gameObjects)
             {
+                jellyBeanParent = obj;
                 if (obj.GetComponent<PepperShaker>())
                 {
                     var jellyClone = PrefabUtility.InstantiatePrefab(jellyPrefab) as GameObject;
@@ -301,8 +309,6 @@ public class PrefabPlacer : EditorWindow {
             foreach (GameObject obj in Selection.gameObjects)
             {
                 Transform tempTransform = obj.transform;
-                //DestroyImmediate(obj);
-                //obj = null;
                 var replacement = PrefabUtility.InstantiatePrefab(pepperShaker) as GameObject;
                 replacement.transform.position = tempTransform.position;
             }
@@ -315,7 +321,16 @@ public class PrefabPlacer : EditorWindow {
                 Transform tempTransform = obj.transform;
                 var replacement = PrefabUtility.InstantiatePrefab(smallTomato) as GameObject;
                 replacement.transform.position = tempTransform.position;
-                Destroy(obj);
+            }
+        }
+
+        else if (thing == "bigTomato")
+        {
+            foreach (GameObject obj in Selection.gameObjects)
+            {
+                Transform tempTransform = obj.transform;
+                var replacement = PrefabUtility.InstantiatePrefab(bigTomato) as GameObject;
+                replacement.transform.position = tempTransform.position;
             }
         }
 
@@ -326,7 +341,6 @@ public class PrefabPlacer : EditorWindow {
                 Transform tempTransform = obj.transform;
                 var replacement = PrefabUtility.InstantiatePrefab(bigKnife) as GameObject;
                 replacement.transform.position = tempTransform.position;
-                Destroy(obj);
             }
         }
 
@@ -337,7 +351,6 @@ public class PrefabPlacer : EditorWindow {
                 Transform tempTransform = obj.transform;
                 var replacement = PrefabUtility.InstantiatePrefab(bigPlainKnife) as GameObject;
                 replacement.transform.position = tempTransform.position;
-                Destroy(obj);
             }
         }
 
