@@ -14,6 +14,8 @@ public class Score_ScoreManager : MonoBehaviour {
    
     //this is used to store text boxes of score data on screen. It's not important;
     public List<GameObject> tempList = new List<GameObject>();
+    [SerializeField]
+    private CharacterCollisions characterCols;
 
     public GameObject scorePrefab;
     public Transform scoreGrid;
@@ -221,7 +223,7 @@ public class Score_ScoreManager : MonoBehaviour {
 
     public int CalculateScore()
     {
-        int jellies = _GM.instance.gummyBearPivot.GetComponent<CharacterCollisions>().jelliesCollected;
+        int jellies = characterCols.jelliesCollected;
         float time = _GM.instance.timeTime * 100;
         
 
