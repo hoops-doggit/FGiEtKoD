@@ -40,6 +40,7 @@ public class Score_ScoreManager : MonoBehaviour {
     public int jellyScore = 150;
     public int timeScore;
     public bool clothesBool = false;
+    public bool needsNameUpdate = false;
     
     public int currentScore;
     [SerializeField]
@@ -89,6 +90,9 @@ public class Score_ScoreManager : MonoBehaviour {
             savedScores.score9 = highscores[8].Score;
             savedScores.name10 = highscores[9].Name;
             savedScores.score10 = highscores[9].Score;
+            savedScores.playerName = playerSavedName;
+            savedScores.playerScore = playerSavedScore;
+
         }
 
         PlayerPrefs.SetString("save", Score_Serializer.Serialize<Score_SavedScoreData>(savedScores));
@@ -127,8 +131,19 @@ public class Score_ScoreManager : MonoBehaviour {
         highscores.Add(new HighScore(9, savedScores.name9, savedScores.score9));
         highscores.Add(new HighScore(10, savedScores.name10, savedScores.score10));
         highscores.Sort();
+        //this goes through all of the scores and just checks that the one representing the players score has the most recent name;
+        for (int i = 0; i < highscores.Count; i++)
+        {
+            if (highscores[i].Score == playerSavedScore)
+            {
+                if (highscores[i].Name != playerSavedName)
+                {
+                    highscores[i].Name = playerSavedName;
+                }
+            }
+        }
     }
-
+    //old check high scores
     public void CheckScoreAgainstHighScores(int score){
         GetScores();
         for (int i = 0; i < (numberOfDisplayedScores-1); i++)
@@ -152,6 +167,7 @@ public class Score_ScoreManager : MonoBehaviour {
         GetScores();
         bool higherThanSomething = false;
 
+
         for (int i = 0; i < numberOfDisplayedScores; i++)
         {
             Debug.Log("Checking player score against " + i);
@@ -159,47 +175,64 @@ public class Score_ScoreManager : MonoBehaviour {
             if (score > highscores[i].Score)
             {
                 Debug.Log("stop checking, score is higher than " + i);
-                highscores.Remove(highscores[numberOfDisplayedScores - 1]);                
+                //highscores.Remove(highscores[numberOfDisplayedScores - 1]);                
                 
                 currentScore = score;
                 higherThanSomething = true;
                 //UpdateHighScoreList();
                 //AskForName();
             }
-
+            #region logic
             //does player already have a high score? yes/no
-                //if yes 
-                    //is score higher than their previous score?
-                        //if yes
-                            //overwrite old score with new
-                        //if no
-                            //didn't get high score
-                //if no
-                    //is score higher than any other score?
-                        //if yes
-                            //does player name exist?
-                                //if yes
-                                    //enter score using existing name
-                        //if no
-                            //didn't get high score
+            //if yes 
+            //is score higher than their previous score?
+            //if yes
+            //overwrite old score with new
+            //if no
+            //didn't get high score
+            //if no
+            //is score higher than any other score?
+            //if yes
+            //does player name exist?
+            //if yes
+            //enter score using existing name
+            //if no
+            //didn't get high score
+            #endregion
         }
 
         //if players score is higher than something on the scoreboard
         if (higherThanSomething)
         {
+            Debug.Log("player score is higher than something");
             //if player has a saved score already
             if (playerSavedScore > 0)
             {
+                Debug.Log("saved playerscore is higher than 0");
                 //and if the players score is higher than one of their previous scores
                 if (score > playerSavedScore)
                 {
+                    Debug.Log("player score is higher than saved player score");
+
                     //don't ask for name prompt
+                    needsNameUpdate = false;
+
                     //overwrite old score with new
+                    for (int i = 0; i < highscores.Count; i++)
+                    {
+                        if(highscores[i].Name == playerSavedName)
+                        {
+                            highscores[i].Score = score;
+                            playerSavedScore = score;
+                            Save();
+                        }
+                    }                    
                     return true;
                 }
                 //if it's not higher than one of their previous scores
                 else
                 {
+                    Debug.Log("player score is lower than saved player score");
                     return false;
                 }
             }
@@ -207,7 +240,9 @@ public class Score_ScoreManager : MonoBehaviour {
             //if player doesn't have a high score already
             if (playerSavedScore == 0)
             {
+                Debug.Log("saved player score is 0");
                 //ask for name prompt
+                needsNameUpdate = true;
                 return true;
             }
         }
@@ -248,13 +283,13 @@ public class Score_ScoreManager : MonoBehaviour {
 
     //this should just add to list etc not show scores
     public void AddNameAndScore(string name){
+        //this should only be run once
         playerSetName = name;
         savedScores.playerName = name;
         savedScores.playerScore = currentScore;
 
         //this is where I need to save new inputted name
         highscores.Add(new HighScore(1, name, currentScore));
-        highscores.Sort();
         Destroy(nameEntryboxClone);
         ShowScores();
         //Debug.Log("did save");
@@ -262,6 +297,7 @@ public class Score_ScoreManager : MonoBehaviour {
     }
 
     public void ShowScores(){
+        highscores.Sort();
         for (int i = 0; i < (numberOfDisplayedScores -1); i++){
             if (i <= highscores.Count - 1)
             {

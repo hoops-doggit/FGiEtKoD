@@ -8,7 +8,6 @@ public class UI_Manager : MonoBehaviour {
 
     public GameObject gameCanvas;
     public GameObject levelEndCanvas;
-
     public GameObject resultsScreen;
     public GameObject youGotHighScoreText;
     public Text highScoreText;
@@ -20,6 +19,8 @@ public class UI_Manager : MonoBehaviour {
     public Text pointsFromClothes;
     public Text clothesText;
     public GameObject continueToNameEntryButton;
+    [SerializeField]
+    private GameObject continueToHighScores;
     public GameObject viewHighScoresButton;
     public GameObject mainMenuButton;
     public GameObject playAgainButton;
@@ -50,6 +51,8 @@ public class UI_Manager : MonoBehaviour {
         viewHighScoresButton.SetActive(false);
         mainMenuButton.SetActive(false);
         playAgainButton.SetActive(false);
+        continueToHighScores.SetActive(false);
+
     }
 
     public void TurnOffAllScreens()
@@ -63,12 +66,12 @@ public class UI_Manager : MonoBehaviour {
     }
 
 
-    public void GotHighScore(int score, int jelliesCollected, int jellyPoints, int timePoints, bool clothed, int clothesPoints)
+    public void GotHighScore(int score, int jelliesCollected, int jellyPoints, int timePoints, bool clothed, int clothesPoints, bool needsNameEntry)
     {
         gameCanvas.SetActive(false);
         levelEndCanvas.SetActive(true);
         resultsScreen.SetActive(true);
-        youGotHighScoreText.SetActive(true);
+        
 
         //setting all text fields
         highScoreText.text = score.ToString() + "!";
@@ -88,8 +91,17 @@ public class UI_Manager : MonoBehaviour {
         }
         numberOfJelliesCollected.text = jelliesCollected.ToString();
 
+        if (needsNameEntry)
+        {
+            continueToNameEntryButton.SetActive(true);
+            youGotHighScoreText.SetActive(true);
+        }
 
-        continueToNameEntryButton.SetActive(true);
+        if (!needsNameEntry)
+        {
+            continueToHighScores.SetActive(true);
+        }
+        
         //assumes all buttons are turned off;
     }
 
@@ -119,6 +131,7 @@ public class UI_Manager : MonoBehaviour {
         //mainMenuButton.SetActive(true);
         viewHighScoresButton.SetActive(true);
         playAgainButton.SetActive(true);
+        mainMenuButton.SetActive(true);
     }
 
     public void ShowNameInputScreen()
@@ -157,7 +170,10 @@ public class UI_Manager : MonoBehaviour {
     {
         resultsScreen.SetActive(false);
         //update scores with updated scores
+        Score_ScoreManager.instance.Load();
         Score_ScoreManager.instance.ShowScores();
+        mainMenuButton.SetActive(true);
+        
         hallOfFame.SetActive(true); 
     }
 

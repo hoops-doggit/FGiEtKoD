@@ -59,6 +59,7 @@ public class _GM : MonoBehaviour {
 
     public void LevelComplete(bool booley)
     {
+        Score_ScoreManager scoreMan = Score_ScoreManager.instance;
         Time.timeScale = 0.0f;
         if (booley)
         {
@@ -71,13 +72,13 @@ public class _GM : MonoBehaviour {
 
             //update highscore list
 
-            UI_Manager.instance.GotHighScore(Score_ScoreManager.instance.currentScore, numberOfJelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore, Score_ScoreManager.instance.clothesBool, Score_ScoreManager.instance.clothesValue);            
+            UI_Manager.instance.GotHighScore(scoreMan.currentScore, numberOfJelliesCollected, scoreMan.jellyScore, scoreMan.timeScore, scoreMan.clothesBool, scoreMan.clothesValue, scoreMan.needsNameUpdate);            
         }
 
         else if (!booley)
         {
             //Player didn't get a high score so just show results screen
-            UI_Manager.instance.DidntGetHighScore(Score_ScoreManager.instance.currentScore, numberOfJelliesCollected, Score_ScoreManager.instance.jellyScore, Score_ScoreManager.instance.timeScore, Score_ScoreManager.instance.clothesBool, Score_ScoreManager.instance.clothesValue);
+            UI_Manager.instance.DidntGetHighScore(scoreMan.currentScore, numberOfJelliesCollected, scoreMan.jellyScore, scoreMan.timeScore, scoreMan.clothesBool, scoreMan.clothesValue);
         }
     }
 
@@ -93,6 +94,14 @@ public class _GM : MonoBehaviour {
         lm.SetEnvironmentSettings();
         numberOfJelliesCollected = 0;
         Debug.Log(currentScene);
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu");
+        lm.SetEnvironmentSettings();
+
     }
 
     // Update is called once per frame

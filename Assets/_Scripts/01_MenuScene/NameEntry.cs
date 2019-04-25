@@ -25,6 +25,12 @@ public class NameEntry : MonoBehaviour {
 
     public void CommitNameFromMenu()
     {
+        //Score_ScoreManager sm = new Score_ScoreManager();
+        //sm.Load();
+        //sm.playerSavedName = nameEntryBox.text;
+        //sm.Save();
+        //Destroy(sm);
+
         if (PlayerPrefs.HasKey("save"))
         {
             savedScores = Score_Serializer.Deserialize<Score_SavedScoreData>(PlayerPrefs.GetString("save"));
