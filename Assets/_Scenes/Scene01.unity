@@ -28045,6 +28045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempList: []
+  characterCols: {fileID: 531723915}
   scorePrefab: {fileID: 1662435183271072, guid: 6ab8b0dc37869e24f833f43a05f8c64c,
     type: 2}
   scoreGrid: {fileID: 1899660743}
