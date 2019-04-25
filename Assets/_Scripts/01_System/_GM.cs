@@ -101,7 +101,6 @@ public class _GM : MonoBehaviour {
         Time.timeScale = 1;
         SceneManager.LoadScene("Menu");
         lm.SetEnvironmentSettings();
-
     }
 
     // Update is called once per frame
