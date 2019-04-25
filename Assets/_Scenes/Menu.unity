@@ -857,6 +857,16 @@ Prefab:
       propertyPath: m_Name
       value: CommitName"Done"Button
       objectReference: {fileID: 0}
+    - target: {fileID: 114668993323223486, guid: 208dd565b30804848aec6958f050caff,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 114668993323223486, guid: 208dd565b30804848aec6958f050caff,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 208dd565b30804848aec6958f050caff, type: 2}
   m_IsPrefabParent: 0
