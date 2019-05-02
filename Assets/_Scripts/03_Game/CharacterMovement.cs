@@ -590,10 +590,15 @@ public class CharacterMovement : MonoBehaviour {
 
         if (rayGotTriggered)
         {
-            checkRay = false;
-            charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + hit.distance);
-            Pushback();
-            rayGotTriggered = false;
+            if (hit.collider.gameObject.tag != "jelly")
+            {
+                checkRay = false;
+
+                charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + hit.distance);
+
+                Pushback();
+                rayGotTriggered = false;
+            }            
         }
 	}
 

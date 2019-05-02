@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33796065080015480}
   - component: {fileID: 23259170272003098}
   - component: {fileID: 114180495032668246}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ClothesPile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 33140486517100670}
   - component: {fileID: 23555618451079194}
   - component: {fileID: 114709874937564860}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ClothesPile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 65119760483596724}
   - component: {fileID: 114781212710817600}
   - component: {fileID: 114244522261988486}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ClothesPile
   m_TagString: clothesPile
   m_Icon: {fileID: 0}
@@ -295,6 +295,9 @@ MonoBehaviour:
   bottom02:
   - {fileID: 21300000, guid: f7094924bcb5f4dd79d7f693ba21a3d5, type: 3}
   - {fileID: 21300002, guid: f7094924bcb5f4dd79d7f693ba21a3d5, type: 3}
+  bottom03:
+  - {fileID: 21300000, guid: ee8e0c93cca65a740a636e2c851afc31, type: 3}
+  - {fileID: 21300002, guid: ee8e0c93cca65a740a636e2c851afc31, type: 3}
   topName: 
   bottomName: 
 --- !u!114 &114709874937564860

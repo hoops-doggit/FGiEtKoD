@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4056146362052086}
   - component: {fileID: 212605758208449608}
   - component: {fileID: 114543421522153300}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Jelly Sprite
-  m_TagString: Untagged
+  m_TagString: jelly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,9 +39,9 @@ GameObject:
   - component: {fileID: 65410231507159426}
   - component: {fileID: 95996247988166346}
   - component: {fileID: 114382987627520152}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Jelly_Animation
-  m_TagString: Untagged
+  m_TagString: jelly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,9 +54,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4509804111408532}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Jelly_Small
-  m_TagString: Untagged
+  m_TagString: jelly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1994419130604820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.5, y: 0, z: 1106.4501}
+  m_LocalPosition: {x: 5.401117, y: 0.004999989, z: 76}
   m_LocalScale: {x: 0.4, y: 0.5, z: 0.4}
   m_Children:
   - {fileID: 4384520810957458}
@@ -112,8 +112,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.963067, y: 6.368705, z: 0.5607691}
-  m_Center: {x: 0.22223616, y: 3.3843522, z: 0.21961546}
+  m_Size: {x: 11.963067, y: 6.368705, z: 1.3832675}
+  m_Center: {x: 0.22223592, y: 3.3843522, z: 0.63086456}
 --- !u!95 &95996247988166346
 Animator:
   serializedVersion: 3
