@@ -18,12 +18,18 @@ public class TomatoSplat : MonoBehaviour {
     private void OnEnable()
     {
         myBoxCollider = GetComponent<BoxCollider>();
-        splat = _GM.instance.GetComponent<Tomato_SplatHolder>().splat;
+        if (splat == null)
+        {
+            splat = _GM.instance.GetComponent<Tomato_SplatHolder>().splat;
+        }
     }
 
     private void Start()
     {
-        splat = _GM.instance.GetComponent<Tomato_SplatHolder>().splat;
+        if (splat == null)
+        {
+            splat = _GM.instance.GetComponent<Tomato_SplatHolder>().splat;
+        }
     }
 
     void OnTriggerEnter(Collider other)
