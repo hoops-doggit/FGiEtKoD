@@ -73,6 +73,7 @@ GameObject:
   - component: {fileID: 4030171529566084}
   - component: {fileID: 212803146228759218}
   - component: {fileID: 114201155156436828}
+  - component: {fileID: 114120594474613122}
   m_Layer: 0
   m_Name: JellyBean Sprite
   m_TagString: jellybean
@@ -126,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111947735896808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.5, y: 2.59, z: -40.5}
+  m_LocalPosition: {x: 5.5, y: 2.59, z: 56.699997}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4334059472817824}
@@ -165,6 +166,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castShadows: 1
+  receiveShadows: 1
+--- !u!114 &114120594474613122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1931458277483930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1800204556, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castShadows: 2
   receiveShadows: 1
 --- !u!114 &114201155156436828
 MonoBehaviour:
@@ -312,7 +326,7 @@ SpriteRenderer:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1931458277483930}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -320,7 +334,7 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 42a99a517ffa33b4a96b308e6cd2a30e, type: 2}
+  - {fileID: 2100000, guid: 144b996f77c05d14a8083981015716b7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

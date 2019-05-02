@@ -3,7 +3,9 @@ guid: c1d80a3544180454ca94aa6ccfad5e2c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - smallTomato: {fileID: 1538052682233610, guid: 1e996166b62b83144b599e4674bf8156,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
