@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4780641680793608}
   - component: {fileID: 212792020398407248}
   - component: {fileID: 114806007883161272}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SaltPowder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 95033717463046594}
   - component: {fileID: 114971904601104422}
   - component: {fileID: 114959064894712652}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SaltShaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 65649377539297492}
   - component: {fileID: 114673384087240618}
   - component: {fileID: 114460903795064092}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SaltShaker
   m_TagString: pepper
   m_Icon: {fileID: 0}

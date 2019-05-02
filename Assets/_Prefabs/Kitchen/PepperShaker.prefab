@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4116322714581652}
   - component: {fileID: 212364646214939910}
   - component: {fileID: 114678974635795880}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PepperPowder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 95627792459259854}
   - component: {fileID: 114786184576064132}
   - component: {fileID: 114200557668463316}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PepperShaker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 65747079529025646}
   - component: {fileID: 114832674072719554}
   - component: {fileID: 114301488447145654}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: PepperShaker
   m_TagString: pepper
   m_Icon: {fileID: 0}

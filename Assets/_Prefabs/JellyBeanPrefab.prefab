@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4465882715153410}
   - component: {fileID: 95196830019321956}
   - component: {fileID: 114952207984636208}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: JellyBeanPrefab
   m_TagString: jellybean
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 212535952169187870}
   - component: {fileID: 114797967750038292}
   - component: {fileID: 114038051886923700}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ExclaimAnim Sprite
   m_TagString: jellybean
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 4297291334360626}
   - component: {fileID: 114994656788681938}
   - component: {fileID: 135376642382473628}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: CollisionObject
   m_TagString: jellybean
   m_Icon: {fileID: 0}
@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 212803146228759218}
   - component: {fileID: 114201155156436828}
   - component: {fileID: 114120594474613122}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: JellyBean Sprite
   m_TagString: jellybean
   m_Icon: {fileID: 0}
