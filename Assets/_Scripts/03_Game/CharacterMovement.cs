@@ -10,6 +10,9 @@ public class CharacterMovement : MonoBehaviour {
     public GameObject charContainer;
     public GameObject character;
     public Transform playerGoalPos;
+    [SerializeField]
+    private Transform raycastPoint;
+    public float raycastMinDistance;
     private Vector3 characterPos;
     [Header("Movement")]
     public float hsp;
@@ -114,6 +117,8 @@ public class CharacterMovement : MonoBehaviour {
     private float fastAcc;
     private float fastHsp;
     private float fastJumpSpeed;
+    public bool checkRay;
+    public bool rayGotTriggered;
 
 
 
@@ -184,9 +189,8 @@ public class CharacterMovement : MonoBehaviour {
             runScaler.ResetTrigger("Run");
             runScaler.SetTrigger("Jump");
             Sound_GBSfx.instance.JumpSFX();
-        }        
+        }
     }
-
 
     public void Pushback()
     {
@@ -207,7 +211,6 @@ public class CharacterMovement : MonoBehaviour {
             moveSpeed = fastPushedBackMoveSpeed;
         }
     }
-
 
 	public void PlayBurst ()
 	{
@@ -437,9 +440,7 @@ public class CharacterMovement : MonoBehaviour {
             grav = fastGrav * gravMulitplier;
             StopCoroutine("GravityTime");
         }
-    }
-
- 
+    } 
            
     void GenerateTomatoSplat(string side)
     {
@@ -539,7 +540,6 @@ public class CharacterMovement : MonoBehaviour {
             }
 		}
 
-
         if (moveSpeed > maxSpeed && !endScene && !fast) {
             moveSpeed = maxSpeed;
 		}
@@ -554,10 +554,47 @@ public class CharacterMovement : MonoBehaviour {
                 moveSpeed = moveSpeed * endSceneSlowDown;
             }
         }
-			
-			
 
-		charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + moveSpeed);
+        RaycastHit hit;
+
+
+        if (Physics.Raycast(raycastPoint.position, Vector3.forward, out hit, 40))
+        {
+            if(hit.distance > raycastMinDistance)
+            {
+                checkRay = true;
+                Debug.DrawRay(raycastPoint.position, Vector3.forward * hit.distance, Color.grey);
+            }
+            if (hit.distance < raycastMinDistance && !rayGotTriggered && checkRay)
+            {
+                rayGotTriggered = true;
+                Debug.DrawRay(raycastPoint.position, Vector3.forward * hit.distance, Color.red);
+            }
+            else
+            {
+                rayGotTriggered = false;
+                Debug.DrawRay(raycastPoint.position, Vector3.forward * hit.distance, Color.yellow);
+            }
+
+        }
+        else
+        {
+            Debug.DrawRay(raycastPoint.position, Vector3.forward * 50, Color.yellow);
+        }
+        
+
+        if (!rayGotTriggered)
+        {
+            charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + moveSpeed);
+        }
+
+        if (rayGotTriggered)
+        {
+            checkRay = false;
+            charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + hit.distance);
+            Pushback();
+            rayGotTriggered = false;
+        }
 	}
 
     private void Update()
