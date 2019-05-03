@@ -57,25 +57,16 @@ public class _GM : MonoBehaviour {
             GameCanvas.SetActive(true); }
 	}
 
-    public void LevelComplete(bool booley)
+    public void LevelComplete(bool hasHighScore)
     {
         Score_ScoreManager scoreMan = Score_ScoreManager.instance;
         Time.timeScale = 0.0f;
-        if (booley)
+        if (hasHighScore)
         {
-            //Player name is Temp?
-            //Ask player to input name
-
-            //Player name exists?
-            //Player did get a high score so show the results screen with highscore text
-            
-
-            //update highscore list
-
             UI_Manager.instance.GotHighScore(scoreMan.currentScore, numberOfJelliesCollected, scoreMan.jellyScore, scoreMan.timeScore, scoreMan.clothesBool, scoreMan.clothesValue, scoreMan.needsNameUpdate);            
         }
 
-        else if (!booley)
+        else if (!hasHighScore)
         {
             //Player didn't get a high score so just show results screen
             UI_Manager.instance.DidntGetHighScore(scoreMan.currentScore, numberOfJelliesCollected, scoreMan.jellyScore, scoreMan.timeScore, scoreMan.clothesBool, scoreMan.clothesValue);

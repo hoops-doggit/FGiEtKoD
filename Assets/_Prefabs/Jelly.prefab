@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4111572196408150}
   - component: {fileID: 212258192176687008}
   - component: {fileID: 114529485474705608}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Jelly Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4724316828821792}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Jelly
   m_TagString: jelly
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 65862096580072642}
   - component: {fileID: 95138584778049246}
   - component: {fileID: 114952411087994480}
-  m_Layer: 2
+  m_Layer: 10
   m_Name: Jelly_Animation
   m_TagString: Untagged
   m_Icon: {fileID: 0}

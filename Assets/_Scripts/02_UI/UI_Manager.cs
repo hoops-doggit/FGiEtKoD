@@ -137,7 +137,7 @@ public class UI_Manager : MonoBehaviour {
     public void ShowNameInputScreen()
     {
         //this is the only time you should be asked to input your name before going to the score screen
-        if(Score_ScoreManager.instance.playerSavedName == "temp")
+        if(Score_ScoreManager.instance.playerSavedScore == 0)
         {
             //turn off results screen
             resultsScreen.SetActive(false);

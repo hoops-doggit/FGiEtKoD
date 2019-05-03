@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -165,41 +166,9 @@ public class Score_ScoreManager : MonoBehaviour {
     public bool CheckIfPlayerGotHighScore(int score)
     {
         GetScores();
-        bool higherThanSomething = false;
+        bool higherThanSomething = false;  
 
-
-        for (int i = 0; i < numberOfDisplayedScores; i++)
-        {
-            Debug.Log("Checking player score against " + i);
-            //if players score is higher than any of the current scores return true;
-            if (score > highscores[i].Score)
-            {
-                Debug.Log("stop checking, score is higher than " + i);
-                //highscores.Remove(highscores[numberOfDisplayedScores - 1]);                
-                
-                currentScore = score;
-                higherThanSomething = true;
-                //UpdateHighScoreList();
-                //AskForName();
-            }
-            #region logic
-            //does player already have a high score? yes/no
-            //if yes 
-            //is score higher than their previous score?
-            //if yes
-            //overwrite old score with new
-            //if no
-            //didn't get high score
-            //if no
-            //is score higher than any other score?
-            //if yes
-            //does player name exist?
-            //if yes
-            //enter score using existing name
-            //if no
-            //didn't get high score
-            #endregion
-        }
+        higherThanSomething = highscores.Any(s => s.Score < score);
 
         //if players score is higher than something on the scoreboard
         if (higherThanSomething)
