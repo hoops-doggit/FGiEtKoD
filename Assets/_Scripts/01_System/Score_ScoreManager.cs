@@ -93,7 +93,6 @@ public class Score_ScoreManager : MonoBehaviour {
             savedScores.score10 = highscores[9].Score;
             savedScores.playerName = playerSavedName;
             savedScores.playerScore = playerSavedScore;
-
         }
 
         PlayerPrefs.SetString("save", Score_Serializer.Serialize<Score_SavedScoreData>(savedScores));
@@ -193,6 +192,7 @@ public class Score_ScoreManager : MonoBehaviour {
                         {
                             highscores[i].Score = score;
                             playerSavedScore = score;
+                            playerSetScore = score;
                             Save();
                         }
                     }                    
@@ -202,6 +202,8 @@ public class Score_ScoreManager : MonoBehaviour {
                 else
                 {
                     Debug.Log("player score is lower than saved player score");
+                    playerSavedScore = score;
+                    playerSetScore = score;
                     return false;
                 }
             }
@@ -211,6 +213,8 @@ public class Score_ScoreManager : MonoBehaviour {
             {
                 Debug.Log("saved player score is 0");
                 //ask for name prompt
+                playerSetScore = score;
+                playerSavedScore = score;
                 needsNameUpdate = true;
                 return true;
             }

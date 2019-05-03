@@ -161,6 +161,7 @@ public class UI_Manager : MonoBehaviour {
     public void CommitName()
     {
         Score_ScoreManager.instance.playerSetName = inputField.text;
+        Score_ScoreManager.instance.playerSavedName = inputField.text;
         Score_ScoreManager.instance.AddNameAndScore(inputField.text);
         nameInputScreen.SetActive(false);
         hallOfFame.SetActive(true);
