@@ -73,7 +73,7 @@ public class ColourEffect_CEManager : MonoBehaviour  {
         }
 
         //calling this here may use a bunch of resources. Will Readdress later
-        Debug.Log("Saved stuff");
+        //Debug.Log("Saved stuff");
         Save();
     }
 

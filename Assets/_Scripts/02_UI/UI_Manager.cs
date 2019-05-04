@@ -136,32 +136,15 @@ public class UI_Manager : MonoBehaviour {
 
     public void ShowNameInputScreen()
     {
-        //this is the only time you should be asked to input your name before going to the score screen
-        if(Score_ScoreManager.instance.playerSavedScore == 0)
-        {
-            //turn off results screen
-            resultsScreen.SetActive(false);
-
-            //update score text on name input screen (don't need this on name entry screen)
-            //nameEntryHighScoreText.text = Score_ScoreManager.instance.currentScore.ToString() + "!";
-
-            //turn on name input screen
-            Debug.Log("tried to load name input screen");
-            nameInputScreen.SetActive(true);
-        }
-
-        else
-        {
-            Score_ScoreManager.instance.UpdateHighScoreList();
-            ShowHallOfFame();
-        }
-        
+        resultsScreen.SetActive(false);
+        nameInputScreen.SetActive(true);
     }
 
     public void CommitName()
     {
         Score_ScoreManager.instance.playerSetName = inputField.text;
         Score_ScoreManager.instance.playerSavedName = inputField.text;
+        Score_ScoreManager.instance.savedScores.playerName = inputField.text;
         Score_ScoreManager.instance.AddNameAndScore(inputField.text);
         nameInputScreen.SetActive(false);
         hallOfFame.SetActive(true);

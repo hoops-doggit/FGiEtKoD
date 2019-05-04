@@ -51,7 +51,6 @@ public class Score_ScoreManager : MonoBehaviour {
     {
         instance = this;
 
-
         //the below line is for resetting progress
         //PlayerPrefs.DeleteAll();
     }
@@ -91,8 +90,11 @@ public class Score_ScoreManager : MonoBehaviour {
             savedScores.score9 = highscores[8].Score;
             savedScores.name10 = highscores[9].Name;
             savedScores.score10 = highscores[9].Score;
-            savedScores.playerName = playerSavedName;
-            savedScores.playerScore = playerSavedScore;
+            savedScores.playerScore = playerSetScore;
+            if(playerSetName != null)
+            {
+                savedScores.playerName = playerSetName;
+            }            
         }
 
         PlayerPrefs.SetString("save", Score_Serializer.Serialize<Score_SavedScoreData>(savedScores));
@@ -132,29 +134,29 @@ public class Score_ScoreManager : MonoBehaviour {
         highscores.Add(new HighScore(10, savedScores.name10, savedScores.score10));
         highscores.Sort();
         //this goes through all of the scores and just checks that the one representing the players score has the most recent name;
-        for (int i = 0; i < highscores.Count; i++)
-        {
-            if (highscores[i].Score == playerSavedScore)
-            {
-                if (highscores[i].Name != playerSavedName)
-                {
-                    highscores[i].Name = playerSavedName;
-                }
-            }
-        }
+
+        //for (int i = 0; i < highscores.Count; i++)
+        //{
+        //    if (highscores[i].Score == playerSavedScore)
+        //    {
+        //        if (highscores[i].Name != playerSetName && playerSetName != null)
+        //        {
+        //            highscores[i].Name = playerSetName;
+        //        }
+        //    }
+        //}
     }
     //old check high scores
     public void CheckScoreAgainstHighScores(int score){
         GetScores();
         for (int i = 0; i < (numberOfDisplayedScores-1); i++)
         {
-            Debug.Log("highscore[" + i + "] " + highscores[i].Score);
+            //Debug.Log("highscore[" + i + "] " + highscores[i].Score);
             Debug.Log("Checking against " + i);
             if (score > highscores[i].Score)
             {
                 Debug.Log("stop checking, score is higher than " + i);
                 highscores.Remove(highscores[numberOfDisplayedScores - 1]);
-                //AskForName();
                 return;
             }
         }
@@ -172,53 +174,37 @@ public class Score_ScoreManager : MonoBehaviour {
         //if players score is higher than something on the scoreboard
         if (higherThanSomething)
         {
-            Debug.Log("player score is higher than something");
-            //if player has a saved score already
-            if (playerSavedScore > 0)
+            //if score is higher than player saved score
+            if (score > playerSavedScore)
             {
-                Debug.Log("saved playerscore is higher than 0");
-                //and if the players score is higher than one of their previous scores
-                if (score > playerSavedScore)
-                {
-                    Debug.Log("player score is higher than saved player score");
-
-                    //don't ask for name prompt
-                    needsNameUpdate = false;
-
-                    //overwrite old score with new
-                    for (int i = 0; i < highscores.Count; i++)
-                    {
-                        if(highscores[i].Name == playerSavedName)
-                        {
-                            highscores[i].Score = score;
-                            playerSavedScore = score;
-                            playerSetScore = score;
-                            Save();
-                        }
-                    }                    
-                    return true;
-                }
-                //if it's not higher than one of their previous scores
-                else
-                {
-                    Debug.Log("player score is lower than saved player score");
-                    playerSavedScore = score;
-                    playerSetScore = score;
-                    return false;
-                }
-            }
-
-            //if player doesn't have a high score already
-            if (playerSavedScore == 0)
-            {
-                Debug.Log("saved player score is 0");
-                //ask for name prompt
+                //this gets playersetscore ready for saving;
                 playerSetScore = score;
-                playerSavedScore = score;
-                needsNameUpdate = true;
+                //if player saved score didn't actually exist
+                if(playerSavedScore == 0)
+                {
+                    //get ready to update player name
+                    needsNameUpdate = true;
+                }
+
+                //update players score in the highscore list
+                for (int i = 0; i < highscores.Count; i++)
+                {
+                    if (highscores[i].Score == playerSavedScore)
+                    {
+                        highscores[i].Score = score;
+                        Save();
+                    }
+                }
+
                 return true;
             }
+
+            else
+            {
+                return false;
+            }
         }
+        
 
         //if players score isn't higher than anything on the scoreboard
         if (!higherThanSomething)
@@ -233,7 +219,7 @@ public class Score_ScoreManager : MonoBehaviour {
     {
         for (int i = 0; i < highscores.Count; i++)
         {
-            if (highscores[i].Name == playerSavedName || highscores[i].Name == playerSetName)
+            if (highscores[i].Name == playerSavedName|| highscores[i].Name == playerSetName)
             {
                 if (currentScore > highscores[i].Score)
                 {
@@ -243,23 +229,12 @@ public class Score_ScoreManager : MonoBehaviour {
         }
     }
 
-    //maybe too UI centric
-    private void AskForName(){
-        nameEntryboxPrefab.SetActive(true);
-        //dont' need below
-        for (int i = 0; i < tempList.Count; i++)
-        {
-            Destroy(tempList[i].gameObject);
-        }
-        tempList.Clear();
-    }
-
     //this should just add to list etc not show scores
     public void AddNameAndScore(string name){
         //this should only be run once
         playerSetName = name;
         savedScores.playerName = name;
-        savedScores.playerScore = currentScore;
+        playerSetScore = currentScore;
 
         //this is where I need to save new inputted name
         highscores.Add(new HighScore(1, name, currentScore));
@@ -304,7 +279,7 @@ public class Score_ScoreManager : MonoBehaviour {
         }
 
         currentScore = score;
-        Debug.Log("score = " + score);
+        Debug.Log("currentScore = " + score);
         return score;
     }
 }
