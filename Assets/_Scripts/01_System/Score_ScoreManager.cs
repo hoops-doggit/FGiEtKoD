@@ -47,6 +47,8 @@ public class Score_ScoreManager : MonoBehaviour {
     [SerializeField]
     private GameObject clothes;
 
+    public Color playerTextColour;
+
     private void Awake()
     {
         instance = this;
@@ -252,11 +254,20 @@ public class Score_ScoreManager : MonoBehaviour {
                 GameObject tmpObj = Instantiate(scorePrefab);
                 HighScore tmpScore = highscores[i];
                 tmpObj.GetComponent<Score_ScoreObject>().SetScore((i + 1).ToString(), highscores[i].Name, highscores[i].Score.ToString());
+                if(tmpObj.GetComponent<Score_ScoreObject>().name == playerSavedName || tmpObj.GetComponent<Score_ScoreObject>().name == savedScores.playerName)
+                {
+                    Text things = tmpObj.GetComponentInChildren<Text>();
+                    things.color = playerTextColour;
+                }
                 tmpObj.transform.SetParent(scoreGrid);
                 tmpObj.transform.GetComponent<RectTransform>().localScale = Vector3.one;
                 tempList.Add(tmpObj);
             }
         }
+
+        
+
+
     }
 
     public int CalculateScore()
