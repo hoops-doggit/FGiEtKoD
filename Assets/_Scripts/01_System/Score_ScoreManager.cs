@@ -91,7 +91,7 @@ public class Score_ScoreManager : MonoBehaviour {
             savedScores.name10 = highscores[9].Name;
             savedScores.score10 = highscores[9].Score;
             savedScores.playerScore = playerSetScore;
-            if(playerSetName != null)
+            if(playerSetName != "")
             {
                 savedScores.playerName = playerSetName;
             }            
@@ -139,7 +139,7 @@ public class Score_ScoreManager : MonoBehaviour {
         {
             if (highscores[i].Score == playerSavedScore)
             {
-                if (highscores[i].Name != playerSavedName)
+                if (highscores[i].Name != playerSavedName && playerSavedName != "")
                 {
                     highscores[i].Name = playerSavedName;
                 }
