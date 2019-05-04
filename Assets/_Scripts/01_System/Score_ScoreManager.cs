@@ -135,16 +135,16 @@ public class Score_ScoreManager : MonoBehaviour {
         highscores.Sort();
         //this goes through all of the scores and just checks that the one representing the players score has the most recent name;
 
-        //for (int i = 0; i < highscores.Count; i++)
-        //{
-        //    if (highscores[i].Score == playerSavedScore)
-        //    {
-        //        if (highscores[i].Name != playerSetName && playerSetName != null)
-        //        {
-        //            highscores[i].Name = playerSetName;
-        //        }
-        //    }
-        //}
+        for (int i = 0; i < highscores.Count; i++)
+        {
+            if (highscores[i].Score == playerSavedScore)
+            {
+                if (highscores[i].Name != playerSavedName)
+                {
+                    highscores[i].Name = playerSavedName;
+                }
+            }
+        }
     }
     //old check high scores
     public void CheckScoreAgainstHighScores(int score){
