@@ -51,10 +51,6 @@ public class PepperShaker : MonoBehaviour {
                 orange.transform.position = new Vector3(transform.position.x, 0, transform.position.z + orangeOffset);
 
                 Orange_Behaviour ob = orange.GetComponent<Orange_Behaviour>();
-                //ParticleSystem particles = Instantiate(ob.orangeDestroyedFX, gameObject.transform);
-                //particles.transform.parent = null;
-                //particles.transform.localScale = Vector3.one;
-
                 gotHit = true;
                 animating = true;
                 anim.SetTrigger("jump");
