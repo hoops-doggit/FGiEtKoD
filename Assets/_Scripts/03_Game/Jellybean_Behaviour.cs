@@ -11,10 +11,24 @@ public class Jellybean_Behaviour : MonoBehaviour {
     public float sizeIncrease;
 	public float scaleMax;
     public bool special = false;
-    private int multiplier = 5; 
-
-
+    private int multiplier = 5;
     private bool gotTouched;
+    [SerializeField]
+    private RealBakedAnimator rba;
+
+    public void Start()
+    {
+        if (special)
+        {
+            ChangeToSpecial();
+        }
+    }
+    public void ChangeToSpecial()
+    {
+        special = true;
+        rba.ChangeColor("yellow");
+    }
+
 
     private void OnTriggerEnter(Collider other)
 	{

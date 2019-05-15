@@ -19342,38 +19342,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 39
       objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a9ec65694a4904bd8b33a7c4496d76e1,
-        type: 3}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_CastShadows
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_ReceiveShadows
-      value: 1
+    - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
+      propertyPath: m_Name
+      value: JellyBeanPrefab (1)
       objectReference: {fileID: 0}
     - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 42a99a517ffa33b4a96b308e6cd2a30e, type: 2}
-    - target: {fileID: 212803146228759218, guid: 34fbc05369c007649a5105664c4d8856,
-        type: 2}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
-      propertyPath: m_Name
-      value: JellyBeanPrefab (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &463865048
@@ -31072,7 +31050,7 @@ MonoBehaviour:
   - {fileID: 185301314}
   maxNumberOfToms: 2
   numberOfToms: 0
-  smallTomato: {fileID: 1538052682233610, guid: 1e996166b62b83144b599e4674bf8156,
+  smallTomato: {fileID: 1723640585120142, guid: df901a91c5d939748b88235a2299c9cb,
     type: 2}
   waitForSeconds: 5
 --- !u!4 &1091873588 stripped
@@ -42202,7 +42180,7 @@ MonoBehaviour:
   - {fileID: 112770336}
   maxNumberOfToms: 1
   numberOfToms: 0
-  smallTomato: {fileID: 1538052682233610, guid: 1e996166b62b83144b599e4674bf8156,
+  smallTomato: {fileID: 1723640585120142, guid: df901a91c5d939748b88235a2299c9cb,
     type: 2}
   waitForSeconds: 5
 --- !u!1 &1459547611 stripped
@@ -47812,7 +47790,7 @@ MonoBehaviour:
   - {fileID: 2011383033}
   maxNumberOfToms: 3
   numberOfToms: 0
-  smallTomato: {fileID: 1538052682233610, guid: 1e996166b62b83144b599e4674bf8156,
+  smallTomato: {fileID: 1723640585120142, guid: df901a91c5d939748b88235a2299c9cb,
     type: 2}
   waitForSeconds: 5
 --- !u!1001 &1504730033
@@ -48576,7 +48554,7 @@ MonoBehaviour:
   - {fileID: 1652007422}
   maxNumberOfToms: 0
   numberOfToms: 0
-  smallTomato: {fileID: 1538052682233610, guid: 1e996166b62b83144b599e4674bf8156,
+  smallTomato: {fileID: 1723640585120142, guid: df901a91c5d939748b88235a2299c9cb,
     type: 2}
   waitForSeconds: 5
 --- !u!4 &1545234005 stripped
@@ -49602,7 +49580,7 @@ MonoBehaviour:
   - {fileID: 14970154}
   maxNumberOfToms: 3
   numberOfToms: 0
-  smallTomato: {fileID: 1538052682233610, guid: 1e996166b62b83144b599e4674bf8156,
+  smallTomato: {fileID: 1723640585120142, guid: df901a91c5d939748b88235a2299c9cb,
     type: 2}
   waitForSeconds: 5
 --- !u!4 &1613575238 stripped
@@ -50346,7 +50324,7 @@ MonoBehaviour:
   - {fileID: 868900713}
   maxNumberOfToms: 2
   numberOfToms: 0
-  smallTomato: {fileID: 1538052682233610, guid: 1e996166b62b83144b599e4674bf8156,
+  smallTomato: {fileID: 1723640585120142, guid: df901a91c5d939748b88235a2299c9cb,
     type: 2}
   waitForSeconds: 5
 --- !u!1001 &1647481460
@@ -56588,7 +56566,7 @@ MonoBehaviour:
   - {fileID: 66158460}
   maxNumberOfToms: 3
   numberOfToms: 0
-  smallTomato: {fileID: 1538052682233610, guid: 1e996166b62b83144b599e4674bf8156,
+  smallTomato: {fileID: 1723640585120142, guid: df901a91c5d939748b88235a2299c9cb,
     type: 2}
   waitForSeconds: 5
 --- !u!1 &1893496863
@@ -66453,6 +66431,6 @@ MonoBehaviour:
   - {fileID: 1226313439}
   maxNumberOfToms: 2
   numberOfToms: 0
-  smallTomato: {fileID: 1538052682233610, guid: 1e996166b62b83144b599e4674bf8156,
+  smallTomato: {fileID: 1723640585120142, guid: df901a91c5d939748b88235a2299c9cb,
     type: 2}
   waitForSeconds: 5

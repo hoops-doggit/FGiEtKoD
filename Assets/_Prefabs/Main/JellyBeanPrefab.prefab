@@ -127,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111947735896808}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.5, y: 2.59, z: 56.699997}
+  m_LocalPosition: {x: -5.5, y: 5.3, z: 163.63}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4334059472817824}
@@ -202,12 +202,28 @@ MonoBehaviour:
   - {fileID: 21300014, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
   FramesPerSecond: 19
   Speed: 1
-  pink: []
+  pink:
+  - {fileID: 21300000, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300002, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300004, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300006, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300008, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300010, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300012, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
+  - {fileID: 21300014, guid: a9ec65694a4904bd8b33a7c4496d76e1, type: 3}
   blue: []
   green: []
   orange: []
-  yellow: []
-  currentColour: blue
+  yellow:
+  - {fileID: 21300000, guid: 078dffead95d0d5409532a279d54e317, type: 3}
+  - {fileID: 21300002, guid: 078dffead95d0d5409532a279d54e317, type: 3}
+  - {fileID: 21300004, guid: 078dffead95d0d5409532a279d54e317, type: 3}
+  - {fileID: 21300006, guid: 078dffead95d0d5409532a279d54e317, type: 3}
+  - {fileID: 21300008, guid: 078dffead95d0d5409532a279d54e317, type: 3}
+  - {fileID: 21300010, guid: 078dffead95d0d5409532a279d54e317, type: 3}
+  - {fileID: 21300012, guid: 078dffead95d0d5409532a279d54e317, type: 3}
+  - {fileID: 21300014, guid: 078dffead95d0d5409532a279d54e317, type: 3}
+  currentColour: pink
 --- !u!114 &114797967750038292
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -263,6 +279,7 @@ MonoBehaviour:
   sizeIncrease: 0.2
   scaleMax: 1.4
   special: 0
+  rba: {fileID: 114201155156436828}
 --- !u!135 &135376642382473628
 SphereCollider:
   m_ObjectHideFlags: 1
