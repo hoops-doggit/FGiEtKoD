@@ -10,6 +10,8 @@ public class Jellybean_Behaviour : MonoBehaviour {
     public GameObject parent;
     public float sizeIncrease;
 	public float scaleMax;
+    public bool special = false;
+    private int multiplier = 5; 
 
 
     private bool gotTouched;
@@ -20,7 +22,14 @@ public class Jellybean_Behaviour : MonoBehaviour {
         if (other.gameObject.tag == "player")
         {
             CharacterMovement.cm.PlayBurst();
-            other.gameObject.GetComponent<CharacterCollisions>().jelliesCollected++;
+            if (!special)
+            {
+                other.gameObject.GetComponent<CharacterCollisions>().jelliesCollected++;
+            }
+            else if (special)
+            {
+                other.gameObject.GetComponent<CharacterCollisions>().jelliesCollected += multiplier;
+            }
             parent.GetComponent<JellyBean_Death>().PlayAnimation();
             Character_HitTracker.instance.AddJelly();
             Sound_GBSfx.instance.JellyPickup();

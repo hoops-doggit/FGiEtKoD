@@ -17,6 +17,7 @@ public class PrefabPlacer : EditorWindow {
     float hardJellyPos = 2.2f;
 
     public GameObject jellyPrefab;
+    public GameObject jellySpecial;
     public GameObject jellyBeanParent;
     private GameObject saltShaker;
     private GameObject pepperShaker;
@@ -43,6 +44,7 @@ public class PrefabPlacer : EditorWindow {
         hardJellyPos = ppd.hardJellyPos;
 
         jellyPrefab = ppd.jellyPrefab;
+        jellySpecial = ppd.jellySpecialPrefab;
         jellyBeanParent = ppd.jellyBeanParent;
         saltShaker = ppd.saltShaker;
         pepperShaker = ppd.pepperShaker;
@@ -65,6 +67,7 @@ public class PrefabPlacer : EditorWindow {
         ppd.hardJellyPos = hardJellyPos;
 
         ppd.jellyPrefab = jellyPrefab;
+        ppd.jellySpecialPrefab = jellySpecial;
         ppd.jellyBeanParent = jellyBeanParent;
         //ppd.prefabToReplaceWith = prefabToReplaceWith;
 
@@ -97,8 +100,10 @@ public class PrefabPlacer : EditorWindow {
 
         GUILayout.Label("Jellybean Placement", EditorStyles.boldLabel);
         EditorGUILayout.BeginHorizontal();
-        GUILayout.Label("Jellybean Prefab", EditorStyles.label);
+        GUILayout.Label("Jellybean", EditorStyles.label);
         jellyPrefab = (GameObject)EditorGUILayout.ObjectField(jellyPrefab, typeof(GameObject), true);
+        GUILayout.Label("Jellybean Special", EditorStyles.label);
+        jellySpecial  = (GameObject)EditorGUILayout.ObjectField(jellySpecial, typeof(GameObject), true);
         EditorGUILayout.EndHorizontal();
 
         EditorGUILayout.BeginHorizontal();

@@ -13,6 +13,7 @@ public class PrefabPlacerData : ScriptableObject {
     public float hardJellyPos = 2f;
 
     public GameObject jellyPrefab;
+    public GameObject jellySpecialPrefab;
     public GameObject jellyBeanParent;
     public GameObject saltShaker;
     public GameObject pepperShaker;

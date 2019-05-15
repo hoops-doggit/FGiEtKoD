@@ -22,11 +22,6 @@ public class CharacterCollisions : MonoBehaviour {
     //NOTE: Jellybeans are triggers
     public int jelliesCollected;
 
-    private void Awake()
-    {
-        
-    }
-
     private void Start()
     {
         cm = CharacterMovement.cm;

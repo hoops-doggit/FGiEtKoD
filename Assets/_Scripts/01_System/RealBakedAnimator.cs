@@ -19,7 +19,7 @@ public class RealBakedAnimator : MonoBehaviour {
     public Sprite[] yellow;
 
     //used to tell objects what to do when gb collides with them
-    public string currentColour = "blue";
+    public string currentColour = "pink";
 
 
     private SpriteRenderer spriteRenderer;
@@ -68,15 +68,6 @@ public class RealBakedAnimator : MonoBehaviour {
 		float t = (float)Time.time * (int)FramesPerSecond * Speed;
 		var s = m_Sprites[(int)Mathf.Repeat(t, m_Sprites.Length)];
 		spriteRenderer.sprite = s;
-
-        //For sending to the character to tell which foot is placed
-        //sprite = (int)Mathf.Repeat(t, m_Sprites.Length);
-
-        //if (sprite != spriteCounter)
-        //{
-        //    cm.currentWalkFrame = sprite;
-        //    spriteCounter = sprite;
-        //}
     }
 
     

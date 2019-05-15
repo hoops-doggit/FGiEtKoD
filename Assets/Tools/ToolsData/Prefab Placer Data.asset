@@ -20,6 +20,8 @@ MonoBehaviour:
   hardJellyPos: 2.2
   jellyPrefab: {fileID: 1111947735896808, guid: 34fbc05369c007649a5105664c4d8856,
     type: 2}
+  jellySpecialPrefab: {fileID: 1075846835840438, guid: d342551c8f53aec47a473b4e3ad6293f,
+    type: 2}
   jellyBeanParent: {fileID: 0}
   saltShaker: {fileID: 1768296653921600, guid: 561faa49d14bd9e47adb0d94397a8914, type: 2}
   pepperShaker: {fileID: 1378863973518244, guid: c8b6d738469e146bbb7fa0890f9c2430,

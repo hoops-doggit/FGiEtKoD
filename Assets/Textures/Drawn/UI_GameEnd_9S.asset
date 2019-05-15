@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1566551335, guid: ab85ac808950aa04ea8320fc273cd8c0, type: 3}
-  m_Name: Animation_2019-4-10_17-56-43
+  m_Name: UI_GameEnd_9S
   m_EditorClassIdentifier: 
   frames:
   - _texture: {fileID: 28690314242617068}
@@ -82,7 +82,7 @@ Sprite:
   m_AtlasName: 
   m_PackingTag: 
   m_RenderDataKey:
-    00000000000000000000000000000000: 0
+    c778e23396f89d84dbd2657666ef1286: 213404648983278272
   m_AtlasTags: []
   m_SpriteAtlas: {fileID: 0}
   m_RD:
