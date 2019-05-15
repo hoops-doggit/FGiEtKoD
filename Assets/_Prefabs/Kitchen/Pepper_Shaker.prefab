@@ -184,8 +184,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7b0550f2d310244ba1e6bae25d1663, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightning: {fileID: 1110580685424948, guid: e480d2ba4e93acc43b4a1c3028d56298, type: 2}
-  lightningZOffset: 0
+  lightningCollider: {fileID: 1110580685424948, guid: e480d2ba4e93acc43b4a1c3028d56298,
+    type: 2}
+  lightningZOffset: 20
 --- !u!114 &114678974635795880
 MonoBehaviour:
   m_ObjectHideFlags: 1

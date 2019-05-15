@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 65649377539297492}
   - component: {fileID: 114673384087240618}
   - component: {fileID: 114460903795064092}
+  - component: {fileID: 114472967386992746}
   m_Layer: 2
   m_Name: SaltShaker
   m_TagString: pepper
@@ -156,6 +157,20 @@ MonoBehaviour:
   - green
   - orange
   - yellow
+--- !u!114 &114472967386992746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768296653921600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a7b0550f2d310244ba1e6bae25d1663, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightningCollider: {fileID: 1110580685424948, guid: e480d2ba4e93acc43b4a1c3028d56298,
+    type: 2}
+  lightningZOffset: 20
 --- !u!114 &114673384087240618
 MonoBehaviour:
   m_ObjectHideFlags: 1

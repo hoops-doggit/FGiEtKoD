@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212325428185360184}
   - component: {fileID: 114859882280676416}
   m_Layer: 0
-  m_Name: PepperPowder
+  m_Name: Pepper_Powder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
