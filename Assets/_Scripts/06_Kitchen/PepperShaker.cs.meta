@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 02130575641b74655a3d09e190a0a751
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pepperShaker: {instanceID: 0}
+  - pepperPowder: {instanceID: 0}
+  - Orange: {fileID: 1734551463131190, guid: 07968ca29eb9fee40aacb08ce87acd8e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

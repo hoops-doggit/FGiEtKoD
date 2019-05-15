@@ -6,20 +6,19 @@ public class Yellow_Power : MonoBehaviour {
 
     public GameObject lightning;
     private GameObject lightningClone;
-    private Collider col;
     public List<GameObject> go = new List<GameObject>();
-    public float lightningZOffset;
    
-    public void LemonPower()
+
+
+    public void LemonPower(Vector3 pos)
     {
-        Vector3 position = col.gameObject.transform.position;
-        col.gameObject.transform.position = new Vector3(0, position.y, position.z + lightningZOffset);
-        col.enabled = true;
+        lightningClone = Instantiate(lightning, pos, Quaternion.identity, null);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        go.Add(other.gameObject);
+        LemonPower(other.transform.position);
+        Debug.Log("did yellow power thing");
     }
     public void GetObjectsInCol(GameObject thing)
     {
