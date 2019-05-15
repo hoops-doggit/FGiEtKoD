@@ -17,6 +17,7 @@ public class CharacterMovement : MonoBehaviour {
     [Header("Movement")]
     public float hsp;
     private float hspInitial;
+    public float slowhsp;
     public float vsp;
     [Header("Gravity")]
     public float grav;
@@ -142,9 +143,6 @@ public class CharacterMovement : MonoBehaviour {
         snowFlake.Pause();
         speedStreaks.Pause();
         clothesLight.enabled = true;
-
-        //charSpriteOBJ.GetComponent<ShadowCastingSprite>().enabled = false;
-        //charSpriteOBJ.GetComponent<SpriteRenderer>().material = standardMat;
     }
 
     // Use this for initialization
@@ -247,6 +245,7 @@ public class CharacterMovement : MonoBehaviour {
         }
     }
 
+
     public void HitDoor()
     {
         StartCoroutine("HitDoorCoroutine");
@@ -274,10 +273,12 @@ public class CharacterMovement : MonoBehaviour {
         float initialSlowSpeed = slowSpeed;
         float initialAccSpeed = accSpeed;
         slowed = true;
+        hsp = slowhsp;
         moveSpeed = blueSlowSpeed;
         accSpeed = blueSlowedAcc;
         yield return new WaitForSeconds(blueSlowedDuration);
         slowed = false;
+        hsp = hspInitial;
         slowSpeed = initialSlowSpeed;
         accSpeed = initialAccSpeed;
         Debug.Log("Stopping blue slow");
@@ -315,8 +316,7 @@ public class CharacterMovement : MonoBehaviour {
         speedStreaks.Stop();
         Debug.Log("this");
         FastEnd();
-
-        //StopCoroutine("GotHitColouredCoroutine");
+        StopCoroutine("GotHitColouredCoroutine");
     }
 
     public void HitTomato()
@@ -557,7 +557,6 @@ public class CharacterMovement : MonoBehaviour {
 
         RaycastHit hit;
 
-
         if (Physics.Raycast(raycastPoint.position, Vector3.forward, out hit, 40))
         {
             if(hit.distance > raycastMinDistance)
@@ -660,23 +659,5 @@ public class CharacterMovement : MonoBehaviour {
                 grav = oldGrav;
             }
         }
-
-        //if (gotClothes)
-        //{
-        //    clothesLight.enabled = true;
-        //    if (clothesLight.intensity < clothesLightMax)
-        //    {
-        //        clothesLight.intensity = clothesLight.intensity + clothesLightIncrease;
-        //    }
-        //}
-
-        //if (!gotClothes && clothesLight.intensity > 0)
-        //{
-        //    clothesLight.intensity = clothesLight.intensity - (clothesLightIncrease * 3);
-        //    if (clothesLight.intensity < 0)
-        //    {
-        //        clothesLight.enabled = false;
-        //    }
-        //}
     }
 }

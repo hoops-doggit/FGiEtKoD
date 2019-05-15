@@ -57,8 +57,11 @@ public class RealBakedAnimator : MonoBehaviour {
                 currentColour = "pink";
                 break;
         }
+    }
 
-
+    public void SpeedUp()
+    {
+        Speed = 1.25f;
     }
 
 	void Update() {

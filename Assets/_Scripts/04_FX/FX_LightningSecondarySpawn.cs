@@ -9,9 +9,9 @@ public class FX_LightningSecondarySpawn : MonoBehaviour {
     [SerializeField]
     private GameObject secondarySpark2;
     public Transform parent;
+   
 
-
-	public void DoSecondarySpark()
+    public void DoSecondarySpark()
     {
         secondarySpark1.SetActive(true);
         secondarySpark2.SetActive(true);

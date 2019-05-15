@@ -27,6 +27,7 @@ public class Jellybean_Behaviour : MonoBehaviour {
     {
         special = true;
         rba.ChangeColor("yellow");
+        rba.SpeedUp();
     }
 
 

@@ -19351,6 +19351,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 42a99a517ffa33b4a96b308e6cd2a30e, type: 2}
+    - target: {fileID: 114994656788681938, guid: 34fbc05369c007649a5105664c4d8856,
+        type: 2}
+      propertyPath: special
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 34fbc05369c007649a5105664c4d8856, type: 2}
   m_IsPrefabParent: 0
@@ -35789,6 +35794,7 @@ MonoBehaviour:
   raycastPoint: {fileID: 1910824790}
   raycastMinDistance: 1.2
   hsp: 40
+  slowhsp: 20
   vsp: 0
   grav: 0.035
   oldGrav: 0

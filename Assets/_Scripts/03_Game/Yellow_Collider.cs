@@ -8,7 +8,7 @@ public class Yellow_Collider : MonoBehaviour {
     private GameObject lightningClone;
     public GameObject jellyBean;
     public GameObject goldenJellyBean;
-    public float pauseBeforeSpawningLightning;
+    private float pauseBeforeSpawningLightning;
     public float colliderWidth;
     private float colliderRadius;
     public Collider[] allObjectsInsideCollider;
@@ -36,14 +36,14 @@ public class Yellow_Collider : MonoBehaviour {
     {
         if (x.tag == "jellybean")
         {
-            lightningClone = Instantiate(lightning, pos, Quaternion.identity, null);
-            Destroy(x.gameObject);
+            SpawnLightningClone(pos);
+            x.GetComponent<Jellybean_Behaviour>().ChangeToSpecial();
         }
 
         else if (x.tag == "pepper")
         {
-            lightningClone = Instantiate(lightning, pos, Quaternion.identity, null);
-            GameObject newJB = Instantiate(jellyBean, new Vector3(pos.x, 2.987f, pos.z), Quaternion.identity, null);
+            SpawnLightningClone(pos);
+            GameObject newJB = Instantiate(jellyBean, new Vector3(pos.x, pos.y + 2.987f, pos.z), Quaternion.identity, null);
             //instantiate smoke particles
             Destroy(x.gameObject);
         }
@@ -51,7 +51,7 @@ public class Yellow_Collider : MonoBehaviour {
 
     private IEnumerator DestroyObject()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.75f);
         Destroy(gameObject);
     }
 
@@ -68,15 +68,17 @@ public class Yellow_Collider : MonoBehaviour {
         Sound_GBSfx.instance.JellyPickup(1);
     }
 
-    private void ReplaceWithJellyBean()
-    {
-
+    public void SpawnLightningClone(Vector3 pos)
+    {        
+        lightningClone = Instantiate(lightning, pos, Quaternion.identity, null);
+        SpriteRenderer sr = lightningClone.GetComponent<SpriteRenderer>();
+        float flipI = Random.Range(0, 1);
+        if (flipI > 0.5f)
+        {
+            sr.flipX = true;
+        }        
     }
 
-    private void ReplaceWithGoldenJellyBean()
-    {
-
-    }
 }
 
 
