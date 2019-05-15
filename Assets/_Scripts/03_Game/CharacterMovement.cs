@@ -37,19 +37,19 @@ public class CharacterMovement : MonoBehaviour {
     //public float pushedBackJumpHeight;
     public float pushedBackAcc;
     private float pushedBackInitial;
-	public float moveSpeed;
+    public float moveSpeed;
     public float maxSpeed;
     public float runSpeed;
-	public float slowSpeed;
+    public float slowSpeed;
     public float fastSpeed;
     public float standingStartSpeed;
     public float doorSlowSpeed;
-	public float accSpeed;
+    public float accSpeed;
     public float accSlowSpeed;
     public float accInitial;
     public bool slowed;
     public float blueSlowSpeed;
-	public float slowedDuration;
+    public float slowedDuration;
     public float blueSlowedDuration;
     public float blueSlowedAcc;
     public bool fast;
@@ -68,8 +68,8 @@ public class CharacterMovement : MonoBehaviour {
 
     private float _positionDifference;
     public bool _groundContact;
-	public int _groundCount;
-	public bool trueGroundContact;
+    public int _groundCount;
+    public bool trueGroundContact;
 
     [Header("tomato")]
     public GameObject tomatoFootprint;
@@ -108,7 +108,7 @@ public class CharacterMovement : MonoBehaviour {
     public Material shadowCasting;
     public GameObject charSpriteOBJ;
 
-   
+
 
     //variables for modifying fast behaviour
     private float fastAccSpeedModifier = 1.1f;
@@ -120,8 +120,6 @@ public class CharacterMovement : MonoBehaviour {
     private float fastJumpSpeed;
     public bool checkRay;
     public bool rayGotTriggered;
-
-
 
     private void Awake()
     {
@@ -149,14 +147,13 @@ public class CharacterMovement : MonoBehaviour {
     void Start()
     {
         _positionDifference = RightPos;
-        //_groundContact = true;
         pushedBackInitial = pushedBackAcc;
 
         maxSpeed = runSpeed;
         oldGrav = grav;
 
         fastAcc = accSpeed * fastAccSpeedModifier;
-        fastHsp =  hsp * FastHspModifier;
+        fastHsp = hsp * FastHspModifier;
         fastJumpSpeed = jumpspeed * fastJumpSpeedModifier;
         accInitial = accSpeed;
         hspInitial = hsp;
@@ -178,7 +175,7 @@ public class CharacterMovement : MonoBehaviour {
 
     public void Jump()
     {
-		if (trueGroundContact)
+        if (trueGroundContact)
         {
             _groundContact = false;
             vsp = jumpspeed;
@@ -205,21 +202,21 @@ public class CharacterMovement : MonoBehaviour {
             moveSpeed = pushedBackMoveSpeed;
         }
 
-        else if (fast){
+        else if (fast) {
             moveSpeed = fastPushedBackMoveSpeed;
         }
     }
 
-	public void PlayBurst ()
-	{
-		StopCoroutine ("PlayBurstCR");
-		StartCoroutine ("PlayBurstCR");
-	}
+    public void PlayBurst()
+    {
+        StopCoroutine("PlayBurstCR");
+        StartCoroutine("PlayBurstCR");
+    }
 
-	public void GotHit(){
-		StopCoroutine ("GotHitCoroutine");
-		StartCoroutine ("GotHitCoroutine");
-	}
+    public void GotHit() {
+        StopCoroutine("GotHitCoroutine");
+        StartCoroutine("GotHitCoroutine");
+    }
 
     public void GotHitColoured(string colour)
     {
@@ -239,7 +236,12 @@ public class CharacterMovement : MonoBehaviour {
             StartCoroutine("SlowCoroutine");
         }
 
-        else if (colour != "pink" || colour != "green" || colour != "blue") 
+        else if (colour == "blueWater")
+        {
+            StartCoroutine("SlowWaterCoroutine");
+        }
+
+        else if (colour != "pink" || colour != "green" || colour != "blue")
         {
             StartCoroutine("GotHitCoroutine");
         }
@@ -284,6 +286,22 @@ public class CharacterMovement : MonoBehaviour {
         Debug.Log("Stopping blue slow");
         StopCoroutine("SlowCoroutine");
     }
+
+    public void IceSkatingStart()
+    {
+        if (!slowed) { snowFlake.Play(); }
+        
+        FastInitial();
+        hsp = slowhsp;
+    }
+
+    public void IceSkatingStop()
+    {
+        if (!slowed) { snowFlake.Stop(); }
+        FastEnd();
+        hsp = hspInitial;
+    }
+
 
     public IEnumerator GotHitCoroutine()
     {
@@ -464,9 +482,6 @@ public class CharacterMovement : MonoBehaviour {
 
     // Update is called once per frame
     void FixedUpdate () {
-
-  //      _groundContact = character.GetComponent<CharacterCollisions>().groundContact;
-		//_groundCount = character.GetComponent<CharacterCollisions>().groundCount;
 
 		if (_groundCount <= 0) {
 			trueGroundContact = false;

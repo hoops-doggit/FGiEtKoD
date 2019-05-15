@@ -17,6 +17,8 @@ TagManager:
   - pepper
   - orange
   - UnDestroyable
+  - water
+  - ice
   layers:
   - Default
   - TransparentFX

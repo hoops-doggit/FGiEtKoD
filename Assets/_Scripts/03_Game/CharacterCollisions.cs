@@ -78,6 +78,14 @@ public class CharacterCollisions : MonoBehaviour {
             sliceClone.transform.SetParent(null);
             sliceClone.GetComponent<FX_Slice2Parent>().MoveSlice(slicePos, came);
         }
+
+        if (col.gameObject.tag == "ice")
+        {
+            groundContact = true;
+            groundCount++;
+            cm.UpdateGroundStats();
+            cm.IceSkatingStart();
+        }
     }
 
     public void OnCollisionExit(Collision col)
@@ -87,6 +95,14 @@ public class CharacterCollisions : MonoBehaviour {
             groundContact = false;
             groundCount--;
             cm.UpdateGroundStats();
+        }
+
+        if (col.gameObject.tag == "ice")
+        {
+            groundContact = false;
+            groundCount--;
+            cm.UpdateGroundStats();
+            cm.IceSkatingStop();
         }
     }
 
