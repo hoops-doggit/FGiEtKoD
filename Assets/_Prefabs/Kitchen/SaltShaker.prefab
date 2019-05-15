@@ -74,7 +74,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1768296653921600}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 91.2}
+  m_LocalPosition: {x: -5.5, y: -4.995, z: -87.75}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4780641680793608}
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightningCollider: {fileID: 1110580685424948, guid: e480d2ba4e93acc43b4a1c3028d56298,
     type: 2}
-  lightningZOffset: 20
+  lightningZOffset: 50
 --- !u!114 &114673384087240618
 MonoBehaviour:
   m_ObjectHideFlags: 1

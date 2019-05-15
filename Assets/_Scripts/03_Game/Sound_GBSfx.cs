@@ -12,9 +12,11 @@ public class Sound_GBSfx : MonoBehaviour {
     public AudioClip[] jumpSFXClips;
     public AudioClip moveLeft;
     public AudioClip moveRight;
-    public AudioClip jellyPickup;
+    public AudioClip[] jellyPickup;
     public AudioClip genericHit;
     public AudioClip ground;
+    public AudioClip lightning01;
+    public AudioClip lightning02;
     [Header("Audio Sources")]
     public AudioSource[] audioSources;
     
@@ -75,7 +77,14 @@ public class Sound_GBSfx : MonoBehaviour {
     public void JellyPickup()
     {
         AudioSource source = PickAudioSource();
-        source.clip = jellyPickup;
+        source.clip = jellyPickup[Random.Range(0, jellyPickup.Length)];
+        source.Play();
+    }
+
+    public void JellyPickup(int i)
+    {
+        AudioSource source = PickAudioSource();
+        source.clip = jellyPickup[i];
         source.Play();
     }
 
@@ -89,6 +98,13 @@ public class Sound_GBSfx : MonoBehaviour {
     {
         AudioSource source = PickAudioSource();
         source.clip = moveRight;
+        source.Play();
+    }
+
+    public void PlayLightning()
+    {
+        AudioSource source = PickAudioSource();
+        source.clip = lightning01;
         source.Play();
     }
 

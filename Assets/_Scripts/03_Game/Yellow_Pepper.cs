@@ -11,8 +11,10 @@ public class Yellow_Pepper : MonoBehaviour {
     public void DoYellow()
     {
         Vector3 pos = new Vector3 (0, 0, gameObject.transform.position.z + lightningZOffset);
-        lightningClone = Instantiate(lightningClone, pos, Quaternion.identity);
+        lightningClone = Instantiate(lightningCollider, pos, Quaternion.identity);
         lightningClone.transform.parent = null;
         lightningClone.transform.position = pos;
     }
+
+    
 }

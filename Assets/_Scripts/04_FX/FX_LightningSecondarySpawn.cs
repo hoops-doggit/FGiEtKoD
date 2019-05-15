@@ -4,19 +4,23 @@ using UnityEngine;
 
 public class FX_LightningSecondarySpawn : MonoBehaviour {
 
-    public GameObject secondarySpark;
-    private GameObject secondary;
+    [SerializeField]
+    private GameObject secondarySpark1;
+    [SerializeField]
+    private GameObject secondarySpark2;
     public Transform parent;
 
 
 	public void DoSecondarySpark()
     {
-        secondary = Instantiate(secondarySpark, gameObject.transform.position, Quaternion.identity, parent);
-        secondary.transform.localPosition = new Vector3(3.29f, 2.1f, 0);
-        secondary.SetActive(true);
-        secondary = Instantiate(secondarySpark, gameObject.transform.position, Quaternion.identity, parent);
-        secondary.transform.localPosition = new Vector3(-3.29f, 2.1f, 0);
-        secondary.GetComponent<SpriteRenderer>().flipX = true;
-        secondary.SetActive(true);
+        secondarySpark1.SetActive(true);
+        secondarySpark2.SetActive(true);
+        StartCoroutine("TIME");
+    }
+
+    private IEnumerator TIME()
+    {
+        yield return new WaitForSeconds(5);
+        Destroy(gameObject);
     }
 }
