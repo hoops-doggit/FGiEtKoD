@@ -13,6 +13,8 @@ public class Tomato_Spawner : MonoBehaviour {
     private int totalNumberOfPeppers;
     [SerializeField]
     private GameObject smallTomato;
+    [SerializeField]
+    private GameObject smallTomatoJellyBean;
     private GameObject smallTomatoClone;
     public float waitForSeconds = 5f;
 
@@ -40,9 +42,18 @@ public class Tomato_Spawner : MonoBehaviour {
 
     public void ReplaceWithTomato(int i)
     {
-        smallTomatoClone = Instantiate(smallTomato, pepperList[i].transform.position, Quaternion.identity, pepperList[i].transform);
-        smallTomatoClone.transform.parent = null;
-        pepperList[i].SetActive(false);
+        if (pepperList[i].transform.position.y < 2)
+        {
+            smallTomatoClone = Instantiate(smallTomatoJellyBean, pepperList[i].transform.position, Quaternion.identity, pepperList[i].transform);
+            smallTomatoClone.transform.parent = null;
+            pepperList[i].SetActive(false);
+        }
+        else
+        {
+            smallTomatoClone = Instantiate(smallTomato, pepperList[i].transform.position, Quaternion.identity, pepperList[i].transform);
+            smallTomatoClone.transform.parent = null;
+            pepperList[i].SetActive(false);
+        }
     }
 
     public void AddSelf(GameObject go)
