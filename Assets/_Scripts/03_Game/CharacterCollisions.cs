@@ -7,6 +7,8 @@ public class CharacterCollisions : MonoBehaviour {
     public bool groundContact;
     public int groundCount;
     private CharacterMovement cm;
+    [SerializeField]
+    private BakedAnimator bodyColour;
     public GameObject clothes_top;
     private Clothes_BakedAnimator _cbaTop;
     public GameObject clothes_bottom;
@@ -35,8 +37,6 @@ public class CharacterCollisions : MonoBehaviour {
 
     public void OnCollisionEnter(Collision col)
     {
-
-
         if (col.gameObject.tag == "ground")
         {
             groundContact = true;
@@ -86,6 +86,20 @@ public class CharacterCollisions : MonoBehaviour {
             cm.UpdateGroundStats();
             cm.IceSkatingStart();
         }
+
+        if(col.gameObject.tag == "sponge" && bodyColour.currentColour == "blue")
+        {
+            cm.IceSkatingStart();
+            groundContact = true;
+            groundCount++;
+            cm.UpdateGroundStats();
+        }
+        if(col.gameObject.tag == "sponge" && bodyColour.currentColour != "blue")
+        {
+            groundContact = true;
+            groundCount++;
+            cm.UpdateGroundStats();
+        }
     }
 
     public void OnCollisionExit(Collision col)
@@ -121,6 +135,18 @@ public class CharacterCollisions : MonoBehaviour {
                 ba.ChangeColor("pink");
             }
         }
+    }
+
+    private void LandedOnGround()
+    {
+        groundContact = true;
+        groundCount++;
+        cm.UpdateGroundStats();
+    }
+
+    private void LeftGround()
+    {
+
     }
 
 }
