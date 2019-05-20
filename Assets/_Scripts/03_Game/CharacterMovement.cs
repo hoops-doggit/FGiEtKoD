@@ -11,7 +11,7 @@ public class CharacterMovement : MonoBehaviour {
     public GameObject character;
     public Transform playerGoalPos;
     [SerializeField]
-    private Transform raycastPoint;
+    private Transform[] raycastPoints;
     public float raycastMinDistance;
     private Vector3 characterPos;
     [Header("Movement")]
@@ -571,48 +571,50 @@ public class CharacterMovement : MonoBehaviour {
         }
 
         RaycastHit hit;
-
-        if (Physics.Raycast(raycastPoint.position, Vector3.forward, out hit, 40))
+        foreach (Transform t in raycastPoints)
         {
-            if(hit.distance > raycastMinDistance)
+            if (Physics.Raycast(t.position, Vector3.forward, out hit, 40))
             {
-                checkRay = true;
-                Debug.DrawRay(raycastPoint.position, Vector3.forward * hit.distance, Color.grey);
-            }
-            if (hit.distance < raycastMinDistance && !rayGotTriggered && checkRay)
-            {
-                rayGotTriggered = true;
-                Debug.DrawRay(raycastPoint.position, Vector3.forward * hit.distance, Color.red);
+                if (hit.distance > raycastMinDistance)
+                {
+                    checkRay = true;
+                    Debug.DrawRay(t.position, Vector3.forward * hit.distance, Color.grey);
+                }
+                if (hit.distance < raycastMinDistance && !rayGotTriggered && checkRay)
+                {
+                    rayGotTriggered = true;
+                    Debug.DrawRay(t.position, Vector3.forward * hit.distance, Color.red);
+                }
+                else
+                {
+                    rayGotTriggered = false;
+                    Debug.DrawRay(t.position, Vector3.forward * hit.distance, Color.yellow);
+                }
             }
             else
             {
-                rayGotTriggered = false;
-                Debug.DrawRay(raycastPoint.position, Vector3.forward * hit.distance, Color.yellow);
+                Debug.DrawRay(t.position, Vector3.forward * 50, Color.yellow);
             }
 
-        }
-        else
-        {
-            Debug.DrawRay(raycastPoint.position, Vector3.forward * 50, Color.yellow);
-        }
-        
-
-        if (!rayGotTriggered)
-        {
-            charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + moveSpeed);
-        }
-
-        if (rayGotTriggered)
-        {
-            if (hit.collider.gameObject.tag != "jelly")
+            if (!rayGotTriggered)
             {
-                checkRay = false;
+                charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + moveSpeed);
+            }
 
-                charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + hit.distance);
+            if (rayGotTriggered)
+            {
+                if (hit.collider.gameObject.tag != "jelly")
+                {
+                    checkRay = false;
 
-                Pushback();
-                rayGotTriggered = false;
-            }            
+                    charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + hit.distance);
+
+                    Pushback();
+                    rayGotTriggered = false;
+                }
+                break;
+            }
+            break;
         }
 	}
 

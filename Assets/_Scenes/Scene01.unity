@@ -19824,6 +19824,36 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 480716332}
+--- !u!1 &482925426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1342501880917024, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 482925427}
+  m_Layer: 0
+  m_Name: FrontRay (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &482925427
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4104817898819912, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 482925426}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.32, y: 2.49, z: 0.651001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1900030352}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &485241565 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4943130514345168, guid: d0fa2be3871fd4b32ad124b4c9e5f52e,
@@ -20382,6 +20412,36 @@ Transform:
   - {fileID: 1535470535}
   m_Father: {fileID: 0}
   m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &512838455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1342501880917024, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 512838456}
+  m_Layer: 0
+  m_Name: FrontRay (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &512838456
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4104817898819912, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 512838455}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.32, y: 2.4899998, z: 0.651001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1900030352}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &513028196 stripped
 GameObject:
@@ -24482,6 +24542,36 @@ Transform:
   m_PrefabParentObject: {fileID: 4943130514345168, guid: d0fa2be3871fd4b32ad124b4c9e5f52e,
     type: 2}
   m_PrefabInternal: {fileID: 2142674187}
+--- !u!1 &716966913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1342501880917024, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 716966914}
+  m_Layer: 0
+  m_Name: FrontRay (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &716966914
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4104817898819912, guid: 2b412f96e5de450469f5cfa1cb3c4263,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 716966913}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.28, z: 0.651001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1900030352}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &719794648 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4633533025614772, guid: c8b6d738469e146bbb7fa0890f9c2430,
@@ -36418,7 +36508,11 @@ MonoBehaviour:
   charContainer: {fileID: 1407234082}
   character: {fileID: 855339170}
   playerGoalPos: {fileID: 339841891}
-  raycastPoint: {fileID: 1910824790}
+  raycastPoints:
+  - {fileID: 1910824790}
+  - {fileID: 716966914}
+  - {fileID: 482925427}
+  - {fileID: 512838456}
   raycastMinDistance: 1.2
   hsp: 40
   slowhsp: 20
@@ -43016,7 +43110,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1900030352}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478416879
 GameObject:
@@ -57518,6 +57612,9 @@ Transform:
   - {fileID: 25024924}
   - {fileID: 81348112}
   - {fileID: 1910824790}
+  - {fileID: 716966914}
+  - {fileID: 482925427}
+  - {fileID: 512838456}
   - {fileID: 1476095283}
   m_Father: {fileID: 2044876164}
   m_RootOrder: 0
