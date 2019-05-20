@@ -19,6 +19,7 @@ TagManager:
   - UnDestroyable
   - water
   - ice
+  - sponge
   layers:
   - Default
   - TransparentFX
