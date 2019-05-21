@@ -2,10 +2,14 @@
 
 public class Sponge_Behaviour : MonoBehaviour {
 
-	public Animator anim;
+    [SerializeField]
+	private Animator anim;
+    [SerializeField]
+    private Animator anim2;
 
 
-	void OnCollisionEnter(Collision col){
-		anim.SetTrigger ("hit");
-	}
+    void OnCollisionEnter(Collision col){
+        anim.SetTrigger("hit");
+        anim2.SetTrigger("hit");
+    }
 }

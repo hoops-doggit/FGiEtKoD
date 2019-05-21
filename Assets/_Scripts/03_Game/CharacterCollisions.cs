@@ -81,7 +81,6 @@ public class CharacterCollisions : MonoBehaviour {
 
         if (col.gameObject.tag == "ice")
         {
-            //groundContact = true;
             groundCount++;
             cm.UpdateGroundStats();
             cm.IceSkatingStart();
@@ -90,13 +89,11 @@ public class CharacterCollisions : MonoBehaviour {
         if(col.gameObject.tag == "sponge" && bodyColour.currentColour == "blue")
         {
             cm.IceSkatingStart();
-            //groundContact = true;
             groundCount++;
             cm.UpdateGroundStats();
         }
         if(col.gameObject.tag == "sponge" && bodyColour.currentColour != "blue")
         {
-            //groundContact = true;
             groundCount++;
             cm.UpdateGroundStats();
         }
@@ -160,6 +157,13 @@ public class CharacterCollisions : MonoBehaviour {
         if (groundCount > 0)
         {
             groundContact = true;
+            cm.UpdateGroundStats();
+        }
+
+        else
+        {
+            groundContact = false;
+            cm.UpdateGroundStats();
         }
     }
 

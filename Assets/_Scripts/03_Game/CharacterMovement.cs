@@ -487,7 +487,7 @@ public class CharacterMovement : MonoBehaviour {
 			trueGroundContact = false;
 		} 
 
-		else if (_groundCount > 0) {
+		if (_groundCount > 0) {
 			trueGroundContact = true;
             jumpScaler.speed = 1;//this just makes character rigid
             if (!fast)
@@ -603,7 +603,7 @@ public class CharacterMovement : MonoBehaviour {
 
             if (rayGotTriggered)
             {
-                if (hit.collider.gameObject.tag != "jelly")
+                if (hit.collider.gameObject.tag != "jelly" && hit.collider.gameObject.tag != "sponge")
                 {
                     checkRay = false;
 
