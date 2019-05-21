@@ -69,7 +69,6 @@ public class Pickup_Jelly : MonoBehaviour {
     {
         _gb = other.gameObject;
         StartCoroutine("ChangeColor");
-
     }
 
     private IEnumerator ChangeColor(){

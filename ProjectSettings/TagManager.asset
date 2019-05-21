@@ -20,6 +20,7 @@ TagManager:
   - water
   - ice
   - sponge
+  - door
   layers:
   - Default
   - TransparentFX

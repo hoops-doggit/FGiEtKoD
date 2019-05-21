@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DoodleStudio95;
+using System;
 
 public class CharacterMovement : MonoBehaviour {
 
     public static CharacterMovement cm;
+    
 
     public GameObject charContainer;
     public GameObject character;
@@ -30,6 +32,7 @@ public class CharacterMovement : MonoBehaviour {
     private float jumpspeedInitial;
     //public float jumpHeight;
     [Header("OtherMovement")]
+    public float tinyJumpSpeed;
     public bool pushedBack;
     public float pushedBackMoveSpeed;
     public float fastPushedBackMoveSpeed;
@@ -108,6 +111,8 @@ public class CharacterMovement : MonoBehaviour {
     public Material shadowCasting;
     public GameObject charSpriteOBJ;
 
+    private List<RaycastHit> hitList = new List<RaycastHit>();
+
 
 
     //variables for modifying fast behaviour
@@ -120,6 +125,7 @@ public class CharacterMovement : MonoBehaviour {
     private float fastJumpSpeed;
     public bool checkRay;
     public bool rayGotTriggered;
+    
 
     private void Awake()
     {
@@ -579,7 +585,11 @@ public class CharacterMovement : MonoBehaviour {
         }
 
         RaycastHit hit;
+
+        float distance = 0;
         rayGotTriggered = false;
+        Collider col = null;
+        hitList.Clear();
         foreach (Transform t in raycastPoints)
         {
             if (Physics.Raycast(t.position, Vector3.forward, out hit, 40))
@@ -589,14 +599,14 @@ public class CharacterMovement : MonoBehaviour {
                     checkRay = true;
                     Debug.DrawRay(t.position, Vector3.forward * hit.distance, Color.grey);
                 }
-                if (hit.distance < raycastMinDistance && !rayGotTriggered && checkRay)
-                {
-                    rayGotTriggered = true;
+                if (hit.distance < raycastMinDistance && !rayGotTriggered)
+                {                    
+                    hitList.Add(hit);
                     Debug.DrawRay(t.position, Vector3.forward * hit.distance, Color.red);
+                    rayGotTriggered = true;
                 }
                 else
                 {
-                    rayGotTriggered = false;
                     Debug.DrawRay(t.position, Vector3.forward * hit.distance, Color.yellow);
                 }
             }
@@ -604,22 +614,58 @@ public class CharacterMovement : MonoBehaviour {
             {
                 Debug.DrawRay(t.position, Vector3.forward * 50, Color.yellow);
             }
-
-            if (rayGotTriggered)
+        }
+        
+        if (hitList.Count > 0)
+        {
+            foreach (RaycastHit hittite in hitList)
             {
-                if (hit.collider.gameObject.tag != "jelly" && hit.collider.gameObject.tag != "sponge")
+                distance += hittite.distance;
+            }
+            distance /= hitList.Count;
+            foreach (RaycastHit rch in hitList)
+            {
+                if (rch.collider.gameObject.tag == "box" && !pushedBack)
                 {
                     Pushback();
-                    charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + hit.distance);
+                    if (_groundContact)
+                    {
+                        charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + distance);
+                    }
+                    break;
+                }
+                else if (rch.collider.gameObject.tag == "sponge")
+                {
+                    Boink();
+                    MoveCharacter();
+                    break;
+                }
+                else if (rch.collider.gameObject.tag == "jelly")
+                {
+                    MoveCharacter();
+                    break;
+                }
+                else
+                {
+                    MoveCharacter();
                     break;
                 }
             }
         }
-
-        if (!rayGotTriggered)
+        else
         {
-            charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + moveSpeed);
-        }
+            MoveCharacter();
+        }                
+    }
+
+    private void MoveCharacter()
+    {
+        charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + moveSpeed);
+    }
+
+    private void Boink()
+    {   _groundContact = false;
+        vsp = tinyJumpSpeed;
     }
 
     private void Update()
