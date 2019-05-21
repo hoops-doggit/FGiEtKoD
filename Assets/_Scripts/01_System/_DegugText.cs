@@ -14,7 +14,7 @@ public class _DegugText : MonoBehaviour {
 
     private void Start()
     {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     // Update is called once per frame

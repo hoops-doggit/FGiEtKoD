@@ -2434,8 +2434,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.85611, y: 3.231052, z: 0.09802126}
-  m_Center: {x: -0.071968056, y: -0.19533446, z: 0.050989393}
+  m_Size: {x: 7.7342343, y: 3.2310522, z: 0.09902741}
+  m_Center: {x: 0, y: -0.19533451, z: 0.050486315}
 --- !u!114 &94006024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20613,6 +20613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   groundContact: 0
   groundCount: 0
+  bodyColour: {fileID: 0}
   clothes_top: {fileID: 81348111}
   clothes_bottom: {fileID: 0}
   slice: {fileID: 1324321480808914, guid: b7284ff49b791694bb704d22bb8950e8, type: 2}
@@ -29293,7 +29294,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 968135863}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2000}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1343061840}
@@ -34927,7 +34928,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: ToggleDebugText
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 0
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 0
@@ -52685,6 +52686,11 @@ Prefab:
     - target: {fileID: 4916697650525174, guid: e35c45b9ba76b0f458a61aa2fa5e4bdb, type: 2}
       propertyPath: m_LocalScale.y
       value: 243.22946
+      objectReference: {fileID: 0}
+    - target: {fileID: 65950063180119146, guid: e35c45b9ba76b0f458a61aa2fa5e4bdb,
+        type: 2}
+      propertyPath: m_Center.z
+      value: 0.097
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e35c45b9ba76b0f458a61aa2fa5e4bdb, type: 2}

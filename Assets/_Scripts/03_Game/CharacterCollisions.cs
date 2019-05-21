@@ -39,7 +39,7 @@ public class CharacterCollisions : MonoBehaviour {
     {
         if (col.gameObject.tag == "ground")
         {
-            groundContact = true;
+            //groundContact = true;
             groundCount++;
             cm.UpdateGroundStats();
         }
@@ -81,7 +81,7 @@ public class CharacterCollisions : MonoBehaviour {
 
         if (col.gameObject.tag == "ice")
         {
-            groundContact = true;
+            //groundContact = true;
             groundCount++;
             cm.UpdateGroundStats();
             cm.IceSkatingStart();
@@ -90,13 +90,13 @@ public class CharacterCollisions : MonoBehaviour {
         if(col.gameObject.tag == "sponge" && bodyColour.currentColour == "blue")
         {
             cm.IceSkatingStart();
-            groundContact = true;
+            //groundContact = true;
             groundCount++;
             cm.UpdateGroundStats();
         }
         if(col.gameObject.tag == "sponge" && bodyColour.currentColour != "blue")
         {
-            groundContact = true;
+            //groundContact = true;
             groundCount++;
             cm.UpdateGroundStats();
         }
@@ -106,14 +106,20 @@ public class CharacterCollisions : MonoBehaviour {
     {
         if (col.gameObject.tag == "ground")
         {
-            groundContact = false;
+            //groundContact = false;
+            groundCount--;
+            cm.UpdateGroundStats();
+        }
+
+        if(col.gameObject.tag == "sponge")
+        {
             groundCount--;
             cm.UpdateGroundStats();
         }
 
         if (col.gameObject.tag == "ice")
         {
-            groundContact = false;
+            //groundContact = false;
             groundCount--;
             cm.UpdateGroundStats();
             cm.IceSkatingStop();
@@ -139,7 +145,7 @@ public class CharacterCollisions : MonoBehaviour {
 
     private void LandedOnGround()
     {
-        groundContact = true;
+        //groundContact = true;
         groundCount++;
         cm.UpdateGroundStats();
     }
@@ -147,6 +153,14 @@ public class CharacterCollisions : MonoBehaviour {
     private void LeftGround()
     {
 
+    }
+
+    private void FixedUpdate()
+    {
+        if (groundCount > 0)
+        {
+            groundContact = true;
+        }
     }
 
 }
