@@ -481,20 +481,23 @@ public class CharacterMovement : MonoBehaviour {
 
 
     // Update is called once per frame
-    void FixedUpdate () {
+    void FixedUpdate()
+    {
 
-		if (_groundCount <= 0) {
-			trueGroundContact = false;
-		} 
+        if (_groundCount <= 0)
+        {
+            trueGroundContact = false;
+        }
 
-		if (_groundCount > 0) {
-			trueGroundContact = true;
+        if (_groundCount > 0)
+        {
+            trueGroundContact = true;
             jumpScaler.speed = 1;//this just makes character rigid
             if (!fast)
             {
                 grav = oldGrav;
             }
-		}
+        }
 
         #region normal vspeed and gravity behaviour
         if (trueGroundContact && !pushedBack && vsp < 0.0f)
@@ -503,7 +506,7 @@ public class CharacterMovement : MonoBehaviour {
             gravCoRoutineOn = false;
         }
 
-		if (!trueGroundContact)
+        if (!trueGroundContact)
         {
             vsp -= grav;
 
@@ -537,12 +540,14 @@ public class CharacterMovement : MonoBehaviour {
 
         character.transform.position = characterPos;
 
-		//speed up
-        if (moveSpeed != maxSpeed && !slowed && !pushedBack && !endScene) {
-			
-			if (moveSpeed <= 0) {
-				moveSpeed = standingStartSpeed;
-			}
+        //speed up
+        if (moveSpeed != maxSpeed && !slowed && !pushedBack && !endScene)
+        {
+
+            if (moveSpeed <= 0)
+            {
+                moveSpeed = standingStartSpeed;
+            }
 
             if (!fast)
             {
@@ -553,24 +558,28 @@ public class CharacterMovement : MonoBehaviour {
             {
                 moveSpeed *= (accSpeed * 2);
             }
-		}
+        }
 
-        if (moveSpeed > maxSpeed && !endScene && !fast) {
+        if (moveSpeed > maxSpeed && !endScene && !fast)
+        {
             moveSpeed = maxSpeed;
-		}
+        }
 
         if (moveSpeed > maxSpeed && fast)
         {
             moveSpeed = maxSpeed;
         }
 
-        if (endScene){
-            if(moveSpeed > endSceneMoveSpeed){
+        if (endScene)
+        {
+            if (moveSpeed > endSceneMoveSpeed)
+            {
                 moveSpeed = moveSpeed * endSceneSlowDown;
             }
         }
 
         RaycastHit hit;
+        rayGotTriggered = false;
         foreach (Transform t in raycastPoints)
         {
             if (Physics.Raycast(t.position, Vector3.forward, out hit, 40))
@@ -596,27 +605,22 @@ public class CharacterMovement : MonoBehaviour {
                 Debug.DrawRay(t.position, Vector3.forward * 50, Color.yellow);
             }
 
-            if (!rayGotTriggered)
-            {
-                charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + moveSpeed);
-            }
-
             if (rayGotTriggered)
             {
                 if (hit.collider.gameObject.tag != "jelly" && hit.collider.gameObject.tag != "sponge")
                 {
-                    checkRay = false;
-
-                    charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + hit.distance);
-
                     Pushback();
-                    rayGotTriggered = false;
+                    charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + hit.distance);
+                    break;
                 }
-                break;
             }
-            break;
         }
-	}
+
+        if (!rayGotTriggered)
+        {
+            charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + moveSpeed);
+        }
+    }
 
     private void Update()
     {
