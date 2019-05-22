@@ -26,6 +26,7 @@ public class TomatoSplat : MonoBehaviour {
 
     private void Start()
     {
+        myBoxCollider = GetComponent<BoxCollider>();
         if (splat == null)
         {
             splat = _GM.instance.GetComponent<Tomato_SplatHolder>().splat;
