@@ -34,12 +34,11 @@ public class TomatoSplat : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
 	{
-		other.GetComponentInParent<CharacterMovement> ().GotHit();
+		other.GetComponentInParent<CharacterMovement>().GotHit();
         other.GetComponentInParent<CharacterMovement>().HitTomato();
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
 		DoSplat();
-        myBoxCollider.enabled = false;
-        
+        myBoxCollider.enabled = false;        
 	}
 
     public void DoSplat() {

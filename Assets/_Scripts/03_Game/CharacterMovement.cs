@@ -6,8 +6,7 @@ using System;
 
 public class CharacterMovement : MonoBehaviour {
 
-    public static CharacterMovement cm;
-    
+    public static CharacterMovement cm;    
 
     public GameObject charContainer;
     public GameObject character;
@@ -33,6 +32,7 @@ public class CharacterMovement : MonoBehaviour {
     //public float jumpHeight;
     [Header("OtherMovement")]
     public float tinyJumpSpeed;
+    public float fastTinyJumpSpeed;
     public bool pushedBack;
     public float pushedBackMoveSpeed;
     public float fastPushedBackMoveSpeed;
@@ -395,7 +395,7 @@ public class CharacterMovement : MonoBehaviour {
         }       
     }    
 
-    private void FastInitial()
+    public void FastInitial()
     {
         //Fast_CameraControll.instance.GoingFast();
         fast = true;
@@ -588,7 +588,6 @@ public class CharacterMovement : MonoBehaviour {
 
         float distance = 0;
         rayGotTriggered = false;
-        Collider col = null;
         hitList.Clear();
         foreach (Transform t in raycastPoints)
         {
@@ -615,7 +614,7 @@ public class CharacterMovement : MonoBehaviour {
                 Debug.DrawRay(t.position, Vector3.forward * 50, Color.yellow);
             }
         }
-        
+
         if (hitList.Count > 0)
         {
             foreach (RaycastHit hittite in hitList)
@@ -655,7 +654,25 @@ public class CharacterMovement : MonoBehaviour {
         else
         {
             MoveCharacter();
-        }                
+        }
+
+
+        //Gravity stuff
+        if (_groundCount <= 0)
+        {
+            trueGroundContact = false;
+        }
+
+        else if (_groundCount > 0)
+        {
+            StopCoroutine("GravityTime");
+            trueGroundContact = true;
+            jumpScaler.speed = 1;//this just makes character rigid
+            if (!fast)
+            {
+                grav = oldGrav;
+            }
+        }
     }
 
     private void MoveCharacter()
@@ -665,7 +682,14 @@ public class CharacterMovement : MonoBehaviour {
 
     private void Boink()
     {   _groundContact = false;
-        vsp = tinyJumpSpeed;
+        if (!fast)
+        {
+            vsp = tinyJumpSpeed;
+        }
+        else
+        {
+            vsp = fastTinyJumpSpeed;
+        }
     }
 
     private void Update()
@@ -712,19 +736,6 @@ public class CharacterMovement : MonoBehaviour {
             }
         }
 
-        if (_groundCount <= 0)
-        {
-            trueGroundContact = false;
-        }
-
-        else if (_groundCount > 0)
-        {
-            trueGroundContact = true;
-            jumpScaler.speed = 1;//this just makes character rigid
-            if (!fast)
-            {
-                grav = oldGrav;
-            }
-        }
+        
     }
 }
