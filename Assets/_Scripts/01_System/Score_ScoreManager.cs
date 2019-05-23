@@ -55,6 +55,7 @@ public class Score_ScoreManager : MonoBehaviour {
 
         //the below line is for resetting progress
         //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteKey("save");
     }
 
     // Use this for initialization
