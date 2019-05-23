@@ -42,6 +42,11 @@ public class CharacterCollisions : MonoBehaviour {
             //groundContact = true;
             groundCount++;
             cm.UpdateGroundStats();
+
+            if(cm.transform.position.y < 0)
+            {
+                cm.Boink();
+            }
         }
 
         if (col.gameObject.tag == "box")

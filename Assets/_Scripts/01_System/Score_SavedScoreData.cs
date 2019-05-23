@@ -6,7 +6,7 @@ public class Score_SavedScoreData {
 
     public string name1 = "JACOB!"; public int score1 = 15152;
     public string name2 = "slinky"; public int score2 = 13350;
-    public string name3 = "hehesia"; public int score3 = 15481;
+    public string name3 = "Nemesia"; public int score3 = 15481;
     public string name4 = "Jaelly"; public int score4 = 11375;
     public string name5 = "Ariel"; public int score5 = 10506;
     public string name6 = "Aiden"; public int score6 = 9871;

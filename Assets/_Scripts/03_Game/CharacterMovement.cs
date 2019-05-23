@@ -672,7 +672,7 @@ public class CharacterMovement : MonoBehaviour {
             {
                 grav = oldGrav;
             }
-        }
+        }        
     }
 
     private void MoveCharacter()
@@ -680,7 +680,7 @@ public class CharacterMovement : MonoBehaviour {
         charContainer.transform.position = new Vector3(charContainer.transform.position.x, charContainer.transform.position.y, charContainer.transform.position.z + moveSpeed);
     }
 
-    private void Boink()
+    public void Boink()
     {   _groundContact = false;
         if (!fast)
         {
