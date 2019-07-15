@@ -37,7 +37,9 @@ public class CharacterCollisions : MonoBehaviour {
 
     public void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "ground")
+        string tag = col.gameObject.tag;
+
+        if (tag == "ground")
         {
             //groundContact = true;
             groundCount++;
@@ -49,12 +51,12 @@ public class CharacterCollisions : MonoBehaviour {
             }
         }
 
-        if (col.gameObject.tag == "box")
+        if (tag == "box")
         {
             cm.Pushback();
         }
 
-        if (col.gameObject.tag == "clothesPile")
+        if (tag == "clothesPile")
         {
             clothes_top.SetActive(true);
 
@@ -63,13 +65,13 @@ public class CharacterCollisions : MonoBehaviour {
             cm.HitClothesPile();
         }
 
-        if (col.gameObject.tag == "butterKnife")
+        if (tag == "butterKnife")
         {
             cm.Pushback();
             Debug.Log("hitButterKnife");
         }
 
-        if (col.gameObject.tag == "bigKnife")
+        if (tag == "bigKnife")
 
         {
             colourBumps++;
@@ -84,20 +86,20 @@ public class CharacterCollisions : MonoBehaviour {
             sliceClone.GetComponent<FX_Slice2Parent>().MoveSlice(slicePos, came);
         }
 
-        if (col.gameObject.tag == "ice")
+        if (tag == "ice")
         {
             groundCount++;
             cm.UpdateGroundStats();
             cm.IceSkatingStart();
         }
 
-        if(col.gameObject.tag == "sponge" && bodyColour.currentColour == "blue")
+        if(tag  == "sponge" && bodyColour.currentColour == "blue")
         {
             cm.IceSkatingStart();
             groundCount++;
             cm.UpdateGroundStats();
         }
-        if(col.gameObject.tag == "sponge" && bodyColour.currentColour != "blue")
+        if(tag == "sponge" && bodyColour.currentColour != "blue")
         {
             groundCount++;
             cm.UpdateGroundStats();
@@ -106,20 +108,22 @@ public class CharacterCollisions : MonoBehaviour {
 
     public void OnCollisionExit(Collision col)
     {
-        if (col.gameObject.tag == "ground")
+        string tag = col.gameObject.tag;
+
+        if (tag == "ground")
         {
             //groundContact = false;
             groundCount--;
             cm.UpdateGroundStats();
         }
 
-        if(col.gameObject.tag == "sponge")
+        if(tag == "sponge")
         {
             groundCount--;
             cm.UpdateGroundStats();
         }
 
-        if (col.gameObject.tag == "ice")
+        if (tag == "ice")
         {
             //groundContact = false;
             groundCount--;
