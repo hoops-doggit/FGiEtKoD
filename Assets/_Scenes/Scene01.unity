@@ -44742,9 +44742,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: fb4ff351fd1508948874c12f345ece34, type: 3}
-  - {fileID: 8300000, guid: 04ea56dca9eeef94e915184a363c856e, type: 3}
-  - {fileID: 8300000, guid: b873d5c2cbe81e64d8d47f05d827eed0, type: 3}
+  - {fileID: 8300000, guid: afd35ee6d27e64d3fb886378f59c9338, type: 3}
+  - {fileID: 8300000, guid: f2d3eb6373b7341c6acd3fc8ecfdd98d, type: 3}
+  - {fileID: 8300000, guid: 0b2300510441c4bafbe16815ac9591c3, type: 3}
 --- !u!114 &1994077695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44757,19 +44757,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSFXClips:
-  - {fileID: 8300000, guid: 3ccf8e83c0ea6b34aa8ede7cc7c06398, type: 3}
-  - {fileID: 8300000, guid: 10527e926a865da4cb6e8c4b25ad60d3, type: 3}
-  moveLeft: {fileID: 8300000, guid: 97711be80765b0940a5d469d92080d81, type: 3}
-  moveRight: {fileID: 8300000, guid: 93b8be6657931e94ca01a5261757f89d, type: 3}
+  - {fileID: 8300000, guid: cff66693aa12f4284a5fd988ac245657, type: 3}
+  - {fileID: 8300000, guid: 71f41e56d3125430cb3710476d755dd3, type: 3}
+  moveLeft: {fileID: 8300000, guid: 0db6803d0694247cfa22404975a04cb7, type: 3}
+  moveRight: {fileID: 8300000, guid: 1850e4ab0f384485b9b207f2a10380a6, type: 3}
   jellyPickup:
-  - {fileID: 8300000, guid: a2d9fce3dee0ace4ab12e1f7fb18dfef, type: 3}
-  - {fileID: 8300000, guid: 6a954c0222cef564d89b55b802d5a8da, type: 3}
-  - {fileID: 8300000, guid: e267682404a429841b71b84bbe462746, type: 3}
-  - {fileID: 8300000, guid: c7486484ea9cb0146abcc5724ae094c3, type: 3}
-  genericHit: {fileID: 8300000, guid: abcfcd41b6b664a438ca43025540eb5f, type: 3}
-  ground: {fileID: 8300000, guid: 59ec4c1a1d7ec2548b24a67c9267f07b, type: 3}
-  lightning01: {fileID: 8300000, guid: 68b155c3a432f42479b9f675ac001d50, type: 3}
-  lightning02: {fileID: 8300000, guid: 16371050741675b4fbde4bdae307cc1c, type: 3}
+  - {fileID: 8300000, guid: 74f023b70c5824b838c95271176fed27, type: 3}
+  - {fileID: 8300000, guid: 4d536dc111dee45b1b2b2038c789246e, type: 3}
+  - {fileID: 8300000, guid: f2c4709e2b83943a5acb3e4ad1f3e24e, type: 3}
+  - {fileID: 8300000, guid: 9d4365926f76d459e801f4b0bc51a421, type: 3}
+  genericHit: {fileID: 8300000, guid: bf274d66c33e84d428612e7691b671ab, type: 3}
+  ground: {fileID: 8300000, guid: d4a4067ae597e4214bc014559775f9e4, type: 3}
+  lightning01: {fileID: 8300000, guid: 229485dc04b8349939c3e7b9feccf962, type: 3}
+  lightning02: {fileID: 8300000, guid: 70de54a16911343fe9bef5342b04458f, type: 3}
   audioSources:
   - {fileID: 1359601788}
   - {fileID: 784987581}
