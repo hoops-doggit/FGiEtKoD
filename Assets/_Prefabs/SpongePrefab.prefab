@@ -89,9 +89,10 @@ GameObject:
   - component: {fileID: 4079054354051310}
   - component: {fileID: 95767037605465430}
   - component: {fileID: 65047216234637174}
+  - component: {fileID: 114233415118756144}
   m_Layer: 0
   m_Name: Sponge_Animator
-  m_TagString: ground
+  m_TagString: sponge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -308,7 +309,7 @@ BoxCollider:
   m_GameObject: {fileID: 1269346500312260}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 3.76, y: 0.46, z: 4.63}
   m_Center: {x: 0, y: 0, z: 0}
@@ -337,7 +338,7 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1633157582461858}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fb289ee1cccf343c9b921804b9aafa57, type: 2}
   m_CullingMode: 0
@@ -374,6 +375,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 95767037605465430}
   anim2: {fileID: 95876137018843522}
+--- !u!114 &114233415118756144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1461476374082164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33cca77a6baaa4474ad059f7d5c88f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114297708275487046
 MonoBehaviour:
   m_ObjectHideFlags: 1

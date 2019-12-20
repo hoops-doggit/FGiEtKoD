@@ -9,6 +9,11 @@ public class Sponge_Behaviour : MonoBehaviour {
 
 
     void OnCollisionEnter(Collision col){
+
+    }
+
+    public void StartSpongeAnimation()
+    {
         anim.SetTrigger("hit");
         anim2.SetTrigger("hit");
     }
